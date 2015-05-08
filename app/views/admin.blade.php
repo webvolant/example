@@ -39,6 +39,11 @@
 
     {{ HTML::script('ckeditor/ckeditor.js') }}
 
+    {{ HTML::script('js/sweet-alert.min.js') }}
+    {{ HTML::style('css/sweet-alert.css') }}
+
+    {{ HTML::style('template.css') }}
+
 
 </head>
 <body>
@@ -420,20 +425,21 @@
         var $i=0;
         $(".test-new").click(function(e) {
             e.preventDefault();
-            var arr = <?php if (isset($parentList)) echo json_encode($parentList); ?>;
-            var selector = "<form class='form-inline' role='form'><div class='form-group col-xs-6'><select class='form-inline' id='test_id"+$i+"'></select></div>";
+            var arr = <?php if (isset($parentList)) echo json_encode($parentList); else echo '[]'; ?>;
+            var selector = "<form class='' role='form'><div class='div50 margin10'><label for='test_id'>Исследование</label><select class='form-control' id='test_id"+$i+"'></select></div>";
                 $(".tests").append(selector);
-            var form = "<div class='form-group col-xs-6'><input class='form-inline' id = 'price_for_test"+$i+"'/></div></form>";
+            var form = "<div class='div50 margin10'><label for='price_for_test'>Цена на исследование</label><input class='form-control' id = 'price_for_test"+$i+"'/></div></form>";
                 $(".tests").append(form);
 
             var select = $("#test_id"+$i);
             select.html('');
 
-            $.each(arr, function(i, value) {
-                select.append('<option id="' + i + '" value="' + i + '">' + value + '</option>');
-            });
-
-            $i=$i+1;
+            if (arr){
+                $.each(arr, function(i, value) {
+                    select.append('<option id="' + i + '" value="' + i + '">' + value + '</option>');
+                });
+                $i=$i+1;
+            }
         });
 
         //Сохранение значений из формы в клиниках.
@@ -450,22 +456,43 @@
             var arr = [];
             arr["test_id"] = [];
             arr["price_for_test"] = [];
+            //arr["links"] = [];
 
             $(".tests select").each(function(i) {
                 arr.test_id.push($("select[id=test_id"+$p+"]").val());
                 arr.price_for_test.push($("input[id=price_for_test"+$p+"]").val());
+                //arr.price_for_test.push($("input[id=links"+$p+"]").val());
                 //window.alert(test_id);
                 //window.alert(price_for_test);
                 $p=$p+1;
             });
             $.post('/admin/test-save', {test_id:JSON.stringify(arr.test_id),price_for_test:JSON.stringify(arr.price_for_test),klinik_id:klinik_id},function(data){
-                $(".dropdown-messages").html(data);
-                console.log(data);
-                //if (data==""){
-                    //$.favicon('/public/template_image/favicon.ico');
-                //}else{
-                    //$.favicon('/public/template_image/favicon_warning.ico');
-                //}
+                //$(".dropdown-messages").html(data);
+                if (data['flag']=='0')
+                    swal({
+                        title: 'Ошибка',
+                        text: data['data'],
+                        type: 'error',
+                        confirmButtonText: 'Закрыть'
+                    });
+                else{
+                    swal({
+                        title: 'Успех',
+                        text: data['data'],
+                        type: 'success',
+                        confirmButtonText: 'Закрыть'
+                    });
+                }
+            });
+        });
+
+        //удаление значений из формы в клиниках.
+        $(".test-delete").click(function(e) {
+            e.preventDefault();
+            $(this).parents('p').remove();//.html('Исследование было удалено!');
+            var test_id = $(this).attr('id');
+            var klinik_id = $("input[name=klinik_id]").val();
+            $.post('/admin/test-delete', {test_id:test_id,klinik_id:klinik_id},function(data){
 
             });
         });

@@ -48,11 +48,13 @@
 
 <p>
     @if ($errors->first('klinika_name'))
-    <div class="alert alert-danger" role="alert"><?php echo $errors->first('klinika_name'); ?></div>
-    @else
-    @endif
-    {{ Form::label('Место приема - если у врача нет клиники') }}
-    {{ Form::text('klinika_name', null, array('class' => 'form-control', 'placeholder'=>'Панфилова 23')) }}
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('klinika_name'); ?></div>
+@else
+@endif
+{{ Form::label('Место приема - если у врача нет клиники') }}
+{{ Form::text('klinika_name', null, array('id'=>'myPlaceTextBox2', 'class' => 'form-control', 'placeholder'=>'Начните вводить адрес')) }}
+
+<?php echo "<html><head>".$map['js']."</head><body>".$map['html']."</body></html>" ?>
 </p>
 
 <p>
@@ -184,9 +186,14 @@
 <div class="alert alert-danger" role="alert"><?php echo $errors->first('description'); ?></div>
 @else
 @endif
-{{ Form::label('Краткое описание о враче') }}
-{{ Form::text('description', null, array('class' => 'form-control', 'placeholder'=>'Врач детский аллерголог-иммунолог. Занимается диагностикой и лечением аллергического ринита, дерматита, крапивницы, бронхиальной астмы, пищевой аллергии.')) }}
+{{ Form::label('Краткое описание') }}
+{{ Form::text('description', null, array('class' => 'form-control', 'placeholder'=>'')) }}
 </p>
+
+<script>
+    var a = "<? echo 'description' ?>" ;
+    CKEDITOR.replace( a );
+</script>
 
 <p>
     @if ($errors->first('education'))

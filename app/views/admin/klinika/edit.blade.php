@@ -16,42 +16,32 @@
 
 {{ Form::model($user, array('action' => array('AdminKlinikaController@edit', $user->id), 'role' => 'form', 'enctype'=>'multipart/form-data', 'class' => 'form-horizontal')) }}
 
+<div class="tests_all">
+    <?php echo $tests; ?>
+</div>
+
+
 <p><a href="" class="test-new btn btn-primary">Выбрать исследование</a>
 {{ Form::hidden('klinik_id', "$user->id") }}
 <a href="" class="test-save btn btn-success">Сохранить</a></p>
 
-
-
 <div class="tests">
-<!--
-    <p>
-        <?php //var_dump($errors->first('msg')); ?>
-        @if($errors->first('msg'))
-    <h4><div class="alert alert-success" role="alert">{{ $errors->first('msg') }}</div></h4>
-    @endif
-
-    <?php //var_dump($errors->first('err')); ?>
-    @if($errors->first('err'))
-    <h4><div class="alert alert-danger" role="alert">{{ $errors->first('err') }}</div></h4>
-    @endif
-    </p>
-
-    {{ Form::hidden('klinik_id', "$user->id") }}
-    <p>
-        {{ Form::select('test_id', $parentList, null, array('class' => 'form-control')) }}
-    </p>
-
-    <p>
-        {{ Form::text('price_for_test', null, array('class' => 'form-control', 'placeholder'=>'200')) }}
-    </p>
--->
 
 </div>
+<div class="clear"></div>
 
 
+<p><hr/>
+    @if ($errors->first('status'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('status'); ?></div>
+@else
+@endif
+{{ Form::label('Статус') }}
+{{ Form::select('status', Helper::status(), null, array('class' => 'form-control')) }}
+</p>
 
 <p>
-<hr/>
+
     @if ($errors->first('name'))
 <div class="alert alert-danger" role="alert"><?php echo $errors->first('name'); ?></div>
 @else
@@ -148,7 +138,10 @@
 {{ Form::text('description', null, array('class' => 'form-control', 'placeholder'=>'Многопрофильный медицинский центр, специализирующийся на проведении диагностического обследования взрослых и детей от 14 лет.')) }}
 </p>
 
-
+<script>
+    var a = "<? echo 'description' ?>" ;
+    CKEDITOR.replace( a );
+</script>
 
 <p>
     {{ Form::submit( "Отправить", array('class' => 'btn btn-primary')) }}

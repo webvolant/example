@@ -20,6 +20,7 @@ class CreateSpecialitiesTable extends Migration {
             $table->string('specialisation_alias');
 
             $table->text('description');
+            $table->text('description_specialisation');
 
             $table->timestamps();
         });

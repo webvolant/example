@@ -61,12 +61,20 @@ class AdminKlinikaController extends Controller {
 
         $parentList = \Test::getNestedList('name');
 
+
+
+        //$tests = $kl->Tests()->orderBy('lft')->get();
+
+        $tests = Klinika::getTestsForKlinik($kl);
+
+
         return View::make('admin.klinika.edit',array(
             'user'=>$kl,
             'doctors'=>$doctors,
             'doctors_current'=>$mas,
             'map'=>$map,
-            'parentList'=>$parentList
+            'parentList'=>$parentList,
+            'tests'=>$tests,
         ));
     }
 

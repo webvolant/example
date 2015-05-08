@@ -95,7 +95,7 @@
 
                                 <?php echo $errors->first('name'); ?>
                                 <p>{{ Form::label('Ваш номер телефона:') }}
-                                {{ Form::text('phone', null, array('type'=>'tel','required pattern'=>"[0-9_-]{9}", 'title'=>"Формат: (312) 99 99 99", 'id'=>'user_phone3', 'class' => ' form-control rfield', 'placeholder'=>'(___) __ __ __')) }}
+                                {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'user_phone3', 'class' => ' form-control rfield', 'placeholder'=>'0(___) __ __ __')) }}
                                 </p>
                                 <p>{{ Form::text('name', null, array('class' => ' form-control', 'placeholder'=>'Ваше имя')) }}</p>
 
@@ -268,7 +268,7 @@
 
                                 <?php echo $errors->first('name'); ?>
                                 <p>{{ Form::label('Ваш номер телефона:') }}
-                                    {{ Form::text('phone', null, array('type'=>'tel','required pattern'=>"[0-9_-]{9}", 'title'=>"Формат: (312) 99 99 99", 'id'=>'user_phone2', 'class' => ' form-control rfield', 'placeholder'=>'(___) __ __ __')) }}
+                                    {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'user_phone2', 'class' => ' form-control rfield', 'placeholder'=>'0(___) __ __ __')) }}
                                 </p>
 
 

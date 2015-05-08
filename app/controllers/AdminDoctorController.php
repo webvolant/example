@@ -4,8 +4,15 @@ class AdminDoctorController extends Controller {
 
     public function add()
     {
+        $config['places'] = TRUE;
+        $config['placesAutocompleteInputID'] = 'myPlaceTextBox2';
+        $config['placesAutocompleteBoundsMap'] = TRUE; // set results biased towards the maps viewport
+        //$config['placesAutocompleteOnChange'] = 'alert(\'You selected a place\');';
+        Gmaps::initialize($config);
+        $map = Gmaps::create_map();
+
         $specialities = Speciality::all()->lists('name', 'id');//->select('name', 'email')
-        return View::make('admin.doctor.add', array('specialities'=>$specialities));
+        return View::make('admin.doctor.add', array('specialities'=>$specialities,'map'=>$map));
     }
 
     public function profile($id)

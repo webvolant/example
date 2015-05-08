@@ -98,16 +98,13 @@ Route::post('order/otziv', array(
             'reviewStars' => array('required'),
             'reviewStars2' => array('required'),
             'reviewStars3' => array('required'),
-            'phone' => 'exists:clients',
+            'phone' => array('required','exists:clients'),
             'comment' => array('required')
         );
 
 
         $validation = Validator::make(Input::all(), $rules);
         if ($validation->passes()){
-
-
-
             $id = 0;
             $phone = Input::get('phone');
             $client = Client::where('phone','LIKE', "%$phone%")->exists();
@@ -157,8 +154,11 @@ Route::post('order/otziv', array(
             return Redirect::route('doctor/detail', array('link'=>User::where('id','=',Input::get('doctor_id'))->first()->link ))->withErrors(['msg'=>'Вы успешно оставили отзыв!']);
         }
         else{
+            //$er
+            $messages = $validation->errors();
+            $messages->add('error_status', 'К сожалению ошибка, отзыв не оставлен, исправьте поля.');
             return Redirect::route('doctor/detail', array('link'=>User::where('id','=',Input::get('doctor_id'))->first()->link ))->withInput()
-                ->withErrors($validation);
+                ->withErrors($messages);
         }
     }
 ));

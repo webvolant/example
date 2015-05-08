@@ -23,7 +23,8 @@
         {{ HTML::style('source/jquery.fancybox.css') }}
 
         <!-- Scripts are placed here -->
-        {{ HTML::script('js/jquery-2.1.3.min.js') }}
+        {{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') }}
+        {{ HTML::script('https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.3.1/jquery.maskedinput.js') }}
         {{ HTML::script('js/bootstrap.js') }}
 
         {{ HTML::script('js/jquery.chained.min.js') }}
@@ -116,10 +117,10 @@
 
                 <div class="form-group">
 
-                    <?php echo $errors->first('phone'); ?>
+                    <?php echo $errors->first('phone_main'); ?>
                     {{ Form::label('Для записи на прием, впишите номер:') }}
-                    <a class="pull-right">{{ Form::submit( "Отправить", array('class' => 'btn_submit btn btn-warning submit_send_order')) }}</a>
-                    {{ Form::text('phone', null, array('type'=>'tel','required pattern'=>"[0-9_-]{9}", 'title'=>"Формат: (312) 99 99 99", 'id'=>'user_phone', 'class' => ' form-control rfield', 'placeholder'=>'(___) __ __ __')) }}
+                    <a class="pull-right">{{ Form::submit( "Отправить", array('class' => 'btn_submit_main btn btn-warning submit_send_order')) }}</a>
+                    {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'user_phone_main', 'class' => ' form-control rfield', 'placeholder'=>'0(___) __ __ __')) }}
 
                     <p>или звоните {{ Form::label(' 0312 986 900') }}</p>
                 </div>
@@ -142,7 +143,7 @@
                         {{ Form::open(array('url' => 'search', 'role' => 'form', 'class' => '')) }}
                         <div class="col-xs-3 ">
                                 <div class="form-group">
-                                <span class="h2_my">Поиск врачей</span>
+                                <span class="h4_my line35">Воспользуйтесь поиском!</span>
                                 </div>
                         </div>
 
@@ -196,6 +197,7 @@
                             <li><a href="{{ URL::route('/') }}">Главная</a></li>
                             <li><a href="{{ URL::to('doctor/doctors') }}">Врачи</a></li>
                             <li><a href="{{ URL::to('clinics/all') }}">Клиники</a></li>
+                            <li><a href="{{ URL::to('diagnostica/centers') }}">Диагностические центры</a></li>
                         </ul>
                 </nav>
 
@@ -266,7 +268,7 @@
             <div class="col-xs-8">
                 <ul class="about_list i-doctor_l">
                     <li class="about_item">
-                        <h3><a href="http://diagnostica.docdoc.ru" class="about_link i-diagcenters" target="_blank">
+                        <h3><a href="{{ URL::to('diagnostica/centers') }}" class="about_link i-diagcenters" target="_blank">
                                 Диагностические центры
                             </a></h3>
                         <p>
@@ -356,14 +358,19 @@
 
 </body>
 
-{{ HTML::script('js/jquery.maskedinput.js') }}
-{{ HTML::script('js/phone_script.js') }}
+
 
 
 
 
 <script type="text/javascript">
     $(document).ready(function() {
+
+        $("#phone_otziv").mask("0(999) 99-99-99");
+        $("#phone_reg").mask("0(999) 99-99-99");
+        $('#user_phone_main').mask("0(999) 99-99-99");
+        $('#user_phone2').mask("0(999) 99-99-99");
+        $('#user_phone3').mask("0(999) 99-99-99");
 
         if (window.location.href.indexOf("deti") > -1) {
             $(".child_checkbox").prop("checked", true);
@@ -412,7 +419,7 @@
         //заказ аякс
         $(".submit_send_order").click(function(e){
             e.preventDefault();
-            var phone = $("#user_phone").val();
+            var phone = $("#user_phone_main").val();
                 $.post('/order-new', {phone:phone},function(data){
                     if (data['flag']=='0')
                         swal({

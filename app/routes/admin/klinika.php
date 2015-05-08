@@ -9,6 +9,18 @@
 
 Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
+    Route::post('test-delete', array(
+        'as'=>'test-delete',
+        function(){
+            if (Request::ajax()){
+                    $test_id = Input::get('test_id');
+                    $klinik_id = Input::get('klinik_id');
+                    $kl = Klinika::find($klinik_id)->first();
+                    $kl->Tests()->detach($test_id);
+            }
+        }
+    ));
+
     Route::post('/test-save', array(
         'as'=>'test-save',
         function(){
@@ -18,31 +30,19 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 );
                 $validation = Validator::make(Input::all(), $rules);
                 if ($validation->passes()){
-                    //var_dump(Input::all());
                     $test_id = json_decode(Input::get('test_id'));
                     $price_for_test = json_decode(Input::get('price_for_test'));
                     $klinik_id = Input::get('klinik_id');
-                    //var_dump($test_id);
-                    $kl = Klinika::find(1);
-                    var_dump($test_id);
-
+                    $kl = Klinika::find($klinik_id);
+                    $i=0;
                     for ($i = 0; $i < count($test_id); $i++){
-                        $kl->Tests()->attach($test_id[$i], array('price', 1));
+                        $link = Test::find($test_id[$i])->link;
+                        $kl->Tests()->attach($test_id[$i], array('price'=>$price_for_test[$i],'link'=>$link));
                     }
 
-                    //$resource->pivot->gcal_id = "TEST";
-                    //$resource->pivot->save();
-                    //for ($i = 0; $i < count($test_id); $i++)
-                    //{
-                        //echo $test_id[$i];
-                        //$select_specialities = Input::get('specialities');
-
-                    //}
-                    //foreach ($test_id as $item)
-
-                    //$data['flag'] = 1;
-                    //$data['data'] = "Были обновлены заданные исследования для клиники";
-                    //return $data;
+                    $data['flag'] = 1;
+                    $data['data'] = "Были обновлены заданные исследования для клиники";
+                    return $data;
                 }
                 else{
                     $data['flag'] = 0;
@@ -68,12 +68,12 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         'as'=>'klinika/add',
         function(){
             $rules = array(
-                //'fio' => array('required'),
+                'fio' => array('required'),
                 //'email' => array('required','unique:users,email'),
                 //'pass' => array('required','confirmed'),
                 //'pass_confirmation' => array('required'),
                 //'phone' => array('required'),
-                //'specialities' => array('required')
+                //'doctors' => array('required')
             );
 
 
@@ -94,15 +94,16 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
 
                 $klinika->grafik = Input::get('grafik');
+                $klinika->description = Input::get('description');
 
                 $klinika->save();
 
-                $select_doctors = Input::get('doctors');
-                foreach($select_doctors as $item)
-                    $klinika->Users()->attach($item);
+                if (Input::get('doctors')){
+                    $select_doctors = Input::get('doctors');
+                    foreach($select_doctors as $item)
+                        $klinika->Users()->attach($item);
+                }
 
-                $klinika->description = Input::get('description');
-                //$klinika->logo = Input::get('logo');
                 if (Input::hasFile('logo')) {
                     $dir = '/uploads'.date('/Y/m/d/');
 
@@ -121,16 +122,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         $filename = str_random(10).'.jpg';
                         $image->move(public_path().$dir, $filename);
                     }
-                    /*$dir = '/uploads'.date('/Y/m/d/');
-
-                    do {
-                        $filename = str_random(10).'.jpg';
-                    } while (File::exists(public_path().$dir.$filename));
-                    Input::file('logo')->move(public_path().$dir, $filename);
-                    $klinika->logo = $dir.$filename;
-                    $klinika->save();*/
                 }
-
                 return Redirect::route('klinika/index');
             }
             else{
@@ -155,6 +147,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 //'pass' => array('required','confirmed'),
                 //'pass_confirmation' => array('required'),
                 //'phone' => array('required')
+                //'doctors' => array('required')
             );
             $validation = Validator::make(Input::all(), $rules);
 
@@ -175,13 +168,17 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
 
                 $klinika->grafik = Input::get('grafik');
+                $klinika->description = Input::get('description');
 
                 $klinika->save();
 
-                $select_doctors = Input::get('doctors');
-                $klinika->Users()->sync($select_doctors);
+                if (Input::get('doctors')){
+                    $select_doctors = Input::get('doctors');
+                    $klinika->Users()->sync($select_doctors);
+                }
 
-                $klinika->description = Input::get('description');
+
+
                 //$klinika->logo = Input::get('logo');
                 /*if (Input::hasFile('logo')) {
                     $dir = '/uploads'.date('/Y/m/d/');
@@ -259,9 +256,13 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
                 //CRM save - after data
                 $json = json_encode($klinika);
-                $json = json_decode($json, true);
-                $json['doctors'] = $select_doctors;
-                $j = json_encode($json, true);
+
+                if (Input::get('doctors')){
+                    $json = json_decode($json, true);
+                    $json['doctors'] = $select_doctors;
+                    $json = json_encode($json, true);
+                }
+
 
                 //$string =  serialize( $user->toArray() ) ;
                 //$string =  serialize( $user->toArray() ) ;
@@ -272,7 +273,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
                 $crm = new Crm;
                 $crm->info_before = $j_before;
-                $crm->info_after = $j;
+                $crm->info_after = $json;
                 $crm->user_id = Auth::user()->id;
                 $crm->save();
                 return Redirect::route('klinika/index');

@@ -31,10 +31,11 @@ class CreateTestsTable extends Migration {
         {
             $table->increments('id');
             $table->integer('klinik_id')->unsigned();
-            $table->foreign('klinik_id')->references('id')->on('kliniks');
+            $table->foreign('klinik_id')->references('id')->on('kliniks')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('test_id')->unsigned();
-            $table->foreign('test_id')->references('id')->on('tests');
+            $table->foreign('test_id')->references('id')->on('tests')->onDelete('cascade')->onUpdate('cascade');
             $table->string('price', 255);
+            $table->string('link', 255);
             $table->timestamps();
         });
     }

@@ -19,6 +19,15 @@
 {{ Form::open(array('url' => action('AdminKlinikaController@add'), 'enctype'=>'multipart/form-data', 'role' => 'form', 'class' => 'form-horizontal')) }}
 
 <p>
+    @if ($errors->first('status'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('status'); ?></div>
+@else
+@endif
+{{ Form::label('Статус') }}
+{{ Form::select('status', Helper::status(), null, array('class' => 'form-control')) }}
+</p>
+
+<p>
     @if ($errors->first('name'))
 <div class="alert alert-danger" role="alert"><?php echo $errors->first('name'); ?></div>
 @else
@@ -103,6 +112,10 @@
 {{ Form::text('description', null, array('class' => 'form-control', 'placeholder'=>'Многопрофильный медицинский центр, специализирующийся на проведении диагностического обследования взрослых и детей от 14 лет.')) }}
 </p>
 
+<script>
+    var a = "<? echo 'description' ?>" ;
+    CKEDITOR.replace( a );
+</script>
 
 
 

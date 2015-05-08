@@ -223,7 +223,7 @@
                                                 @else
                                                 @endif
                                                 {{ Form::label('Статус события') }}
-                                                {{ Form::select('status', $status, null, array('class' => 'form-control')) }}
+                                                {{ Form::select('status', $status, null, array('disabled','class' => 'form-control')) }}
                                                 </p>
 
                                                 <p>

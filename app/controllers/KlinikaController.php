@@ -33,6 +33,18 @@ class KlinikaController extends Controller {
                         ->paginate(Helper::getPagesCount());
                 return View::make('front.klinika.list', array('users'=>$users));
             }
+
+
+            $users = User::whereHas(
+                'specialities', function($q){
+                    $q->where('speciality_id', \Route::current()->parameter('spec'));
+                }
+            )->get();
+            if (!$users->exists())
+                $users = Klinika::paginate(Helper::getPagesCount());
+            return View::make('front.klinika.list', array('users'=>$users));
+
+
         } else { //Клиники без специализации
             if ( Input::get('order') != null && Input::get('direction') != null ){
                         $users = Klinika::whereStatus(1)
@@ -44,7 +56,12 @@ class KlinikaController extends Controller {
                     ->paginate(Helper::getPagesCount());
                     return View::make('front.klinika.list', array('users'=>$users));
             }
+
+
+
         }
+
+
 /*
         $users = User::whereHas(
             'specialities', function($q){
@@ -61,6 +78,8 @@ class KlinikaController extends Controller {
 
         return View::make('front.klinika.list', array('users'=>$users));*/
     }
+
+
 
     //Доктор детализированное инфо
     public function detail($link)
@@ -88,6 +107,35 @@ class KlinikaController extends Controller {
         //var_dump($photos);
         //die();
         return View::make('front.klinika.detail', array('user' => $user,'photos'=>$photos,'map'=>$map,'users'=>$users));
+    }
+
+    public function centers(){
+        if (\Route::current()->parameter('diag') != null && \Route::current()->parameter('area') != null){
+            $users = Klinika::whereHas('tests', function($q){
+                    $q->where('link', \Route::current()->parameter('area'))->orWhere('link', \Route::current()->parameter('diag'));
+                }
+            )->paginate(Helper::getPagesCount());
+            return View::make('front.klinika.list', array('users'=>$users));
+        }
+        elseif (\Route::current()->parameter('diag') != null){ //для поиска по второму параметру.
+            $users = Klinika::whereHas('tests', function($q){
+                    $q->where('link', \Route::current()->parameter('diag'));
+                }
+            )->paginate(Helper::getPagesCount());
+        }
+        elseif (\Route::current()->parameter('area') != null){ //для поиска по второму параметру.
+            $users = Klinika::whereHas('tests', function($q){
+                    $q->where('link', \Route::current()->parameter('area'));
+                }
+            )->paginate(Helper::getPagesCount());
+        }
+
+        if (\Route::current()->parameter('diag') != null && \Route::current()->parameter('area') != null){
+            //$users = Klinika::with('tests')
+            //->paginate(Helper::getPagesCount());
+            return View::make('front.klinika.list', array('users'=>$users));
+        }
+
     }
 
 

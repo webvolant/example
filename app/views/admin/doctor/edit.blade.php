@@ -186,9 +186,14 @@
 <div class="alert alert-danger" role="alert"><?php echo $errors->first('description'); ?></div>
 @else
 @endif
-{{ Form::label('Краткое описание о враче') }}
-{{ Form::text('description', null, array('class' => 'form-control', 'placeholder'=>'Врач детский аллерголог-иммунолог. Занимается диагностикой и лечением аллергического ринита, дерматита, крапивницы, бронхиальной астмы, пищевой аллергии.')) }}
+{{ Form::label('Краткое описание') }}
+{{ Form::text('description', null, array('class' => 'form-control', 'placeholder'=>'')) }}
 </p>
+
+<script>
+    var a = "<? echo 'description' ?>" ;
+    CKEDITOR.replace( a );
+</script>
 
 <p>
     @if ($errors->first('education'))

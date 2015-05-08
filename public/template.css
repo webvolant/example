@@ -3,6 +3,10 @@
     width: 1024px;
 }
 
+.div50{
+    width:40%;
+    float:left;
+}
 
 .glyphicon{
 
@@ -919,7 +923,7 @@ textarea.form-control.review_form{
 .phone_form {
     position: relative;
 }
-#user_phone {
+#user_phone_main {
     width: 210px;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;

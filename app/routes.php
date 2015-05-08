@@ -67,21 +67,22 @@ View::composer(array('front','front.doctor.list','front.klinika.list','front.art
     });*/
 
     $specialisations = Speciality::all()->lists('specialisation', 'id');
+    asort($specialisations);
 
     $view->with('search1', $search_mas); //массив критериев поиска
     $view->with('specialities', $specialities); //массив специальностей
 
-
+/*
     $temp = [];
     foreach ( $specialisations as $key => $sp)
             array_push($temp, $sp);
 
     $unic = array_unique($temp);
+*/
 
 
 
-
-    $view->with('specialisations', $unic); //массив специализаций
+    $view->with('specialisations', $specialisations); //массив специализаций
     $view->with('specialisations2', Speciality::all());
 });
 
