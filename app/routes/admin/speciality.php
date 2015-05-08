@@ -37,6 +37,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $spec = new Speciality();
                 $spec->name = Input::get('name');
                 $spec->specialisation = Input::get('specialisation');
+                $spec->description = Input::get('description');
+                $spec->description_specialisation = Input::get('description_specialisation');
                 $spec->save();
                 return Redirect::route('speciality/index');
             }
@@ -57,7 +59,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         'as'=>'speciality/edit',
         function($id){
             $rules = array(
-                'name' => array('required','unique:specialities,name')
+                //'name' => array('required','unique:specialities,name')
             );
 
             $validation = Validator::make(Input::all(), $rules);
@@ -66,6 +68,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
                 $spec->name = Input::get('name');
                 $spec->specialisation = Input::get('specialisation');
+                $spec->description = Input::get('description');
+                $spec->description_specialisation = Input::get('description_specialisation');
                 $spec->save();
                 return Redirect::route('speciality/index');
             }

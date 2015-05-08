@@ -27,6 +27,7 @@ return array(
 	*/
 
 	'url' => 'http://localhost',
+    //'url' => 'http://my-doc.volant247.lclients.ru/',
 
 	/*
 	|--------------------------------------------------------------------------

@@ -18,18 +18,32 @@ class Klinika extends Eloquent {
     public function Users()
     {
         return $this->belongsToMany('User', 'user_kliniks',  'user_id', 'klinik_id' );
-        //return $this->belongsToMany('Profession', 'doctor_professions', 'doctor_id', 'profession_id')->withPivot('doctor_got_professions');
     }
 
     public function Tests()
     {
-        return $this->belongsToMany('Test', 'klinika_tests', 'klinik_id', 'test_id')->withPivot('price');
-        //return $this->belongsToMany('Profession', 'doctor_professions', 'doctor_id', 'profession_id')->withPivot('doctor_got_professions');
+        return $this->belongsToMany('Test', 'klinika_tests', 'klinik_id', 'test_id')->withPivot('price','link');
     }
 
 
 
-
+    public static function getTestsForKlinik($kl){
+        $tests = $kl->Tests()->withPivot('price')->orderBy('lft')->get();
+        $cap = "";
+        $parent_prev = "";
+        foreach($tests as $test){
+            if ($test->name == 'root')
+                $parent = 'Нет родителя';
+            else
+                $parent = $test->parent()->first()->name;
+            if ($parent_prev != $parent){
+                $cap .= '<p>'.$parent.'</p>';
+                $parent_prev = $parent;
+            }
+            $cap .='<p class="margin10">'.$test->name.'<a id='. $test->id .' class="test-delete" href='.' class="margin10">'.' - удалить'.'</a>'.'</p>';
+        }
+        return $cap;
+    }
 
 
     //Получение всех клиник

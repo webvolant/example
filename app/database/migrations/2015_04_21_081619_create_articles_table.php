@@ -21,10 +21,10 @@ class CreateArticlesTable extends Migration {
             $table->text('description');
 
             $table->integer('operator_id')->unsigned()->nullable();
-            $table->foreign('operator_id')->references('id')->on('users');
+            $table->foreign('operator_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
             $table->integer('speciality_id')->unsigned()->nullable();
-            $table->foreign('speciality_id')->references('id')->on('specialities');
+            $table->foreign('speciality_id')->references('id')->on('specialities')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });
@@ -38,10 +38,10 @@ class CreateArticlesTable extends Migration {
             $table->text('description');
 
             $table->integer('operator_id')->unsigned()->nullable();
-            $table->foreign('operator_id')->references('id')->on('users');
+            $table->foreign('operator_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
             $table->integer('speciality_id')->unsigned()->nullable();
-            $table->foreign('speciality_id')->references('id')->on('specialities');
+            $table->foreign('speciality_id')->references('id')->on('specialities')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

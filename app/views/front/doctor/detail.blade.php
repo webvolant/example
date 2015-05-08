@@ -29,9 +29,22 @@
     @endif
 
     <?php //var_dump($errors->first('err')); ?>
-    @if($errors->first('err'))
-    <h4><div class="alert alert-danger" role="alert">{{ $errors->first('err') }}</div></h4>
+    @if($errors->first('error_status'))
+        <h4><div class="alert alert-danger" role="alert">{{ $errors->first('error_status') }}</div></h4>
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+            //window.alert('hel');
+                swal({
+                    title: 'Отзыв не принят',
+                    text: 'Ошибка',
+                    type: 'error',
+                    confirmButtonText: 'Закрыть'
+                });
+            });
+        </script>
     @endif
+
 </p>
 
 <?php
@@ -131,7 +144,7 @@ $grafik_arr = explode(";", $user->grafik);
 
                                             <?php echo $errors->first('name'); ?>
                                             <p>{{ Form::label('Ваш номер телефона:') }}
-                                            {{ Form::text('phone', null, array('type'=>'tel','required pattern'=>"[0-9_-]{9}", 'title'=>"Формат: (312) 99 99 99", 'id'=>'user_phone2', 'class' => ' form-control rfield', 'placeholder'=>'(___) __ __ __')) }}
+                                            {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'user_phone2', 'class' => ' form-control rfield', 'placeholder'=>'(___) __ __ __')) }}
                                             </p>
 
 
@@ -555,7 +568,7 @@ $grafik_arr = explode(";", $user->grafik);
                 <div class="alert alert-danger" role="alert"><?php echo $errors->first('phone'); ?></div>
                 @else
                 @endif
-                {{ Form::text('phone', null, array('type'=>'tel','required pattern'=>"[0-9_-]{9}", 'title'=>"Формат: (312) 99 99 99", 'id'=>'phone_otziv', 'class' => ' form-control rfield', 'placeholder'=>'(___) __ __ __')) }}
+                {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'phone_otziv', 'class' => ' form-control', 'placeholder'=>'0(___) __ __ __')) }}
             <span class="h8_my">Мы просим указать ваш телефон для контроля достоверности отзывов</span></p>
 
 
@@ -565,7 +578,7 @@ $grafik_arr = explode(";", $user->grafik);
 
         <div class="row">
             <div class="col-md-12">
-            <p class="text-center">{{ Form::submit( "Высказаться", array('class' => 'btn_submit btn-lg btn-info')) }}</p>
+            <p class="text-center">{{ Form::submit( "Высказаться", array('class' => 'btn btn-lg btn-info')) }}</p>
             </div>
         </div>
 

@@ -110,7 +110,7 @@ class Helper extends Controller{
     }
 
     public static function orderTime(){
-        return 120;
+        return 180;
     }
 
     public static function latestOrderTime(){

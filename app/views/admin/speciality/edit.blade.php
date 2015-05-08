@@ -22,12 +22,40 @@
     {{ Form::text('name', null, array('class' => 'form-control', 'placeholder'=>'Специальность')) }}
 </p>
 
+
+<p>
+    @if ($errors->first('description'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('description'); ?></div>
+@else
+@endif
+{{ Form::label('Описание') }}
+{{ Form::text('description', null, array('class' => 'form-control', 'placeholder'=>'')) }}
+</p>
+
+<script>
+    var a = "<? echo 'description' ?>" ;
+    CKEDITOR.replace( a );
+</script>
+
 <p>
     <?php echo $errors->first('specialisation'); ?>
     {{ Form::label('Направление') }}
     {{ Form::text('specialisation', null, array('class' => 'form-control', 'placeholder'=>'Направление')) }}
 </p>
 
+<p>
+    @if ($errors->first('description_specialisation'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('description_specialisation'); ?></div>
+@else
+@endif
+{{ Form::label('Краткое описание') }}
+{{ Form::text('description_specialisation', null, array('class' => 'form-control', 'placeholder'=>'')) }}
+</p>
+
+<script>
+    var a = "<? echo 'description' ?>" ;
+    CKEDITOR.replace( a );
+</script>
 
 <p>
     {{ Form::submit( "Отправить", array('class' => 'btn btn-primary')) }}

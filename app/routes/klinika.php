@@ -31,33 +31,14 @@ Route::get('clinic/detail/{link}', array('as' => 'clinic/detail',
     'uses' => 'KlinikaController@detail'
     ))->where('link', '[A-Za-z-0-9]+');
 
-/*
 
-//search sort
-Route::post('users/sort/price/desc', array('as' => 'users/sort/price/desc',
-    function () {
-        $users = Session::get('users');
+Route::get('diagnostica/centers', array('as' => 'diagnostica/centers',
+    'uses' => 'KlinikaController@centers'
+));
 
-        $users = $users->sortBy(function($user)
-        {
-            return $user->price;
-        })->reverse();
-
-        return View::make('front.doctor.list', array('users'=>$users));
-    }));
-
-//search sort
-Route::post('users/sort/price/asc', array('as' => 'users/sort/price/asc',
-    function () {
-        $users = Session::get('users');
-
-        $users = $users->sortBy(function($user)
-        {
-            return $user->price;
-        });
-
-        return View::make('front.doctor.list', array('users'=>$users));
-    }));
+Route::get('diagnostica/centers/{diag}/{area}', array('as' => 'diagnostica/centers',
+    'uses' => 'KlinikaController@centers'
+))->where('diag', '[A-Za-z-0-9]+')->where('area', '[A-Za-z-0-9]+');
 
 
 

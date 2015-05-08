@@ -33,7 +33,7 @@
             <p class="h6_my_bold">Специальности</p>
             <ul class="list">
                 @foreach($specialities as $key => $item)
-                <li><a href='{{ URL::route("doctor", array($key)) }}'>{{ $item }}</a></li>
+                <li><a href='{{ URL::route("doctor/doctors", array($key)) }}'>{{ $item }}</a></li>
                 @endforeach
             </ul>
 

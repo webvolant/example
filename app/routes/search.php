@@ -22,17 +22,25 @@ Route::post('search', array('as' => 'search',
         if ($validation->passes()) {
             if (Input::get('krit1')=='0'){
 
-                $users = User::whereHas(
+                /*$users = User::whereHas(
                     'specialities', function($q){
                         $q->where('speciality_id', Input::get('krit2'));
                     }
-                )->paginate(1);
+                )->paginate(Helper::getPagesCount());*/
 
                 return Redirect::to('doctor/doctors/'.Input::get('krit2'));//View::make('front.doctor.list', array('users'=>$users));
             }
 
             if (Input::get('krit1')=='1'){
+                //var_dump(Input::get('krit2'));
+                //die();
+                /*$users = User::whereHas(
+                    'specialities', function($q){
+                        $q->where('speciality_id', Input::get('krit2'));
+                    }
+                )->paginate(Helper::getPagesCount());*/
 
+                return Redirect::to('clinics/all/'.Input::get('krit2'));//View::make('front.doctor.list', array('users'=>$users));
 
 
                 //return View::make('front.doctor.list', array('users'=>$users));

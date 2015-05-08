@@ -27,15 +27,7 @@ class CreateKliniksTable extends Migration {
             $table->string('rating_second');
             $table->string('count_otzivi');
 
-
-            //$table->integer('photo_id')->unsigned();
-            //$table->foreign('user_id')->references('id')->on('users');
-
-            //$table->string('phone_dom');
-            //$table->string('phone_mob');
-
-            //$table->string('key_klinika'); ключ на выпадающий список оператор
-
+            $table->string('type');
             $table->timestamps();
         });
 
@@ -43,9 +35,9 @@ class CreateKliniksTable extends Migration {
         {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('klinik_id')->unsigned();
-            $table->foreign('klinik_id')->references('id')->on('kliniks')->onDelete('cascade');
+            $table->foreign('klinik_id')->references('id')->on('kliniks')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
 
@@ -53,7 +45,7 @@ class CreateKliniksTable extends Migration {
         {
             $table->increments('id');
             $table->integer('klinik_id')->unsigned();
-            $table->foreign('klinik_id')->references('id')->on('kliniks');
+            $table->foreign('klinik_id')->references('id')->on('kliniks')->onDelete('cascade')->onUpdate('cascade');
             $table->string('path_small');
             $table->string('path_big');
             $table->string('path');

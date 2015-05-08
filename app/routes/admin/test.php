@@ -22,39 +22,30 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function()
         'uses' => 'AdminTestController@add'));
 
     Route::post('test/add', function () {
-
         $rules = array(
-            //'name_ru' => array('required')
+            'name' => array('required')
             //'parent_id' => array('required')
         );
-
         $validation = Validator::make(Input::all(), $rules);
-
         if ($validation->fails()) {
             // проверка не пройдена.
             return Redirect::to('category::add')->withInput()->withErrors($validation);
         }
-
         if ($validation->passes()) {
             // проверка не пройдена.
             $parent_id = Input::get('parent_id');
             if ($parent_id){
                 $root = Test::find($parent_id);
-
                 $cat = $root->children()->create(['name' => Input::get('name')]);
-                //$cat->name = Input::get('name');
+                $cat->link = Helper::alias(Input::get('name'));
                 $cat->save();
-                //$name_ru = Input::get('name_ru');
-                //$cat = $root->children()->create(['name_ru' => $name]);
             }else{
                 $node = new Test();
                 $node->parent_id = null;
                 $node->name = Input::get('name');
+                $node->link = Helper::alias(Input::get('name'));
                 $node->save();
-
             }
-
-            //$cat->save();
             return Redirect::route('test/index')->withInput();
         }
 
@@ -65,21 +56,19 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function()
     Route::post('test/edit/{id}',
         function($id) {
             $rules = array(
-                //'name_ru' => array('required')
+                'name' => array('required')
                 //'parent_id' => array('required')
             );
-
             $validation = Validator::make(Input::all(), $rules);
 
             if ($validation->passes()) {
                 // проверка не пройдена.
                 $parent_id = Input::get('parent_id');
                 $node = Test::find($id);
-                foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties):
-                    $name_lang = "name_$localeCode";
-                    $node->$name_lang = Input::get($name_lang);
-                endforeach;
+
                 $node->parent_id = $parent_id;
+                $node->name = Input::get('name');
+                $node->link = Helper::alias(Input::get('name'));
                 $node->save();
                 return Redirect::route('test/index')->withInput();
             }else{

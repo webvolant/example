@@ -62,7 +62,18 @@ return array(
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
-
+/*
+        'mysql' => array(
+            'driver'    => 'mysql',
+            'host'      => 'mysql4.locum.ru',
+            'database'  => 'volant24_my-do44',
+            'username'  => 'volant24_my-do44',
+            'password'  => 'DnXmmsPFp',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+        ),
+*/
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
