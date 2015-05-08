@@ -339,8 +339,9 @@
 {{ HTML::script('bower_components/metisMenu/dist/metisMenu.min.js') }}
 
 <!-- DataTables JavaScript -->
-{{ HTML::script('bower_components/DataTables/media/js/jquery.dataTables.min.js') }}
 {{ HTML::script('bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}
+{{ HTML::script('bower_components/DataTables/media/js/jquery.dataTables.min.js') }}
+
 
 <!-- Custom Theme JavaScript -->
 {{ HTML::script('dist/js/sb-admin-2.js') }}
