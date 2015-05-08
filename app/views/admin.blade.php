@@ -16,8 +16,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-
-
     <!-- Bootstrap Core CSS -->
     {{ HTML::style('bower_components/bootstrap/dist/css/bootstrap.min.css') }}
     <!-- MetisMenu CSS -->
@@ -36,13 +34,22 @@
 
     {{ HTML::style('css/jquery.datetimepicker.css') }}
 
-
-    {{ HTML::script('ckeditor/ckeditor.js') }}
-
-    {{ HTML::script('js/sweet-alert.min.js') }}
     {{ HTML::style('css/sweet-alert.css') }}
 
     {{ HTML::style('template.css') }}
+
+    <!-- jQuery -->
+    {{ HTML::script('bower_components/jquery/dist/jquery.min.js') }}
+
+    <!-- Bootstrap Core JavaScript -->
+    {{ HTML::script('bower_components/bootstrap/dist/js/bootstrap.min.js') }}
+
+    <!-- Metis Menu Plugin JavaScript -->
+    {{ HTML::script('bower_components/metisMenu/dist/metisMenu.min.js') }}
+
+    <!-- DataTables JavaScript -->
+    {{ HTML::script('bower_components/DataTables/media/js/jquery.dataTables.min.js') }}
+    {{ HTML::script('bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}
 
 
 </head>
@@ -325,22 +332,6 @@
 
 </body>
 
-<!-- jQuery -->
-{{ HTML::script('bower_components/jquery/dist/jquery.min.js') }}
-
-<!-- Bootstrap Core JavaScript -->
-{{ HTML::script('bower_components/bootstrap/dist/js/bootstrap.min.js') }}
-
-{{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') }}
-{{ HTML::script('https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.3.1/jquery.maskedinput.js') }}
-{{ HTML::script('js/bootstrap.js') }}
-
-<!-- Metis Menu Plugin JavaScript -->
-{{ HTML::script('bower_components/metisMenu/dist/metisMenu.min.js') }}
-
-<!-- DataTables JavaScript -->
-{{ HTML::script('bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}
-{{ HTML::script('bower_components/DataTables/media/js/jquery.dataTables.min.js') }}
 
 
 <!-- Custom Theme JavaScript -->
@@ -350,12 +341,16 @@
 
 {{ HTML::script('js/jquery.favicon.js') }}
 
+{{ HTML::script('ckeditor/ckeditor.js') }}
+
+{{ HTML::script('js/sweet-alert.min.js') }}
+
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
-            responsive: false
+
         });
 
         $('#map_canvas').css({'display':'none'}); //запрет на вывод карты
