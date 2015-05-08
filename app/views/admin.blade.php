@@ -331,6 +331,10 @@
 <!-- Bootstrap Core JavaScript -->
 {{ HTML::script('bower_components/bootstrap/dist/js/bootstrap.min.js') }}
 
+{{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') }}
+{{ HTML::script('https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.3.1/jquery.maskedinput.js') }}
+{{ HTML::script('js/bootstrap.js') }}
+
 <!-- Metis Menu Plugin JavaScript -->
 {{ HTML::script('bower_components/metisMenu/dist/metisMenu.min.js') }}
 
