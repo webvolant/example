@@ -2,6 +2,24 @@
     max-width: none !important;
     width: 1024px;
 }
+.column3{
+    -webkit-column-count:3;
+    -moz-column-count:3;
+    column-count:3;
+}
+
+.margin-left20{
+    margin-left: 20px;
+}
+
+/* не менять */
+hr.with_border{
+    border-bottom: 1px dotted #c3bec2;
+    border-top: none;
+    margin-top: 25px;
+    margin-bottom:0px;
+    padding: 3px;
+}
 
 .div50{
     width:40%;
@@ -68,6 +86,7 @@ a:hover{
 
 #object_list{
     padding:10px;
+    padding-left: 0px;
     border-top: 1px solid #e6e6e6;
 }
 
@@ -207,6 +226,14 @@ a:hover{
     padding:2px;
 }
 
+.block{
+
+}
+
+.top{
+    padding-top:30px;
+    display: block;
+}
 
 .space{
     padding-top:3px;
@@ -239,14 +266,14 @@ a:hover{
 
 .h4_my{
     font-size: 16px;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
 
 
 }
 
 .h4_my_bold{
     font-size: 16px;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
     font-weight: bold;
 
 
@@ -285,6 +312,7 @@ a:hover{
     background: rgba(117, 214, 255, 0.25);
 }
 
+
 #object:hover{
     background: rgba(117, 214, 255, 0.25);
 }
@@ -295,22 +323,39 @@ a:hover{
     padding-top:10px ;
 }
 
-.intro_doctor_image{
-    width: 110px;
-    height: 160px;
+.intro_klinika_image{
+    width: 120px;
+    height: 80px;
     background: rgba(117, 214, 255, 0.42);
     display: block;
 }
 
+.intro_klinika_image img{
+    width: 120px;
+    height: 80px;
+    border:1px solid rgba(122, 122, 122, 0.23);
+}
+
+
+.intro_doctor_image{
+    width: 110px;
+    min-height: 160px;
+    background: rgba(117, 214, 255, 0.42);
+    display: block;
+    background-size: contain;
+}
+
 .intro_doctor_image img{
     width: 110px;
-    height: 160px;
+    min-height: 160px;
     border:1px solid rgba(122, 122, 122, 0.23);
+    background-size: contain;
 }
 
 .intro_doctor_info{
     display: block;
     min-height:200px;
+    padding-left: 10px;
 
 }
 

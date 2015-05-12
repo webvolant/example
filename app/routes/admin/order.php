@@ -28,7 +28,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $seconds = date('U', time());
                 //$seconds = $object->format('U'); //текущее время в секундах
                 $events = array();// date( "U" );//date( "d.m.Y H:i" );
-                $eventers = Eventer::where('flag','!=',2)->take(Helper::getEventsCount())->get();
+                $eventers = Eventer::where('flag','!=',3)->take(Helper::getEventsCount())->get();
                 foreach ($eventers as $i):
                     $object = DateTime::createFromFormat('d.m.Y H:i', $i->date_end);
                     $object_seconds = $object->format('U');
@@ -57,7 +57,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 //$seconds = $object->format('U'); //текущее время в секундах
                 $seconds = date('U', time());
                 $events = array();// date( "U" );//date( "d.m.Y H:i" );
-                $eventers = Eventer::where('flag','!=',2)->take(Helper::getEventsCount())->get();
+                $eventers = Eventer::where('flag','!=',3)->take(Helper::getEventsCount())->get();
                 //var_dump($eventers->count());
                 foreach ($eventers as $i):
                     $object = DateTime::createFromFormat('d.m.Y H:i', $i->date_end);
@@ -97,7 +97,9 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
                 $event->order_id = Input::get('order_id');
 
-                //$event->status_id = Input::get('status');
+                if (Input::get('status'))
+                $event->status_id = Input::get('status');
+
                 $event->flag = Input::get('flag');
                 $event->comment = Input::get('comment');
 
@@ -116,13 +118,12 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         'as'=>'edit/event',
         function($id){
             if (Request::ajax()){
-                $event = Eventer::find($id)->first();
+                $event = Eventer::find($id);
                 $json_before = json_encode($event);
-
-                //$event->order_id = Input::get('order_id');
 
                 //$event->status_id = Input::get('status')[0];
                 $event->flag = Input::get('flag')[0];
+                var_dump($event->flag);
                 $event->comment = Input::get('comment');
 
                 //$event->date_begin = Input::get('date_begin');
@@ -131,7 +132,6 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $event->user_id = Auth::user()->id;
 
                 $event->save();
-
                 $json = json_encode($event);
 
                 $crm = new Crm;
@@ -167,14 +167,33 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
             $validation = Validator::make(Input::all(), $rules);
             if ($validation->passes()){
                 $order = new Order();
-                //var_dump(Input::get('global_status')[0]);
-                //die();
-                $order->global_status = Input::get('global_status')[0];
-                $order->client_id = Input::get('client')[0];
+
+                $order->global_status = Input::get('global_status');
+
+                if(Input::get('client') == 'NULL')
+                    $order->client_id = NULL;
+                else
+                    $order->client_id = Input::get('client');
+
                 $order->operator_id = Auth::user()->id;
-                $order->doctor_id = Input::get('doctor')[0];
-                //$order->otziv_id
+
+                if(Input::get('doctor') == 'NULL')
+                    $order->doctor_id = NULL;
+                else
+                    $order->doctor_id = Input::get('doctor');
+
+                if(Input::get('klinika') == 'NULL')
+                    $order->klinik_id = NULL;
+                else
+                    $order->klinik_id = Input::get('klinika');
+
+                if(Input::get('diag') == 'NULL')
+                    $order->diag_id = NULL;
+                else
+                    $order->diag_id = Input::get('diag');
                 $order->save();
+
+
                 return Redirect::route('order/index');
             }
             else{
@@ -199,10 +218,32 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
             $validation = Validator::make(Input::all(), $rules);
             if ($validation->passes()){
-                $status = Status::find($id);
+                $order = Order::find($id);
 
-                $status->name = Input::get('name');
-                $status->save();
+                $order->global_status = Input::get('global_status');
+
+                if(Input::get('client') == 'NULL')
+                    $order->client_id = NULL;
+                else
+                    $order->client_id = Input::get('client');
+
+                $order->operator_id = Auth::user()->id;
+
+                if(Input::get('doctor') == 'NULL')
+                    $order->doctor_id = NULL;
+                else
+                    $order->doctor_id = Input::get('doctor');
+
+                if(Input::get('klinika') == 'NULL')
+                    $order->klinik_id = NULL;
+                else
+                    $order->klinik_id = Input::get('klinika');
+
+                if(Input::get('diag') == 'NULL')
+                    $order->diag_id = NULL;
+                else
+                    $order->diag_id = Input::get('diag');
+                $order->save();
                 return Redirect::route('order/index');
             }
             else{

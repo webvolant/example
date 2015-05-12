@@ -9,7 +9,7 @@
 @extends('admin')
 
 @section('page-header')
-    Пользователи
+    Учреждения
 @stop
 
 
@@ -39,6 +39,7 @@
             <th>Конт.Лицо</th>
             <th>Телефон</th>
             <th>Адрес</th>
+            <th>Тип</th>
             <th><i class="fa fa-wrench fa-fw"></th>
         </tr>
 
@@ -46,13 +47,14 @@
     <tbody>
         @foreach ( $users as $key => $user)
             <tr>
-                <td><a href='{{ URL::route("klinika/edit", array($user->id)) }}'>{{ $user->id }}</a></td>
-                <td><a href='{{ URL::route("klinika/edit", array($user->id)) }}'>{{ $user->name }}</a></td>
+                <td class="gradeB"><a href='{{ URL::route("klinika/edit", array($user->id)) }}'>{{ $user->id }}</a></td>
+                <td class="gradeA"><a href='{{ URL::route("klinika/edit", array($user->id)) }}'>{{ $user->name }}</a></td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->fio }}</td>
                 <td>{{ $user->phone }}</td>
                 <td>{{ $user->address }}</td>
-                <td class="gradeA">
+                <td>{{ Klinika::getType($user->type) }}</td>
+                <td>
                     <a href='{{ URL::route("klinika/edit", array($user->id)) }}' class="btn btn-info"><i class="fa fa-wrench fa-fw"></i></a>
                     <a href='{{ URL::route("klinika/delete", array($user->id)) }}' class="btn btn-danger"><i class="fa fa-trash-o fa-fw"></i></a>
                 </td>

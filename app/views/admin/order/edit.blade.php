@@ -60,7 +60,6 @@
                 {{ Form::label('Комментарий') }}
                 {{ Form::text('comment',null,array('class'=>'form-control','placeholder'=>'Комментарий')) }}
                 </p>
-
                 <p>
                     @if ($errors->first('status'))
                 <div class="alert alert-danger" role="alert"><?php echo $errors->first('status'); ?></div>
@@ -76,9 +75,8 @@
                 @else
                 @endif
                 {{ Form::label('Флаг события') }}
-                {{ Form::select('flag', Helper::eventStatus(), null, array('class' => 'form-control')) }}
+                {{ Form::select('flag', Helper::eventStatus(), null, array( 'class' => 'form-control')) }}
                 </p>
-
                 <p>
                     {{ Form::submit( "Отправить", array('class' => 'btn btn-primary')) }}
                 </p>
@@ -108,26 +106,54 @@
 @else
 @endif
 {{ Form::label('Глобальный статус') }}
-{{ Form::select('global_status',Helper::globalStatus(),null,array('class'=>'form-control')) }}
+{{ Form::select('global_status',Helper::globalStatus(),$order->global_status,array('class'=>'form-control')) }}
 </p>
+
+    <p>
+        @if ($errors->first('client'))
+    <div class="alert alert-danger" role="alert"><?php echo $errors->first('client'); ?></div>
+    @else
+    @endif
+    {{ Form::label('Привязка к клиенту') }}
+    {{ Form::select('client',['NULL'=>'Ничего не выбрано'] + $clients,$order->client_id,array('id'=>'client','class'=>'form-control custom-scroll')) }}
+    </p>
+
+    <p>
+        @if ($errors->first('doctor'))
+    <div class="alert alert-danger" role="alert"><?php echo $errors->first('doctor'); ?></div>
+    @else
+    @endif
+    {{ Form::label('Привязка к доктору') }}
+    {{ Form::select('doctor',['NULL'=>'Ничего не выбрано'] + $doctors,$order->doctor_id,array('id'=>'doctor','class'=>'form-control custom-scroll')) }}
+    </p>
+
+    <p>
+        @if ($errors->first('klinika'))
+    <div class="alert alert-danger" role="alert"><?php echo $errors->first('klinika'); ?></div>
+    @else
+    @endif
+    {{ Form::label('Привязка к клинике') }}
+    {{ Form::select('klinika',['NULL'=>'Ничего не выбрано'] + $kliniks,$order->klinik_id,array('id'=>'klinika','class'=>'form-control custom-scroll')) }}
+    </p>
+
+    <p>
+        @if ($errors->first('diag'))
+    <div class="alert alert-danger" role="alert"><?php echo $errors->first('diag'); ?></div>
+    @else
+    @endif
+    {{ Form::label('Привязка к диагностике') }}
+    {{ Form::select('diag',['NULL'=>'Ничего не выбрано'] + $diags,$order->diag_id,array('id'=>'diag','class'=>'form-control custom-scroll')) }}
+    </p>
+
 
 
 <p>
-    @if ($errors->first('client'))
-<div class="alert alert-danger" role="alert"><?php echo $errors->first('client'); ?></div>
+    @if ($errors->first('comment'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('comment'); ?></div>
 @else
 @endif
-{{ Form::label('Привязка к клиенту') }}
-{{ Form::select('client',$clients,null,array('class'=>'form-control custom-scroll')) }}
-</p>
-
-<p>
-    @if ($errors->first('client'))
-<div class="alert alert-danger" role="alert"><?php echo $errors->first('client'); ?></div>
-@else
-@endif
-{{ Form::label('Привязка к доктору') }}
-{{ Form::select('doctor',$doctors,null,array('class'=>'form-control custom-scroll')) }}
+{{ Form::label('Комментарий к заявке') }}
+{{ Form::text('comment', null, array('class' => 'form-control', 'placeholder'=>'')) }}
 </p>
 
 
@@ -187,7 +213,7 @@
 
                                                 <p><h4></h4></p>
 
-                                                {{ Form::model($user, array('url' => '/edit/event', $user->id, 'role' => 'form', 'class' => 'width90 form-horizontal', 'id'=>'formid-edit-event')) }}
+                                                {{ Form::model($user, array('url' => '/edit/event', $user->id, 'role' => 'form', 'class' => 'width90 form-horizontal formid-edit-event', 'id'=>'formid-edit-event'.$user->id)) }}
 
                                                 <p>
                                                     @if ($errors->first('date_begin'))
@@ -223,7 +249,7 @@
                                                 @else
                                                 @endif
                                                 {{ Form::label('Статус события') }}
-                                                {{ Form::select('status', $status, null, array('disabled','class' => 'form-control')) }}
+                                                {{ Form::select('status', $status, $user->status_id, array('disabled','class' => 'form-control')) }}
                                                 </p>
 
                                                 <p>
@@ -232,11 +258,12 @@
                                                 @else
                                                 @endif
                                                 {{ Form::label('Флаг события') }}
-                                                {{ Form::select('flag', Helper::eventStatus(), null, array('class' => 'form-control')) }}
+                                                {{ Form::select('flag', Helper::eventStatus(), $user->flag, array('class' => 'form-control')) }}
                                                 </p>
 
+                                                {{ Form::hidden('event_id', "$user->id") }}
                                                 <p>
-                                                    {{ Form::submit( "Отправить", array('class' => 'btn btn-primary')) }}
+                                                    {{ Form::submit( "Отправить", array('class' => 'formid-edit-event btn btn-primary')) }}
                                                 </p>
 
                                                 {{ Form::close() }}

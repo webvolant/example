@@ -9,7 +9,7 @@
 @extends('admin')
 
 @section('page-header')
-    Редактирование клиники
+    Редактирование
 @stop
 
 @section('content')
@@ -38,6 +38,15 @@
 @endif
 {{ Form::label('Статус') }}
 {{ Form::select('status', Helper::status(), null, array('class' => 'form-control')) }}
+</p>
+
+<p>
+    @if ($errors->first('type'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('type'); ?></div>
+@else
+@endif
+{{ Form::label('Тип') }}
+{{ Form::select('type', Helper::typeOfObject(), null, array('class' => 'form-control')) }}
 </p>
 
 <p>
@@ -94,6 +103,7 @@
 <div class="alert alert-danger" role="alert"><?php echo $errors->first('doctors'); ?></div>
 @else
 @endif
+{{ Form::label('Привязка к докторам') }}
 {{ Form::select('doctors[]',$doctors,$doctors_current,array('multiple'=>true,'class'=>'form-control custom-scroll')) }}
 </p>
 
@@ -135,7 +145,7 @@
 @else
 @endif
 {{ Form::label('Краткое описание клиники') }}
-{{ Form::text('description', null, array('class' => 'form-control', 'placeholder'=>'Многопрофильный медицинский центр, специализирующийся на проведении диагностического обследования взрослых и детей от 14 лет.')) }}
+{{ Form::text('description', null, array('class' => 'form-control')) }}
 </p>
 
 <script>

@@ -15,8 +15,12 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
             if (Request::ajax()){
                     $test_id = Input::get('test_id');
                     $klinik_id = Input::get('klinik_id');
+
                     $kl = Klinika::find($klinik_id)->first();
                     $kl->Tests()->detach($test_id);
+
+                if ($kl->Tests()->count()==0)
+                    $kl->type = "0";
             }
         }
     ));
@@ -36,9 +40,12 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                     $kl = Klinika::find($klinik_id);
                     $i=0;
                     for ($i = 0; $i < count($test_id); $i++){
-                        $link = Test::find($test_id[$i])->link;
-                        $kl->Tests()->attach($test_id[$i], array('price'=>$price_for_test[$i],'link'=>$link));
+                        //$link = Test::find($test_id[$i])->link;
+                        $kl->Tests()->attach($test_id[$i], array('price'=>$price_for_test[$i]));
                     }
+
+                    if ($kl->Tests()->count()!=0)
+                        $kl->type = "1";
 
                     $data['flag'] = 1;
                     $data['data'] = "Были обновлены заданные исследования для клиники";
@@ -69,6 +76,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         function(){
             $rules = array(
                 'fio' => array('required'),
+                'name' => array('required'),
                 //'email' => array('required','unique:users,email'),
                 //'pass' => array('required','confirmed'),
                 //'pass_confirmation' => array('required'),
@@ -84,6 +92,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $klinika->link = Helper::alias(Input::get('name'));
                 //$m = Helper::alias(Input::get('fio'));
                 //var_dump($m);
+                $klinika->status = Input::get('status');
+                $klinika->type = Input::get('type');
 
                 $klinika->name = Input::get('name');
                 //$user->password = Hash::make(Input::get('pass'));
@@ -105,13 +115,18 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 }
 
                 if (Input::hasFile('logo')) {
-                    $dir = '/uploads'.date('/Y/m/d/');
+                    $dir = '/uploads/kliniks'.date('/Y/'.$klinika->id.'/');
+                    $filename = 'logo'.'.jpg';
+                    //var_dump($dir);
+                    //die();
 
-                    do {
-                        $filename = str_random(30).'.jpg';
-                    } while (File::exists(public_path().$dir.$filename));
-                    Input::file('logo')->move(public_path().$dir, $filename);
-                    $klinika->logo = $dir.$filename;
+                    $image = Input::file('logo');
+                    $image->move(public_path().$dir, $filename);
+                    $img = Image::make(public_path().$dir.$filename);
+                    $img->resize(240, 320);
+                    $img->insert(public_path().'/template_image/watermark.png');
+                    $img->save(public_path().$dir.'thumb_'.$filename);
+                    $klinika->logo = $dir.'thumb_'.$filename;
                     $klinika->save();
                 }
 
@@ -156,6 +171,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $klinika = Klinika::find($id);
 
                 $klinika->link = Helper::alias(Input::get('name'));
+                $klinika->status = Input::get('status');
+                $klinika->type = Input::get('type');
                 //$m = Helper::alias(Input::get('fio'));
                 //var_dump($m);
 
@@ -178,51 +195,23 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 }
 
 
-
-                //$klinika->logo = Input::get('logo');
-                /*if (Input::hasFile('logo')) {
-                    $dir = '/uploads'.date('/Y/m/d/');
-
-                    do {
-                        $filename = str_random(30).'.jpg';
-                    } while (File::exists(public_path().$dir.$filename));
-                    Input::file('logo')->move(public_path().$dir, $filename);
-                    $klinika->logo = $dir.$filename;
-                    $klinika->save();
-                }*/
-                //var_dump(Input::file('images'));
-                //die();
-
-
                 if (Input::hasFile('logo')) {
-                    $dir = '/uploads'.date('/Y/'.$klinika->id.'/');
-                    //$photodb = new Photo();
+                    $dir = '/uploads/kliniks'.date('/Y/'.$klinika->id.'/');
                     $filename = 'logo'.'.jpg';
-
-                    //var_dump(public_path().$dir, $filename);
-                    //die();
 
                     $image = Input::file('logo');
                     $image->move(public_path().$dir, $filename);
-
                     $img = Image::make(public_path().$dir.$filename);
-                    $img->resize(560, 280);
+                    $img->resize(240, 320);
                     $img->insert(public_path().'/template_image/watermark.png');
-                    //var_dump(public_path().'/template_image/watermark.png');
-                    //die();
-
                     $img->save(public_path().$dir.'thumb_'.$filename);
-
-                    // $klinika->logo = $dir . $filename;
                     $klinika->logo = $dir.'thumb_'.$filename;
-                    //$photodb->klinik_id = $klinika->id;
                     $klinika->save();
-                    //var_dump(public_path().$dir, $filename);
-                    //die();
                 }
 
+
                 if (Input::hasFile('images')) {
-                    $dir = '/uploads'.date('/Y/'.$klinika->id.'/');
+                    $dir = '/uploads/kliniks'.date('/Y/'.$klinika->id.'/');
                     $i = 1;
                     foreach(Input::file('images') as $image)
                     {

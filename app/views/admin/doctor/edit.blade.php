@@ -70,7 +70,8 @@
 </p>
 
 <p>
-    {{ Form::select('specialities[]',$specialities,$specialities_current,array('multiple'=>true,'class'=>'form-control custom-scroll')) }}
+    {{ Form::label('Привязка к специальностям') }}
+    {{ Form::select('specialities[]',$specialities,$specialities_current,array('id'=>'multi', 'multiple'=>true,'class'=>'form-control custom-scroll')) }}
 </p>
 
 

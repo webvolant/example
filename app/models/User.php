@@ -47,13 +47,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     /****** ОПЕРАТОРЫ *//////////////////
 
     //Получение всех операторов
-    public function getOperators(){
-        if (Cache::has('getOperators')) {
-            $result = Cache::get('getOperators');
-        }else{
-            $temp = User::whereRole('operator')->get();
-            $result = Cache::add('getOperators', $temp, Helper::cacheTime());
-        }
+    public static function getOperators(){
+        $result = Cache::remember('getOperators', Helper::cacheTime(), function () {
+            return User::where('role','=','operator')->orWhere('role','=','admin')->get();
+        });
         return $result;
     }
 

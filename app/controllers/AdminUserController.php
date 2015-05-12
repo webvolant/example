@@ -35,8 +35,10 @@ class AdminUserController extends Controller {
 
     public function index()
     {
-        $users = new User();
-        $operators = $users->getOperators();
+        //$users = new User();
+        $operators = User::getOperators();
+        //var_dump($operators);
+        //die();
         return View::make('admin.user.list',array('users'=>$operators));
     }
 

@@ -13,14 +13,56 @@ class Test extends Node {
    * @var string
    */
     protected $table = 'tests';
+    protected $orderColumn = 'lft';
 
   //////////////////////////////////////////////////////////////////////////////
 
     public function Kliniks()
     {
-        return $this->belongsToMany('Klinika', 'klinika_tests','klinik_id', 'test_id')->withPivot('price','link');
+        return $this->belongsToMany('Klinika', 'klinika_tests','klinik_id', 'test_id')->withPivot('price');
         //return $this->belongsToMany('Profession', 'doctor_professions', 'doctor_id', 'profession_id')->withPivot('doctor_got_professions');
     }
+
+    //для поиска
+    public static function getTreeWithLinks(){
+        $tests = Test::where('name','!=','root')->orderBy('lft')->get();
+        $cap = "";
+        foreach($tests as $test){
+            if ($test->parent()->first()->name != 'root')
+                $parent_link = $test->parent()->first()->link;
+
+            if ($test->getImmediateDescendants()->count()){
+                $cap .= "<p><a class='search_test h4_my margin5' href='"."/diagnostica/centers/$test->link'>".$test->name.'</a></p>';
+            }else{
+                $cap .= "<p><a class='search_test h6_my margin20' href='"."/diagnostica/centers/$parent_link/$test->link'>".$test->name.'</a></p>';
+            }
+        }
+
+        return $cap;
+    }
+
+    //Для детальной записи диаг.центра
+    public static function getListWithPrice($kl){
+        $tests = $kl->Tests()->withPivot('price')->orderBy('lft')->get();
+        $cap = "";
+        foreach($tests as $test){
+            //var_dump($test->pivot->price);
+            $price = $test->pivot->price;
+            if ($test->parent()->first()->name != 'root')
+                $parent_link = $test->parent()->first()->link;
+
+            if ($test->getImmediateDescendants()->count()){
+                $cap .= "<p class=''><span class='top h4_my margin5'>".$test->name.'<span></p>';
+            }else{
+                $cap .= "<p id='$test->id'><div class='pull-left'><a class='h6_my margin-left20' href='"."/diagnostica/centers/$parent_link/$test->link'>".$test->name.'</a></div>'."<div class='h4_my_bold pull-right'>$price сом</div>".'<div><hr class="with_border"/></div></p>';
+            }
+        }
+
+        return $cap;
+    }
+
+
+
   //
   // Below come the default values for Baum's own Nested Set implementation
   // column names.

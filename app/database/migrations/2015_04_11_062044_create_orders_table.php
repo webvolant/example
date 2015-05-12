@@ -29,6 +29,9 @@ class CreateOrdersTable extends Migration {
             $table->integer('klinik_id')->unsigned()->nullable();
             $table->foreign('klinik_id')->references('id')->on('kliniks');
 
+            $table->integer('diag_id')->unsigned()->nullable();
+            $table->foreign('diag_id')->references('id')->on('tests');
+
             $table->timestamps();
         });
 

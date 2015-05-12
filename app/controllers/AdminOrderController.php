@@ -8,10 +8,19 @@ class AdminOrderController extends Controller {
         asort($doctors);
         $clients = Client::all()->lists('phone','id');
         asort($clients);
+        $kliniks = Klinika::all()->lists('name','id');
+        asort($kliniks);
+        $diags = Test::all()->lists('name','id');
+        asort($diags);
+        $status = Status::all()->lists('name','id');
         return View::make('admin.order.add',array(
             'clients'=>$clients,
             'doctors'=>$doctors,
+            'status'=>$status,
+            'kliniks'=>$kliniks,
+            'diags'=>$diags
         ));
+
     }
 
 
@@ -38,9 +47,13 @@ class AdminOrderController extends Controller {
         asort($doctors);
         $clients = Client::all()->lists('phone','id');
         asort($clients);
-        $order = Order::find($id);
-
+        $kliniks = Klinika::all()->lists('name','id');
+        asort($kliniks);
+        $diags = Test::all()->lists('name','id');
+        asort($diags);
         $status = Status::all()->lists('name','id');
+
+        $order = Order::find($id);
 
         $events = Eventer::where('order_id', '=', "$id")->take(10)->get(); //take(20)
 
@@ -50,6 +63,8 @@ class AdminOrderController extends Controller {
             'order'=>$order,
             'events'=>$events,
             'status'=>$status,
+            'kliniks'=>$kliniks,
+            'diags'=>$diags
         ));
     }
 

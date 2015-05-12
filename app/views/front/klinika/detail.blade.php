@@ -184,9 +184,14 @@
     <?php $specs=""; //ОБнулить для след. ?>
 
         <div class="col-md-2">
+            @if ($user->logo)
             <div class="intro_doctor_image">
                 {{ HTML::image($user->logo); }}
             </div>
+            @else
+            <div class="intro_doctor_image">
+            </div>
+            @endif
         </div>
 
         <div class="col-md-7">

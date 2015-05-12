@@ -9,7 +9,7 @@
 @extends('admin')
 
 @section('page-header')
-    Новая клиника
+    Добавление
 @stop
 
 @section('content')
@@ -25,6 +25,15 @@
 @endif
 {{ Form::label('Статус') }}
 {{ Form::select('status', Helper::status(), null, array('class' => 'form-control')) }}
+</p>
+
+<p>
+    @if ($errors->first('type'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('type'); ?></div>
+@else
+@endif
+{{ Form::label('Тип') }}
+{{ Form::select('type', Helper::typeOfObject(), null, array('class' => 'form-control')) }}
 </p>
 
 <p>
@@ -65,11 +74,12 @@
 
 <p>
     @if ($errors->first('address'))
-    <div class="alert alert-danger" role="alert"><?php echo $errors->first('address'); ?></div>
-    @else
-    @endif
-    {{ Form::label('Адрес клиники') }}
-    {{ Form::text('address', null, array('class' => 'form-control', 'placeholder'=>'Панфилова 23')) }}
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('address'); ?></div>
+@else
+@endif
+{{ Form::label('Адрес клиники') }}
+{{ Form::text('address', null, array('id'=>'myPlaceTextBox2', 'class' => 'form-control', 'placeholder'=>'Введите местоположение')) }}
+<?php echo "<html><head>".$map['js']."</head><body>".$map['html']."</body></html>" ?>
 </p>
 
 
@@ -79,6 +89,7 @@
     <div class="alert alert-danger" role="alert"><?php echo $errors->first('doctors'); ?></div>
     @else
     @endif
+    {{ Form::label('Привязка к докторам') }}
     {{ Form::select('doctors[]',$doctors,null,array('multiple'=>true,'class'=>'form-control custom-scroll')) }}
 </p>
 

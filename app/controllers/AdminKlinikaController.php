@@ -28,28 +28,18 @@ class AdminKlinikaController extends Controller {
 
     public function edit($id)
     {
-        //$config['center'] = '42.875186, 74.611545';
-        //$config['zoom'] = 'auto';
         $config['places'] = TRUE;
         $config['placesAutocompleteInputID'] = 'myPlaceTextBox2';
         $config['placesAutocompleteBoundsMap'] = TRUE; // set results biased towards the maps viewport
-        //$config['placesAutocompleteOnChange'] = 'alert(\'You selected a place\');';
         Gmaps::initialize($config);
         $map = Gmaps::create_map();
 
         $doctors = User::getDoctors()->lists('fio', 'id');
-        //var_dump($doctors);
         $kl = Klinika::find($id);
         $doctors_current = $kl->Users->toArray();
         $mas = [];
         foreach($doctors_current as $i)
             array_push($mas, $i['id']);
-
-        //foreach($mas as $item){
-            //var_dump($item);
-        //}
-
-
 
         //CRM save - before data
         $json = json_encode($kl);
@@ -58,22 +48,31 @@ class AdminKlinikaController extends Controller {
         $j = json_encode($json, true);
         Session::put('j_before', $j);
 
+        $parentList = \Test::getNestedList('name', $key = 'id', $seperator = '---');
+        //$mas = json_encode($parentList);
+        //foreach($mas as $key=>$i) //$key = null, $seperator = ' '
+        //var_dump($mas);
+        //var_dump($mas);
 
-        $parentList = \Test::getNestedList('name');
+        //getNestedList('name');
+        $json_list = "[";
+        foreach($parentList as $key=>$i)
+            $json_list .= '{"'.$key.'":"'.$i.'"},';
+        $json_list .=']';
+
+        //var_dump($json22);
 
 
-
-        //$tests = $kl->Tests()->orderBy('lft')->get();
+        //asort($parentList);
 
         $tests = Klinika::getTestsForKlinik($kl);
-
 
         return View::make('admin.klinika.edit',array(
             'user'=>$kl,
             'doctors'=>$doctors,
             'doctors_current'=>$mas,
             'map'=>$map,
-            'parentList'=>$parentList,
+            'parentList'=>$json_list,
             'tests'=>$tests,
         ));
     }

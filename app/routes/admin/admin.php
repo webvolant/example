@@ -53,14 +53,22 @@ Route::post('admin/login', array('as' => 'admin/login',
 Route::get('admin/login', array('as' => 'admin/login',
     'uses' => 'AdminUserController@showLogin'));
 
+
+
+
+
 Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
+
 
     Route::get('dashboard', array(
         'as'=>'dashboard',
         'uses'=>'AdminController@dashboard'));
 
 
+});
 
+
+Route::group(array('prefix' => 'admin', 'before' => 'administrator'), function() {
 
     // OPERATOR
     Route::get('user/profile/{id}', array(
@@ -155,7 +163,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 });
 
 //Удаление оператора только админу
-Route::group(array('prefix' => 'admin', 'before' => 'admin'), function() {
+Route::group(array('prefix' => 'admin', 'before' => 'administrator'), function() {
 
     Route::get('user/delete/{id}', array(
         'as'=>'user/delete',

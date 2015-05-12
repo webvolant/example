@@ -126,6 +126,10 @@ class Helper extends Controller{
         return Carbon::now()->addMinutes(1/60);
     }
 
+    public static function typeOfObject(){
+        $mas=[0=>'Клиника',1=>'Диагностический центр'];
+        return $mas;
+    }
 
     public static function globalStatus(){
         $mas=[0=>'Новый',1=>'Обрабатывается',2=>'Завершен',3=>'Возобновлен'];
@@ -144,20 +148,16 @@ class Helper extends Controller{
     }
 
     public static function eventStatus(){
-        $mas=[/*0=>'Событие ждет',1=>'Событие занято оператором'*/2=>'Выполненное событие',3=>'Событие не выполнено',4=>'Обращение клиента'];
+        $mas=[2=>'Событие не выполнено',1=>'Обращение клиента',3=>'Выполненное событие']; /*0=>'Событие ждет',1=>'Событие занято оператором'*/
         return $mas;
     }
 
     public static function getStrEventStatus($mas){
-        if ($mas==0)
-            return $str = 'Событие ждет';
-        elseif ($mas==1)
-            return $str = 'Событие занято оператором';
-        elseif ($mas==2)
+        if ($mas==3)
             return $str = 'Выполненное событие';
-        elseif ($mas==3)
+        elseif ($mas==2)
             return $str = 'Событие не выполнено';
-        elseif ($mas==4)
+        elseif ($mas==1)
             return $str = 'Обращение клиента'; //четвертый номер событие создано из формы
     }
 

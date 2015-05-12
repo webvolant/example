@@ -34,18 +34,35 @@
 @else
 @endif
 {{ Form::label('Привязка к клиенту') }}
-{{ Form::select('client',$clients,null,array('class'=>'form-control custom-scroll')) }}
+{{ Form::select('client',['NULL'=>'Ничего не выбрано'] + $clients,NULL,array('id'=>'client','class'=>'form-control custom-scroll')) }}
 </p>
 
 <p>
-    @if ($errors->first('client'))
-<div class="alert alert-danger" role="alert"><?php echo $errors->first('client'); ?></div>
+    @if ($errors->first('doctor'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('doctor'); ?></div>
 @else
 @endif
 {{ Form::label('Привязка к доктору') }}
-{{ Form::select('doctor',$doctors,null,array('class'=>'form-control custom-scroll')) }}
+{{ Form::select('doctor',['NULL'=>'Ничего не выбрано'] + $doctors,NULL,array('id'=>'doctor','class'=>'form-control custom-scroll')) }}
 </p>
 
+<p>
+    @if ($errors->first('klinika'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('klinika'); ?></div>
+@else
+@endif
+{{ Form::label('Привязка к клинике') }}
+{{ Form::select('klinika',['NULL'=>'Ничего не выбрано'] + $kliniks,NULL,array('id'=>'klinika','class'=>'form-control custom-scroll')) }}
+</p>
+
+<p>
+    @if ($errors->first('diag'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('diag'); ?></div>
+@else
+@endif
+{{ Form::label('Привязка к диагностике') }}
+{{ Form::select('diag',['NULL'=>'Ничего не выбрано'] + $diags,NULL,array('id'=>'diag','class'=>'form-control custom-scroll')) }}
+</p>
 
 
 

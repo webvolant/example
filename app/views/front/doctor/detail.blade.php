@@ -54,11 +54,14 @@ $grafik_arr = explode(";", $user->grafik);
 
                 <div class="row">
                     <div class="col-md-2">
-                        <div class="intro_doctor_image">
-                            @if ($user->logo)
-                            {{ HTML::image($user->logo); }}
-                            @endif
-                        </div>
+                        @if ($user->logo)
+                            <div class="intro_doctor_image">
+                                {{ HTML::image($user->logo); }}
+                            </div>
+                        @else
+                            <div class="intro_doctor_image">
+                            </div>
+                        @endif
                     </div>
 
                     <div class="col-md-6">

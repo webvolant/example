@@ -17,18 +17,19 @@ class Klinika extends Eloquent {
 
     public function Users()
     {
-        return $this->belongsToMany('User', 'user_kliniks',  'user_id', 'klinik_id' );
+        return $this->belongsToMany('User', 'user_kliniks',  'klinik_id','user_id' );
     }
 
     public function Tests()
     {
-        return $this->belongsToMany('Test', 'klinika_tests', 'klinik_id', 'test_id')->withPivot('price','link');
+        return $this->belongsToMany('Test', 'klinika_tests', 'klinik_id', 'test_id')->withPivot('price');
     }
 
 
 
     public static function getTestsForKlinik($kl){
         $tests = $kl->Tests()->withPivot('price')->orderBy('lft')->get();
+        //$tests = $kl->Tests()->withPivot('price')->orderBy('lft')->getNestedList();
         $cap = "";
         $parent_prev = "";
         foreach($tests as $test){
@@ -40,7 +41,7 @@ class Klinika extends Eloquent {
                 $cap .= '<p>'.$parent.'</p>';
                 $parent_prev = $parent;
             }
-            $cap .='<p class="margin10">'.$test->name.'<a id='. $test->id .' class="test-delete" href='.' class="margin10">'.' - удалить'.'</a>'.'</p>';
+            $cap .='<p class="margin-left20">'.$test->name.'<a id='. $test->id .' class="test-delete" href='.' class="margin-left20">'.' - удалить'.'</a>'.'</p>';
         }
         return $cap;
     }
@@ -103,6 +104,16 @@ class Klinika extends Eloquent {
         //die();
         return $result;
 
+    }
+
+    public static function getType($id){
+        if ($id==0){
+            $res = 'Клиника';
+        }
+        elseif($id==1){
+            $res = 'Диагностический центр';
+        }
+        return $res;
     }
 
 

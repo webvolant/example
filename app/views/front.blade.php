@@ -28,6 +28,9 @@
         {{ HTML::script('js/bootstrap.js') }}
 
         {{ HTML::script('js/jquery.chained.min.js') }}
+
+        {{ HTML::style('bootstrap-multiselect-master/dist/css/bootstrap-multiselect.css') }}
+
         {{ HTML::script('js/jquery.simpletip-1.3.1.min.js') }}
 
         {{ HTML::script('js/jquery.mousewheel-3.0.6.pack.js') }}
@@ -151,7 +154,7 @@
                                 <div class="form-group">
 
                                     <select id="krit1" name="krit1" class="form-control">
-                                        <option value="">Начните выбор тут</option>
+                                        <option value="">Искать по</option>
 
                                         @foreach ($search1 as $key => $item)
                                         <option value="{{ $key }}">{{ $item }}</option>
@@ -164,7 +167,7 @@
                         <div class="col-xs-4 ">
                             <div class="form-group">
                                 <select id="krit2" name="krit2" class="form-control">
-                                    <option value="">Продолжите здесь</option>
+                                    <option value="">Теперь параметр</option>
 
                                     @foreach ($specialities as $key => $item)
                                     <option value="{{ $key }}" class="0">{{ $item }}</option>
@@ -175,7 +178,31 @@
                                     @endforeach
                                 </select>
 
+                                <a id="test_icon" class="" data-toggle="modal" data-target="#testsModal" class="btn btn-info btn-sm" ><span class="glyphicon glyphicon-edit"></span></a>
+
                             </div>
+
+
+
+
+                            <div class="modal fade" id="testsModal" tabindex="-1" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header"><button class="close" type="button" data-dismiss="modal">x</button>
+                                            <h4 class="modal-title" id="myModalLabel">Выберите исследование</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="column3">
+                                                {{ Test::getTreeWithLinks() }}
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="col-xs-1 ">
                                 <div class="pull-right">{{ Form::submit( "Искать", array('class' => 'btn btn-warning')) }}</div>
@@ -359,7 +386,7 @@
 </body>
 
 
-
+{{ HTML::script('bootstrap-multiselect-master/dist/js/bootstrap-multiselect.js') }}
 
 
 
@@ -447,6 +474,9 @@
             var name = $( "[name='name']" ).val();
             var comment = $( "[name='comment']" ).val();
             $.post('/order-new-doctor', {phone:phone,doctor_id:doctor_id,comment:comment,name:name,pacient:pacient},function(data){
+
+                    // do something…
+
                 if (data['flag']=='0')
                     swal({
                         title: 'Заявка не принята',
@@ -455,6 +485,7 @@
                         confirmButtonText: 'Закрыть'
                     });
                 else{
+                    $('.modal').hide();
                     swal({
                         title: 'Заявка принята',
                         text: data['data'],
@@ -493,6 +524,13 @@
             });
         });
 
+/*
+        $("#krit2").multiselect({
+            nonSelectedText: 'Ничего не выбрано!',
+
+            enableFiltering: true
+        });
+*/
 
     });
 </script>

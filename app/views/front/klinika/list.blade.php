@@ -59,9 +59,14 @@
         <div id="object_list">
 
                     <div class="col-md-2">
-                        <div class="intro_doctor_image">
-                            {{ HTML::image($user->logo); }}
-                        </div>
+                        @if ($user->logo)
+                            <div class="intro_klinika_image">
+                                {{ HTML::image($user->logo); }}
+                            </div>
+                        @else
+                            <div class="intro_klinika_image">
+                            </div>
+                        @endif
                     </div>
 
                     <div class="col-md-6">

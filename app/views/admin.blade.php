@@ -38,6 +38,11 @@
 
     {{ HTML::style('template.css') }}
 
+    {{ HTML::style('bootstrap-multiselect-master/dist/css/bootstrap-multiselect.css') }}
+
+
+    {{ HTML::script('ckeditor/ckeditor.js') }}
+
     <!-- jQuery -->
     {{ HTML::script('bower_components/jquery/dist/jquery.min.js') }}
 
@@ -50,6 +55,11 @@
     <!-- DataTables JavaScript -->
     {{ HTML::script('bower_components/DataTables/media/js/jquery.dataTables.min.js') }}
     {{ HTML::script('bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}
+
+    {{ HTML::script('bootstrap-multiselect-master/dist/js/bootstrap-multiselect.js') }}
+
+
+
 
 
 </head>
@@ -124,9 +134,9 @@
         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
     </a>
     <ul class="dropdown-menu dropdown-user">
-        <li><a href='{{ URL::route("doctor/edit", array(Auth::user()->id)) }}'><i class="fa fa-user fa-fw"></i>Профиль юзера</a>
+        <!--<li><a href='{{ URL::route("doctor/edit", array(Auth::user()->id)) }}'><i class="fa fa-user fa-fw"></i>Профиль юзера</a>-->
         </li>
-        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+        <li><a href="{{ URL::route('/') }}"><i class="fa fa-gear fa-fw"></i> На сайт</a>
         </li>
         <li class="divider"></li>
         <li><a href="{{ URL::route('logout') }}"><i class="fa fa-sign-out fa-fw"></i>Выйти</a>
@@ -157,14 +167,6 @@
                 <!-- /.nav-second-level -->
             </li>
 
-
-
-
-
-
-
-
-
             <li>
                 <a href="#"><i class="fa fa-edit fa-fw"></i>Менеджер заявок<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
@@ -179,22 +181,7 @@
             </li>
 
 
-
-
-            <li class="active">
-                <a href="#"><i class="fa fa-edit fa-fw"></i>Менеджер операторов<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="{{ URL::route('user/index') }}"><i class="fa fa-list fa-fw"></i>Управление операторами</a>
-                    </li>
-                    <li>
-                        <a href="{{ URL::route('user/add') }}"><i class="fa fa-plus fa-fw"></i>Добавить оператора</a>
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-
-            <li class="active">
+            <li class="">
                 <a href="#"><i class="fa fa-edit fa-fw"></i>Менеджер врачей<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -207,47 +194,24 @@
                 <!-- /.nav-second-level -->
             </li>
 
-            <li>
-                <a href="#"><i class="fa fa-edit fa-fw"></i>Менеджер Специальностей<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="{{ URL::route('speciality/index') }}"><i class="fa fa-list fa-fw"></i>Управление специальностями</a>
-                    </li>
-                    <li>
-                        <a href="{{ URL::route('speciality/add') }}"><i class="fa fa-plus fa-fw"></i>Добавить специальность</a>
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
 
-            <li>
-                <a href="#"><i class="fa fa-edit fa-fw"></i>Менеджер статусов<span class="fa arrow"></span></a>
+
+            <li class="">
+                <a href="#"><i class="fa fa-edit fa-fw"></i>Менеджер Клиник и Диаг. Ц.<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{ URL::route('status/index') }}"><i class="fa fa-list fa-fw"></i>Управление статусами</a>
+                        <a href="{{ URL::route('klinika/index') }}"><i class="fa fa-list fa-fw"></i>Управление</a>
                     </li>
                     <li>
-                        <a href="{{ URL::route('status/add') }}"><i class="fa fa-plus fa-fw"></i>Добавить статус</a>
+                        <a href="{{ URL::route('klinika/add') }}"><i class="fa fa-plus fa-fw"></i>Добавить</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
 
 
-            <li class="active">
-                <a href="#"><i class="fa fa-edit fa-fw"></i>Менеджер Клиник<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="{{ URL::route('klinika/index') }}"><i class="fa fa-list fa-fw"></i>Управление клиниками</a>
-                    </li>
-                    <li>
-                        <a href="{{ URL::route('klinika/add') }}"><i class="fa fa-plus fa-fw"></i>Добавить клинику</a>
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
 
-            <li class="active">
+            <li class="">
                 <a href="#"><i class="fa fa-edit fa-fw"></i>Отзывы<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -261,7 +225,7 @@
             </li>
 
 
-            <li class="active">
+            <li class="">
                 <a href="#"><i class="fa fa-edit fa-fw"></i>Статьи и Заболевания<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -275,6 +239,58 @@
                     </li>
                     <li>
                         <a href="{{ URL::route('article/add') }}"><i class="fa fa-plus fa-fw"></i>Добавить статью</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
+            <li class="">
+                <a href="#"><i class="fa fa-edit fa-fw"></i>Менеджер Клиентов<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ URL::route('client/index') }}"><i class="fa fa-list fa-fw"></i>Управление клиентами</a>
+                    </li>
+                    <li>
+                        <a href="{{ URL::route('client/add') }}"><i class="fa fa-plus fa-fw"></i>Добавить клиента</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
+            <li class="">
+                <a href="#"><i class="fa fa-edit fa-fw"></i>Менеджер операторов<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ URL::route('user/index') }}"><i class="fa fa-list fa-fw"></i>Управление операторами</a>
+                    </li>
+                    <li>
+                        <a href="{{ URL::route('user/add') }}"><i class="fa fa-plus fa-fw"></i>Добавить оператора</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-edit fa-fw"></i>Справочники<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ URL::route('test/index') }}"><i class="fa fa-list fa-fw"></i>Управление Исследованиями</a>
+                    </li>
+                    <li>
+                        <a href="{{ URL::route('test/add') }}"><i class="fa fa-plus fa-fw"></i>Добавить исследование</a>
+                    </li>
+                    <li>
+                        <a href="{{ URL::route('speciality/index') }}"><i class="fa fa-list fa-fw"></i>Управление специальностями</a>
+                    </li>
+                    <li>
+                        <a href="{{ URL::route('speciality/add') }}"><i class="fa fa-plus fa-fw"></i>Добавить специальность</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="{{ URL::route('status/index') }}"><i class="fa fa-list fa-fw"></i>Управление статусами</a>
+                    </li>
+                    <li>
+                        <a href="{{ URL::route('status/add') }}"><i class="fa fa-plus fa-fw"></i>Добавить статус</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
@@ -341,21 +357,23 @@
 
 {{ HTML::script('js/jquery.favicon.js') }}
 
-{{ HTML::script('ckeditor/ckeditor.js') }}
-
 {{ HTML::script('js/sweet-alert.min.js') }}
+
+
 
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
-
+            "order": [[ 0, "desc" ]]
         });
 
+
+
+
+
         $('#map_canvas').css({'display':'none'}); //запрет на вывод карты
-
-
 
         $('#formid-add-event').submit(function(e){
             e.preventDefault();
@@ -375,18 +393,20 @@
             });
         });
 
-        $('#formid-edit-event').submit(function(e){
-            e.preventDefault();
 
-            var id = 1;
-            var date_begin = $(this).find('input[name=date_begin]').val();
-            var date_end = $(this).find('input[name=date_end]').val();
-            var comment = $(this).find('input[name=comment]').val();
-            var status = $(this).find('select[name=status]').val();
-            var flag = $(this).find('select[name=flag]').val();
+
+        $('form.formid-edit-event').submit(function(event){
+            event.preventDefault();
+            var id = $('#'+this.id+' input[name=event_id]').val();
+            var date_begin = $('#'+this.id+' input[name=date_begin]').val();
+            var date_end = $('#'+this.id+' input[name=date_end]').val();
+            var comment = $('#'+this.id+' input[name=comment]').val();
+            var status = $('#'+this.id+' select[name=status]').val();
+            var flag = $('#'+this.id+' select[name=flag]').val();
 
             var order_id = "<?php if(isset($order->id)) echo $order->id; ?>";
-
+            //window.alert(id);
+            //window.alert(date_begin);
             $.post('/admin/edit/event/'+id, {date_begin:date_begin,date_end:date_end,comment:comment,status:status,flag:flag,order_id:order_id},function(data){
                 $('.message').html(data);
                 //console.log(data);
@@ -425,8 +445,12 @@
         var $i=0;
         $(".test-new").click(function(e) {
             e.preventDefault();
-            var arr = <?php if (isset($parentList)) echo json_encode($parentList); else echo '[]'; ?>;
-            var selector = "<form class='' role='form'><div class='div50 margin10'><label for='test_id'>Исследование</label><select class='form-control' id='test_id"+$i+"'></select></div>";
+
+            var arr = <?php if (isset($parentList))  { echo $parentList; } else echo '[]'; ?>;
+            //var arr = [{'1':'root'},{'2':'---two'}];
+            //window.alert( obj );
+            //var arr = obj;
+            var selector = "<form class='' 'default' role='form'><div class='div50 margin10'><label for='test_id'>Исследование</label><select class='form-control' id='test_id"+$i+"'></select></div>";
                 $(".tests").append(selector);
             var form = "<div class='div50 margin10'><label for='price_for_test'>Цена на исследование</label><input class='form-control' id = 'price_for_test"+$i+"'/></div></form>";
                 $(".tests").append(form);
@@ -434,10 +458,16 @@
             var select = $("#test_id"+$i);
             select.html('');
 
+
+
             if (arr){
-                $.each(arr, function(i, value) {
-                    select.append('<option id="' + i + '" value="' + i + '">' + value + '</option>');
-                });
+                for(var k in arr){
+                    console.log(k, '=>', arr[k]);
+                    $.each((k, '=>', arr[k]), function(i, value) {
+                        //window.alert(value);
+                        select.append('<option id="' + i + '" value="' + i + '">' + value + '</option>');
+                    });
+                }
                 $i=$i+1;
             }
         });
@@ -582,6 +612,11 @@
 
 
 
+        $("select").multiselect({
+            nonSelectedText: 'Ничего не выбрано!',
+            includeSelectAllOption: true,
+            enableFiltering: true
+        });
 
     });
 </script>

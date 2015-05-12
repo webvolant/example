@@ -14,6 +14,13 @@ class Client extends Eloquent {
 
 
 
+    public static function getClients(){
+        $result = Cache::remember('getClients', Helper::cacheTime(), function () {
+            return Client::all();
+        });
+        return $result;
+    }
+
 
     public static function getName($id){
         $result = Client::find($id);
