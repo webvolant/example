@@ -14,7 +14,7 @@
 
 
 @section('content')
-<div class="col-md-9">
+<div class="col-xs-12 col-sm-12 col-md-10">
 
     @if (\Route::current()->parameter('spec')!=null)
     {{ Speciality::find(\Route::current()->parameter('spec'))->first()->description }}
@@ -45,7 +45,7 @@
     @foreach ( $users as $key => $user)
     <div id="object_list">
 
-        <div class="col-md-2">
+        <div class="col-xs-12 col-sm-12 col-md-2">
             @if ($user->logo)
             <div class="intro_doctor_image">
                 {{ HTML::image($user->logo); }}
@@ -56,7 +56,7 @@
             @endif
         </div>
 
-        <div class="col-md-7">
+        <div class="col-xs-12 col-sm-12 col-md-7">
             <div class="intro_doctor_info">
                 <p class="h3_my"><a href='{{ URL::route("doctor/detail", array($user->link)) }}'>{{ $user->fio }}</a></p>
 
@@ -97,7 +97,7 @@
             </div> <!--intro_doctor_info -->
         </div><!-- col-md-7 -->
 
-        <div class="col-md-3">
+        <div class="col-xs-12 col-sm-12 col-md-3">
             <div class="pull-left margin10">
                 @if ($user->count_otzivi)
                     <p class="orange_text_big">{{ $user->count_otzivi }}</p>
@@ -134,7 +134,7 @@
 
                                 <?php echo $errors->first('name'); ?>
                                 <p>{{ Form::label('Ваш номер телефона:') }}
-                                    {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'user_phone2', 'class' => ' form-control rfield', 'placeholder'=>'0(___) __ __ __')) }}
+                                    {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => ' form-control rfield', 'placeholder'=>'0(___) __ __ __')) }}
                                 </p>
 
 
@@ -185,7 +185,7 @@
 
 
             @section('sidebar')
-                <div class="col-md-3">
+                <div class="col-xs-12 col-sm-12 col-md-2">
                     <p class="h6_my_bold">Специальности</p>
                     <ul class="list">
                         @foreach($specialities as $key => $item)
@@ -193,32 +193,9 @@
                         @endforeach
                     </ul>
                 </div>
+                {{ $sidebar_libraries }}
             @stop
 
-            @section('info')
-                <div class="col-md-3">
-                    <div class="sidebar_item">
-                        <p><a href="{{ URL::route('library') }}">Медицинская библиотека</a></p>
-                        <p>
-                            Полезные статьи о заболеваниях, современных методах лечения и диагностиках.
-                        </p>
-                    </div>
-
-                    <div class="sidebar_item">
-                        <p><a href="{{ URL::route('library') }}">Диагностические центры</a></p>
-                        <p>
-                            Вам нужно провести диагностику или обследование? Специализированный портал поможет подобрать диагностический центр рядом с домом.
-                        </p>
-                    </div>
-
-                    <div class="sidebar_item">
-                        <p><a href="{{ URL::route('illness') }}">Справочник заболеваний</a></p>
-                        <p>
-                            Медицинский справочник болезней от А до Я.
-                        </p>
-                    </div>
-                </div>
-            @stop
 
 
 

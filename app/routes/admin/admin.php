@@ -138,6 +138,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'administrator'), function()
 
             if ($validation->passes()){
                 $user = User::find($id);
+                $json_before = json_encode($user);
 
                 $user->password = Hash::make(Input::get('pass'));
                 $user->email = Input::get('email');
@@ -146,6 +147,18 @@ Route::group(array('prefix' => 'admin', 'before' => 'administrator'), function()
                 $user->role = 'operator';
 
                 $user->save();
+
+
+                //$json_before = json_encode($user);
+                $json = json_encode($user);
+                $crm = new Crm;
+                $crm->info_before = $json_before;
+                $crm->info_after = $json;
+                $crm->object_id = $id;
+                $crm->object = "user";
+                $crm->user_id = Auth::user()->id;
+                $crm->save();
+
                 return Redirect::route('user/index');
             }else{
                 return Redirect::route('user/add')->withInput()->withErrors($validation);

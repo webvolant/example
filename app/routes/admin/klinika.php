@@ -169,6 +169,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
             if ($validation->passes()){
 
                 $klinika = Klinika::find($id);
+                $json_before = json_encode($klinika);
 
                 $klinika->link = Helper::alias(Input::get('name'));
                 $klinika->status = Input::get('status');
@@ -202,7 +203,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                     $image = Input::file('logo');
                     $image->move(public_path().$dir, $filename);
                     $img = Image::make(public_path().$dir.$filename);
-                    $img->resize(240, 320);
+                    $img->resize(150, 150);
                     $img->insert(public_path().'/template_image/watermark.png');
                     $img->save(public_path().$dir.'thumb_'.$filename);
                     $klinika->logo = $dir.'thumb_'.$filename;
@@ -258,11 +259,16 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 //$string = serialize( $select_specialities ) ;
 
                 //before in Controller
-                $j_before = Session::get('j_before');
+                //$j_before = Session::get('j_before');
+
+
+                //$json = json_encode($klinika);
 
                 $crm = new Crm;
-                $crm->info_before = $j_before;
+                $crm->info_before = $json_before;
                 $crm->info_after = $json;
+                $crm->object_id = $id;
+                $crm->object = "klinika";
                 $crm->user_id = Auth::user()->id;
                 $crm->save();
                 return Redirect::route('klinika/index');

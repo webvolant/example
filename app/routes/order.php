@@ -351,3 +351,74 @@ Route::post('/order-new-klinika', array(
         }
     }
 ));
+
+
+Route::post('/order-new-diag', array(
+    'as'=>'order-new-diag',
+    function(){
+        if (Request::ajax()){
+            $rules = array(
+                'phone' => array('required'),
+            );
+            $validation = Validator::make(Input::all(), $rules);
+            if ($validation->passes()){
+                //$client = 0;
+                $id = 0;
+                $phone = Input::get('phone');
+                $klinik_id = Input::get('klinik_id');
+                $comment = Input::get('comment');
+                $name = Input::get('name');
+                $pacient = Input::get('pacient');
+                $client = Client::where('phone','LIKE', "%$phone%")->exists();
+
+                if ($client==false){
+                    $client2 = new Client();
+                    $client2->phone = $phone;
+                    $client2->fio = $name;
+                    $client2->save();
+                    $id = $client2->id;
+                }else{
+                    $cl = Client::where('phone','LIKE', "%$phone%")->first();
+                    $id = $cl->id;
+                }
+
+                $order = new Order();
+                $order->client_id = $id;
+                $order->global_status = "0";
+                $order->comment = $comment;
+                $order->klinik_id = $klinik_id;
+                $order->pacient = $pacient;
+                $order->diag_id = Input::get('diag_id');
+
+                $order->save();
+
+                $event = new Eventer();
+                $event->order_id = $order->id;
+                //$event->status_id = '';
+                $event->flag = '4';
+                $event->comment = 'Событие создано клиентом, на странице диаг. центра';
+
+                $event->date_begin = date('d.m.Y H:i', time());
+                //$event->date_end = date('d.m.Y H:i', time());
+
+                //$date_end = date('Y-m-d');
+                $event->date_end = date('d.m.Y H:i', strtotime("+3 hours", time()));
+
+                //$event->user_id = Auth::user()->id;
+                $event->save();
+
+                $data['flag'] = 1;
+                $data['data'] = "Ваша заявка на прием отправлена. Наши консультанты свяжутся с Вами в течении 15 минут ежедневно в с 9:00 до 21:00 и запишут Вас на прием.";
+                return $data;
+            }
+            else{
+                $data['flag'] = 0;
+                $data['data'] = "Возможно вы не заполнили поле телефон, попробуйте еще раз.";
+                return $data;
+            }
+        }
+    }
+));
+
+
+

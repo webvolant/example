@@ -20,6 +20,9 @@ class CreateCrmTable extends Migration {
 
 
             $table->text('object');
+            $table->integer('object_id')->nullable();
+            //$table->foreign('object_id')
+            //    ->references('id')->on('users');
 
             //$table->string('user_id');
             $table->integer('user_id')->unsigned();

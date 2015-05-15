@@ -98,6 +98,8 @@ Route::post('review/edit/{id}', array(
 
 
             $otziv = Otziv::find($id);
+            $json_before = json_encode($otziv);
+
             $otziv->client_id = $id_cl;
             $otziv->fio = Input::get('fio');
             $otziv->phone = $phone;
@@ -146,6 +148,19 @@ Route::post('review/edit/{id}', array(
                 $klinika->count_otzivi = $count_otzivi;
                 $klinika->save();
             }
+
+
+
+
+            //$json_before = json_encode($user);
+            $json = json_encode($otziv);
+            $crm = new Crm;
+            $crm->info_before = $json_before;
+            $crm->info_after = $json;
+            $crm->object_id = $id;
+            $crm->object = "review";
+            $crm->user_id = Auth::user()->id;
+            $crm->save();
 
             return Redirect::route('review/index');
         }

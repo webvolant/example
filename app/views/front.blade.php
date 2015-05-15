@@ -11,9 +11,13 @@
 <html>
 <head>
     @section('head')
-        <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    @section('meta')
         <title>mydoc.kg</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    @show
 
         <!-- CSS are placed here -->
         {{ HTML::style('css/bootstrap.css') }}
@@ -82,80 +86,55 @@
 </head>
 <body>
 
-
 <div class="container">
+    <div class="row header">
+            @section('header')
+                <div class=" col-xs-12 col-sm-6 col-md-3">
+                    <div class="logo"></div>
+                </div>
 
-<div class="container">
+                <div class="col-xs-7 col-sm-6 col-md-3">
+                        <ul class="list">
+                            <li><span class="orange_text">{{ $orders }} </span><?php echo strstr(Lang::choice('mydoc.orders', $orders, ['n' => $orders], 'ru'),"з"); ?> к врачам</li>
+                            <li><span class="orange_text">{{ $docs }} </span><?php echo strstr(Lang::choice('mydoc.docs', $docs, ['n' => $docs], 'ru'),"в"); ?> в базе</li>
+                            <li><span class="orange_text">{{ $ot }} </span><?php echo strstr(Lang::choice('mydoc.ot', $ot, ['n' => $ot], 'ru'),"о"); ?> </li>
+                        </ul>
+                </div>
+
+                <div class="col-xs-5 col-sm-offset-2 col-sm-3 col-md-offset-0 col-md-2">
+                    <div class="doctor1"></div>
+                </div>
+
+                <div class="col-xs-12 col-sm-offset-1 col-sm-6 col-md-offset-0 col-md-4">
+                    <div class="form-group form-inline order_form">
+                        <?php echo $errors->first('phone_main'); ?>
+                        {{ Form::label('Для записи на прием, впишите номер:') }}
+                        {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control', 'placeholder'=>'0(___) __ __ __')) }}
+                        {{ Form::submit( "Отправить", array('class' => 'form-control btn_submit_main btn btn-warning submit_send_order')) }}
+                        <p>или звоните {{ Form::label(' 0312 986 900') }}</p>
+
+                    </div>
+                </div>
+            @show
+    </div>
+
     <div class="row">
+            <div class="search col-xs-12 col-sm-12 col-md-12">
 
-
-    <div class="header">
-        @section('header')
-
-
-
-
-
-            <div class="col-xs-3 ">
-                <div class="logo"></div>
-            </div>
-
-            <div class="col-xs-3 ">
-                <div class="statistics">
-                    <ul class="list">
-                        <li><span class="orange_text">{{ $orders }} </span><?php echo strstr(Lang::choice('mydoc.orders', $orders, ['n' => $orders], 'ru'),"з"); ?> к врачам</li>
-                        <li><span class="orange_text">{{ $docs }} </span><?php echo strstr(Lang::choice('mydoc.docs', $docs, ['n' => $docs], 'ru'),"в"); ?> в базе</li>
-                        <li><span class="orange_text">{{ $ot }} </span><?php echo strstr(Lang::choice('mydoc.ot', $ot, ['n' => $ot], 'ru'),"о"); ?> </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-xs-2 ">
-                <div class="doctor1"></div>
-            </div>
-
-            <div class="col-xs-4 priem">
-
-
-
-                <div class="form-group">
-
-                    <?php echo $errors->first('phone_main'); ?>
-                    {{ Form::label('Для записи на прием, впишите номер:') }}
-                    <a class="pull-right">{{ Form::submit( "Отправить", array('class' => 'btn_submit_main btn btn-warning submit_send_order')) }}</a>
-                    {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'user_phone_main', 'class' => ' form-control rfield', 'placeholder'=>'0(___) __ __ __')) }}
-
-                    <p>или звоните {{ Form::label(' 0312 986 900') }}</p>
-                </div>
-
-
-
-            </div>
-
-        @show
-    </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="search">
                     @section('search')
-                    <div class="col-xs-12 ">
-                        {{ Form::open(array('url' => 'search', 'role' => 'form', 'class' => '')) }}
-                        <div class="col-xs-3 ">
-                                <div class="form-group">
-                                <span class="h4_my line35">Воспользуйтесь поиском!</span>
-                                </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-3">
+                            {{ Form::open(array('url' => 'search', 'role' => 'form', 'class' => '')) }}
+                            <div class="form-group">
+                                <h5>Воспользуйтесь поиском!</h5>
+                            </div>
                         </div>
 
-                        <div class="col-xs-4 ">
+                        <div class="col-xs-4 col-sm-5 col-md-4">
                                 <div class="form-group">
 
                                     <select id="krit1" name="krit1" class="form-control">
                                         <option value="">Искать по</option>
-
                                         @foreach ($search1 as $key => $item)
                                         <option value="{{ $key }}">{{ $item }}</option>
                                         @endforeach
@@ -164,8 +143,9 @@
                                 </div>
                         </div>
 
-                        <div class="col-xs-4 ">
+                        <div class="col-xs-4 col-sm-5 col-md-4">
                             <div class="form-group">
+                                <a id="test_icon" class="pull-left" data-toggle="modal" data-target="#testsModal" class="btn btn-info btn-sm" ><span class="glyphicon glyphicon-edit"></span></a>
                                 <select id="krit2" name="krit2" class="form-control">
                                     <option value="">Теперь параметр</option>
 
@@ -177,12 +157,7 @@
                                     <option value="{{ $key }}" class="1">{{ $item }}</option>
                                     @endforeach
                                 </select>
-
-                                <a id="test_icon" class="" data-toggle="modal" data-target="#testsModal" class="btn btn-info btn-sm" ><span class="glyphicon glyphicon-edit"></span></a>
-
                             </div>
-
-
 
 
                             <div class="modal fade" id="testsModal" tabindex="-1" role="dialog">
@@ -204,41 +179,41 @@
                             </div>
 
                         </div>
-                        <div class="col-xs-1 ">
+                        <div class="col-xs-offset-2 col-xs-2 col-sm-offset-0 col-sm-2 col-md-offset-0 col-md-1">
                                 <div class="pull-right">{{ Form::submit( "Искать", array('class' => 'btn btn-warning')) }}</div>
                             </div>
                         {{ Form::close() }}
-                    </div>
                     @show
-                </div>
             </div>
-        </div>
     </div>
 
-    <div class="container">
         <div class="row">
-            <div class="col-xs-12">
-
-                <nav class="navbar navbar-default" role="navigation">
-                        <ul class="nav navbar-nav">
-                            <li><a href="{{ URL::route('/') }}">Главная</a></li>
-                            <li><a href="{{ URL::to('doctor/doctors') }}">Врачи</a></li>
-                            <li><a href="{{ URL::to('clinics/all') }}">Клиники</a></li>
-                            <li><a href="{{ URL::to('diagnostica/centers') }}">Диагностические центры</a></li>
-                        </ul>
-                </nav>
-
-            </div>
+                <!-- Static navbar -->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="{{ URL::route('/') }}">Главная</a></li>
+                                <li><a href="{{ URL::to('doctor/doctors') }}">Врачи</a></li>
+                                <li><a href="{{ URL::to('clinics/all') }}">Клиники</a></li>
+                                <li><a href="{{ URL::to('diagnostica/centers') }}">Диагностические центры</a></li>
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div><!--/.container-fluid -->
+                </div>
         </div>
-    </div>
-
-
 
 @section('specialities')
-<div class="container">
     <div class="row">
-        <div class="col-xs-12">
-            <div class="specialities">
+        <div class="specialities col-xs-12 col-sm-12 col-md-12">
                     <ul class="list">
                         <?php $temp='А'; ?>
                         @foreach($specialities as $key => $item)
@@ -253,18 +228,15 @@
                         @endforeach
                     </ul>
 
-            </div>
         </div>
     </div>
-</div>
 @show
 
-    <div class="container content">
-        <div class="row">
+        <div class="content row">
 
 
             @section('content')
-            <div class="col-xs-4">
+            <div class="col-xs-12 col-sm-12 col-md-3">
             <section class="about track_links"><ul class="about_list_short list">
                     <li class="about_item i-closetohome ">
                         <h4>
@@ -292,58 +264,53 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-xs-8">
-                <ul class="about_list i-doctor_l">
-                    <li class="about_item">
-                        <h3><a href="{{ URL::to('diagnostica/centers') }}" class="about_link i-diagcenters" target="_blank">
-                                Диагностические центры
-                            </a></h3>
-                        <p>
-                            Вам нужно сдать анализы или провести обследование? Специализированный портал поможет Вам найти нужный центр.
-                        </p>
-                    </li>
-                    <li class="about_item">
-                        <h3><a href="{{ URL::route('library') }}" class="about_link i-pacientlib">
-                                Медицинская библиотека
-                            </a></h3>
-                        <p>
-                            Мы собрали для вас массу полезных статей о врачах, медицинских направлениях, современных методах лечения и диагностики.
-                        </p>
-                    </li>
-                    <li class="about_item">
-                        <h3><a href="{{ URL::route('illness') }}" class="about_link i-sicklist">
-                                Справочник заболеваний
-                            </a></h3>
-                        <p>
-                            Здесь Вы можете подобрать врача, который специализируется на лечении конкретного заболевания.
-                        </p>
-                    </li>
-                </ul></section>
+            <div class="col-xs-12 col-sm-12 col-md-9 ">
+
+                <div class="i-doctor_l col-md-3 hidden-xs hidden-sm">
+                </div>
+
+                    <div class="col-md-3">
+                        <p><span class="i-diagcenters"></span></p>
+                        <h5><a href="{{ URL::to('diagnostica/centers') }}">Диагностические центры</a></h5>
+                        <p>Вам нужно сдать анализы или провести обследование? Специализированный портал поможет Вам найти нужный центр.</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <p><span class="i-pacientlib"></span></p>
+                        <h5><a href="{{ URL::route('library') }}">Медицинская библиотека</a></h5>
+                        <p>Мы собрали для вас массу полезных статей о врачах, медицинских направлениях, современных методах лечения и диагностики.</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <p><span class="i-sicklist"></span></p>
+                        <h5><a href="{{ URL::route('illness') }}">Справочник заболеваний</a></h5>
+                        <p>Здесь Вы можете подобрать врача, который специализируется на лечении конкретного заболевания.</p>
+                    </div>
             </div>
             @show
 
+
             @section('sidebar')
+
             @show
+
 
             @section('info')
             @show
         </div>
-    </div>
 
 
 
 <div class="clear"></div>
 
-<div class="container">
     <div class="row">
-        <div class="col-xs-12">
-            <div class="footer">
+        <div class="footer col-xs-12 col-sm-12 col-md-12">
                 @section('footer')
-                <div class="col-xs-3 ">
+                <div class="col-xs-12 col-sm-3 col-md-3">
                     <div class="logo"></div>
                 </div>
 
-                <div class="col-xs-4 about">
+                <div class="col-xs-12 col-sm-4 col-md-4 about">
                     <span class="h4_my">О нас</span>
                     <p></p>
                     <span class="h8_my"><p>Сервис "Мой доктор" предоставляет доступ к данным о врачах, практикующих в клиниках и медицинских центрах Бишкека.</p></span>
@@ -351,7 +318,7 @@
                     <span class="h8_my"><p>Вы можете легко подобрать себе нужного специалиста, используя удобные опции поиска на сайте.</p></span>
                 </div>
 
-                <div class="col-xs-4">
+                <div class="col-xs-12 col-sm-5 col-md-5">
                     <div class="registration">
                         @section('registration')
                         <span class="h4_my">Врачам и клиникам</span>
@@ -372,16 +339,10 @@
                 </div>
 
                 @show
-            </div>
-        </div>
         </div>
     </div>
 
-
-</div>
-
-
-
+</div> <!-- container -->
 
 </body>
 
@@ -389,13 +350,34 @@
 {{ HTML::script('bootstrap-multiselect-master/dist/js/bootstrap-multiselect.js') }}
 
 
+{{ HTML::script('js/bl-search.js') }}
+
+
 
 <script type="text/javascript">
     $(document).ready(function() {
+        $(".diag_link").click(function(e){
+            e.preventDefault();
+            var diag_id = $(this).attr('id');
+            var diag_text = $(this).text();
+            //window.alert(diag_text);
+            if (diag_id){
+                $('#zapis_na_priem').modal('show');
+                $(".diag_text").html(diag_text);
+                $("#diag_for_order").val(diag_id);
+            }
+        });
+
 
         $("#phone_otziv").mask("0(999) 99-99-99");
         $("#phone_reg").mask("0(999) 99-99-99");
-        $('#user_phone_main').mask("0(999) 99-99-99");
+
+        var $inputs = $('input[id=phone]');
+        $.each($inputs,function(){
+            $(this).mask("0(999) 99-99-99");
+        });
+
+
         $('#user_phone2').mask("0(999) 99-99-99");
         $('#user_phone3').mask("0(999) 99-99-99");
 
@@ -446,7 +428,7 @@
         //заказ аякс
         $(".submit_send_order").click(function(e){
             e.preventDefault();
-            var phone = $("#user_phone_main").val();
+            var phone = $("#phone").val();
                 $.post('/order-new', {phone:phone},function(data){
                     if (data['flag']=='0')
                         swal({
@@ -468,7 +450,7 @@
 
         $(".submit_send_order_doctor").click(function(e){
             e.preventDefault();
-            var phone = $("#user_phone2").val();
+            var phone = $(this).parents('.modal').find("#phone").val();
             var doctor_id = $( "[name='doctor_id']" ).val();
             var pacient = $( "[name='pacient']" ).val();
             var name = $( "[name='name']" ).val();
@@ -499,12 +481,41 @@
 
         $(".submit_send_order_klinika").click(function(e){
             e.preventDefault();
-            var phone = $("#user_phone3").val();
+            var phone = $(this).parents('.modal').find("#phone").val();
             var klinik_id = $( "[name='klinik_id']" ).val();
             var pacient = $( "[name='pacient']" ).val();
             var name = $( "[name='name']" ).val();
             var comment = $( "[name='comment']" ).val();
             $.post('/order-new-klinika', {phone:phone,klinik_id:klinik_id,comment:comment,name:name,pacient:pacient},function(data){
+                if (data['flag']=='0')
+                    swal({
+                        title: 'Заявка не принята',
+                        text: data['data'],
+                        type: 'error',
+                        confirmButtonText: 'Закрыть'
+                    });
+                else{
+                    swal({
+                        title: 'Заявка принята',
+                        text: data['data'],
+                        type: 'success',
+                        confirmButtonText: 'Закрыть'
+                    });
+                }
+
+            });
+        });
+
+        $(".submit_send_order_diag").click(function(e){
+
+            e.preventDefault();
+            var phone = $(this).parents('.modal').find("#phone").val();
+            var klinik_id = $( "[name='klinik_id']" ).val();
+            var pacient = $( "[name='pacient']" ).val();
+            var name = $( "[name='name']" ).val();
+            var comment = $( "[name='comment']" ).val();
+            var diag_id = $( "[name='diag_id']" ).val();
+            $.post('/order-new-klinika', {phone:phone,klinik_id:klinik_id,comment:comment,name:name,pacient:pacient,diag_id:diag_id},function(data){
                 if (data['flag']=='0')
                     swal({
                         title: 'Заявка не принята',

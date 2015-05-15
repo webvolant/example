@@ -51,6 +51,17 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+App::missing(function($exception)
+{
+    //Try URL::previous()
+    return View::make('not-found')->withMessage($exception->getMessage());
+});
+/*
+App::missing(function($exception)
+{
+    return Response::view('not-found', array(), 404);
+});
+*/
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler

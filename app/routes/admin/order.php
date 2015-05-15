@@ -132,11 +132,13 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $event->user_id = Auth::user()->id;
 
                 $event->save();
+
                 $json = json_encode($event);
 
                 $crm = new Crm;
                 $crm->info_before = $json_before;
                 $crm->info_after = $json;
+                $crm->object_id = $id;
                 $crm->object = "event";
                 $crm->user_id = Auth::user()->id;
                 $crm->save();

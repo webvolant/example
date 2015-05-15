@@ -27,14 +27,18 @@ class Test extends Node {
     public static function getTreeWithLinks(){
         $tests = Test::where('name','!=','root')->orderBy('lft')->get();
         $cap = "";
-        foreach($tests as $test){
-            if ($test->parent()->first()->name != 'root')
-                $parent_link = $test->parent()->first()->link;
 
-            if ($test->getImmediateDescendants()->count()){
-                $cap .= "<p><a class='search_test h4_my margin5' href='"."/diagnostica/centers/$test->link'>".$test->name.'</a></p>';
-            }else{
-                $cap .= "<p><a class='search_test h6_my margin20' href='"."/diagnostica/centers/$parent_link/$test->link'>".$test->name.'</a></p>';
+        foreach($tests as $test){
+            $parent_link = $test->parent()->first()->link;
+            //if ($test->parent()->first()->name != 'root')
+            //    $parent_link = $test->parent()->first()->link;
+
+            if ($test->getImmediateDescendants()->count() && ($test->parent()->first()->name=='root')){
+                $cap .= "<p id='$test->id'><a class='h6_my' href='"."/diagnostica/centers/$test->link"."'>".$test->name.'</a></p>';
+            }elseif ($test->getLevel()==2) {
+                $cap .= "<p id='$test->id'><a class='h6_my margin-left10' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></p>';
+            }elseif ($test->getLevel()==3) {
+                $cap .= "<p id='$test->id'><a class='h6_my margin-left20' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></p>';
             }
         }
 
@@ -46,15 +50,17 @@ class Test extends Node {
         $tests = $kl->Tests()->withPivot('price')->orderBy('lft')->get();
         $cap = "";
         foreach($tests as $test){
-            //var_dump($test->pivot->price);
+            //var_dump($test->id);
             $price = $test->pivot->price;
             if ($test->parent()->first()->name != 'root')
                 $parent_link = $test->parent()->first()->link;
 
-            if ($test->getImmediateDescendants()->count()){
+            if ($test->getImmediateDescendants()->count() && ($test->parent()->first()->name=='root')){
                 $cap .= "<p class=''><span class='top h4_my margin5'>".$test->name.'<span></p>';
-            }else{
-                $cap .= "<p id='$test->id'><div class='pull-left'><a class='h6_my margin-left20' href='"."/diagnostica/centers/$parent_link/$test->link'>".$test->name.'</a></div>'."<div class='h4_my_bold pull-right'>$price сом</div>".'<div><hr class="with_border"/></div></p>';
+            }elseif ($test->getLevel()==2) {
+                $cap .= "<p><div class='pull-left'><a id='$test->id' class='h6_my margin-left10 diag_link' href='"."/diagnostica/centers/$parent_link/$test->link'>".$test->name.'</a></div>'."<div class='h4_my_bold pull-right'>$price сом</div>".'<div><hr class="with_border"/></div></p>';
+            }elseif ($test->getLevel()==3) {
+                $cap .= "<p><div class='pull-left'><a id='$test->id' class='h6_my margin-left20 diag_link' href='"."/diagnostica/centers/$parent_link/$test->link'>".$test->name.'</a></div>'."<div class='h4_my_bold pull-right'>$price сом</div>".'<div><hr class="with_border"/></div></p>';
             }
         }
 

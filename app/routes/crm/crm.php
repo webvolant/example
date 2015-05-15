@@ -31,4 +31,9 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         'uses'=>'AdminController@kliniks'
     ));
 
+    /*Route::get('crm/diags' , array(
+        'as'=>'crm/diags',
+        'uses'=>'AdminController@diags'
+    ));*/
+
 });

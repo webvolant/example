@@ -91,7 +91,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         $image = Input::file('logo');
                         $image->move(public_path().$dir, $filename);
                         $img = Image::make(public_path().$dir.$filename);
-                        $img->resize(320, 240);
+                        $img->resize(140, 220);
                         $img->insert(public_path().'/template_image/watermark.png');
                         $img->save(public_path().$dir.'thumb_'.$filename);
                         $user->logo = $dir.'thumb_'.$filename;
@@ -133,6 +133,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                     if ($validation->passes()){
 
                     $user = User::find($id);
+                        $json_before = json_encode($user);
 
                         $user->role = 'doctor';
                         $user->link = Helper::alias(Input::get('fio'));
@@ -190,7 +191,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                             $image = Input::file('logo');
                             $image->move(public_path().$dir, $filename);
                             $img = Image::make(public_path().$dir.$filename);
-                            $img->resize(320, 240);
+                            $img->resize(140, 220);
                             $img->insert(public_path().'/template_image/watermark.png');
                             $img->save(public_path().$dir.'thumb_'.$filename);
                             $user->logo = $dir.'thumb_'.$filename;
@@ -204,18 +205,21 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         $json = json_encode($user);
                         $json = json_decode($json, true);
                         $json['specialities'] = $select_specialities;
-                        $j = json_encode($json, true);
+                        $json = json_encode($json, true);
 
                         //$string =  serialize( $user->toArray() ) ;
                         //$string =  serialize( $user->toArray() ) ;
                         //$string = serialize( $select_specialities ) ;
 
                         //before in Controller
-                        $j_before = Session::get('j_before');
+                        //$j_before = Session::get('j_before');
 
+                        //$json_before = json_encode($klinika);
                         $crm = new Crm;
-                        $crm->info_before = $j_before;
-                        $crm->info_after = $j;
+                        $crm->info_before = $json_before;
+                        $crm->info_after = $json;
+                        $crm->object_id = $id;
+                        $crm->object = "doctor";
                         $crm->user_id = Auth::user()->id;
                         $crm->save();
                     return Redirect::route('doctor/index');

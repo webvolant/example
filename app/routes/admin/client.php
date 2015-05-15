@@ -68,6 +68,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
             if ($validation->passes()){
                 $user = Client::find($id);
+                $json_before = json_encode($user);
 
                 //$user->password = Hash::make(Input::get('pass'));
                 $user->email = Input::get('email');
@@ -75,6 +76,17 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $user->fio = Input::get('fio');
 
                 $user->save();
+
+
+                //$json_before = json_encode($klinika);
+                $json = json_encode($user);
+                $crm = new Crm;
+                $crm->info_before = $json_before;
+                $crm->info_after = $json;
+                $crm->object_id = $id;
+                $crm->object = "client";
+                $crm->user_id = Auth::user()->id;
+                $crm->save();
                 return Redirect::route('client/index');
             }else{
                 return Redirect::route('client/add')->withInput()->withErrors($validation);

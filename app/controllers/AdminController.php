@@ -19,6 +19,12 @@ class AdminController extends Controller {
         return View::make('admin.crm.list',array('users'=>$users));
     }
 
+    /*public function diag()
+    {
+        $users = Crm::where('object','=','klinika')->where('type','=','1')->get();
+        return View::make('admin.crm.list',array('users'=>$users));
+    }*/
+
     public function docs()
     {
         $users = Crm::where('object','=','doctor')->get();

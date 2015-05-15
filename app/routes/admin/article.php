@@ -66,6 +66,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
             $validation = Validator::make(Input::all(), $rules);
             if ($validation->passes()){
                 $user = Illness::find($id);
+                $json_before = json_encode($user);
+
                 $user->name = Input::get('name');
                 $user->link = Helper::alias(Input::get('name'));
                 $user->status = Input::get('status')[0];
@@ -75,27 +77,16 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
                 $user->save();
 
-                //$select_specialities = Input::get('specialities');
-                //$user->Specialities()->sync($select_specialities);
-
-                //CRM save - after data
+                //$json_before = json_encode($user);
                 $json = json_encode($user);
-                $json = json_decode($json, true);
-                //$json['specialities'] = $select_specialities;
-                $j = json_encode($json, true);
-
-                //$string =  serialize( $user->toArray() ) ;
-                //$string =  serialize( $user->toArray() ) ;
-                //$string = serialize( $select_specialities ) ;
-
-                //before in Controller
-                $j_before = Session::get('j_before');
-
                 $crm = new Crm;
-                $crm->info_before = $j_before;
-                $crm->info_after = $j;
+                $crm->info_before = $json_before;
+                $crm->info_after = $json;
+                $crm->object_id = $id;
+                $crm->object = "illness";
                 $crm->user_id = Auth::user()->id;
                 $crm->save();
+
                 return Redirect::route('illness/index');
             }
             else{
@@ -182,6 +173,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $validation = Validator::make(Input::all(), $rules);
                     if ($validation->passes()){
                     $user = Article::find($id);
+                        $json_before = json_encode($user);
+
                         $user->name = Input::get('name');
                         $user->link = Helper::alias(Input::get('name'));
                         $user->status = Input::get('status')[0];
@@ -191,27 +184,16 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
                         $user->save();
 
-                        //$select_specialities = Input::get('specialities');
-                        //$user->Specialities()->sync($select_specialities);
-
-                        //CRM save - after data
+                        //$json_before = json_encode($user);
                         $json = json_encode($user);
-                        $json = json_decode($json, true);
-                        //$json['specialities'] = $select_specialities;
-                        $j = json_encode($json, true);
-
-                        //$string =  serialize( $user->toArray() ) ;
-                        //$string =  serialize( $user->toArray() ) ;
-                        //$string = serialize( $select_specialities ) ;
-
-                        //before in Controller
-                        $j_before = Session::get('j_before');
-
                         $crm = new Crm;
-                        $crm->info_before = $j_before;
-                        $crm->info_after = $j;
+                        $crm->info_before = $json_before;
+                        $crm->info_after = $json;
+                        $crm->object_id = $id;
+                        $crm->object = "article";
                         $crm->user_id = Auth::user()->id;
                         $crm->save();
+
                     return Redirect::route('article/index');
                 }
                 else{

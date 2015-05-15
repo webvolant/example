@@ -91,15 +91,17 @@
 
 
                             <div class="form-group">
-                                <p class="h6_my">Клиника: {{ $user->name }}</p>
+                                <p class="h6_my">Диагностический центр: {{ $user->name }}</p>
+                                <p class="h6_my">Диагностика: <span class="diag_text">Вы не выбрали диагностику</span></p>
 
                                 <?php echo $errors->first('name'); ?>
                                 <p>{{ Form::label('Ваш номер телефона:') }}
-                                {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'user_phone3', 'class' => ' form-control rfield', 'placeholder'=>'0(___) __ __ __')) }}
+                                {{ Form::text('phone', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control', 'placeholder'=>'0(___) __ __ __')) }}
                                 </p>
                                 <p>{{ Form::text('name', null, array('class' => ' form-control', 'placeholder'=>'Ваше имя')) }}</p>
 
                                 {{ Form::hidden('klinik_id', "$user->id") }}
+                                {{ Form::hidden('diag_id', "", array('id'=>'diag_for_order')) }}
                                 <p>
                                     {{ Form::radio('pacient', 'small'); }} Ребенок
                                 </p>
@@ -110,7 +112,7 @@
                                 <p><a href="#" id="{{ $user->id }}"class="user_phone2_a">Добавить комментарий</a></p>
                                 <p>{{ Form::textarea('comment', null, array('class' =>'hidden2 form-control', 'id'=>"user_phone2_comment$user->id", 'placeholder'=>'Ваш комментарий')) }}</p>
 
-                                <p>{{ Form::submit( "Отправить", array('class' => 'btn_submit btn btn-warning submit_send_order_klinika')) }}</p>
+                                <p>{{ Form::submit( "Отправить", array('class' => 'btn_submit btn btn-warning submit_send_order_diag')) }}</p>
 
                             </div>
 
@@ -276,13 +278,15 @@
                             <div class="form-group">
                                 <p class="h6_my">Врач: {{ $user->fio }}</p>
 
+
                                 <?php echo $errors->first('name'); ?>
                                 <p>{{ Form::label('Ваш номер телефона:') }}
-                                    {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'user_phone2', 'class' => ' form-control rfield', 'placeholder'=>'0(___) __ __ __')) }}
+                                    {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => ' form-control rfield', 'placeholder'=>'0(___) __ __ __')) }}
                                 </p>
 
 
                                 {{ Form::hidden('doctor_id', "$user->id") }}
+
 
                                 <p>{{ Form::text('name', null, array('class' => ' form-control', 'placeholder'=>'Ваше имя')) }}</p>
 
@@ -327,6 +331,29 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+    $(".submit_send_order").click(function(e){
+        e.preventDefault();
+        var phone = $("#user_phone_main").val();
+        $.post('/order-new', {phone:phone},function(data){
+            if (data['flag']=='0')
+                swal({
+                    title: 'Заявка не принята',
+                    text: data['data'],
+                    type: 'error',
+                    confirmButtonText: 'Закрыть'
+                });
+            else{
+                swal({
+                    title: 'Заявка принята',
+                    text: data['data'],
+                    type: 'success',
+                    confirmButtonText: 'Закрыть'
+                });
+            }
+        });
+    });
+
 
     if (window.location.href.indexOf("deti") > -1) {
         $(".child_checkbox").prop("checked", true);

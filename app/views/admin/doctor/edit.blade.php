@@ -70,8 +70,12 @@
 </p>
 
 <p>
-    {{ Form::label('Привязка к специальностям') }}
-    {{ Form::select('specialities[]',$specialities,$specialities_current,array('id'=>'multi', 'multiple'=>true,'class'=>'form-control custom-scroll')) }}
+    @if ($errors->first('specialities'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('specialities'); ?></div>
+@else
+@endif
+{{ Form::label('Привязка к специальностям') }}
+{{ Form::select('specialities[]',$specialities,$specialities_current,array('multiple'=>true,'class'=>'form-control custom-scroll')) }}
 </p>
 
 

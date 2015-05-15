@@ -10,17 +10,15 @@
 
     @section('head')
     @parent
-
-
     @show
 
 
-        @section('specialities')
-        @show
+    @section('specialities')
+    @show
 
 
 @section('content')
-<div class="col-md-9">
+<div class="col-xs-12 col-sm-12 col-md-9">
 
 <p>
     <?php //var_dump($errors->first('msg')); ?>
@@ -53,18 +51,19 @@ $grafik_arr = explode(";", $user->grafik);
 
 
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-xs-12 col-sm-12 col-md-2">
                         @if ($user->logo)
                             <div class="intro_doctor_image">
-                                {{ HTML::image($user->logo); }}
+                                {{ HTML::image($user->logo,'doctor',array('class' => 'img-responsive')) }}
                             </div>
                         @else
                             <div class="intro_doctor_image">
+
                             </div>
                         @endif
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
                         <div class="intro_doctor_info">
 
                             <p class="h3_my"><?php $f = substr($user->fio,0,strpos($user->fio," ")); $name = substr($user->fio,strpos($user->fio," ")) ?><?php echo $f; ?>
@@ -107,7 +106,7 @@ $grafik_arr = explode(";", $user->grafik);
 
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-xs-12 col-sm-12 col-md-4">
                         <div class="pull-left margin20">
                             @if ($user->count_otzivi)
                                 <p class="orange_text_big">{{ $user->count_otzivi }}</p>
@@ -129,7 +128,7 @@ $grafik_arr = explode(";", $user->grafik);
                         <p></p>
 
 
-                        <p class="hidden doctor_id">{{ $user->id }}</p>
+
                         <p id="price_include" data-toggle="modal" data-target="#zapis_na_priem" class="btn btn-success" ><span class="glyphicon glyphicon-edit"></span> Онлайн запись</p></p>
 
                         <div class="modal fade" id="zapis_na_priem" tabindex="-1" role="dialog">
@@ -147,7 +146,7 @@ $grafik_arr = explode(";", $user->grafik);
 
                                             <?php echo $errors->first('name'); ?>
                                             <p>{{ Form::label('Ваш номер телефона:') }}
-                                            {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'user_phone2', 'class' => ' form-control rfield', 'placeholder'=>'(___) __ __ __')) }}
+                                            {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => ' form-control rfield', 'placeholder'=>'(___) __ __ __')) }}
                                             </p>
 
 
@@ -467,7 +466,7 @@ $grafik_arr = explode(";", $user->grafik);
 
 
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-xs-12 col-sm-12 col-md-4">
                 <p>Квалификация</p>
                 <p>
                     @if ($errors->first('reviewStars'))
@@ -493,7 +492,7 @@ $grafik_arr = explode(";", $user->grafik);
                 </p>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-xs-12 col-sm-12 col-md-4">
                 <p>Внимание</p>
                 <p>
                     @if ($errors->first('reviewStars2'))
@@ -519,7 +518,7 @@ $grafik_arr = explode(";", $user->grafik);
                 </p>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-xs-12 col-sm-12 col-md-4">
                 <p>Цена-качество</p>
                 <p>
                     @if ($errors->first('reviewStars3'))
@@ -547,40 +546,40 @@ $grafik_arr = explode(";", $user->grafik);
         </div>
 
         <div class="row">
-        <div class="col-md-6">
-            <p>
-                @if ($errors->first('comment'))
-            <div class="alert alert-danger" role="alert"><?php echo $errors->first('comment'); ?></div>
-            @else
-            @endif
-            {{ Form::textarea('comment', null, array('class' => 'form-control review_form', 'id'=>'', 'placeholder'=>'Напишите здесь текст отзыва')) }}
-            </p>
-        </div>
-
-        <div class="col-md-6">
-            <p>
-                @if ($errors->first('name'))
-            <div class="alert alert-danger" role="alert"><?php echo $errors->first('name'); ?></div>
-            @else
-            @endif
-            {{ Form::text('name', null, array('class' => 'form-control', 'id'=>'', 'placeholder'=>'Ваше имя')) }}
-            </p>
-
-            <p>
-                @if ($errors->first('phone'))
-                <div class="alert alert-danger" role="alert"><?php echo $errors->first('phone'); ?></div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <p>
+                    @if ($errors->first('comment'))
+                <div class="alert alert-danger" role="alert"><?php echo $errors->first('comment'); ?></div>
                 @else
                 @endif
-                {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'phone_otziv', 'class' => ' form-control', 'placeholder'=>'0(___) __ __ __')) }}
-            <span class="h8_my">Мы просим указать ваш телефон для контроля достоверности отзывов</span></p>
+                {{ Form::textarea('comment', null, array('class' => 'form-control review_form', 'id'=>'', 'placeholder'=>'Напишите здесь текст отзыва')) }}
+                </p>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <p>
+                    @if ($errors->first('name'))
+                <div class="alert alert-danger" role="alert"><?php echo $errors->first('name'); ?></div>
+                @else
+                @endif
+                {{ Form::text('name', null, array('class' => 'form-control', 'id'=>'', 'placeholder'=>'Ваше имя')) }}
+                </p>
+
+                <p>
+                    @if ($errors->first('phone'))
+                    <div class="alert alert-danger" role="alert"><?php echo $errors->first('phone'); ?></div>
+                    @else
+                    @endif
+                    {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'phone_otziv', 'class' => ' form-control', 'placeholder'=>'0(___) __ __ __')) }}
+                <span class="h8_my">Мы просим указать ваш телефон для контроля достоверности отзывов</span></p>
 
 
-            {{ Form::hidden('doctor_id', "$user->id") }}
-        </div>
+                {{ Form::hidden('doctor_id', "$user->id") }}
+            </div>
         </div>
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-12">
             <p class="text-center">{{ Form::submit( "Высказаться", array('class' => 'btn btn-lg btn-info')) }}</p>
             </div>
         </div>
@@ -602,7 +601,7 @@ $grafik_arr = explode(";", $user->grafik);
 
 
 @section('sidebar')
-    <div class="col-md-3">
+    <div class="col-xs-12 col-sm-12 col-md-3">
         <p class="h4_my">Информация о враче</p>
 
         <p class="h6_my_bold">Местоположение</p>
