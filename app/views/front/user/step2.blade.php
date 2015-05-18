@@ -5,6 +5,16 @@
 
 @stop
 
+@section('title')
+{{ Helper::title() }}
+{{ "Регистрация - шаг2" }}
+@stop
+
+@section('description')
+
+@stop
+
+
 @section('content')
 {{ Form::open(array('url' => 'registration/step2', 'method'=>'post', 'role' => 'form', 'class' => 'form-inline')) }}
 

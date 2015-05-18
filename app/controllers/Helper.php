@@ -189,6 +189,17 @@ class Helper extends Controller{
     }
 
 
+    public static function existsInCollection($collection, $key, $value) {
+        $flag = '';
+        foreach ($collection as $item) {
+            if (isset($item->$key) && $item->$key == $value)
+                $flag = true;
+            else
+                $flag = false;
+        }
+        return $flag;
+    }
+
 
     public static function findInCollection($collection, $key, $value) {
         $new_col = new \Illuminate\Database\Eloquent\Collection;
@@ -198,5 +209,16 @@ class Helper extends Controller{
             }
         }
         return $new_col;
+    }
+
+
+    public static function title(){
+        //$mas=[0=>'Не опубликовано',1=>'Опубликовано'];
+        return "my-doc.kg - портал по поиску медицинской помощи | ";
+    }
+
+    public static function description(){
+        //$mas=[0=>'Не опубликовано',1=>'Опубликовано'];
+        return "На портале большая база данных врачей Бишкека, а также клиник и диагностических центров.";
     }
 }

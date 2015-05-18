@@ -16,7 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     @section('meta')
-        <title>mydoc.kg</title>
+        <title>@yield('title', Helper::title() )</title>
+        <meta name="description" content="@yield('description', Helper::description())">
     @show
 
         <!-- CSS are placed here -->

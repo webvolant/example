@@ -4,7 +4,14 @@
 
 @stop
 
+@section('title')
+{{ Helper::title() }}
+{{ "Раздел заболеваний" }}
+@stop
 
+@section('description')
+{{ "Страница со списком заболеваний" }}
+@stop
 
 @section('content')
 

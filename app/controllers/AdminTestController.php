@@ -28,7 +28,7 @@ class AdminTestController extends Controller {
         //$root = Category::find(10);
 
         //CategoryController::recurs($root);
-        //$root = Category::create(['name' => 'root']);
+
         //$child1 = $root->children()->create(['name' => 'Product 1.1.1']);
         //$child2 = $root->children()->create(['name' => 'Product 1.1.2']);
 
@@ -41,6 +41,8 @@ class AdminTestController extends Controller {
         //$nestedList = Category::getNestedList('name');
 
         $node = \Test::where('name', '=', 'root')->first();
+        //if ($node->count()==0)
+        //$root = Test::create(['name' => 'root']);
         /*$nestedList = Category::getNestedList('name');
         foreach ($nestedList as $item){
             echo '<pre>';
@@ -56,7 +58,7 @@ class AdminTestController extends Controller {
     /**********add******/
     public function add(){
         $parentList = \Test::getNestedList('name');
-        return View::make('admin.test.add', array('parentList'=>$parentList));
+        return View::make('admin.test.add', array('list'=>$parentList));
     }
 
     /**********edit******/
@@ -64,7 +66,7 @@ class AdminTestController extends Controller {
         $cat = \Test::find($id);
         $name = "name";
         $parentList = \Test::getNestedList($name);
-        return View::make('admin.test.edit', array('parentList'=>$parentList))->with('cat', $cat);
+        return View::make('admin.test.edit', array('list'=>$parentList))->with('cat', $cat);
     }
 
     /**********delete******/

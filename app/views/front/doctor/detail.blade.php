@@ -13,6 +13,15 @@
     @show
 
 
+@section('title')
+    {{ Helper::title() }}
+    {{ "Врач - ".$user->fio }}
+@stop
+
+@section('description')
+    {{ $user->description }}
+@stop
+
     @section('specialities')
     @show
 
@@ -121,7 +130,7 @@ $grafik_arr = explode(";", $user->grafik);
                                 <p class="orange_text_big">{{ round($user->rating,1) }}</p>
                                 <p class="line0"><span>рейтинг</span></p>
                             @else
-                                <p class="orange_text_big">{{ $user->rating_second }}</p>
+                                <p class="orange_text_big">1</p>
                                 <p class="line0"><span>рейтинг</span></p>
                             @endif
                         </div>
@@ -548,11 +557,11 @@ $grafik_arr = explode(";", $user->grafik);
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6">
                 <p>
-                    @if ($errors->first('comment'))
-                <div class="alert alert-danger" role="alert"><?php echo $errors->first('comment'); ?></div>
+                    @if ($errors->first('comment_doc'))
+                <div class="alert alert-danger" role="alert"><?php echo $errors->first('comment_doc'); ?></div>
                 @else
                 @endif
-                {{ Form::textarea('comment', null, array('class' => 'form-control review_form', 'id'=>'', 'placeholder'=>'Напишите здесь текст отзыва')) }}
+                {{ Form::textarea('comment_doc', null, array('class' => 'form-control review_form', 'id'=>'', 'placeholder'=>'Напишите здесь текст отзыва')) }}
                 </p>
             </div>
 

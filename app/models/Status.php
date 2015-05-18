@@ -10,4 +10,14 @@ class Status extends Eloquent{
 
     protected $table = 'status';
 
+
+    public static function getName($id){
+        $result = Status::find($id);
+        if ($result){
+            return $result->name;
+        }
+        return "нет статуса";
+    }
 }
+
+

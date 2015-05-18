@@ -34,7 +34,7 @@ class Order extends Eloquent {
 */
     public function events()
     {
-        return $this->hasMany('Event');
+        return $this->hasMany('Eventer');
     }
 
 

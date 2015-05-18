@@ -22,7 +22,7 @@
 
 <p>
     {{ Form::label('По каким заявкам сделать отчет?') }}
-    <select id="orders" name="type">
+    <select id="events" name="type">
         <option value="0">Ожидающие заявки</option>
         <option value="1">Просроченные заявки</option>
         <option value="2">Выполненные заявки</option>
@@ -62,27 +62,23 @@
 
                         <tr>
                             <th>id</th>
-                            <th>Статус</th>
-                            <th>Клиент</th>
-                            <th>Врач</th>
+                            <th>Глобальное состояние</th>
                             <th>Создано</th>
-                            <th>Последнее событие</th>
+                            <th>Статус</th>
                             <th>Оператор</th>
                             <th>Начало события</th>
                         </tr>
 
                         </thead>
                         <tbody>
-                        @foreach ( $orders as $key => $user)
+                        @foreach ( $events as $key => $user)
                         <tr>
-                            <td><a href='{{ URL::route("order/edit", array($user->id)) }}'>{{ $user->id }}</a></td>
-                            <td><a href='{{ URL::route("order/edit", array($user->id)) }}'>{{ Helper::getStrGlobalStatus($user->global_status) }}</a></td>
-                            <td>{{ Client::getPhone($user->client_id) }}</td>
-                            <td>{{ User::getName($user->doctor_id) }}</td>
+                            <td><a href='{{ URL::route("order/edit", array($user->order_id)) }}'>{{ $user->id }}</a></td>
+                            <td><a href='{{ URL::route("order/edit", array($user->order_id)) }}'>{{ Helper::getStrGlobalStatus($user->global_status) }}</a></td>
                             <td>{{ $user->created_at }}</td>
-                            <td>{{ Status::getName($user->events()->orderBy('id', 'desc')->first()->status_id) }}</td>
-                            <td>{{ User::getName($user->events()->orderBy('id', 'desc')->first()->user_id) }} </td>
-                            <td>{{ $user->events()->orderBy('id', 'desc')->first()->date_begin }} </td>
+                            <td>{{ Status::getName($user->status_id) }}</td>
+                            <td>{{ User::getName($user->user_id) }} </td>
+                            <td>{{ $user->date_begin }} </td>
                         </tr>
                         @endforeach
                         </tbody>

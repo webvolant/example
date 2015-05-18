@@ -5,6 +5,16 @@
 
 @stop
 
+@section('title')
+{{ Helper::title() }}
+{{ "Регистрация - успешная регистрация" }}
+@stop
+
+@section('description')
+
+@stop
+
+
 @section('content')
 <h3>
     Благодарим вас за обращение!

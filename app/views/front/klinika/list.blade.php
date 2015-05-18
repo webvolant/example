@@ -8,6 +8,15 @@
 ?>
 @extends('front')
 
+@section('title')
+{{ Helper::title() }}
+{{ "Клиники" }}
+@stop
+
+@section('description')
+{{ "большая база данных клиник по различным специализациям" }}
+@stop
+
 
 @section('specialities')
 @show
@@ -90,7 +99,7 @@
                             <p class="orange_text_big">{{ round($user->rating,1) }}</p>
                             <p class="line0"><span>рейтинг</span></p>
                             @else
-                            <p class="orange_text_big">{{ $user->rating_second }}</p>
+                            <p class="orange_text_big">1</p>
                             <p class="line0"><span>рейтинг</span></p>
                             @endif
                         </div>

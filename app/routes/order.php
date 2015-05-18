@@ -99,10 +99,8 @@ Route::post('order/otziv', array(
             'reviewStars2' => array('required'),
             'reviewStars3' => array('required'),
             'phone' => array('required','exists:clients'),
-            'comment' => array('required')
+            'comment_doc' => array('required')
         );
-
-
         $validation = Validator::make(Input::all(), $rules);
         if ($validation->passes()){
             $id = 0;
@@ -132,7 +130,7 @@ Route::post('order/otziv', array(
             $otziv->fio = Input::get('name');
             $otziv->phone = $phone;
             $otziv->status = 0;
-            $otziv->comment = Input::get('comment');
+            $otziv->comment = Input::get('comment_doc');
             $otziv->doctor_id = Input::get('doctor_id');
             $otziv->rang_qualif = Input::get('reviewStars');
             $otziv->rang_vnimanie = Input::get('reviewStars2');

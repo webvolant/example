@@ -66,7 +66,7 @@
                 @else
                 @endif
                 {{ Form::label('Статус события') }}
-                {{ Form::select('status', $status, null, array('class' => 'form-control')) }}
+                {{ Form::select('status',['NULL'=>'Ничего не выбрано'] +  $status, null, array('class' => 'form-control')) }}
                 </p>
 
                 <p>
@@ -181,6 +181,7 @@
                         <tr>
                             <th>id</th>
                             <th>Статус</th>
+                            <th>Статус события</th>
                             <th>Комментарий</th>
                             <th>Оператор</th>
                             <th>Создание</th>
@@ -194,6 +195,7 @@
                         <tr>
                             <td>{{ $user->id }}</td>
                             <td>{{ Helper::getStrEventStatus($user->flag) }}</td>
+                            <td>{{ Status::getName('$user->status_id') }}</td>
                             <td>{{ $user->comment }}</td>
                             <td>{{ User::getName($user->user_id) }}</td>
                             <td>{{ $user->date_begin }}</td>

@@ -25,7 +25,7 @@
         <p>
             <?php echo $errors->first('parent_id'); ?>
             {{ Form::label('Root') }}
-            {{ Form::select('parent_id', $parentList, null, array('class' => 'form-control')) }}
+            {{ Form::select('parent_id', $list, null, array('class' => 'form-control')) }}
         </p>
 
 

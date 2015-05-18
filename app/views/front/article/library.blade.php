@@ -4,7 +4,14 @@
 
 @stop
 
+@section('title')
+{{ Helper::title() }}
+{{ "Библиотека статей" }}
+@stop
 
+@section('description')
+{{ "статьи" }}
+@stop
 
 @section('content')
 

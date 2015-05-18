@@ -279,6 +279,7 @@
                     <li>
                         <a href="{{ URL::route('test/add') }}"><i class="fa fa-plus fa-fw"></i>Добавить исследование</a>
                     </li>
+                    <li class="divider"></li>
                     <li>
                         <a href="{{ URL::route('speciality/index') }}"><i class="fa fa-list fa-fw"></i>Управление специальностями</a>
                     </li>
@@ -291,6 +292,20 @@
                     </li>
                     <li>
                         <a href="{{ URL::route('status/add') }}"><i class="fa fa-plus fa-fw"></i>Добавить статус</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-edit fa-fw"></i>Отчеты<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li class="divider"></li>
+                    <li>
+                        <a href="{{ URL::route('report/orders') }}"><i class="fa fa-list fa-fw"></i>По заявкам</a>
+                    </li>
+                    <li>
+                        <a href="{{ URL::route('report/events') }}"><i class="fa fa-list fa-fw"></i>По событиям</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
@@ -365,8 +380,19 @@
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
     $(document).ready(function() {
+
         $('#dataTables-example').DataTable({
-            "order": [[ 0, "desc" ]]
+            "order": [[ 0, "desc" ]],
+            "language": {
+                "info": "Показано _PAGE_ из _PAGES_",
+                "lengthMenu": "Показать _MENU_ ",
+                infoFiltered:   "(Всего было _MAX_ )",
+                "search": "Фильтр по тексту:",
+                "paginate": {
+                    "next": "вперед",
+                    "previous": "назад"
+                }
+            }
         });
 
 
@@ -435,6 +461,9 @@
                 lang:'ru'
             });
         });
+
+
+
 
 
 
@@ -541,15 +570,7 @@
             var date_begin = "";
             $.post('/admin/reviews-last', {name:date_begin},function(data){
                 $(".dropdown-messages").html(data);
-                //console.log(data);
-                if (data==""){
-                    //$.favicon('/public/template_image/favicon.ico');
-                }else{
-                    //$.favicon('/public/template_image/favicon_warning.ico');
-                }
-
             });
-            //}, 10000);
         });
 
         $(".dropdown-toggle").click(function() {

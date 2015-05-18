@@ -15,8 +15,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         'as'=>'reviews-last',
         function(){
             if (Request::ajax()){
-                $events = array();// date( "U" );//date( "d.m.Y H:i" );
-                $eventers = Otziv::where('user_id','==',null)->take(Helper::getEventsCount())->get();
+                $events = array();
+                $eventers = Otziv::where('status','=',0)->take(Helper::getEventsCount())->get();
                 foreach ($eventers as $i){
                     $link ="<li class='divider'></li><li><a href = /admin/review/edit/$i->id >
                              <div>

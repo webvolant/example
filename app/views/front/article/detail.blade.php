@@ -8,6 +8,15 @@
 ?>
 @extends('front')
 
+@section('title')
+{{ Helper::title() }}
+{{ $article->name }}
+@stop
+
+@section('description')
+{{ $article->description }}
+@stop
+
     @section('head')
     @parent
 

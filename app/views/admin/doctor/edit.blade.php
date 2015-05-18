@@ -104,7 +104,7 @@
 @else
 @endif
 {{ Form::label('Рейтинг') }}
-{{ Form::text('rating', null, array('class' => 'form-control', 'placeholder'=>'2')) }}
+{{ Form::text('rating', '1', array('class' => 'form-control', 'placeholder'=>'2')) }}
 </p>
 
 
@@ -186,6 +186,11 @@
 {{ Form::text('profil', null, array('class' => 'form-control', 'placeholder'=>'пищевая аллергия; инфекции имунной системы;')) }}
 </p>
 
+<script>
+    var a = "<? echo 'profil' ?>" ;
+    CKEDITOR.replace( a );
+</script>
+
 <p>
     @if ($errors->first('description'))
 <div class="alert alert-danger" role="alert"><?php echo $errors->first('description'); ?></div>
@@ -218,6 +223,10 @@
 {{ Form::text('qualif', null, array('class' => 'form-control', 'placeholder'=>'Ежегодные краткосрочные конференции в Москве')) }}
 </p>
 
+<script>
+    var a = "<? echo 'qualif' ?>" ;
+    CKEDITOR.replace( a );
+</script>
 
 
 

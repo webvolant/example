@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder {
 
         $this->call('IllnessTableSeeder');
         $this->call('ArticleTableSeeder');
+        $this->call('TestTableSeeder');
 	}
 
 }
@@ -229,6 +230,25 @@ class IllnessTableSeeder extends Seeder {
 Бронхиальная астма — хроническое воспалительное заболевание дыхательных путей с участием разнообразных клеточных элементов.
 Сердечная астма — приступы удушья от нескольких минут до нескольких часов при инфаркте миокарда, кардиосклерозе, пороках сердца и других болезнях, сопряжённых с сердечной недостаточностью.
 Диспепсическая астма — избыточное скопление газов в кишечнике (метеоризм).',
+            'status'=>'1',
+        ));
+
+    }
+
+}
+
+class TestTableSeeder extends Seeder {
+
+    public function run()
+    {
+        DB::table('tests')->delete();
+
+        Test::create(array(
+            'name' => 'root',
+            'link' => 'root',
+            'lft' => '1',
+            'rgt' => '2',
+            'depth'=>'0',
             'status'=>'1',
         ));
 

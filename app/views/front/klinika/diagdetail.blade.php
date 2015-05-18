@@ -15,6 +15,15 @@
 
         @show
 
+@section('title')
+{{ Helper::title() }}
+{{ $user->name }}
+@stop
+
+@section('description')
+{{ $user->description }}
+@stop
+
 @section('specialities')
 @show
 
@@ -29,7 +38,7 @@
                         <p class="orange_text_big">{{ round($user->rating,1) }}</p>
                         <p class="line0"><span>рейтинг</span></p>
                         @else
-                        <p class="orange_text_big">{{ $user->rating_second }}</p>
+                        <p class="orange_text_big">1</p>
                         <p class="line0"><span>рейтинг</span></p>
                         @endif
                     </div>
