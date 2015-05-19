@@ -24,13 +24,6 @@ Route::get('clinic/detail/{link}', array('as' => 'clinic/detail',
     'uses' => 'KlinikaController@detail'
     ))->where('link', '[A-Za-z-0-9]+');
 
-Route::get('doc_angular', array('as' => 'doc_angular',
-    'uses' => 'KlinikaController@doc_angular'
-));
-
-Route::get('/news/getNews', array('as' => '/news/getNews',
-    'uses' => 'KlinikaController@getNews'
-));
 
 
 
