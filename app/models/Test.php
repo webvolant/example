@@ -33,7 +33,7 @@ class Test extends Node {
             //if ($test->parent()->first()->name != 'root')
             //    $parent_link = $test->parent()->first()->link;
 
-            if ($test->getImmediateDescendants()->count() && ($test->parent()->first()->name=='root')){
+            if ($test->getLevel()==1){
                 $cap .= "<p id='$test->id'><a class='h6_my' href='"."/diagnostica/centers/$test->link"."'>".$test->name.'</a></p>';
             }elseif ($test->getLevel()==2) {
                 $cap .= "<p id='$test->id'><a class='h6_my margin-left10' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></p>';
@@ -55,7 +55,7 @@ class Test extends Node {
             if ($test->parent()->first()->name != 'root')
                 $parent_link = $test->parent()->first()->link;
 
-            if ($test->getImmediateDescendants()->count() && ($test->parent()->first()->name=='root')){
+            if ($test->getLevel()==1){
                 $cap .= "<p class=''><span class='top h4_my margin5'>".$test->name.'<span></p>';
             }elseif ($test->getLevel()==2) {
                 $cap .= "<p><div class='pull-left'><a id='$test->id' class='h6_my margin-left10 diag_link' href='"."/diagnostica/centers/$parent_link/$test->link'>".$test->name.'</a></div>'."<div class='h4_my_bold pull-right'>$price сом</div>".'<div><hr class="with_border"/></div></p>';

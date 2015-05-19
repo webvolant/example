@@ -48,6 +48,7 @@
 
             {{ HTML::script('slick/slick.js') }}
 
+
         {{ HTML::style('css/sweet-alert.css') }}
         <script>
             $(document).ready(function() {

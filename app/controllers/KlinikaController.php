@@ -6,6 +6,24 @@ class KlinikaController extends Controller {
         return View::make('front.klinika.list');
     }*/
 
+    public function doc_angular() {
+        //$this->pageTitle = 'Список новостей';
+        return View::make('front.doctor.list2');
+    }
+
+    public function getNews() {
+        $comments = Klinika::all()->toJson();
+        //var_dump($comments);
+        //die();
+        $this->renderJSON($comments);
+    }
+
+    protected function renderJSON($data) {
+        header('Content-type: application/json');
+        echo json_encode($data);
+        //Yii::app()->end();
+    }
+
     //все клиники что есть в базе
     public function all(){
         if (\Route::current()->parameter('spec')!=null){
