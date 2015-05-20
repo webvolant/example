@@ -27,6 +27,8 @@
 
         {{ HTML::style('source/jquery.fancybox.css') }}
 
+    {{ HTML::style('css/component.css') }}
+
         <!-- Scripts are placed here -->
         {{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') }}
         {{ HTML::script('https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.3.1/jquery.maskedinput.js') }}
@@ -47,6 +49,8 @@
             {{ HTML::style('slick/slick-theme.css') }}
 
             {{ HTML::script('slick/slick.js') }}
+
+    {{ HTML::script('js/modernizr.custom.js') }}
 
 
         {{ HTML::style('css/sweet-alert.css') }}
@@ -202,11 +206,11 @@
                             </button>
                         </div>
                         <div class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav">
-                                <li><a href="{{ URL::route('/') }}">Главная</a></li>
-                                <li><a href="{{ URL::to('doctor/doctors') }}">Врачи</a></li>
-                                <li><a href="{{ URL::to('clinics/all') }}">Клиники</a></li>
-                                <li><a href="{{ URL::to('diagnostica/centers') }}">Диагностические центры</a></li>
+                            <ul class="nav navbar-nav cl-effect-6">
+                                <li><a href="{{ URL::route('/') }}"><span class="glyphicon glyphicon-home"></span> Главная</a></li>
+                                <li><a href="{{ URL::to('doctor/doctors') }}"><span class="glyphicon glyphicon-user"></span> Врачи</a></li>
+                                <li><a href="{{ URL::to('clinics/all') }}"><span class="glyphicon glyphicon-plus"></span> Клиники</a></li>
+                                <li><a href="{{ URL::to('diagnostica/centers') }}"><span class="glyphicon glyphicon-search"></span> Диагностические центры</a></li>
                             </ul>
                         </div><!--/.nav-collapse -->
                     </div><!--/.container-fluid -->
