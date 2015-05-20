@@ -15,9 +15,14 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
             if (Request::ajax()){
                     $test_id = Input::get('test_id');
                     $klinik_id = Input::get('klinik_id');
+                //var_dump($klinik_id);
 
-                    $kl = Klinika::find($klinik_id)->first();
+                    $kl = Klinika::find($klinik_id);
+                //var_dump($kl->id);
                     $kl->Tests()->detach($test_id);
+                //foreach($kl->Tests() as $item){
+                    //var_dump($kl->Tests());
+                //}
 
                 if ($kl->Tests()->count()==0)
                     $kl->type = "0";

@@ -542,6 +542,7 @@
                         confirmButtonText: 'Закрыть'
                     });
                 }
+                location.reload();
             });
         });
 
@@ -550,9 +551,10 @@
             e.preventDefault();
             $(this).parents('p').remove();//.html('Исследование было удалено!');
             var test_id = $(this).attr('id');
+            //window.alert(test_id);
             var klinik_id = $("input[name=klinik_id]").val();
             $.post('/admin/test-delete', {test_id:test_id,klinik_id:klinik_id},function(data){
-
+                console.log(data);
             });
         });
 

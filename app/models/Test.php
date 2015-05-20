@@ -19,7 +19,7 @@ class Test extends Node {
 
     public function Kliniks()
     {
-        return $this->belongsToMany('Klinika', 'klinika_tests', 'test_id', 'klinik_id')->withPivot('price');
+        return $this->belongsToMany('Klinika', 'klinika_tests', 'klinik_id','test_id')->withPivot('price');
         //return $this->belongsToMany('Profession', 'doctor_professions', 'doctor_id', 'profession_id')->withPivot('doctor_got_professions');
     }
 
