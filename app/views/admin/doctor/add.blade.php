@@ -179,13 +179,19 @@
 @else
 @endif
 {{ Form::label('Профиль - основные направления по которым работает доктор') }}
-{{ Form::text('profil', null, array('class' => 'form-control', 'placeholder'=>'пищевая аллергия; инфекции имунной системы;')) }}
+{{ Form::text('profil', null, array('id'=>'profil', 'class' => 'form-control', 'placeholder'=>'пищевая аллергия; инфекции имунной системы;')) }}
 </p>
 
-<script>
-    var a = "<? echo 'profil' ?>" ;
-    CKEDITOR.replace( a );
+<script type="text/javascript">
+    CKEDITOR.replace( 'profil' );
+    CKEDITOR.instances.profil.setData($('input#profil').val());
+    timer = setInterval(updateDiv,100);
+    function updateDiv(){
+        var editorText = CKEDITOR.instances.profil.getData();
+        $( "[name='profil']" ).val(editorText);
+    }
 </script>
+
 
 <p>
     @if ($errors->first('description'))
@@ -193,12 +199,17 @@
 @else
 @endif
 {{ Form::label('Краткое описание') }}
-{{ Form::text('description', null, array('class' => 'form-control', 'placeholder'=>'')) }}
+{{ Form::text('description', null, array('id'=>'description', 'class' => 'form-control', 'placeholder'=>'')) }}
 </p>
 
-<script>
-    var a = "<? echo 'description' ?>" ;
-    CKEDITOR.replace( a );
+<script type="text/javascript">
+    CKEDITOR.replace( 'description' );
+    CKEDITOR.instances.description.setData($('input#description').val());
+    timer = setInterval(updateDiv,100);
+    function updateDiv(){
+        var editorText = CKEDITOR.instances.description.getData();
+        $( "[name='description']" ).val(editorText);
+    }
 </script>
 
 <p>
@@ -216,12 +227,17 @@
 @else
 @endif
 {{ Form::label('Курсы повышения квалификации') }}
-{{ Form::text('qualif', null, array('class' => 'form-control', 'placeholder'=>'Ежегодные краткосрочные конференции в Москве')) }}
+{{ Form::text('qualif', null, array('id'=>'qualif', 'class' => 'form-control', 'placeholder'=>'Ежегодные краткосрочные конференции в Москве')) }}
 </p>
 
-<script>
-    var a = "<? echo 'qualif' ?>" ;
-    CKEDITOR.replace( a );
+<script type="text/javascript">
+    CKEDITOR.replace( 'qualif' );
+    CKEDITOR.instances.qualif.setData($('input#qualif').val());
+    timer = setInterval(updateDiv,100);
+    function updateDiv(){
+        var editorText = CKEDITOR.instances.qualif.getData();
+        $( "[name='qualif']" ).val(editorText);
+    }
 </script>
 
 

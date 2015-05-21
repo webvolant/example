@@ -5,6 +5,39 @@
 }
 */
 
+.admin_menu a{
+    color: black;
+}
+
+.navbar-default .navbar-brand {
+    color: black;
+}
+
+.tests_all p{
+    padding:0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .content{
     margin: 0;
     padding: 0;
@@ -151,10 +184,11 @@ a:hover{
 }
 
 .i-doctor_l {
-    background: url("/template_image/doctor2.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+    /*background: url("/template_image/doctor2.png") no-repeat scroll right center rgba(0, 0, 0, 0);*/
     display: block;
     min-height: 200px;
     margin-top: 20px;
+    background: deepskyblue;
 }
 
 .about_list {
@@ -312,6 +346,11 @@ a:hover{
 
 }
 
+.blau_text{
+    color: rgb(0, 144, 218);
+    font-weight: bold;
+}
+
 .h6_my{
     font-size: 14px;
 
@@ -328,6 +367,7 @@ a:hover{
 
 .h3_my{
     font-size: 22px;
+
 
 }
 
@@ -386,12 +426,13 @@ a:hover{
 
 .specialities{
     background-color: #f7f7f7;
-    border: 0px solid #cccccc;
-    border-bottom-width: 3px;
+    border: 0px solid #0090DA;
+    border-bottom-width: 1px;
     position: relative;
     z-index: 1;
     font-size: 0.1em;
     border-radius: 5px;
+    padding:5px;
 
     -webkit-column-count:3;
     -moz-column-count:3;
@@ -425,10 +466,11 @@ a:hover{
 }
 
 .doctor1{
-    background: url("template_image/doctor1.png") top left no-repeat;
+    /*background: url("template_image/doctor1.png") top left no-repeat;*/
     background-size: contain; /* Масштабируем фон */
     min-height:108px;
     margin-top: 10px;
+    background: deepskyblue;
 }
 
 .header{
@@ -467,10 +509,10 @@ padding-top: 10px;
 .footer{
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: #f0f0f0;
-    box-shadow: inset 1px 3px 8px -4px #777;
-    min-height:160px;
+    background-color: #F7F7F7;
+    min-height: 160px;
     margin-top: 15px;
+    border-radius: 5px 5px 5px 5px;
 
 }
 

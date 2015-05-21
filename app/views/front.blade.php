@@ -132,7 +132,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-3">
                             {{ Form::open(array('url' => 'search', 'role' => 'form', 'class' => '')) }}
                             <div class="form-group">
-                                <h5>Воспользуйтесь поиском!</h5>
+                                <h5 class="blau_text">Воспользуйтесь поиском!</h5>
                             </div>
                         </div>
 
@@ -206,7 +206,7 @@
                             </button>
                         </div>
                         <div class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav cl-effect-6">
+                            <ul class="nav navbar-nav cl-effect-1">
                                 <li><a href="{{ URL::route('/') }}"><span class="glyphicon glyphicon-home"></span> Главная</a></li>
                                 <li><a href="{{ URL::to('doctor/doctors') }}"><span class="glyphicon glyphicon-user"></span> Врачи</a></li>
                                 <li><a href="{{ URL::to('clinics/all') }}"><span class="glyphicon glyphicon-plus"></span> Клиники</a></li>

@@ -120,12 +120,17 @@
 @else
 @endif
 {{ Form::label('Краткое описание клиники') }}
-{{ Form::text('description', null, array('class' => 'form-control', 'placeholder'=>'Многопрофильный медицинский центр, специализирующийся на проведении диагностического обследования взрослых и детей от 14 лет.')) }}
+{{ Form::text('description', null, array('id'=>'description', 'class' => 'form-control', 'placeholder'=>'Многопрофильный медицинский центр, специализирующийся на проведении диагностического обследования взрослых и детей от 14 лет.')) }}
 </p>
 
-<script>
-    var a = "<? echo 'description' ?>" ;
-    CKEDITOR.replace( a );
+<script type="text/javascript">
+    CKEDITOR.replace( 'description' );
+    CKEDITOR.instances.description.setData($('input#description').val());
+    timer = setInterval(updateDiv,100);
+    function updateDiv(){
+        var editorText = CKEDITOR.instances.description.getData();
+        $( "[name='description']" ).val(editorText);
+    }
 </script>
 
 

@@ -41,72 +41,75 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $validation = Validator::make(Input::all(), $rules);
                 if ($validation->passes()){
 
-                    $user = new User;
-                    $user->role = 'doctor';
-                    $user->link = Helper::alias(Input::get('fio'));
-                    //$m = Helper::alias(Input::get('fio'));
-                    //var_dump($m);
-                    $user->status = Input::get('status')[0];
+                        $user = new User;
+                        $user->role = 'doctor';
+                        $user->link = Helper::alias(Input::get('fio'));
+                        //$m = Helper::alias(Input::get('fio'));
+                        //var_dump($m);
+                        $user->status = Input::get('status')[0];
 
-                    $doma = Input::get('doma');
-                    if (!isset($doma)) $doma = 0;
-                    $user->doma = $doma;
+                        $doma = Input::get('doma');
+                        if (!isset($doma)) $doma = 0;
+                        $user->doma = $doma;
 
-                    $det_doctor = Input::get('det_doctor');
-                    if (!isset($det_doctor)) $det_doctor = 0;
-                    $user->det_doctor = $det_doctor;
+                        $det_doctor = Input::get('det_doctor');
+                        if (!isset($det_doctor)) $det_doctor = 0;
+                        $user->det_doctor = $det_doctor;
 
-                    $viesd_na_dom = Input::get('viesd_na_dom');
-                    if (!isset($viesd_na_dom)) $viesd_na_dom = 0;
-                    $user->viesd_na_dom = $viesd_na_dom;
+                        $viesd_na_dom = Input::get('viesd_na_dom');
+                        if (!isset($viesd_na_dom)) $viesd_na_dom = 0;
+                        $user->viesd_na_dom = $viesd_na_dom;
 
-                    $user->password = Hash::make(Input::get('pass'));
-                    $user->email = Input::get('email');
-                    $user->phone = Input::get('phone');
-                    $user->klinika_name = Input::get('klinika_name');
-                    $user->fio = Input::get('fio');
+                        $user->password = Hash::make(Input::get('pass'));
+                        $user->email = Input::get('email');
+                        $user->phone = Input::get('phone');
+                        $user->klinika_name = Input::get('klinika_name');
+                        $user->fio = Input::get('fio');
 
 
-                    $user->experience = Input::get('experience');
-                    $user->rang = Input::get('rang');
-                    $user->price = Input::get('price');
-                    $user->price_include = Input::get('price_include');
-                    $user->grafik = Input::get('grafik');
+                        $user->experience = Input::get('experience');
+                        $user->rang = Input::get('rang');
+                        $user->price = Input::get('price');
+                        $user->price_include = Input::get('price_include');
+                        $user->grafik = Input::get('grafik');
 
-                    $user->profil = Input::get('profil');
-                    $user->description = Input::get('description');
-                    $user->education = Input::get('education');
-                    $user->qualif = Input::get('qualif');
+                        $user->profil = Input::get('profil');
+                        $user->description = Input::get('description');
+                        $user->education = Input::get('education');
+                        $user->qualif = Input::get('qualif');
 
-                    $user->rating = Input::get('rating');
+                        //var_dump(Input::all());
+                    //die();
 
-                    $user->save();
+                        $user->rating = Input::get('rating');
 
-                    if (Input::hasFile('logo')) {
-                        $dir = '/uploads/doctors'.date('/Y/'.$user->id.'/');
-                        $filename = 'logo'.'.jpg';
-                        //var_dump($dir);
-                        //die();
-
-                        $image = Input::file('logo');
-                        $image->move(public_path().$dir, $filename);
-                        $img = Image::make(public_path().$dir.$filename);
-                        $img->resize(140, 220);
-                        $img->insert(public_path().'/template_image/watermark.png');
-                        $img->save(public_path().$dir.'thumb_'.$filename);
-                        $user->logo = $dir.'thumb_'.$filename;
                         $user->save();
-                    }
 
-                    $select_specialities = Input::get('specialities');
-                    foreach($select_specialities as $item)
-                        $user->Specialities()->attach($item);
+                        if (Input::hasFile('logo')) {
+                            $dir = '/uploads/doctors'.date('/Y/'.$user->id.'/');
+                            $filename = 'logo'.'.jpg';
+                            //var_dump($dir);
+                            //die();
+
+                            $image = Input::file('logo');
+                            $image->move(public_path().$dir, $filename);
+                            $img = Image::make(public_path().$dir.$filename);
+                            $img->resize(140, 220);
+                            $img->insert(public_path().'/template_image/watermark.png');
+                            $img->save(public_path().$dir.'thumb_'.$filename);
+                            $user->logo = $dir.'thumb_'.$filename;
+                            $user->save();
+                        }
+
+                        $select_specialities = Input::get('specialities');
+                        foreach($select_specialities as $item)
+                            $user->Specialities()->attach($item);
 
                     return Redirect::route('doctor/index');
                     }
                     else{
-
-                        return Redirect::route('doctor/add')->withInput()->withErrors($validation);
+                        //var_dump(Input::all());
+                        return Redirect::route('doctor/add')->withErrors($validation)->withInput();
                     }
             }
         ));
