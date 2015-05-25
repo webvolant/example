@@ -19,10 +19,12 @@ class CreateSpecialitiesTable extends Migration {
             $table->string('specialisation');
             $table->string('specialisation_alias');
 
+            $table->text('keywords');
             $table->text('description');
             $table->text('description_specialisation');
 
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('user_specialities', function($table)
@@ -33,6 +35,7 @@ class CreateSpecialitiesTable extends Migration {
             $table->integer('speciality_id')->unsigned();
             $table->foreign('speciality_id')->references('id')->on('specialities');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

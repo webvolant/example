@@ -285,6 +285,12 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         }
     ))->where('id', '[0-9]+');
 
+
+
+});
+
+//Удаление клиники только админу
+Route::group(array('prefix' => 'admin', 'before' => 'administrator'), function() {
     Route::get('klinika/delete/{id}', array(
         'as'=>'klinika/delete',
         'uses'=>'AdminKlinikaController@delete'

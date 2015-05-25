@@ -38,7 +38,7 @@
     </div>
 
     @if (\Route::current()->parameter('spec')!=null)
-        {{ Speciality::find(\Route::current()->parameter('spec'))->first()->description_specialisation }}
+        {{ Speciality::where('id','=',\Route::current()->parameter('spec'))->first()->description_specialisation }}
     @endif
 
     <div class="row margin10">
@@ -108,7 +108,7 @@
                         <p id="price_include" data-toggle="modal" data-target="#zapis_na_priem{{ $user->link }}" class="btn btn-success" ><span class="glyphicon glyphicon-edit"></span>  Онлайн запись</p></p>
 
                         <span class="h8_my">или по телефону: </span>
-                        <p class="orange_text_small">{{ $user->phone }} </p>
+                        <p class="orange_text_small">0312 986 900</p>
 
                             <?php $grafik = explode(";",$user->grafik); ?>
                             <span class="glyphicon glyphicon-time left h4_my"></span>
@@ -163,7 +163,7 @@
                     </div>
 
                     <div class="intro_doctor_kontakts">
-                       <span class="glyphicon glyphicon-map-marker"></span>{{  $user->address }}  <span class="glyphicon glyphicon-phone">     </span>{{ $user->phone }}
+                       <span class="glyphicon glyphicon-map-marker"></span>{{  $user->address }}  <span class="glyphicon glyphicon-phone">     </span>0312 986 900
                     </div>
 
             @section('sidebar')
@@ -174,7 +174,10 @@
     @endforeach
     </div>
 
-        {{ $users->appends(Input::all())->links() }}
+    @if ($users->count()!=0)
+    {{ $users->appends(Input::all())->links() }}
+    @endif
+
 </div>
 
 

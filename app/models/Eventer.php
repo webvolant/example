@@ -8,6 +8,7 @@
 
 class Eventer extends Eloquent{
 
+    protected $softDelete = true;
     protected $table = 'events';
 
 

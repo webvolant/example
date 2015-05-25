@@ -35,7 +35,7 @@ return array(
 	"digits"               => "Атрибут :attribute must be :digits digits.",
 	"digits_between"       => "Атрибут :attribute must be between :min and :max digits.",
 	"email"                => "Атрибут :attribute должен быть почтовым адресом.",
-	"exists"               => "Атрибут :attribute не верный, или не существует в базе данных.",
+	"exists"               => "Атрибут :attribute не верный, или его не существует в нашей базе данных. Возможно вы не записывались на прием?",
 	"image"                => "Атрибут :attribute должен быть изображением.",
 	"in"                   => "Атрибут selected :attribute is invalid.",
 	"integer"              => "Атрибут :attribute must be an integer.",

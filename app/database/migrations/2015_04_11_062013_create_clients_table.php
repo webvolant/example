@@ -18,6 +18,7 @@ class CreateClientsTable extends Migration {
             $table->text('comment');
 
             $table->timestamps();
+            $table->softDeletes();
         });
 
 

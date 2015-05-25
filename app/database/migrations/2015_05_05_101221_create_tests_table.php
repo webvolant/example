@@ -18,6 +18,8 @@ class CreateTestsTable extends Migration {
             $table->string('price', 255);
             $table->string('link_pivot', 255);
             $table->timestamps();
+            $table->softDeletes();
+
         });
 
 

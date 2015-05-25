@@ -11,6 +11,7 @@ class CreateEventsTable extends Migration {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
+            $table->softDeletes();
         });
 
 
@@ -38,6 +39,7 @@ class CreateEventsTable extends Migration {
             $table->text('comment')->nullable();
 
             $table->timestamps();
+            $table->softDeletes();
         });
 
 

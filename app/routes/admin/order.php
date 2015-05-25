@@ -254,10 +254,12 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
             }
         }
     ))->where('id', '[0-9]+');
-
-    Route::get('order/delete/{id}', array(
-        'as'=>'order/delete',
-        'uses'=>'AdminOrderController@delete'
-    ))->where('id', '[0-9]+');
-
 });
+
+    Route::group(array('prefix' => 'admin', 'before' => 'administrator'), function() {
+        Route::get('order/delete/{id}', array(
+            'as'=>'order/delete',
+            'uses'=>'AdminOrderController@delete'
+        ))->where('id', '[0-9]+');
+
+    });

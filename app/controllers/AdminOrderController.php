@@ -35,7 +35,9 @@ class AdminOrderController extends Controller {
     public function delete($id)
     {
         $user = Order::find($id);
+        //$user->events()->delete();
         $user->delete();
+        //Order::destroy($id);
         //$users = User::paginate(10);
         //return View::make('user::list',array('users'=>$users));
         return Redirect::route("order/index");

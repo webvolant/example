@@ -15,6 +15,20 @@
             if (value==2){
                 $("div#testsModal").modal('show');
                 $("#test_icon").show();
+                $("#krit2").hide();
+            }
+            if (value==0){
+                $("#test_icon").hide();
+                $("#krit2").show();
+            }
+            if (value==1){
+                $("#test_icon").hide();
+                $("#krit2").show();
+            }
+            if (value==3){
+                $("div#illnessModal").modal('show');
+                $("#test_icon").show();
+                $("#krit2").hide();
             }
         });
         //if($('#').exists()){

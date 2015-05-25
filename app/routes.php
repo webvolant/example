@@ -1,19 +1,19 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
 
-Route::get('/test', function(){
 
+Route::get('404', function(){
+    return View::make('error404',array());
 });
+
+Route::get('401', function(){
+    return View::make('error401',array());
+});
+
+Route::get('500', function(){
+    return View::make('error500',array());
+});
+
 
 Route::get('/', array('as' => '/',
     'uses' => 'HomeController@showHome'));
@@ -54,7 +54,7 @@ View::composer(array('front',
         */
 
 
-            $sidebar_libraries = "<div class='col-xs-12 col-sm-12 col-md-2'>
+            $sidebar_libraries = "<div class='pull-right col-xs-12 col-sm-12 col-md-2'>
                 <div class='sidebar_item'>
                     <p><a href='{{ URL::route('library') }}'>Медицинская библиотека</a></p>
                     <p>
@@ -83,11 +83,7 @@ View::composer(array('front',
             $view->with('specialisations', $specialisations); //массив специализаций
             $view->with('specialisations2', Speciality::all());
 
-
-
-            //Test::getNestedList()
-
-
+            $view->with('illness', Illness::all());
 
 
         });

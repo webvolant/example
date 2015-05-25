@@ -9,6 +9,8 @@
 
 class Order extends Eloquent {
 
+    use SoftDeletingTrait;
+
     protected $table = 'orders';
 
     public function user()

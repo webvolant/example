@@ -45,6 +45,7 @@ class CreateUsersTable extends Migration {
             $table->text('qualif');
 
             $table->string('logo');
+            $table->text('keywords');
 
 
             $table->string('status');
@@ -55,6 +56,7 @@ class CreateUsersTable extends Migration {
             //$table->string('key_klinika'); ключ на выпадающий список оператор
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

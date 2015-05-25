@@ -34,14 +34,18 @@
     @else
     @endif
     {{ Form::label('Полное описание') }}
-    {{ Form::textarea('description', null, array('class' => 'form-control', 'placeholder'=>'')) }}
+    {{ Form::textarea('description', null, array('id'=>'description','class' => 'form-control', 'placeholder'=>'')) }}
 </p>
 
-<script>
-    var a = "<? echo 'description' ?>" ;
-    CKEDITOR.replace( a );
+<script type="text/javascript">
+    CKEDITOR.replace( 'description' );
+    CKEDITOR.instances.description.setData($('input#description').val());
+    timer = setInterval(updateDiv,100);
+    function updateDiv(){
+        var editorText = CKEDITOR.instances.description.getData();
+        $( "[name='description']" ).val(editorText);
+    }
 </script>
-
 <p>
     @if ($errors->first('specialities'))
     <div class="alert alert-danger" role="alert"><?php echo $errors->first('specialities'); ?></div>

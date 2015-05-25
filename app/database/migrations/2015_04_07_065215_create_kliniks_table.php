@@ -22,6 +22,7 @@ class CreateKliniksTable extends Migration {
             $table->string('logo');
             $table->string('status');
             $table->string('price');
+            $table->text('keywords');
 
             $table->string('rating');
             $table->string('rating_second');
@@ -29,6 +30,7 @@ class CreateKliniksTable extends Migration {
 
             $table->string('type');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('user_kliniks', function($table)
@@ -39,6 +41,7 @@ class CreateKliniksTable extends Migration {
             $table->integer('klinik_id')->unsigned();
             $table->foreign('klinik_id')->references('id')->on('kliniks')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('photos', function($table)
@@ -52,6 +55,7 @@ class CreateKliniksTable extends Migration {
             //$table->integer('klinik_id')->unsigned();
             //$table->foreign('klinik_id')->references('id')->on('kliniks');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -9,6 +9,7 @@
 
 class Speciality extends Eloquent {
 
+    protected $softDelete = true;
     protected $table = 'specialities';
 
     public function Users()

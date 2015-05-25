@@ -28,15 +28,19 @@
 <div class="alert alert-danger" role="alert"><?php echo $errors->first('description'); ?></div>
 @else
 @endif
-{{ Form::label('Описание') }}
-{{ Form::text('description', null, array('class' => 'form-control', 'placeholder'=>'')) }}
+{{ Form::label('Краткое описание специальности') }}
+{{ Form::text('description', null, array('id'=>'description','class' => 'form-control', 'placeholder'=>'')) }}
 </p>
 
-<script>
-    var a = "<? echo 'description' ?>" ;
-    CKEDITOR.replace( a );
+<script type="text/javascript">
+    CKEDITOR.replace( 'description' );
+    CKEDITOR.instances.description.setData($('input#description').val());
+    timer = setInterval(updateDiv,100);
+    function updateDiv(){
+        var editorText = CKEDITOR.instances.description.getData();
+        $( "[name='description']" ).val(editorText);
+    }
 </script>
-
 <p>
     <?php echo $errors->first('specialisation'); ?>
     {{ Form::label('Направление') }}
@@ -48,13 +52,18 @@
 <div class="alert alert-danger" role="alert"><?php echo $errors->first('description_specialisation'); ?></div>
 @else
 @endif
-{{ Form::label('Краткое описание') }}
-{{ Form::text('description_specialisation', null, array('class' => 'form-control', 'placeholder'=>'')) }}
+{{ Form::label('Краткое описание направления') }}
+{{ Form::text('description_specialisation', null, array('id'=>'description_specialisation','class' => 'form-control', 'placeholder'=>'')) }}
 </p>
 
-<script>
-    var a = "<? echo 'description' ?>" ;
-    CKEDITOR.replace( a );
+<script type="text/javascript">
+    CKEDITOR.replace( 'description_specialisation' );
+    CKEDITOR.instances.description_specialisation.setData($('input#description_specialisation').val());
+    timer = setInterval(updateDiv,100);
+    function updateDiv(){
+        var editorText = CKEDITOR.instances.description_specialisation.getData();
+        $( "[name='description_specialisation']" ).val(editorText);
+    }
 </script>
 
 <p>

@@ -19,14 +19,28 @@
 @stop
 
 @section('specialities')
-@show
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        {{ Test::getColumnsWithLinks() }}
+    </div>
+
+
+</div>
+@stop
 
 @section('content')
+
+
 <div class="col-xs-12 col-sm-12 col-md-10">
 
-    @if (\Route::current()->parameter('spec')!=null)
-        {{ Speciality::find(\Route::current()->parameter('spec'))->first()->description_specialisation }}
+    @if (\Route::current()->parameter('diag')!=null)
+    {{ Test::where('link','=',\Route::current()->parameter('diag'))->first()->description }}
     @endif
+
+    @if (\Route::current()->parameter('area')!=null)
+    {{ Test::where('link','=',\Route::current()->parameter('area'))->first()->description }}
+    @endif
+
 
     <div class="row margin10">
         <?php $url = Helper::getUrlWithParams(); ?>
@@ -95,7 +109,7 @@
                         <p id="price_include" data-toggle="modal" data-target="#zapis_na_priem{{ $user->link }}" class="btn btn-success" ><span class="glyphicon glyphicon-edit"></span>  Онлайн запись</p></p>
 
                         <span class="h8_my">или по телефону: </span>
-                        <p class="orange_text_small">{{ $user->phone }} </p>
+                        <p class="orange_text_small">0312 986 900</p>
 
                             <?php $grafik = explode(";",$user->grafik); ?>
                             <span class="glyphicon glyphicon-time left h4_my"></span>
@@ -150,19 +164,25 @@
                     </div>
 
                     <div class="intro_doctor_kontakts">
-                       <span class="glyphicon glyphicon-map-marker"></span>{{  $user->address }}  <span class="glyphicon glyphicon-phone">     </span>{{ $user->phone }}
+                       <span class="glyphicon glyphicon-map-marker"></span>{{  $user->address }}  <span class="glyphicon glyphicon-phone">     </span>0312 986 900
                     </div>
 
-                @section('sidebar')
-                    {{ $sidebar_libraries }}
-                @stop
+
 
         </div>
     @endforeach
     </div>
 
+    <div class="col-xs-12 col-sm-12 col-md-2">
+        @section('sidebar')
+        {{ Test::getListWithLinks() }}
+        {{ $sidebar_libraries }}
+        @stop
+    </div>
+
         {{ $users->appends(Input::all())->links() }}
 </div>
+
 
 
 @stop

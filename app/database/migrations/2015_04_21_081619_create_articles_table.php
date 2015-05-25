@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration {
             $table->string('status');
 
             $table->text('description');
+            $table->text('keywords');
 
             $table->integer('operator_id')->unsigned()->nullable();
             $table->foreign('operator_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
@@ -26,7 +27,9 @@ class CreateArticlesTable extends Migration {
             $table->integer('speciality_id')->unsigned()->nullable();
             $table->foreign('speciality_id')->references('id')->on('specialities')->onDelete('cascade')->onUpdate('cascade');
 
+
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('articles', function ($table) {
@@ -36,6 +39,7 @@ class CreateArticlesTable extends Migration {
             $table->string('status');
 
             $table->text('description');
+            $table->text('keywords');
 
             $table->integer('operator_id')->unsigned()->nullable();
             $table->foreign('operator_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
@@ -44,6 +48,7 @@ class CreateArticlesTable extends Migration {
             $table->foreign('speciality_id')->references('id')->on('specialities')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
+            $table->softDeletes();
         });
 	}
 

@@ -27,7 +27,7 @@
 
 
     @if (\Route::current()->parameter('spec')!=null)
-    {{ Speciality::find(\Route::current()->parameter('spec'))->first()->description }}
+    {{ Speciality::where('id','=',\Route::current()->parameter('spec'))->first()->description }}
     @endif
 
 
@@ -195,7 +195,7 @@
 
 
             @section('sidebar')
-                <div class="col-xs-12 col-sm-12 col-md-2">
+                <div class="pull-right col-xs-12 col-sm-12 col-md-2">
                     <p class="h6_my_bold">Специальности</p>
                     <ul class="list">
                         @foreach($specialities as $key => $item)

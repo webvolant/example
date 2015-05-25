@@ -7,6 +7,8 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class Klinika extends Eloquent {
 
+
+    protected $softDelete = true;
 	protected $table = 'kliniks';
 
     public function crms()

@@ -8,6 +8,7 @@
 
 class Otziv extends Eloquent {
 
+    protected $softDelete = true;
     protected $table = 'otzivi';
 
 }

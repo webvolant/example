@@ -184,6 +184,35 @@
                                 </div>
                             </div>
 
+
+                            <div class="modal fade" id="illnessModal" tabindex="-1" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header"><button class="close" type="button" data-dismiss="modal">x</button>
+                                            <h4 class="modal-title" id="myModalLabel">Выберите заболевание</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="column3">
+                                                <?php $temp='А'; ?>
+                                                @foreach($illness as $key => $item)
+
+                                                @if (substr($item->name, 0 , 2)!=substr($temp, 0, 2))
+                                                <h4><br/>{{ substr($item->name, 0 , 2) }} </h4>
+                                                @endif
+                                                <?php $temp = $item->name; ?>
+
+                                                <h5><li><a href='{{ URL::route("illness/detail", array($item->link)) }}'>{{ $item->name }}</a></li></h5>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
                         <div class="col-xs-offset-2 col-xs-2 col-sm-offset-0 col-sm-2 col-md-offset-0 col-md-1">
                                 <div class="pull-right">{{ Form::submit( "Искать", array('class' => 'btn btn-warning')) }}</div>
@@ -296,9 +325,14 @@
             @show
 
 
+
             @section('sidebar')
 
+
+
+
             @show
+
 
 
             @section('info')

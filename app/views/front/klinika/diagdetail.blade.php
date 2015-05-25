@@ -134,7 +134,7 @@
                 </div>
             </div>
             <span class="h8_my">или по телефону: </span>
-            <p class="orange_text_small">{{ $user->phone }} </p>
+            <p class="orange_text_small">0312 986 900</p>
         </div>
 
     </div>

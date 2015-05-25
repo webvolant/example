@@ -8,6 +8,7 @@
 
 class Status extends Eloquent{
 
+    protected $softDelete = true;
     protected $table = 'status';
 
 

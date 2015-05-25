@@ -49,19 +49,31 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
+    //return Redirect::to('404', array('code'=>$code,'url' => Request::url()));
 });
 
+/*
 App::missing(function($exception)
 {
     //Try URL::previous()
     return View::make('not-found')->withMessage($exception->getMessage());
 });
-/*
+*/
+
 App::missing(function($exception)
 {
-    return Response::view('not-found', array(), 404);
+    return Response::view('error404', array(), 401);
 });
-*/
+
+App::missing(function($exception)
+{
+    return Response::view('error404', array(), 404);
+});
+
+App::missing(function($exception)
+{
+    return Response::view('error404', array(), 500);
+});
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler

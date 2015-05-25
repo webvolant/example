@@ -24,8 +24,11 @@ class CreateOrdersTable extends Migration {
             $table->string('name', 255);
             $table->string('link', 255);
             $table->string('status', 255);
+            $table->text('keywords');
+            $table->text('description');
 
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('orders', function ($table) {
@@ -54,6 +57,7 @@ class CreateOrdersTable extends Migration {
             $table->foreign('diag_id')->references('id')->on('tests')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('otzivi', function ($table) {
@@ -85,6 +89,7 @@ class CreateOrdersTable extends Migration {
 
 
             $table->timestamps();
+            $table->softDeletes();
         });
 
 

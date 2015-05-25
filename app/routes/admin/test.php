@@ -38,12 +38,16 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function()
                 $root = Test::find($parent_id);
                 $cat = $root->children()->create(['name' => Input::get('name')]);
                 $cat->link = Helper::alias(Input::get('name'));
+                $cat->description = Input::get('description');
+                $cat->keywords = Input::get('keywords');
                 $cat->save();
             }else{
                 $node = new Test();
                 $node->parent_id = null;
                 $node->name = Input::get('name');
                 $node->link = Helper::alias(Input::get('name'));
+                $node->description = Input::get('description');
+                $node->keywords = Input::get('keywords');
                 $node->save();
             }
             return Redirect::route('test/index')->withInput();
@@ -69,6 +73,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function()
                 $node->parent_id = $parent_id;
                 $node->name = Input::get('name');
                 $node->link = Helper::alias(Input::get('name'));
+                $node->description = Input::get('description');
+                $node->keywords = Input::get('keywords');
                 $node->save();
                 return Redirect::route('test/index')->withInput();
             }else{

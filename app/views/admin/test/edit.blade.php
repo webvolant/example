@@ -25,6 +25,25 @@
     {{ Form::select('parent_id', $list, null, array('class' => 'form-control')) }}
 </p>
 
+<p>
+    @if ($errors->first('description'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('description'); ?></div>
+@else
+@endif
+{{ Form::label('Описание') }}
+{{ Form::text('description', null, array('id'=>'description','class' => 'form-control', 'placeholder'=>'')) }}
+</p>
+
+<script type="text/javascript">
+    CKEDITOR.replace( 'description' );
+    CKEDITOR.instances.description.setData($('input#description').val());
+    timer = setInterval(updateDiv,100);
+    function updateDiv(){
+        var editorText = CKEDITOR.instances.description.getData();
+        $( "[name='description']" ).val(editorText);
+    }
+</script>
+
 
 <p>
     {{ Form::submit( 'Отправить', array('class' => 'btn btn-primary')) }}

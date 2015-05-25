@@ -12,6 +12,8 @@ class Test extends Node {
    *
    * @var string
    */
+    //protected $softDelete = true;
+
     protected $table = 'tests';
     protected $orderColumn = 'lft';
 
@@ -39,6 +41,69 @@ class Test extends Node {
                 $cap .= "<p id='$test->id'><a class='h6_my margin-left10' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></p>';
             }elseif ($test->getLevel()==3) {
                 $cap .= "<p id='$test->id'><a class='h6_my margin-left20' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></p>';
+            }
+        }
+
+        return $cap;
+    }
+
+    //на лист диагностических центров
+    public static function getColumnsWithLinks(){
+        $tests = Test::where('name','!=','root')->orderBy('lft')->get();
+        $cap = "";
+
+        foreach($tests as $test){
+            $parent_link = $test->parent()->first()->link;
+            if ($parent_link == 'root' ){
+                $cap.= '</ul>';
+                $cap.= '<ul class="list col-xs-12 col-sm-2 col-md-2">';
+                if ($test->getLevel()==1){
+                    $cap .= "<li><a class='h6_my_bold' href='"."/diagnostica/centers/$test->link"."'>".$test->name.'</a></li>';
+                }elseif ($test->getLevel()==2) {
+                    $cap .= "<li><a class='h6_my_bold margin-left10' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></li>';
+                }elseif ($test->getLevel()==3) {
+                    $cap .= "<li><a class='h6_my_bold margin-left20' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></li>';
+                }
+            }
+            else{
+                if ($test->getLevel()==1){
+                    $cap .= "<li><a class='h6_my' href='"."/diagnostica/centers/$test->link"."'>".$test->name.'</a></li>';
+                }elseif ($test->getLevel()==2) {
+                    $cap .= "<li><a class='h6_my margin-left10' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></li>';
+                }elseif ($test->getLevel()==3) {
+                    $cap .= "<li><a class='h6_my margin-left20' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></li>';
+                }
+            }
+        }
+
+        return $cap;
+    }
+
+    public static function getListWithLinks(){
+        $tests = Test::where('name','!=','root')->orderBy('lft')->get();
+        $cap = "";
+
+        foreach($tests as $test){
+            $parent_link = $test->parent()->first()->link;
+            if ($parent_link == 'root' ){
+                $cap.= '</ul>';
+                $cap.= '<ul class="list">';
+                if ($test->getLevel()==1){
+                    $cap .= "<li><a class='h6_my_bold' href='"."/diagnostica/centers/$test->link"."'>".$test->name.'</a></li>';
+                }elseif ($test->getLevel()==2) {
+                    $cap .= "<li><a class='h6_my_bold margin-left10' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></li>';
+                }elseif ($test->getLevel()==3) {
+                    $cap .= "<li><a class='h6_my_bold margin-left20' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></li>';
+                }
+            }
+            else{
+                if ($test->getLevel()==1){
+                    $cap .= "<li><a class='h6_my' href='"."/diagnostica/centers/$test->link"."'>".$test->name.'</a></li>';
+                }elseif ($test->getLevel()==2) {
+                    $cap .= "<li><a class='h6_my margin-left10' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></li>';
+                }elseif ($test->getLevel()==3) {
+                    $cap .= "<li><a class='h6_my margin-left20' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></li>';
+                }
             }
         }
 

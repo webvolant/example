@@ -9,6 +9,7 @@
 
 class Crm extends Eloquent {
 
+    protected $softDelete = true;
     protected $table = 'crms';
 
     public function user()

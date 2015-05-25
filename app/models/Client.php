@@ -9,6 +9,7 @@
 
 class Client extends Eloquent {
 
+    protected $softDelete = true;
     protected $table = 'clients';
 
 
