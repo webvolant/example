@@ -65,6 +65,11 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         'uses'=>'AdminController@dashboard'));
 
 
+    Route::get('clean', array(
+        'as'=>'clean',
+        'uses'=>'AdminController@cleanCache'
+    ));
+
 });
 
 
@@ -169,10 +174,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'administrator'), function()
 
 
 
-    Route::get('clean', array(
-        'as'=>'clean',
-        'uses'=>'AdminController@cleanCache'
-    ));
+
 });
 
 //Удаление оператора только админу
