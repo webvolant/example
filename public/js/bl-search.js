@@ -4,11 +4,6 @@
 
 (function( $ ){
 
-    /*
-    jQuery.fn.exists = function() {
-        return jQuery(this).length;
-    }
-*/
     $(function() {
         $("select#krit1").change(function(){
             var value = $("select#krit1 option:selected").val();
@@ -31,8 +26,6 @@
                 $("#krit2").hide();
             }
         });
-        //if($('#').exists()){
-        //}
     });
 
     $(function() {
