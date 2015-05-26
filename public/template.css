@@ -495,7 +495,7 @@ a:hover{
 }
 
 .doctor1{
-    background: url("template_image/doctor1.png") top left no-repeat;
+    /*background: url("template_image/doctor1.png") top left no-repeat;*/
     background-size: contain; /* Масштабируем фон */
     min-height:108px;
     margin-top: 10px;
