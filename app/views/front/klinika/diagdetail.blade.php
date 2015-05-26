@@ -32,7 +32,10 @@
 <div class="border col-md-12">
     <div class="col-md-7 block1">
             <div class="row">
-                <span class="h3_my margin20 line75">{{ $user->name }}</span>
+                <div class="col-xs-12 col-sm-8 col-md-8">
+                    <span class="h3_my margintop20">{{ $user->name }}</span>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
                     <div class="pull-right margin10 right20">
                         @if ($user->rating)
                         <p class="orange_text_big">{{ round($user->rating,1) }}</p>
@@ -52,6 +55,7 @@
                         @endif
                     </div>
                 </div>
+            </div>
 
 
             <div class="clear">
@@ -252,7 +256,7 @@
         </div><!-- col-md-7 -->
 
         <div class="col-md-3">
-            <div class="pull-left margin20">
+            <div class="pull-left margin10">
                 @if ($user->count_otzivi)
                 <p class="orange_text_big">{{ $user->count_otzivi }}</p>
                 <p class="line0"><span><?php echo strstr(Lang::choice('mydoc.ot',  $user->count_otzivi, ['n' =>  $user->count_otzivi], 'ru'),"о"); ?></span></p>
@@ -261,12 +265,12 @@
                 <p class="line0"><span> <?php echo strstr(Lang::choice('mydoc.ot',  0, ['n' =>  0], 'ru'),"о"); ?></span></p>
                 @endif
             </div>
-            <div class="pull-left margin20">
+            <div class="pull-left margin10">
                 @if ($user->rating)
                 <p class="orange_text_big">{{ round($user->rating,1) }}</p>
                 <p class="line0"><span>рейтинг</span></p>
                 @else
-                <p class="orange_text_big">{{ $user->rating_second }}</p>
+                <p class="orange_text_big">1</p>
                 <p class="line0"><span>рейтинг</span></p>
                 @endif
             </div>

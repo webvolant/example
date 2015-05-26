@@ -115,6 +115,17 @@
 </p>
 
 <p>
+    @if ($errors->first('images'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('images'); ?></div>
+@else
+@endif
+{{ Form::label('Изображения клиники - выделите сразу несколько изображений для загрузки') }}
+{{ Form::file('images[]', array('multiple'=>'true', 'class' => 'form-control')) }}
+
+</p>
+
+
+<p>
     @if ($errors->first('description'))
 <div class="alert alert-danger" role="alert"><?php echo $errors->first('description'); ?></div>
 @else

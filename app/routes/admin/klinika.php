@@ -138,11 +138,35 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 }
 
                 if (Input::hasFile('images')) {
-                    $dir = '/uploads'.date('/Y/m/d/');
+                    $dir = '/uploads/kliniks'.date('/Y/'.$klinika->id.'/');
+                    $i = 1;
                     foreach(Input::file('images') as $image)
                     {
-                        $filename = str_random(10).'.jpg';
+                        $photodb = new Photo();
+                        $filename = $i.'.jpg';
+
                         $image->move(public_path().$dir, $filename);
+
+                        $img = Image::make(public_path().$dir.$filename);
+                        $img->resize(460, 280);
+                        $img->insert(public_path().'/template_image/watermark.png');
+                        //$img->insert('public/watermark.png');
+                        $img->save(public_path().$dir.'thumb_'.$filename);
+                        $photodb->path_small = $dir.'thumb_'.$filename;
+
+
+                        $img_big = Image::make(public_path().$dir.$filename);
+                        $img_big->resize(720, 640);
+
+                        $img_big->insert(public_path().'/template_image/watermark.png');
+
+                        $img_big->save(public_path().$dir.'big_'.$filename);
+                        $photodb->path_big = $dir.'big_'.$filename;
+
+                        $photodb->path = $dir. $filename;
+                        $photodb->klinik_id = $klinika->id;
+                        $photodb->save();
+                        $i++;
                     }
                 }
                 return Redirect::route('klinika/index');
