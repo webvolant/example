@@ -128,7 +128,9 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                     $image = Input::file('logo');
                     $image->move(public_path().$dir, $filename);
                     $img = Image::make(public_path().$dir.$filename);
-                    $img->resize(240, 320);
+                    $img->resize(150, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    });
                     $img->insert(public_path().'/template_image/watermark.png');
                     $img->save(public_path().$dir.'thumb_'.$filename);
                     $klinika->logo = $dir.'thumb_'.$filename;
@@ -208,7 +210,9 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                     $image = Input::file('logo');
                     $image->move(public_path().$dir, $filename);
                     $img = Image::make(public_path().$dir.$filename);
-                    $img->resize(150, 150);
+                    $img->resize(150, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    });
                     $img->insert(public_path().'/template_image/watermark.png');
                     $img->save(public_path().$dir.'thumb_'.$filename);
                     $klinika->logo = $dir.'thumb_'.$filename;
