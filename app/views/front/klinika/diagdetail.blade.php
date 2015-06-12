@@ -62,8 +62,8 @@
                 <div class="car_pic">
                     @foreach ( $photos as $key => $item)
                     <div class="">
-                        <a class="fancybox" rel="gallery1" href="http://doctors/public/<?php echo $item->path_big; ?>">
-                            {{ HTML::image($item->path_small); }}
+                        <a class="fancybox" rel="gallery1" href="<?php echo url().'/'.$item->path_big; ?>">
+                            {{ HTML::image($item->path_small) }}
                         </a>
                     </div>
                     @endforeach
@@ -379,15 +379,6 @@ $(document).ready(function() {
     $(".fancybox").fancybox({
         openEffect	: 'none',
         closeEffect	: 'none'
-    });
-
-
-    //добавить комментарий в заявке
-    $(".hidden2").hide();
-    $("a.user_phone2_a").click(function(e){
-        e.preventDefault();
-        var $id = $(this).attr('id');
-        $("#user_phone2_comment"+$id).toggle();
     });
 
 

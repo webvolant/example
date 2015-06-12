@@ -62,7 +62,18 @@
 
 
 
+.form-control, .btn {
+    border-radius: 5px;
+}
+.form-control {
+    border: 1px solid rgba(53, 126, 189, 0.21);
+    height:45px;
+    font-size: 16px;
+}
 
+.width250 {
+    min-width: 250px;
+}
 
 
 
@@ -194,6 +205,11 @@ a:hover{
     right: 20px;
 }
 
+.padding_left_right{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 .paddingtop15{
     padding-top: 15px;
 }
@@ -222,7 +238,7 @@ a:hover{
     display: block;
     min-height: 200px;
     margin-top: 20px;
-    background: deepskyblue;
+    /*background: deepskyblue;*/
 }
 
 .about_list {
@@ -489,7 +505,7 @@ a:hover{
 }
 
 .logo{
-    background: url("template_image/logotype.png") top center no-repeat;
+    background: url("template_image/logotype.png") bottom center no-repeat;
     background-size: contain; /* Масштабируем фон */
     min-height:100px;
 
@@ -523,6 +539,7 @@ a:hover{
     font-size: 16px;
     line-height: 33px;
     text-shadow:none;
+    padding: 10px 54px;
 }
 
 .navbar {

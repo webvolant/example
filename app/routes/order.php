@@ -171,46 +171,64 @@ Route::post('/order-new', array(
         );
         $validation = Validator::make(Input::all(), $rules);
             if ($validation->passes()){
-                //$client = 0;
-                //var_dump(Input::get('phone'));
-                $id = 0;
-                $phone = Input::get('phone');
-                if ($phone == null || $phone==""){
-                    return "Заполните поле телефон пожалуйста.";
-                }
 
-                $client = Client::where('phone','LIKE', "%$phone%")->exists();
 
-                if ($client==false){
-                    $client2 = new Client();
-                    $client2->phone = $phone;
-                    $client2->save();
-                    $id = $client2->id;
+
+                $access = 0;
+                $ip = Request::ip();
+                $deny = file('ip.txt');
+                foreach ($deny as $item):
+                    if(trim($item) == $ip) $access++;
+                endforeach;
+                if($access > 0 OR empty($ip)){
+                    $data['flag'] = 0;
+                    $data['data'] = "C вашего ip адреса уже был отправлен запрос, пожалуйста подождите 15 минут и попробуйте снова...";
+                    return $data;
                 }else{
-                    $cl = Client::where('phone','LIKE', "%$phone%")->first();
-                    $id = $cl->id;
+                    file_put_contents('ip.txt',  $ip."\n" , FILE_APPEND);
+
+
+
+
+                    $id = 0;
+                    $phone = Input::get('phone');
+                    if ($phone == null || $phone==""){
+                        return "Заполните поле телефон пожалуйста.";
+                    }
+
+                    $client = Client::where('phone','LIKE', "%$phone%")->exists();
+
+                    if ($client==false){
+                        $client2 = new Client();
+                        $client2->phone = $phone;
+                        $client2->save();
+                        $id = $client2->id;
+                    }else{
+                        $cl = Client::where('phone','LIKE', "%$phone%")->first();
+                        $id = $cl->id;
+                    }
+
+                    $order = new Order();
+                    $order->client_id = $id;
+                    $order->global_status = "0";
+                    $order->save();
+
+                    $event = new Eventer();
+                    $event->order_id = $order->id;
+                    //$event->status_id = '';
+                    $event->flag = '4';
+                    $event->comment = 'Событие создано при помощи формы на главной странице';
+
+                    $event->date_begin = date('d:m:Y H:i', time());
+                    $event->date_end = date('d.m.Y H:i', strtotime("+3 hours", time()));
+
+                    //$event->user_id = Auth::user()->id;
+                    $event->save();
+
+                    $data['flag'] = 1;
+                    $data['data'] = "Ваша заявка на прием отправлена. Наши консультанты свяжутся с Вами в течении 15 минут ежедневно в с 9:00 до 21:00 и запишут Вас на прием.";
+                    return $data;
                 }
-
-                $order = new Order();
-                $order->client_id = $id;
-                $order->global_status = "0";
-                $order->save();
-
-                $event = new Eventer();
-                $event->order_id = $order->id;
-                //$event->status_id = '';
-                $event->flag = '4';
-                $event->comment = 'Событие создано при помощи формы на главной странице';
-
-                $event->date_begin = date('d:m:Y H:i', time());
-                $event->date_end = date('d.m.Y H:i', strtotime("+3 hours", time()));
-
-                //$event->user_id = Auth::user()->id;
-                $event->save();
-
-                $data['flag'] = 1;
-                $data['data'] = "Ваша заявка на прием отправлена. Наши консультанты свяжутся с Вами в течении 15 минут ежедневно в с 9:00 до 21:00 и запишут Вас на прием.";
-                return $data;
             }
             else{
                 $data['flag'] = 0;

@@ -95,11 +95,11 @@
 <div class="container">
     <div class="row header">
             @section('header')
-                <div class=" col-xs-12 col-sm-6 col-md-3">
+                <div class=" col-xs-12 col-sm-6 col-md-4 paddingtop15">
                     <div class="logo"></div>
                 </div>
 
-                <div class="col-xs-7 col-sm-6 col-md-3">
+                <div class="col-xs-7 col-sm-6 col-md-2 paddingtop15">
                         <ul class="list">
                             <li><span class="orange_text">{{ $orders }} </span><?php echo strstr(Lang::choice('mydoc.orders', $orders, ['n' => $orders], 'ru'),"з"); ?> к врачам</li>
                             <li><span class="orange_text">{{ $docs }} </span><?php echo strstr(Lang::choice('mydoc.docs', $docs, ['n' => $docs], 'ru'),"в"); ?> в базе</li>
@@ -114,10 +114,12 @@
                 <div class="col-xs-12 col-sm-offset-1 col-sm-6 col-md-offset-0 col-md-4">
                     <div class="form-group form-inline order_form">
                         <?php echo $errors->first('phone_main'); ?>
-                        {{ Form::label('Для записи на прием, впишите номер:') }}
-                        {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control', 'placeholder'=>'0(___) __ __ __')) }}
+
+                        <p class="h3_my">Поможем найти врача<br/>
+                            звоните <span class="orange_text">0(312) 98-69-00</span></p>
+                        {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control width250', 'placeholder'=>'0(___) __ __ __')) }}
                         {{ Form::submit( "Отправить", array('class' => 'form-control btn_submit_main btn btn-warning submit_send_order')) }}
-                        <p>или звоните {{ Form::label(' 0312 986 900') }}</p>
+
 
                     </div>
                 </div>
@@ -129,18 +131,19 @@
 
                     @section('search')
 
-                        <div class="col-xs-12 col-sm-12 col-md-3">
-                            {{ Form::open(array('url' => 'search', 'role' => 'form', 'class' => '')) }}
-                            <div class="form-group">
-                                <h5 class="blau_text">Воспользуйтесь поиском!</h5>
-                            </div>
-                        </div>
+                <!--<div class="col-xs-12 col-sm-12 col-md-3">
 
-                        <div class="col-xs-4 col-sm-5 col-md-4">
+                    <div class="form-group">
+                        <h5 class="blau_text"></h5>
+                            </div>
+                        </div>-->
+
+                        <div class="col-xs-4 col-sm-5 col-md-5 padding_left_right">
+                            {{ Form::open(array('url' => 'search', 'role' => 'form', 'class' => '')) }}
                                 <div class="form-group">
 
                                     <select id="krit1" name="krit1" class="form-control">
-                                        <option value="">Искать по</option>
+                                        <option value="">Искать</option>
                                         @foreach ($search1 as $key => $item)
                                         <option value="{{ $key }}">{{ $item }}</option>
                                         @endforeach
@@ -149,7 +152,7 @@
                                 </div>
                         </div>
 
-                        <div class="col-xs-4 col-sm-5 col-md-4">
+                        <div class="col-xs-4 col-sm-5 col-md-5 padding_left_right">
                             <div class="form-group">
                                 <a id="test_icon" class="pull-left" data-toggle="modal" data-target="#testsModal" class="btn btn-info btn-sm" ><span class="glyphicon glyphicon-edit"></span></a>
                                 <select id="krit2" name="krit2" class="form-control">
@@ -214,8 +217,8 @@
 
 
                         </div>
-                        <div class="col-xs-offset-2 col-xs-2 col-sm-offset-0 col-sm-2 col-md-offset-0 col-md-1">
-                                <div class="pull-right">{{ Form::submit( "Искать", array('class' => 'btn btn-warning')) }}</div>
+                        <div class="col-xs-offset-2 col-xs-2 col-sm-offset-0 col-sm-2 col-md-offset-0 col-md-2 padding_left_right">
+                                <div class="">{{ Form::submit( "Начать поиск", array('class' => 'form-control btn btn-warning')) }}</div>
                             </div>
                         {{ Form::close() }}
                     @show
@@ -228,7 +231,7 @@
                     <div class="container-fluid">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span>
+                                <span class="sr-only">Навигация</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -239,7 +242,7 @@
                                 <li><a href="{{ URL::route('/') }}"><span class="glyphicon glyphicon-home"></span> Главная</a></li>
                                 <li><a href="{{ URL::to('doctor/doctors') }}"><span class="glyphicon glyphicon-user"></span> Врачи</a></li>
                                 <li><a href="{{ URL::to('clinics/all') }}"><span class="glyphicon glyphicon-plus"></span> Клиники</a></li>
-                                <li><a href="{{ URL::to('diagnostica/centers') }}"><span class="glyphicon glyphicon-search"></span> Диагностические центры</a></li>
+                                <li><a href="{{ URL::to('diagnostica/centers') }}"><span class="glyphicon glyphicon-search"></span> Диагностические центры и лаборатории</a></li>
                             </ul>
                         </div><!--/.nav-collapse -->
                     </div><!--/.container-fluid -->
@@ -299,7 +302,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-9 ">
+            <div class="col-xs-12 col-sm-12 col-md-9 margintop20">
 
                 <div class="i-doctor_l col-md-3 hidden-xs hidden-sm">
                 </div>
@@ -433,11 +436,14 @@
             'height'	: '130px'
         });
 
+
+
         //добавить комментарий в заявке
         $(".hidden2").hide();
         $("a.user_phone2_a").click(function(e){
             e.preventDefault();
             var $id = $(this).attr('id');
+            //window.alert($id);
             $("#user_phone2_comment"+$id).toggle();
         });
 
@@ -470,6 +476,7 @@
             e.preventDefault();
             var phone = $("#phone").val();
                 $.post('/order-new', {phone:phone},function(data){
+                    console.log(data);
                     if (data['flag']=='0')
                         swal({
                             title: 'Заявка не принята',
@@ -491,10 +498,10 @@
         $(".submit_send_order_doctor").click(function(e){
             e.preventDefault();
             var phone = $(this).parents('.modal').find("#phone").val();
-            var doctor_id = $( "[name='doctor_id']" ).val();
-            var pacient = $( "[name='pacient']" ).val();
-            var name = $( "[name='name']" ).val();
-            var comment = $( "[name='comment']" ).val();
+            var doctor_id = $(this).parents('.modal').find( "[name='doctor_id']" ).val();
+            var pacient = $(this).parents('.modal').find( "[name='pacient']" ).val();
+            var name = $(this).parents('.modal').find( "[name='name']" ).val();
+            var comment = $(this).parents('.modal').find( "[name='comment']" ).val();
             $.post('/order-new-doctor', {phone:phone,doctor_id:doctor_id,comment:comment,name:name,pacient:pacient},function(data){
 
                     // do something…
@@ -522,10 +529,10 @@
         $(".submit_send_order_klinika").click(function(e){
             e.preventDefault();
             var phone = $(this).parents('.modal').find("#phone").val();
-            var klinik_id = $( "[name='klinik_id']" ).val();
-            var pacient = $( "[name='pacient']" ).val();
-            var name = $( "[name='name']" ).val();
-            var comment = $( "[name='comment']" ).val();
+            var klinik_id = $(this).parents('.modal').find( "[name='klinik_id']" ).val();
+            var pacient = $(this).parents('.modal').find( "[name='pacient']" ).val();
+            var name = $(this).parents('.modal').find( "[name='name']" ).val();
+            var comment = $(this).parents('.modal').find( "[name='comment']" ).val();
             $.post('/order-new-klinika', {phone:phone,klinik_id:klinik_id,comment:comment,name:name,pacient:pacient},function(data){
                 if (data['flag']=='0')
                     swal({
@@ -550,11 +557,11 @@
 
             e.preventDefault();
             var phone = $(this).parents('.modal').find("#phone").val();
-            var klinik_id = $( "[name='klinik_id']" ).val();
-            var pacient = $( "[name='pacient']" ).val();
-            var name = $( "[name='name']" ).val();
-            var comment = $( "[name='comment']" ).val();
-            var diag_id = $( "[name='diag_id']" ).val();
+            var klinik_id = $(this).parents('.modal').find( "[name='klinik_id']" ).val();
+            var pacient = $(this).parents('.modal').find( "[name='pacient']" ).val();
+            var name = $(this).parents('.modal').find( "[name='name']" ).val();
+            var comment = $(this).parents('.modal').find( "[name='comment']" ).val();
+            var diag_id = $(this).parents('.modal').find( "[name='diag_id']" ).val();
             $.post('/order-new-klinika', {phone:phone,klinik_id:klinik_id,comment:comment,name:name,pacient:pacient,diag_id:diag_id},function(data){
                 if (data['flag']=='0')
                     swal({

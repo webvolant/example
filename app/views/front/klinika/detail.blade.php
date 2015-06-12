@@ -61,8 +61,8 @@
                 <div class="car_pic">
                     @foreach ( $photos as $key => $item)
                     <div class="">
-                        <a class="fancybox" rel="gallery1" href="http://doctors/public/<?php echo $item->path_big; ?>">
-                            {{ HTML::image($item->path_small); }}
+                        <a class="fancybox" rel="gallery1" href="<?php echo url().'/'.$item->path_big; ?>">
+                            {{ HTML::image($item->path_small) }}
                         </a>
                     </div>
                     @endforeach
@@ -119,7 +119,7 @@
                                     {{ Form::radio('pacient', 'big', true); }} Взрослый
                                 </p>
 
-                                <p><a href="#" id="{{ $user->id }}"class="user_phone2_a">Добавить комментарий</a></p>
+                                <p><a href="" id="{{ $user->id }}" class="user_phone2_a">Добавить комментарий</a></p>
                                 <p>{{ Form::textarea('comment', null, array('class' =>'hidden2 form-control', 'id'=>"user_phone2_comment$user->id", 'placeholder'=>'Ваш комментарий')) }}</p>
 
                                 <p>{{ Form::submit( "Отправить", array('class' => 'btn_submit btn btn-warning submit_send_order_klinika')) }}</p>
@@ -349,13 +349,7 @@ $(document).ready(function() {
     });
 
 
-    //добавить комментарий в заявке
-    $(".hidden2").hide();
-    $("a.user_phone2_a").click(function(e){
-        e.preventDefault();
-        var $id = $(this).attr('id');
-        $("#user_phone2_comment"+$id).toggle();
-    });
+
 
 
     //как собираем отзывы

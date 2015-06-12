@@ -73,7 +73,19 @@ return array(
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
         ),
-*/
+
+
+        'mysql' => array(
+            'driver'    => 'mysql',
+            'host'      => 'mysql6.locum.ru',
+            'database'  => 'slide11_my-doc64',
+            'username'  => 'slide11_my-doc64',
+            'password'  => 'gzoeXOiucP',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+        ),
+    */
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',

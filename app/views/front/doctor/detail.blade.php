@@ -170,7 +170,7 @@ $grafik_arr = explode(";", $user->grafik);
                                                 {{ Form::radio('pacient', 'big', true); }} Взрослый
                                             </p>
 
-                                            <p><a href="" id="{{ $user->id }}"class="user_phone2_a">Добавить комментарий</a></p>
+                                            <p><a href="" id="{{ $user->id }} "class="user_phone2_a">Добавить комментарий</a></p>
                                             <p>{{ Form::textarea('comment', null, array('class' =>'hidden2 form-control', 'id'=>"user_phone2_comment$user->id", 'placeholder'=>'Ваш комментарий')) }}</p>
 
                                             <p>{{ Form::submit( "Отправить", array('class' => 'btn_submit btn btn-warning submit_send_order_doctor')) }}</p>
