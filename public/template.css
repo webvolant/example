@@ -234,11 +234,12 @@ a:hover{
 }
 
 .i-doctor_l {
-    /*background: url("/template_image/doctor2.png") no-repeat scroll right center rgba(0, 0, 0, 0);*/
+    background: url("/template_image/doctor2.jpg") no-repeat scroll right center rgba(0, 0, 0, 0);
+    background-size: 140%;
+    background-position-x: 0px;
     display: block;
-    min-height: 200px;
-    margin-top: 20px;
-    /*background: deepskyblue;*/
+    min-height: 400px;
+    margin-top: 21px;
 }
 
 .about_list {
@@ -285,24 +286,24 @@ a:hover{
 
 .i-sicklist {
     background: url("/template_image/icons/i-sicklist.png") no-repeat scroll center center rgba(0, 0, 0, 0);
-    background-size: 85px;
+    background-size: 70px;
     display: block;
-    min-height: 120px;
+    min-height: 100px;
 
 }
 
 .i-pacientlib {
     background: url("/template_image/icons/i-pacientlib.png") no-repeat scroll center center rgba(0, 0, 0, 0);
-    background-size: 85px;
+    background-size: 70px;
     display: block;
-    min-height: 120px;
+    min-height: 100px;
 }
 
 .i-diagcenters {
     background: url("/template_image/icons/i-diagcenters.png") no-repeat scroll center center rgba(0, 0, 0, 0);
-    background-size: 85px;
+    background-size: 70px;
     display: block;
-    min-height: 120px;
+    min-height: 100px;
 }
 
 .sidebar_item {
@@ -505,10 +506,14 @@ a:hover{
 }
 
 .logo{
-    background: url("template_image/logotype.png") bottom center no-repeat;
-    background-size: contain; /* Масштабируем фон */
+    background: url("template_image/logotype5.png") bottom center no-repeat;
+    background-size: cover; /* Масштабируем фон */
     min-height:100px;
 
+}
+
+.header .logo{
+    background-position: 5px;
 }
 
 .order_form{
@@ -516,9 +521,10 @@ a:hover{
 }
 
 .doctor1{
-    /*background: url("template_image/doctor1.png") top left no-repeat;*/
-    background-size: contain; /* Масштабируем фон */
-    min-height:108px;
+    background: url("template_image/doctor1.jpg") top left no-repeat;
+    background-position-y: -30px;
+    background-size: 137%;
+    min-height: 136px;
     margin-top: 10px;
 
 }

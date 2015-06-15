@@ -330,13 +330,7 @@
 
 
             @section('sidebar')
-
-
-
-
             @show
-
-
 
             @section('info')
             @show

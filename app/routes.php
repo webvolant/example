@@ -54,29 +54,28 @@ View::composer(array('front',
         */
 
 
-            $sidebar_libraries = "<div class='pull-right col-xs-12 col-sm-12 col-md-2'>
-                <div class='sidebar_item'>
-                    <p><a href='{{ URL::route('library') }}'>Медицинская библиотека</a></p>
+            $sidebar_libraries = '<div class="pull-right col-xs-12 col-sm-12 col-md-2">
+                <div class="sidebar_item">
+                    <p><a href='.URL::route('library').'>Медицинская библиотека</a></p>
                     <p>
                         Полезные статьи о заболеваниях, современных методах лечения и диагностиках.
                     </p>
                 </div>
 
-                <div class='sidebar_item'>
-                    <p><a href='{{ URL::route('library') }}'>Диагностические центры</a></p>
+                <div class="sidebar_item">
+                    <p><a href='.URL::to('diagnostica/centers').'>Диагностические центры</a></p>
                     <p>
                         Вам нужно провести диагностику или обследование? Специализированный портал поможет подобрать диагностический центр рядом с домом.
                     </p>
                 </div>
 
-                <div class='sidebar_item'>
-                    <p><a href='{{ URL::route('illness') }}'>Справочник заболеваний</a></p>
+                <div class="sidebar_item">
+                    <p><a href='.URL::route('illness').'>Справочник заболеваний</a></p>
                     <p>
                         Медицинский справочник болезней от А до Я.
                     </p>
                 </div>
-            </div>";
-
+            </div>';
             $view->with('sidebar_libraries', $sidebar_libraries);
 
 
