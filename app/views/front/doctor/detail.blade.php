@@ -420,35 +420,7 @@ $grafik_arr = explode(";", $user->grafik);
                                 <div class="col-md-3"><p>{{ $item->fio }}</p><p>{{ date("d-m-Y", strtotime($item->created_at)) }}</p>
                                 </div>
 
-                                    <div class="col-md-3"><p>Квалификация</p>
-                                        <?php for ($i=1; $i <= 5; $i++){ ?>
-                                            <?php if ($i <= $item->rang_qualif) { ?>
-                                            <span class="glyphicon glyphicon-star blau"></span>
-                                            <?php } else { ?>
-                                            <span class="glyphicon glyphicon-star gray"></span>
-                                            <?php } ?>
-                                        <? } ?>
-                                    </div>
-
-                                    <div class="col-md-3"><p>Внимание</p>
-                                        <?php for ($i=1; $i <= 5; $i++){ ?>
-                                            <?php if ($i <= $item->rang_vnimanie) { ?>
-                                                <span class="glyphicon glyphicon-star blau"></span>
-                                            <?php } else { ?>
-                                                <span class="glyphicon glyphicon-star gray"></span>
-                                            <?php } ?>
-                                        <? } ?>
-                                    </div>
-
-                                    <div class="col-md-3"><p>Цена-качество</p>
-                                        <?php for ($i=1; $i <= 5; $i++){ ?>
-                                            <?php if ($i <= $item->rang_price) { ?>
-                                                <span class="glyphicon glyphicon-star blau"></span>
-                                            <?php } else { ?>
-                                                <span class="glyphicon glyphicon-star gray"></span>
-                                            <?php } ?>
-                                        <? } ?>
-                                    </div>
+                                    
                             </div>
                             <div class="col-md-3">
                                     <p></p>
