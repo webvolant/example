@@ -411,7 +411,7 @@ $grafik_arr = explode(";", $user->grafik);
 
 <div class="row otzivi">
                 <?php //var_dump($otzivi->count()); ?>
-                <?php if ($otzivi->count()!=0): ?>
+                <?php if ($otzivi->count()!=0) { ?>
                     <h4 class="h4_my">Отзывы пациентов о враче</h4>
                     <div class="reviews">
                         <?php foreach($otzivi as $item) { ?>
@@ -459,10 +459,10 @@ $grafik_arr = explode(";", $user->grafik);
                         <?php } ?>
                     </div>
 
-                    @if (($count_otzivi-Helper::reviews_count()) > Helper::reviews_count())
+                    <?php if (($count_otzivi - Helper::reviews_count()) > Helper::reviews_count()) { ?>
                         <a href="" class="more-reviews">Еще {{ $count_otzivi-Helper::reviews_count() }} <?php echo strstr(Lang::choice('mydoc.ot', $count_otzivi, ['n' => $count_otzivi], 'ru'),"о"); ?></a>
-                    @endif
-                <?php endif; ?>
+                    <?php } ?>
+                <?php } ?>
 </div> <!-- вывод двух отзывов -->
 
 
