@@ -427,6 +427,20 @@ $grafik_arr = explode(";", $user->grafik);
                                                   else
                                                       echo '<span class="glyphicon glyphicon-star gray"></span>';
                                             ?>
+
+                                        <?php for ($i=1; $i <= 5; $i++)
+                                            if ($i <= $item->rang_vnimanie)
+                                                echo '<span class="glyphicon glyphicon-star blau"></span>';
+                                            else
+                                                echo '<span class="glyphicon glyphicon-star gray"></span>';
+                                        ?>
+
+                                        <?php for ($i=1; $i <= 5; $i++)
+                                            if ($i <= $item->rang_price)
+                                                echo '<span class="glyphicon glyphicon-star blau"></span>';
+                                            else
+                                                echo '<span class="glyphicon glyphicon-star gray"></span>';
+                                        ?>
                                     </div>
 
 
