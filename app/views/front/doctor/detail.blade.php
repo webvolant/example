@@ -417,12 +417,12 @@ $grafik_arr = explode(";", $user->grafik);
                         <?php foreach($otzivi as $item) { ?>
                             <div class="col-md-12">
 
-                                <div class="col-md-3"><p>{{ $item->fio }}</p><p>{{ date("d-m-Y", strtotime($item->created_at)); }}</p>
+                                <div class="col-md-3"><p>{{ $item->fio }}</p><p>{{ date("d-m-Y", strtotime($item->created_at)) }}</p>
                                 </div>
 
                                     <div class="col-md-3"><p>Квалификация</p>
                                         <?php for ($i=1; $i <= 5; $i++){ ?>
-                                            <? if ($i <= $item->rang_qualif) { ?>
+                                            <?php if ($i <= $item->rang_qualif) { ?>
                                             <span class="glyphicon glyphicon-star blau"></span>
                                             <?php } else { ?>
                                             <span class="glyphicon glyphicon-star gray"></span>
@@ -432,7 +432,7 @@ $grafik_arr = explode(";", $user->grafik);
 
                                     <div class="col-md-3"><p>Внимание</p>
                                         <?php for ($i=1; $i <= 5; $i++){ ?>
-                                            <? if ($i <= $item->rang_vnimanie) { ?>
+                                            <?php if ($i <= $item->rang_vnimanie) { ?>
                                                 <span class="glyphicon glyphicon-star blau"></span>
                                             <?php } else { ?>
                                                 <span class="glyphicon glyphicon-star gray"></span>
@@ -442,7 +442,7 @@ $grafik_arr = explode(";", $user->grafik);
 
                                     <div class="col-md-3"><p>Цена-качество</p>
                                         <?php for ($i=1; $i <= 5; $i++){ ?>
-                                            <? if ($i <= $item->rang_price) { ?>
+                                            <?php if ($i <= $item->rang_price) { ?>
                                                 <span class="glyphicon glyphicon-star blau"></span>
                                             <?php } else { ?>
                                                 <span class="glyphicon glyphicon-star gray"></span>
