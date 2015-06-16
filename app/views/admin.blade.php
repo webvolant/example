@@ -81,6 +81,7 @@
 <!-- /.navbar-header -->
 
 <ul class="nav navbar-top-links navbar-right">
+    <li class="dropdown"><a href="{{ URL::route('clean') }}"><i class="fa fa-refresh"> Кэш </i></a></li>
 <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
         <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -151,7 +152,6 @@
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse">
         <ul class="nav" id="side-menu">
-
             <li>
                 <a href="{{ URL::route('dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Админ Панель</a>
             </li>

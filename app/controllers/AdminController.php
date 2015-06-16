@@ -39,7 +39,9 @@ class AdminController extends Controller {
 
 
     public function cleanCache(){
+        \Artisan::call('views:clear');
         Cache::flush();
+        return View::make('admin');
     }
 
 

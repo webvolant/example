@@ -529,6 +529,24 @@ a:hover{
 
 }
 
+.header .h3_my{
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.header .h4_my{
+    line-height: 0px;
+    font-size: 14px;
+}
+
+.h7_my{
+    font-size: 12px;
+}
+
+.order_form p {
+    margin: 0 0 0px;
+}
+
 .header{
 
 }

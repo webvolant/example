@@ -86,16 +86,18 @@
                         </ul>
                 </div>
 
-                <div class="col-xs-5 col-sm-offset-2 col-sm-3 col-md-offset-0 col-md-2">
+                <div class="col-xs-5 col-sm-offset-2 col-sm-3 col-md-offset-0 col-md-2 hidden-xs hidden-sm">
                     <div class="doctor1"></div>
                 </div>
 
-                <div class="col-xs-12 col-sm-offset-1 col-sm-6 col-md-offset-0 col-md-4">
+                <div class="col-xs-12 col-sm-offset-3 col-sm-9  col-md-offset-0 col-md-4">
                     <div class="form-group form-inline order_form">
                         <?php echo $errors->first('phone_main'); ?>
 
-                        <p class="h3_my">Поможем найти врача<br/>
-                            звоните <span class="orange_text">0(312) 98-69-00</span></p>
+                        <p class="h3_my"><span class="h4_my"> Поможем найти врача</span><br/>
+                            звоните <span class="orange_text">0(312) 98-69-00</span><br/>
+                            <span class="h7_my"> или оставьте свой номер</span>
+                        </p>
                         {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control width250', 'placeholder'=>'0(___) __ __ __')) }}
                         {{ Form::submit( "Отправить", array('class' => 'form-control btn_submit_main btn btn-warning submit_send_order')) }}
 
@@ -110,7 +112,7 @@
 
                     @section('search')
 
-                        <div class="col-xs-4 col-sm-5 col-md-5 padding_left_right">
+                        <div class="col-xs-4 col-sm-4 col-md-5 padding_left_right">
                             {{ Form::open(array('url' => 'search', 'role' => 'form', 'class' => '')) }}
                                 <div class="form-group">
 
@@ -124,7 +126,7 @@
                                 </div>
                         </div>
 
-                        <div class="col-xs-4 col-sm-5 col-md-5 padding_left_right">
+                        <div class="col-xs-4 col-sm-4 col-md-5 padding_left_right">
                             <div class="form-group">
                                 <a id="test_icon" class="pull-left" data-toggle="modal" data-target="#testsModal" class="btn btn-info btn-sm" ><span class="glyphicon glyphicon-edit"></span></a>
                                 <select id="krit2" name="krit2" class="form-control">
@@ -189,7 +191,7 @@
 
 
                         </div>
-                        <div class="col-xs-offset-2 col-xs-2 col-sm-offset-0 col-sm-2 col-md-offset-0 col-md-2 padding_left_right">
+                        <div class="col-xs-offset-2 col-xs-2 col-sm-offset-0 col-sm-4 col-md-offset-0 col-md-2 padding_left_right">
                                 <div class="">{{ Form::submit( "Начать поиск", array('class' => 'form-control btn btn-warning')) }}</div>
                             </div>
                         {{ Form::close() }}
