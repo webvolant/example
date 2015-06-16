@@ -86,7 +86,7 @@
       <file leaf-file-name="detail.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/front/doctor/detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="422" column="36" selection-start="17243" selection-end="17243" vertical-scroll-proportion="0.5720054" vertical-offset="6579" max-vertical-offset="10404">
+            <state line="428" column="46" selection-start="17766" selection-end="17766" vertical-scroll-proportion="0.48048452" vertical-offset="6749" max-vertical-offset="10557">
               <folding />
             </state>
           </provider>
@@ -995,7 +995,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/doctor/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="422" column="36" selection-start="17243" selection-end="17243" vertical-scroll-proportion="0.5720054" vertical-offset="6579" max-vertical-offset="10404">
+        <state line="428" column="46" selection-start="17766" selection-end="17766" vertical-scroll-proportion="0.48048452" vertical-offset="6749" max-vertical-offset="10557">
           <folding />
         </state>
       </provider>
