@@ -413,7 +413,7 @@ $grafik_arr = explode(";", $user->grafik);
                 @if ($otzivi->count()!=0)
                     <h4 class="h4_my">Отзывы пациентов о враче</h4>
                     <div class="reviews">
-                        @foreach($otzivi as $item)
+                        <!--@foreach($otzivi as $item)
                             <div class="col-md-12">
 
                                 <div class="col-md-3"><p>{{ $item->fio }}</p><p>{{ date("d-m-Y", strtotime($item->created_at)); }}</p>
@@ -455,7 +455,7 @@ $grafik_arr = explode(";", $user->grafik);
                             <div class="col-md-9">
                                 <p>{{ $item->comment }}</p>
                             </div>
-                        @endforeach
+                        @endforeach-->
                     </div>
 
                     @if (($count_otzivi-Helper::reviews_count()) > Helper::reviews_count())
