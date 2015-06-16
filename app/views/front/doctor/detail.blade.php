@@ -410,58 +410,7 @@ $grafik_arr = explode(";", $user->grafik);
                 <p class="pull-right margin10"><a href="" class="how-reviews-link">Как мы собираем отзывы</a></p>
 
 <div class="row otzivi">
-                @if ($otzivi->count()!=0)
-                    <h4 class="h4_my">Отзывы пациентов о враче</h4>
-                    <div class="reviews">
-                        <!--@foreach($otzivi as $item)
-                            <div class="col-md-12">
-
-                                <div class="col-md-3"><p>{{ $item->fio }}</p><p>{{ date("d-m-Y", strtotime($item->created_at)); }}</p>
-                                </div>
-
-                                    <div class="col-md-3"><p>Квалификация</p>
-                                        <?php for ($i=1; $i <= 5; $i++){ ?>
-                                            @if ($i <= $item->rang_qualif)
-                                            <span class="glyphicon glyphicon-star blau"></span>
-                                            @else
-                                            <span class="glyphicon glyphicon-star gray"></span>
-                                            @endif
-                                        <? } ?>
-                                    </div>
-
-                                    <div class="col-md-3"><p>Внимание</p>
-                                        <?php for ($i=1; $i <= 5; $i++){ ?>
-                                            @if ($i <= $item->rang_vnimanie)
-                                            <span class="glyphicon glyphicon-star blau"></span>
-                                            @else
-                                            <span class="glyphicon glyphicon-star gray"></span>
-                                            @endif
-                                        <? } ?>
-                                    </div>
-
-                                    <div class="col-md-3"><p>Цена-качество</p>
-                                        <?php for ($i=1; $i <= 5; $i++){ ?>
-                                            @if ($i <= $item->rang_price)
-                                            <span class="glyphicon glyphicon-star blau"></span>
-                                            @else
-                                            <span class="glyphicon glyphicon-star gray"></span>
-                                            @endif
-                                        <? } ?>
-                                    </div>
-                            </div>
-                            <div class="col-md-3">
-                                    <p></p>
-                            </div>
-                            <div class="col-md-9">
-                                <p>{{ $item->comment }}</p>
-                            </div>
-                        @endforeach-->
-                    </div>
-
-                    @if (($count_otzivi-Helper::reviews_count()) > Helper::reviews_count())
-                        <a href="" class="more-reviews">Еще {{ $count_otzivi-Helper::reviews_count() }} <?php echo strstr(Lang::choice('mydoc.ot', $count_otzivi, ['n' => $count_otzivi], 'ru'),"о"); ?></a>
-                    @endif
-                @endif
+                
 </div> <!-- вывод двух отзывов -->
 
 
