@@ -410,7 +410,7 @@ $grafik_arr = explode(";", $user->grafik);
                 <p class="pull-right margin10"><a href="" class="how-reviews-link">Как мы собираем отзывы</a></p>
 
 <div class="row otzivi">
-                @if (isset($otzivi))
+                @if ($otzivi->count()!=0)
                     <h4 class="h4_my">Отзывы пациентов о враче</h4>
                     <div class="reviews">
                         @foreach($otzivi as $item)
