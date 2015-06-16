@@ -45,7 +45,40 @@
         <entry file="file://$PROJECT_DIR$/app/views/front/doctor/list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="206" column="17" selection-start="10214" selection-end="10214" vertical-scroll-proportion="-22.5" vertical-offset="2832" max-vertical-offset="3638">
-              <folding />
+              <folding>
+                <marker date="1434354790501" expanded="true" signature="339:9688" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="535:3008" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="3034:9666" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="3101:9589" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="3153:3411" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="3228:3295" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="3358:3377" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="3463:5523" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="3507:5482" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="3650:4101" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="4515:5390" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="4566:5363" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="4622:5332" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="4681:4890" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="4947:5115" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="5174:5297" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="5592:9219" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="5637:6168" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="6213:6554" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="6873:9181" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="6916:9162" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="6964:9139" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="7015:7315" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="7153:7284" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="7364:8970" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="7418:8938" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="7601:7917" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="8166:8286" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="8322:8447" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="9264:9577" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="9799:10154" placeholder="..." />
+                <marker date="1434354790501" expanded="true" signature="9897:10131" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,7 +86,7 @@
       <file leaf-file-name="detail.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/front/doctor/detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="412" column="24" selection-start="16730" selection-end="16730" vertical-scroll-proportion="0.13055182" vertical-offset="6737" max-vertical-offset="10880">
+            <state line="464" column="31" selection-start="19779" selection-end="19779" vertical-scroll-proportion="0.49663526" vertical-offset="7349" max-vertical-offset="10880">
               <folding />
             </state>
           </provider>
@@ -923,13 +956,46 @@
     <entry file="file://$PROJECT_DIR$/app/views/front/doctor/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="206" column="17" selection-start="10214" selection-end="10214" vertical-scroll-proportion="-22.5" vertical-offset="2832" max-vertical-offset="3638">
-          <folding />
+          <folding>
+            <marker date="1434354790501" expanded="true" signature="339:9688" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="535:3008" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="3034:9666" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="3101:9589" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="3153:3411" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="3228:3295" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="3358:3377" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="3463:5523" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="3507:5482" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="3650:4101" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="4515:5390" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="4566:5363" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="4622:5332" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="4681:4890" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="4947:5115" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="5174:5297" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="5592:9219" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="5637:6168" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="6213:6554" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="6873:9181" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="6916:9162" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="6964:9139" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="7015:7315" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="7153:7284" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="7364:8970" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="7418:8938" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="7601:7917" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="8166:8286" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="8322:8447" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="9264:9577" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="9799:10154" placeholder="..." />
+            <marker date="1434354790501" expanded="true" signature="9897:10131" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/doctor/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="412" column="24" selection-start="16730" selection-end="16730" vertical-scroll-proportion="0.13055182" vertical-offset="6737" max-vertical-offset="10880">
+        <state line="464" column="31" selection-start="19779" selection-end="19779" vertical-scroll-proportion="0.49663526" vertical-offset="7349" max-vertical-offset="10880">
           <folding />
         </state>
       </provider>
