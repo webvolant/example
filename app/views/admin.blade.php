@@ -327,7 +327,104 @@
 
                     <h3 class="page-header">@yield('page-header','')</h3>
 
-                    @yield('content','')
+                    @section('content')
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-user-md fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge">{{ User::getDoctorsCount() }}</div>
+                                            <div>Врачи в системе!</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ URL::route('doctor/index') }}">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">Перейти к списку врачей</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-users fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{ User::where('role','=','operator')->orWhere('role','=','admin')->count() }}</div>
+                                    <div>Операторы в системе!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{{ URL::route('user/index') }}">
+                            <div class="panel-footer">
+                                <span class="pull-left">Перейти к списку операторов</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-ambulance fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{ Order::getOrdersCount() }}</div>
+                                    <div>Заявки в системе!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{{ URL::route('order/index') }}">
+                            <div class="panel-footer">
+                                <span class="pull-left">Перейти к списку заявок</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-medkit fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{ Otziv::getOtzivCount() }}</div>
+                                    <div>Отзывы в системе!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{{ URL::route('review/index') }}">
+                            <div class="panel-footer">
+                                <span class="pull-left">Перейти к списку отзывов</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+
+                    @show
 
             </div>
             <!-- /.col-lg-12 -->
