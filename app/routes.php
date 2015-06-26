@@ -28,9 +28,9 @@ View::composer(array('front',
     'front.illness.list'),
     function($view)
         {
-            $view->with('orders', 0);
+            $view->with('orders', Order::getOrdersCount());
             $view->with('docs', User::getDoctorsCount());
-            $view->with('ot', 0);
+            $view->with('ot', Otziv::getOtzivCount());
 
             $search_mas = [0=>"По специальности",1=>"По специализации",2=>"По исследованию",3=>"По заболеванию"];
 

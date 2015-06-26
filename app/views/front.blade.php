@@ -116,8 +116,7 @@
                             {{ Form::open(array('url' => 'search', 'role' => 'form', 'class' => '')) }}
                                 <div class="form-group">
 
-                                    <select id="krit1" name="krit1" class="form-control">
-                                        <option value="">Критерий поиска</option>
+                                    <select id="krit1" name="krit1" class="form-control" placeholder="Критерий поиска">
                                         @foreach ($search1 as $key => $item)
                                         <option value="{{ $key }}">{{ $item }}</option>
                                         @endforeach

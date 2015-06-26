@@ -4,6 +4,12 @@
 	"keywords": ["my-doc", "найти","врач", "клиника","диагностический центр", "бишкек","больница", "обследование"],
 	"license": "MIT",
 	"type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/webvolant/Phpgmaps"
+        }
+    ],
 	"require": {
 		"laravel/framework": "4.2.*",
         "baum/baum": "~1.0",

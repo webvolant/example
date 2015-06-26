@@ -44,8 +44,8 @@
         <a class="pull-left margin3 btn btn-default btn-sm" href="<?php if (Input::get('order')=='experience' && Input::get('direction')=='desc') echo $url; else echo $url.'&order=' . 'experience'.'&direction=' . 'desc';?>">Стаж <span class="glyphicon glyphicon-chevron-up"></span></a>
 
 
-        <label class="pull-right margin3"><input type="checkbox" class="child_checkbox" onchange='window.location.href="<?php if (Input::get('deti')=='true') echo $url; else echo $url.'&deti=' . 'true';?>"'/> Детский доктор</label>
-        <label class="pull-right margin3"><input type="checkbox" class="home_checkbox" onchange='window.location.href="<?php if (Input::get('home')=='true') echo $url; else echo $url.'&home=' . 'true';?>"'/> Выезд на дом</label>
+        <label class="pull-right margin3"><input type="checkbox" class="child_checkbox" onchange='window.location.href="<?php if (Input::get('deti')=='true') echo str_replace("&deti=true","",$url); else echo $url.'&deti=' . 'true';?>"'/> Детский доктор</label>
+        <label class="pull-right margin3"><input type="checkbox" class="home_checkbox" onchange='window.location.href="<?php if (Input::get('home')=='true') echo str_replace("&home=true","",$url); else echo $url.'&home=' . 'true';?>"'/> Выезд на дом</label>
 
     </div>
 

@@ -94,7 +94,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                             $image = Input::file('logo');
                             $image->move(public_path().$dir, $filename);
                             $img = Image::make(public_path().$dir.$filename);
-                            $img->resize(140, 200);
+                            $img->resize(140, 180);
                             $img->insert(public_path().'/template_image/watermark.png');
                             $img->save(public_path().$dir.'thumb_'.$filename);
                             $user->logo = $dir.'thumb_'.$filename;
@@ -194,7 +194,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                             $image = Input::file('logo');
                             $image->move(public_path().$dir, $filename);
                             $img = Image::make(public_path().$dir.$filename);
-                            $img->resize(140, 200);
+                            $img->resize(140, 180);
                             $img->insert(public_path().'/template_image/watermark.png');
                             $img->save(public_path().$dir.'thumb_'.$filename);
                             $user->logo = $dir.'thumb_'.$filename;

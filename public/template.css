@@ -454,14 +454,14 @@ a:hover{
 
 .intro_doctor_image{
     background: rgba(117, 214, 255, 0.13);
-    min-height: 200px;
+    min-height: 180px;
     min-width: 140px;
 }
 
 
 .intro_doctor_info{
     display: block;
-    min-height:200px;
+    min-height:180px;
     padding-left: 10px;
 
 }

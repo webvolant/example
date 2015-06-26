@@ -40,4 +40,12 @@ class Order extends Eloquent {
     }
 
 
+    //Получение числа заявок для статистики в шапке
+    public static function getOrdersCount(){
+        $result = Cache::remember('getOrdersCount', Helper::cacheTime(), function () {
+            return Order::all()->count();
+        });
+        return $result;
+    }
+
 }
