@@ -175,7 +175,7 @@ class Helper extends Controller{
 
     public static function getPagesCount(){
         //$mas=[0=>'Не опубликовано',1=>'Опубликовано'];
-        return 5;
+        return 12;
     }
 
     public static function getEventsCount(){
