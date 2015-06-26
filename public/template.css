@@ -271,22 +271,28 @@ a:hover{
 .i-closetohome {
     background: url(/template_image/icons/i-closetohome.png) no-repeat 0px 0px;
     padding-left: 55px;
+    background-size: 45px;
+    background-position: 1px 0px;
 }
 
 .i-sortbyprice {
     background: url(/template_image/icons/i-sortbyprice.png) no-repeat 0px 0px;
     padding-left: 55px;
+    background-size: 50px;
+    background-position: 0px -5px;
 }
 
 .i-ratingsystem {
     background: url(/template_image/icons/i-ratingsystem.png) no-repeat 0px 0px;
     padding-left: 55px;
+    background-size: 65px;
+    background-position: -10px -8px;
 }
 
 
 .i-sicklist {
     background: url("/template_image/icons/i-sicklist.png") no-repeat scroll center center rgba(0, 0, 0, 0);
-    background-size: 70px;
+    background-size: 80px;
     display: block;
     min-height: 100px;
 
@@ -294,14 +300,14 @@ a:hover{
 
 .i-pacientlib {
     background: url("/template_image/icons/i-pacientlib.png") no-repeat scroll center center rgba(0, 0, 0, 0);
-    background-size: 70px;
+    background-size: 80px;
     display: block;
     min-height: 100px;
 }
 
 .i-diagcenters {
     background: url("/template_image/icons/i-diagcenters.png") no-repeat scroll center center rgba(0, 0, 0, 0);
-    background-size: 70px;
+    background-size: 80px;
     display: block;
     min-height: 100px;
 }

@@ -35,7 +35,7 @@
       <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="38" selection-start="191" selection-end="210" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="2057">
+            <state line="7" column="38" selection-start="191" selection-end="210" vertical-scroll-proportion="58.884617" vertical-offset="1599" max-vertical-offset="2057">
               <folding />
             </state>
           </provider>
@@ -44,25 +44,25 @@
       <file leaf-file-name="doctor.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes/admin/doctor.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="51" selection-start="3744" selection-end="3744" vertical-scroll-proportion="59.384617" vertical-offset="3091" max-vertical-offset="4199">
+            <state line="196" column="51" selection-start="8005" selection-end="8028" vertical-scroll-proportion="-6.0" vertical-offset="3091" max-vertical-offset="4199">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="template.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/template.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="464" column="23" selection-start="6121" selection-end="6121" vertical-scroll-proportion="-27.2" vertical-offset="7208" max-vertical-offset="19618">
+            <state line="274" column="26" selection-start="3295" selection-end="3295" vertical-scroll-proportion="0.18518518" vertical-offset="4573" max-vertical-offset="19720">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Helper.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Helper.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Helper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="177" column="18" selection-start="5195" selection-end="5195" vertical-scroll-proportion="0.5288684" vertical-offset="2695" max-vertical-offset="3808">
+            <state line="177" column="18" selection-start="5195" selection-end="5195" vertical-scroll-proportion="-4.490196" vertical-offset="2695" max-vertical-offset="3808">
               <folding />
             </state>
           </provider>
@@ -204,15 +204,15 @@
         <option value="$PROJECT_DIR$/app/views/front.blade.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/routes/admin/doctor.php" />
-        <option value="$PROJECT_DIR$/public/template.css" />
         <option value="$PROJECT_DIR$/app/controllers/Helper.php" />
+        <option value="$PROJECT_DIR$/public/template.css" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="16" />
-    <option name="y" value="202" />
+    <option name="x" value="219" />
+    <option name="y" value="263" />
     <option name="width" value="1366" />
     <option name="height" value="728" />
   </component>
@@ -290,6 +290,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="template_image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doctors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doctors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template_image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="icons" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -701,7 +723,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="16" y="202" width="1366" height="728" extended-state="0" />
+    <frame x="219" y="263" width="1366" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1002,13 +1024,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="124" selection-start="2602" selection-end="2602" vertical-scroll-proportion="3.2692308" vertical-offset="1394" max-vertical-offset="9554">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/doctor/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="467" column="4" selection-start="19628" selection-end="25368" vertical-scroll-proportion="6.5384617" vertical-offset="7939" max-vertical-offset="10795">
@@ -1032,30 +1047,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="38" selection-start="191" selection-end="210" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="2057">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes/admin/doctor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="51" selection-start="3744" selection-end="3744" vertical-scroll-proportion="59.384617" vertical-offset="3091" max-vertical-offset="4199">
+        <state line="196" column="51" selection-start="8005" selection-end="8028" vertical-scroll-proportion="-6.0" vertical-offset="3091" max-vertical-offset="4199">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/template.css">
+    <entry file="file://$PROJECT_DIR$/app/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="464" column="23" selection-start="6121" selection-end="6121" vertical-scroll-proportion="-27.2" vertical-offset="7208" max-vertical-offset="19618">
+        <state line="7" column="38" selection-start="191" selection-end="210" vertical-scroll-proportion="58.884617" vertical-offset="1599" max-vertical-offset="2057">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="124" selection-start="2602" selection-end="2602" vertical-scroll-proportion="3.2692308" vertical-offset="1394" max-vertical-offset="9554">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Helper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="177" column="18" selection-start="5195" selection-end="5195" vertical-scroll-proportion="0.5288684" vertical-offset="2695" max-vertical-offset="3808">
+        <state line="177" column="18" selection-start="5195" selection-end="5195" vertical-scroll-proportion="-4.490196" vertical-offset="2695" max-vertical-offset="3808">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/template.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="274" column="26" selection-start="3295" selection-end="3295" vertical-scroll-proportion="0.18518518" vertical-offset="4573" max-vertical-offset="19720">
           <folding />
         </state>
       </provider>
