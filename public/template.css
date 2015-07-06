@@ -478,7 +478,26 @@ a:hover{
     padding: 10px;
 }
 
+.column_5{
+    -webkit-column-count:5;
+    -moz-column-count:5;
+    column-count:5;
+    background-color: #f7f7f7;
+    border: 0px solid #0090DA;
+    border-bottom-width: 1px;
+    position: relative;
+    z-index: 1;
+    font-size: 0.1em;
+    border-radius: 5px;
+    padding:5px;
+}
+.spec_list_head{
+    font-weight: bold;
+}
 
+.column{
+    font-size: 14px;
+}
 
 .specialities{
     background-color: #f7f7f7;
@@ -508,6 +527,23 @@ a:hover{
 
 .specialisations li{
     border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+}
+
+#testsModal .modal-dialog{
+    width:90%;
+}
+
+#testsModal .modal-dialog a{
+    font-size: 11px;
+    line-height: 0.6;
+}
+
+#testsModal .modal-dialog p{
+    margin: 0 0 0px;
+}
+#testsModal .modal-dialog .h_head{
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .logo{

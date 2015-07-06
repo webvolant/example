@@ -36,7 +36,7 @@ class Test extends Node {
             //    $parent_link = $test->parent()->first()->link;
 
             if ($test->getLevel()==1){
-                $cap .= "<p id='$test->id'><a class='h6_my' href='"."/diagnostica/centers/$test->link"."'>".$test->name.'</a></p>';
+                $cap .= "<p id='$test->id'><a class='h6_my h_head' href='"."/diagnostica/centers/$test->link"."'>".$test->name.'</a></p>';
             }elseif ($test->getLevel()==2) {
                 $cap .= "<p id='$test->id'><a class='h6_my margin-left10' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></p>';
             }elseif ($test->getLevel()==3) {
@@ -58,7 +58,7 @@ class Test extends Node {
                 $cap.= '</ul>';
                 $cap.= '<ul class="list col-xs-6 col-sm-3 col-md-3">';
                 if ($test->getLevel()==1){
-                    $cap .= "<li><a class='h6_my_bold' href='"."/diagnostica/centers/$test->link"."'>".$test->name.'</a></li>';
+                    $cap .= "<li><a class='h6_my_bold h_head' href='"."/diagnostica/centers/$test->link"."'>".$test->name.'</a></li>';
                 }elseif ($test->getLevel()==2) {
                     $cap .= "<li><a class='h6_my_bold margin-left10' href='"."/diagnostica/centers/$parent_link/$test->link"."'>".$test->name.'</a></li>';
                 }elseif ($test->getLevel()==3) {
@@ -78,6 +78,7 @@ class Test extends Node {
 
         return $cap;
     }
+
 
     public static function getListWithLinks(){
         $tests = Test::where('name','!=','root')->orderBy('lft')->get();
