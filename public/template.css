@@ -234,12 +234,11 @@ a:hover{
 }
 
 .i-doctor_l {
-    background: url("/template_image/doctor2.jpg") no-repeat scroll right center rgba(0, 0, 0, 0);
-    background-size: 140%;
-    background-position-x: 0px;
+    background: url("/template_image/doctor2.jpg") no-repeat scroll center top rgba(0, 0, 0, 0);
+    background-size: 100%;
     display: block;
     min-height: 400px;
-    margin-top: 21px;
+
 }
 
 .about_list {
@@ -527,9 +526,8 @@ a:hover{
 }
 
 .doctor1{
-    background: url("template_image/doctor1.jpg") top left no-repeat;
-    background-position-y: -30px;
-    background-size: 137%;
+    background: url("template_image/doctor1.jpg") top center no-repeat;
+    background-size: 68%;
     min-height: 136px;
     margin-top: 10px;
 

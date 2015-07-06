@@ -12,7 +12,8 @@ class DoctorController extends Controller {
 */
     //все врачи что есть в базе
     public function doctors(){
-
+        $order = Input::get('order');
+        $direction = Input::get('direction');
         //var_dump(\Route::current()->parameter('spec'));
 
         //Input::get('krit2')
@@ -26,7 +27,7 @@ class DoctorController extends Controller {
                         ->whereRole('doctor')->whereStatus(1)
                         ->where('det_doctor','=','1')
                         ->where('viesd_na_dom','=','1')
-                        ->orderBy(Input::get('order'),Input::get('direction'))
+                        ->orderByRaw("ABS($order) $direction")
                         ->paginate(Helper::getPagesCount());
                         return View::make('front.doctor.list', array('users'=>$users));
                     }
@@ -34,7 +35,7 @@ class DoctorController extends Controller {
                         $users = Speciality::find(\Route::current()->parameter('spec'))->Users()
                             ->whereRole('doctor')->whereStatus(1)
                             ->where('det_doctor','=','1')
-                            ->orderBy(Input::get('order'),Input::get('direction'))
+                            ->orderByRaw("ABS($order) $direction")
                             ->paginate(Helper::getPagesCount());
                         return View::make('front.doctor.list', array('users'=>$users));
                     }
@@ -42,7 +43,7 @@ class DoctorController extends Controller {
                         $users = Speciality::find(\Route::current()->parameter('spec'))->Users()
                             ->whereRole('doctor')->whereStatus(1)
                             ->where('viesd_na_dom','=','1')
-                            ->orderBy(Input::get('order'),Input::get('direction'))
+                            ->orderByRaw("ABS($order) $direction")
                             ->paginate(Helper::getPagesCount());
                         return View::make('front.doctor.list', array('users'=>$users));
                     }
@@ -53,7 +54,7 @@ class DoctorController extends Controller {
                     //'specialities', function($q){
                     //    $q->where('speciality_id', \Route::current()->parameter('spec'));
                    // }
-                ->orderBy(Input::get('order'),Input::get('direction'))
+                    ->orderByRaw("ABS($order) $direction")
                 ->paginate(Helper::getPagesCount());
                 return View::make('front.doctor.list', array('users'=>$users));
 
@@ -108,27 +109,28 @@ class DoctorController extends Controller {
                 $users = User::whereRole('doctor')->whereStatus(1)
                     ->where('det_doctor','=','1')
                     ->where('viesd_na_dom','=','1')
-                    ->orderBy(Input::get('order'),Input::get('direction'))
+                    ->orderByRaw("ABS($order) $direction")
                     ->paginate(Helper::getPagesCount());
                 return View::make('front.doctor.list', array('users'=>$users));
             }
             elseif ( Input::get('deti') == true ){
                 $users = User::whereRole('doctor')->whereStatus(1)
                     ->where('det_doctor','=','1')
-                    ->orderBy(Input::get('order'),Input::get('direction'))
+                    ->orderByRaw("ABS($order) $direction")
                     ->paginate(Helper::getPagesCount());
                 return View::make('front.doctor.list', array('users'=>$users));
             }
             elseif ( Input::get('home') == true ){
                 $users = User::whereRole('doctor')->whereStatus(1)
                     ->where('viesd_na_dom','=','1')
-                    ->orderBy(Input::get('order'),Input::get('direction'))
+                    ->orderByRaw("ABS($order) $direction")
                     ->paginate(Helper::getPagesCount());
                 return View::make('front.doctor.list', array('users'=>$users));
             }
 
             $users = User::whereRole('doctor')->whereStatus(1)
-                ->orderBy(Input::get('order'),Input::get('direction'))->paginate(Helper::getPagesCount());
+                ->orderByRaw("ABS($order) $direction")
+                ->paginate(Helper::getPagesCount());
             return View::make('front.doctor.list', array('users'=>$users));
 
         } elseif ( Input::get('order') == null && Input::get('direction') == null ){

@@ -56,7 +56,7 @@ class Test extends Node {
             $parent_link = $test->parent()->first()->link;
             if ($parent_link == 'root' ){
                 $cap.= '</ul>';
-                $cap.= '<ul class="list col-xs-12 col-sm-2 col-md-2">';
+                $cap.= '<ul class="list col-xs-6 col-sm-3 col-md-3">';
                 if ($test->getLevel()==1){
                     $cap .= "<li><a class='h6_my_bold' href='"."/diagnostica/centers/$test->link"."'>".$test->name.'</a></li>';
                 }elseif ($test->getLevel()==2) {

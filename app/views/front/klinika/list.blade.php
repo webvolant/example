@@ -79,7 +79,10 @@
                             <p class="h3_my"><a href='{{ URL::route("clinic/detail", array($user->link)) }}'>{{ $user->name }}</a></p>
 
                             <p><span class="h6_my"> Направления клиники: </span> @foreach(Klinika::getSpecialisations($user->id) as $item) {{ $item }} @endforeach </p>
-                            <p>{{ $user->description }}</p>
+
+                            <?php mb_internal_encoding("UTF-8"); ?>
+                            <p><?php echo mb_substr(html_entity_decode($user->description, ENT_QUOTES, 'UTF-8'), 0, 500);?>
+                                    <a href="{{ URL::route("clinic/detail", array($user->link)); }}">.....</a> </p>
 
                         </div> <!--intro_doctor_info -->
                     </div>

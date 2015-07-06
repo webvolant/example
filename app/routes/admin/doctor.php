@@ -31,6 +31,9 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $rules = array(
                     'fio' => array('required'),
                     'email' => array('required','unique:users,email'),
+                    'rating' => array('required','numeric'),
+                    'price' => array('required','numeric'),
+                    'experience' => array('required','numeric'),
                     //'pass' => array('required','confirmed'),
                     //'pass_confirmation' => array('required'),
                     'phone' => array('required'),
@@ -126,6 +129,9 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $rules = array(
                     'fio' => array('required'),
                     'email' => array('required'),
+                    'rating' => array('required','numeric'),
+                    'price' => array('required','numeric'),
+                    'experience' => array('required','numeric'),
                     //'pass' => array('required','confirmed'),
                     //'pass_confirmation' => array('required'),
                     'phone' => array('required'),

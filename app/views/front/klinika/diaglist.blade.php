@@ -23,8 +23,6 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         {{ Test::getColumnsWithLinks() }}
     </div>
-
-
 </div>
 @stop
 
@@ -175,7 +173,7 @@
 
     <div class="col-xs-12 col-sm-12 col-md-2">
         @section('sidebar')
-        {{ Test::getListWithLinks() }}
+        <!--{{ Test::getListWithLinks() }}-->
         {{ $sidebar_libraries }}
         @stop
     </div>
