@@ -16,7 +16,10 @@ class AdminSpecialityController extends Controller {
 
     public function delete($id)
     {
+        //User::where('speciality_id','=',$id)->detach;
+        //$user->Specialities()->sync($select_specialities);
         $user = Speciality::find($id);
+        $user->Users()->detach();
         $user->delete();
         //$users = User::paginate(10);
         //return View::make('user::list',array('users'=>$users));

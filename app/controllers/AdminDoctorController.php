@@ -24,6 +24,10 @@ class AdminDoctorController extends Controller {
     public function delete($id)
     {
         $user = User::find($id);
+
+        $user->Specialities()->detach();
+        //var_dump($user->Specialities());
+        //die();
         $user->delete();
         //$users = User::paginate(10);
         //return View::make('user::list',array('users'=>$users));

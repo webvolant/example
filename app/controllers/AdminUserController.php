@@ -23,6 +23,10 @@ class AdminUserController extends Controller {
     public function delete($id)
     {
         $user = User::find($id);
+
+
+        //$user->Kliniks()->detach();
+
         $user->delete();
         return Redirect::route("user/index");
     }
