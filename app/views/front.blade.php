@@ -336,6 +336,7 @@
                     <div class="registration">
                         @section('registration')
                         <span class="h4_my">Врачам и клиникам</span>
+                        <p><span class="h8_my">Регистрация врачей и клиник на портале БЕСПЛАТНА.</span></p>
                         <ul class="list">
                             @if (Auth::check())
                             <li><span class="glyphicon glyphicon-home"> </span> Вы на сайте, {{ Auth::user()->fio }}</li>
@@ -346,10 +347,26 @@
                             @endif
 
                         </ul>
-                        <span class="h8_my">Регистрация врачей и клиник на портале БЕСПЛАТНА.</span>
+
 
                         @show
                     </div>
+
+
+
+
+                    <div class="developed pull-right">
+                    <style>
+                        img.developed_logo {
+                        position: relative;
+                        top:-2px;
+                        }
+                    </style>
+                        <img src="/public/template_image/ablogo.png" class="developed_logo" width="20px" height="20px"/> <a href="">AB SOLUTIONS</a> - Разработка веб-сайта<br/>
+                        <div class="pull-right"><a href="mailto:barkalovlab@gmail.com">Напишите нам!</a></div>
+                    </div>
+
+
                 </div>
 
                 @show
