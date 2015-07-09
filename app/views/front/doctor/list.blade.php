@@ -147,6 +147,10 @@
                                     {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => ' form-control rfield', 'placeholder'=>'0(___) __ __ __')) }}
                                 </p>
 
+                                <div class="lastname">
+                                    {{ Form::text('lastname', null, array('title'=>'Поле должно быть заполнено!', 'id'=>'lastname', 'class' => 'form-control')) }}
+                                </div>
+
 
                                 {{ Form::hidden('doctor_id', "$user->id") }}
 

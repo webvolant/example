@@ -189,6 +189,10 @@
                                             </p>
                                             <p>{{ Form::text('name', null, array('class' => ' form-control', 'placeholder'=>'Ваше имя')) }}</p>
 
+                                            <div class="lastname">
+                                                {{ Form::text('lastname', null, array('title'=>'Поле должно быть заполнено!', 'id'=>'lastname', 'class' => 'form-control')) }}
+                                            </div>
+
                                             {{ Form::hidden('klinik_id', "$user->id") }}
                                             <p>
                                                 {{ Form::radio('pacient', 'small'); }} Ребенок

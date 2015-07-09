@@ -297,6 +297,10 @@
                                     {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => ' form-control rfield', 'placeholder'=>'0(___) __ __ __')) }}
                                 </p>
 
+                                <div class="lastname">
+                                    {{ Form::text('lastname', null, array('title'=>'Поле должно быть заполнено!', 'id'=>'lastname', 'class' => 'form-control')) }}
+                                </div>
+
 
                                 {{ Form::hidden('doctor_id', "$user->id") }}
 
@@ -345,27 +349,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
-    $(".submit_send_order").click(function(e){
-        e.preventDefault();
-        var phone = $("#user_phone_main").val();
-        $.post('/order-new', {phone:phone},function(data){
-            if (data['flag']=='0')
-                swal({
-                    title: 'Заявка не принята',
-                    text: data['data'],
-                    type: 'error',
-                    confirmButtonText: 'Закрыть'
-                });
-            else{
-                swal({
-                    title: 'Заявка принята',
-                    text: data['data'],
-                    type: 'success',
-                    confirmButtonText: 'Закрыть'
-                });
-            }
-        });
-    });
+
 
 
     if (window.location.href.indexOf("deti") > -1) {

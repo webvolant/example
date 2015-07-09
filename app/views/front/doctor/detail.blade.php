@@ -158,6 +158,10 @@ $grafik_arr = explode(";", $user->grafik);
                                             {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => ' form-control rfield', 'placeholder'=>'(___) __ __ __')) }}
                                             </p>
 
+                                            <div class="lastname">
+                                                {{ Form::text('lastname', null, array('title'=>'Поле должно быть заполнено!', 'id'=>'lastname', 'class' => 'form-control')) }}
+                                            </div>
+
 
                                             {{ Form::hidden('doctor_id', "$user->id") }}
 
@@ -578,6 +582,9 @@ $grafik_arr = explode(";", $user->grafik);
                     {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'phone_otziv', 'class' => ' form-control', 'placeholder'=>'0(___) __ __ __')) }}
                 <span class="h8_my">Мы просим указать ваш телефон для контроля достоверности отзывов</span></p>
 
+                <div class="lastname">
+                    {{ Form::text('lastname_review', null, array('title'=>'Поле должно быть заполнено!', 'id'=>'lastname_review', 'class' => 'form-control')) }}
+                </div>
 
                 {{ Form::hidden('doctor_id', "$user->id") }}
             </div>

@@ -103,6 +103,14 @@ Route::post('order/otziv', array(
         );
         $validation = Validator::make(Input::all(), $rules);
         if ($validation->passes()){
+
+            $lastname_review = Input::get('lastname_review');
+            // Робот по полю
+            if (!empty($lastname_review)){
+                return Redirect::route('doctor/detail', array('link'=>User::where('id','=',Input::get('doctor_id'))->first()->link ))->withInput()
+                    ->withErrors(['err'=>'Первый уровень защиты сработал, он говорит что вы робот!']);
+            }
+
             $id = 0;
             $phone = Input::get('phone');
             $client = Client::where('phone','LIKE', "%$phone%")->exists();
@@ -168,12 +176,22 @@ Route::post('/order-new', array(
         if (Request::ajax()){
         $rules = array(
             'phone' => array('required'),
+            //'my_name'   => 'honeypot',
+            //'my_time'   => 'required|honeytime:3'
         );
         $validation = Validator::make(Input::all(), $rules);
             if ($validation->passes()){
 
+                $lastname = Input::get('lastname');
+                // Робот по полю
+                if (!empty($lastname)){
+                    $data['flag'] = 0;
+                    $data['data'] = "Первый уровень защиты сработал, он говорит что вы робот!";
+                    return $data;
+                }
 
 
+                // Робот по Ip
                 $access = 0;
                 $ip = Request::ip();
                 $deny = file('ip.txt');
@@ -248,6 +266,15 @@ Route::post('/order-new-doctor', array(
             );
             $validation = Validator::make(Input::all(), $rules);
             if ($validation->passes()){
+
+                $lastname = Input::get('lastname');
+                // Робот по полю
+                if (!empty($lastname)){
+                    $data['flag'] = 0;
+                    $data['data'] = "Первый уровень защиты сработал, он говорит что вы робот!";
+                    return $data;
+                }
+
                 //$client = 0;
                 $id = 0;
                 $phone = Input::get('phone');
@@ -311,6 +338,15 @@ Route::post('/order-new-klinika', array(
             );
             $validation = Validator::make(Input::all(), $rules);
             if ($validation->passes()){
+
+                $lastname = Input::get('lastname');
+                // Робот по полю
+                if (!empty($lastname)){
+                    $data['flag'] = 0;
+                    $data['data'] = "Первый уровень защиты сработал, он говорит что вы робот!";
+                    return $data;
+                }
+
                 //$client = 0;
                 $id = 0;
                 $phone = Input::get('phone');
@@ -378,6 +414,16 @@ Route::post('/order-new-diag', array(
             );
             $validation = Validator::make(Input::all(), $rules);
             if ($validation->passes()){
+
+                $lastname = Input::get('lastname');
+                // Робот по полю
+                if (!empty($lastname)){
+                    $data['flag'] = 0;
+                    $data['data'] = "Первый уровень защиты сработал, он говорит что вы робот!";
+                    return $data;
+                }
+
+
                 //$client = 0;
                 $id = 0;
                 $phone = Input::get('phone');

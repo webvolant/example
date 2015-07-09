@@ -31,10 +31,10 @@
 <div class="alert alert-warning">
     <a href="#" class="close" data-dismiss="alert">&times;</a>
     <?php echo $errors->first('pass'); ?>
-    {{ Form::text('pass', null, array('class' => 'form-control', 'placeholder'=>'пароль')) }}
+    {{ Form::password('pass', array('class' => 'form-control', 'placeholder'=>'пароль')) }}
 </div>
 @else
-{{ Form::text('pass', null, array('class' => 'form-control', 'placeholder'=>'пароль')) }}
+{{ Form::password('pass', array('class' => 'form-control', 'placeholder'=>'пароль')) }}
 @endif
 </p>
 

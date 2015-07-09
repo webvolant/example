@@ -76,7 +76,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="{{ URL::to('/') }}">MYDOC.KG - Панель управления</a>
+    <a class="navbar-brand" href="{{ URL::to('/') }}">МОЙ ДОКТОР - Панель управления</a>
 </div>
 <!-- /.navbar-header -->
 
@@ -156,7 +156,7 @@
                 <a href="{{ URL::route('dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Админ Панель</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-calendar fa-fw"></i>История изменений<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-calendar fa-fw"></i> История изменений<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="{{ URL::route('crm/docs') }}"><i class="fa fa-list fa-fw"></i>Врачи</a>
@@ -168,7 +168,7 @@
             </li>
 
             <li>
-                <a href="#"><i class="fa fa-edit fa-fw"></i>Менеджер заявок<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-ambulance fa-fw"></i> Менеджер заявок<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="{{ URL::route('order/index') }}"><i class="fa fa-list fa-fw"></i>Управление заявками</a>
@@ -182,7 +182,7 @@
 
 
             <li class="">
-                <a href="#"><i class="fa fa-edit fa-fw"></i>Менеджер врачей<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-user-md fa-fw"></i> Менеджер врачей<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="{{ URL::route('doctor/index') }}"><i class="fa fa-list fa-fw"></i>Управление врачами</a>
@@ -197,7 +197,7 @@
 
 
             <li class="">
-                <a href="#"><i class="fa fa-edit fa-fw"></i>Менеджер Клиник и Диаг. Ц.<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-ambulance fa-fw"></i> Менеджер Клиник и Диаг. Ц.<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="{{ URL::route('klinika/index') }}"><i class="fa fa-list fa-fw"></i>Управление</a>
@@ -212,7 +212,7 @@
 
 
             <li class="">
-                <a href="#"><i class="fa fa-edit fa-fw"></i>Отзывы<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-medkit fa-fw"></i> Отзывы<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="{{ URL::route('review/index') }}"><i class="fa fa-list fa-fw"></i>Управление отзывами</a>
@@ -226,7 +226,7 @@
 
 
             <li class="">
-                <a href="#"><i class="fa fa-edit fa-fw"></i>Статьи и Заболевания<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-edit fa-fw"></i> Статьи и Заболевания<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="{{ URL::route('illness/index') }}"><i class="fa fa-list fa-fw"></i>Все Заболевания</a>
@@ -245,7 +245,7 @@
             </li>
 
             <li class="">
-                <a href="#"><i class="fa fa-edit fa-fw"></i>Менеджер Клиентов<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-users fa-fw"></i> Менеджер Клиентов<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="{{ URL::route('client/index') }}"><i class="fa fa-list fa-fw"></i>Управление клиентами</a>
@@ -258,7 +258,7 @@
             </li>
 
             <li class="">
-                <a href="#"><i class="fa fa-edit fa-fw"></i>Менеджер операторов<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-users fa-fw"></i> Менеджер операторов<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="{{ URL::route('user/index') }}"><i class="fa fa-list fa-fw"></i>Управление операторами</a>
@@ -271,7 +271,7 @@
             </li>
 
             <li>
-                <a href="#"><i class="fa fa-edit fa-fw"></i>Справочники<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-edit fa-fw"></i> Справочники<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="{{ URL::route('test/index') }}"><i class="fa fa-list fa-fw"></i>Управление Исследованиями</a>
@@ -298,7 +298,7 @@
             </li>
 
             <li>
-                <a href="#"><i class="fa fa-edit fa-fw"></i>Отчеты<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-edit fa-fw"></i> Отчеты<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li class="divider"></li>
                     <li>

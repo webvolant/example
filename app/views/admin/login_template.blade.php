@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>mydoc.kg Admin Panel - Welcome!</title>
+    <title>my-doc.kg - Admin Panel</title>
 
     <!-- Bootstrap Core CSS -->
     {{ HTML::style('bower_components/bootstrap/dist/css/bootstrap.min.css') }}
@@ -19,6 +19,7 @@
     {{ HTML::style('dist/css/sb-admin-2.css') }}
     <!-- Custom Fonts -->
     {{ HTML::style('bower_components/font-awesome/css/font-awesome.min.css') }}
+    {{ HTML::style('template.css') }}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,17 +30,18 @@
 
 </head>
 
-<body>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="login-panel panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Авторизуйтесь пожалуйста!</h3>
-                </div>
-                <div class="panel-body">
-                            @yield('content','')
+<body class="admin_background_login">
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-dashboard"></i> Контрольная Панель my-doc.kg</h3>
+                    </div>
+                    <div class="panel-body">
+                                @yield('content','')
+                    </div>
                 </div>
             </div>
         </div>

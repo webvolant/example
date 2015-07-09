@@ -139,6 +139,11 @@
                                             <p>{{ Form::label('Ваш номер телефона:') }}
                                                 {{ Form::text('phone', null, array('required', 'pattern'=>"[0-9_-(_)]{9}", 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => ' form-control rfield', 'placeholder'=>'0(___) __ __ __')) }}
                                             </p>
+
+                                            <div class="lastname">
+                                                {{ Form::text('lastname', null, array('title'=>'Поле должно быть заполнено!', 'id'=>'lastname', 'class' => 'form-control')) }}
+                                            </div>
+
                                             <p>{{ Form::text('name', null, array('class' => ' form-control', 'placeholder'=>'Ваше имя')) }}</p>
 
                                             {{ Form::hidden('klinik_id', "$user->id") }}

@@ -5,8 +5,18 @@
 }
 */
 
-.admin_menu a{
+.admin_background_login, .admin_background_login .container{
+    background-color: #2490bc;
+}
+
+
+#side-menu{
+    font-size: 14px;
+}
+
+.navbar-top-links a{
     color: black;
+    font-size: 14px;
 }
 
 .navbar-default .navbar-brand {
@@ -21,7 +31,9 @@
 
 
 
-
+.lastname{
+    display: none;
+}
 
 
 
@@ -72,7 +84,6 @@
 }
 
 .width250 {
-    min-width: 250px;
 }
 
 

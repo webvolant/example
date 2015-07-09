@@ -3,38 +3,42 @@
                             {{ Form::open(array('url' => 'admin/login', 'method'=>'post', 'role' => 'form', 'class' => 'form-signin')) }}
 
                             <p>
-                                <a href="{{ URL::to('/') }}"><?php echo "На сайт" ?></a>
+                                <a href="{{ URL::to('/') }}"><i class="fa fa-arrow-left"></i> <?php echo "На сайт" ?></a>
                             </p>
 <p>
 <?php echo $errors->first('role'); ?>
 </p>
 
 
-<p>
+<div class="form-group has-feedback">
                 @if ($errors->first('email'))
-                    <div class="alert alert-warning">
+                    <div class="alert alert-danger">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
                                                 <?php echo $errors->first('email'); ?>
-                                                {{ Form::text('email', null, array('class' => 'form-control', 'placeholder'=>'email')) }}
                                             </div>
                 @else
-                {{ Form::text('email', null, array('class' => 'form-control', 'placeholder'=>'email')) }}
                 @endif
-</p>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                {{ Form::text('email', null, array('class' => 'form-control', 'placeholder'=>'email')) }}
 
-<p>
+</div>
+
+<div class="form-group has-feedback">
                 @if ($errors->first('pass'))
-                <div class="alert alert-warning">
+                <div class="alert alert-danger">
                     <a href="#" class="close" data-dismiss="alert">&times;</a>
                     <?php echo $errors->first('pass'); ?>
-                    {{ Form::password('pass', null, array('class' => 'form-control', 'placeholder'=>'пароль')) }}
                 </div>
                 @else
-                {{ Form::text('pass', null, array('class' => 'form-control', 'placeholder'=>'пароль')) }}
                 @endif
-</p>
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    {{ Form::password('pass', array('class' => 'form-control', 'placeholder'=>'пароль')) }}
 
-                            <p>{{ Form::submit("Отправить", array('class' => 'btn btn-lg btn-success btn-block')) }}</p>
+</div>
+
+<div class="form-group has-feedback">
+                {{ Form::submit("Войти", array('class' => 'btn btn-lg btn-success btn-block')) }}
+</div>
 
                             {{ Form::close() }}
                             @stop

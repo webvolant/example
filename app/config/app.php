@@ -127,6 +127,7 @@ return array(
         'Intervention\Image\ImageServiceProvider',
         'Appitventures\Phpgmaps\PhpgmapsServiceProvider',
         'Jcf\Geocode\GeocodeServiceProvider',
+        'Msurguy\Honeypot\HoneypotServiceProvider'
 
 	),
 
@@ -199,6 +200,7 @@ return array(
         'Image' => 'Intervention\Image\Facades\Image',
         'Gmaps' => 'Appitventures\Phpgmaps\Facades\Phpgmaps',
         'Geocode' => 'Jcf\Geocode\Facades\Geocode',
+        'Honeypot' => 'Msurguy\Honeypot\HoneypotFacade'
 
 	),
 

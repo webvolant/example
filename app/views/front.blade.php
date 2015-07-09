@@ -99,6 +99,10 @@
                             <span class="h7_my"> или оставьте свой номер</span>
                         </p>
                         {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control width250', 'placeholder'=>'0(___) __ __ __')) }}
+                        <!-- Honeypot::generate('my_name', 'my_time') -->
+                        <div class="lastname">
+                            {{ Form::text('lastname', null, array('title'=>'Поле должно быть заполнено!', 'id'=>'lastname', 'class' => 'form-control')) }}
+                        </div>
                         {{ Form::submit( "Отправить", array('class' => 'form-control btn_submit_main btn btn-warning submit_send_order')) }}
 
 
@@ -438,7 +442,8 @@
         $(".submit_send_order").click(function(e){
             e.preventDefault();
             var phone = $("#phone").val();
-                $.post('/order-new', {phone:phone},function(data){
+            var lastname = $("#lastname").val();
+                $.post('/order-new', {lastname:lastname,phone:phone},function(data){
                     console.log(data);
                     if (data['flag']=='0')
                         swal({
@@ -465,7 +470,8 @@
             var pacient = $(this).parents('.modal').find( "[name='pacient']" ).val();
             var name = $(this).parents('.modal').find( "[name='name']" ).val();
             var comment = $(this).parents('.modal').find( "[name='comment']" ).val();
-            $.post('/order-new-doctor', {phone:phone,doctor_id:doctor_id,comment:comment,name:name,pacient:pacient},function(data){
+            var lastname = $(this).parents('.modal').find( "[name='lastname']" ).val();
+            $.post('/order-new-doctor', {lastname:lastname,phone:phone,doctor_id:doctor_id,comment:comment,name:name,pacient:pacient},function(data){
 
                     // do something…
 
@@ -496,7 +502,8 @@
             var pacient = $(this).parents('.modal').find( "[name='pacient']" ).val();
             var name = $(this).parents('.modal').find( "[name='name']" ).val();
             var comment = $(this).parents('.modal').find( "[name='comment']" ).val();
-            $.post('/order-new-klinika', {phone:phone,klinik_id:klinik_id,comment:comment,name:name,pacient:pacient},function(data){
+            var lastname = $(this).parents('.modal').find( "[name='lastname']" ).val();
+            $.post('/order-new-klinika', {lastname:lastname,phone:phone,klinik_id:klinik_id,comment:comment,name:name,pacient:pacient},function(data){
                 if (data['flag']=='0')
                     swal({
                         title: 'Заявка не принята',
@@ -525,7 +532,8 @@
             var name = $(this).parents('.modal').find( "[name='name']" ).val();
             var comment = $(this).parents('.modal').find( "[name='comment']" ).val();
             var diag_id = $(this).parents('.modal').find( "[name='diag_id']" ).val();
-            $.post('/order-new-klinika', {phone:phone,klinik_id:klinik_id,comment:comment,name:name,pacient:pacient,diag_id:diag_id},function(data){
+            var lastname = $(this).parents('.modal').find( "[name='lastname']" ).val();
+            $.post('/order-new-diag', {lastname:lastname,phone:phone,klinik_id:klinik_id,comment:comment,name:name,pacient:pacient,diag_id:diag_id},function(data){
                 if (data['flag']=='0')
                     swal({
                         title: 'Заявка не принята',

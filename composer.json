@@ -15,7 +15,9 @@
         "baum/baum": "~1.0",
 		"intervention/image": "2.",
         "appitventures/phpgmaps": "1.0.*@dev",
-        "jcf/geocode": "1.0.*"
+        "jcf/geocode": "1.0.*",
+        "msurguy/honeypot": "dev-master"
+        //"ianlandsman/Honeypot": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
