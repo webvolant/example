@@ -127,7 +127,8 @@ return array(
         'Intervention\Image\ImageServiceProvider',
         'Appitventures\Phpgmaps\PhpgmapsServiceProvider',
         'Jcf\Geocode\GeocodeServiceProvider',
-        'Msurguy\Honeypot\HoneypotServiceProvider'
+        'Msurguy\Honeypot\HoneypotServiceProvider',
+        'Schickling\Backup\BackupServiceProvider'
 
 	),
 

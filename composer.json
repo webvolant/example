@@ -16,7 +16,8 @@
 		"intervention/image": "2.",
         "appitventures/phpgmaps": "1.0.*@dev",
         "jcf/geocode": "1.0.*",
-        "msurguy/honeypot": "dev-master"
+        "msurguy/honeypot": "dev-master",
+        "schickling/backup": "0.6.0"
 	},
 	"autoload": {
 		"classmap": [

@@ -46,36 +46,7 @@ return array(
 
 	'connections' => array(
 
-		'sqlite' => array(
-			'driver'   => 'sqlite',
-			'database' => __DIR__.'/../database/production.sqlite',
-			'prefix'   => '',
-		),
-
-		'mysql' => array(
-			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'doc',
-			'username'  => 'root',
-			'password'  => '',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
-		),
-/*
-        'mysql' => array(
-            'driver'    => 'mysql',
-            'host'      => 'mysql4.locum.ru',
-            'database'  => 'volant24_my-do44',
-            'username'  => 'volant24_my-do44',
-            'password'  => 'DnXmmsPFp',
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-        ),
-
-
-        'mysql' => array(
+        /*'mydoc_connect' => array(
             'driver'    => 'mysql',
             'host'      => 'mysql6.locum.ru',
             'database'  => 'slide11_my-doc64',
@@ -84,8 +55,49 @@ return array(
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
-        ),
-    */
+        ),*/
+
+
+        'sqlite' => array(
+			'driver'   => 'sqlite',
+			'database' => __DIR__.'/../database/production.sqlite',
+			'prefix'   => '',
+		),
+
+                'mysql' => array(
+                    'driver'    => 'mysql',
+                    'host'      => 'localhost',
+                    'database'  => 'doc',
+                    'username'  => 'root',
+                    'password'  => '',
+                    'charset'   => 'utf8',
+                    'collation' => 'utf8_unicode_ci',
+                    'prefix'    => '',
+                ),
+/*
+                'mysql' => array(
+                    'driver'    => 'mysql',
+                    'host'      => 'mysql4.locum.ru',
+                    'database'  => 'volant24_my-do44',
+                    'username'  => 'volant24_my-do44',
+                    'password'  => 'DnXmmsPFp',
+                    'charset'   => 'utf8',
+                    'collation' => 'utf8_unicode_ci',
+                    'prefix'    => '',
+                ),
+
+
+                'mysql' => array(
+                    'driver'    => 'mysql',
+                    'host'      => 'mysql6.locum.ru',
+                    'database'  => 'slide11_my-doc64',
+                    'username'  => 'slide11_my-doc64',
+                    'password'  => 'gzoeXOiucP',
+                    'charset'   => 'utf8',
+                    'collation' => 'utf8_unicode_ci',
+                    'prefix'    => '',
+                ),
+            */
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
