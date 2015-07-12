@@ -20,8 +20,7 @@
         <meta name="description" content="@yield('description', Helper::description())">
     @show
 
-        {{ HTML::style('css/bootstrap.css') }}
-        {{ HTML::style('css/bootstrap-theme.css') }}
+        {{ HTML::style('css/bootstrap.min.css') }}
         {{ HTML::style('template.css') }}
 
         {{ HTML::style('source/jquery.fancybox.css') }}
@@ -32,37 +31,7 @@
         {{ HTML::style('css/sweet-alert.css') }}
 
 
-        {{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') }}
-        {{ HTML::script('https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.3.1/jquery.maskedinput.js') }}
-        {{ HTML::script('js/bootstrap.min.js') }}
-        {{ HTML::script('js/jquery.chained.min.js') }}
-        {{ HTML::script('js/jquery.mousewheel-3.0.6.pack.js') }}
-        {{ HTML::script('source/jquery.fancybox.pack.js') }}
-        {{ HTML::script('js/sweet-alert.min.js') }}
-        {{ HTML::script('slick/slick.min.js') }}
-        {{ HTML::script('js/modernizr.custom.js') }}
 
-
-        <script>
-            $(document).ready(function() {
-                $("#krit2").chained("#krit1");
-
-                $('.car_grafik').slick({
-                    infinite: true,
-                    slidesToShow: 6,
-                    slidesToScroll: 6
-                });
-
-                $('.car_pic').slick({
-                    dots: true,
-                    infinite: true,
-                    speed: 500,
-                    fade: true,
-                    cssEase: 'linear'
-                });
-
-            });
-        </script>
 
 
     @show
@@ -363,7 +332,7 @@
                         }
                     </style>
                         <img src="/public/template_image/ablogo.png" class="developed_logo" width="20px" height="20px"/> <a href="">AB SOLUTIONS</a> - Разработка веб-сайта<br/>
-                        <div class="pull-right"><a href="mailto:barkalovlab@gmail.com">Напишите нам!</a></div>
+                        <div class="pull-right"><a href="mailto:barkalovlab@gmail.com"><span class="glyphicon glyphicon-envelope"></span>  Антон Баркалов</a></div>
                     </div>
 
 
@@ -374,6 +343,39 @@
     </div>
 
 </div> <!-- container -->
+
+
+{{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') }}
+{{ HTML::script('https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.3.1/jquery.maskedinput.js') }}
+{{ HTML::script('js/bootstrap.min.js') }}
+{{ HTML::script('js/jquery.chained.min.js') }}
+{{ HTML::script('js/jquery.mousewheel-3.0.6.pack.js') }}
+{{ HTML::script('source/jquery.fancybox.pack.js') }}
+{{ HTML::script('js/sweet-alert.min.js') }}
+{{ HTML::script('slick/slick.min.js') }}
+{{ HTML::script('js/modernizr.custom.js') }}
+
+
+<script>
+    $(document).ready(function() {
+        $("#krit2").chained("#krit1");
+
+        $('.car_grafik').slick({
+            infinite: true,
+            slidesToShow: 6,
+            slidesToScroll: 6
+        });
+
+        $('.car_pic').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
+
+    });
+</script>
 
 </body>
 
