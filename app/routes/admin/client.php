@@ -23,7 +23,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         function(){
             $rules = array(
                 'fio' => array('required'),
-                'email' => array('required','unique:users,email'),
+                //'email' => array('required','unique:users,email'),
                 //'pass' => array('required','confirmed'),
                 //'pass_confirmation' => array('required'),
                 'phone' => array('required')
@@ -34,7 +34,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $user = new Client;
 
                 //$user->password = Hash::make(Input::get('pass'));
-                $user->email = Input::get('email');
+                //$user->email = Input::get('email');
                 $user->phone = Input::get('phone');
                 $user->fio = Input::get('fio');
                 //$user->role = 'operator';
@@ -59,7 +59,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
             $rules = array(
                 'fio' => array('required'),
-                'email' => array('required','unique:users,email'),
+                //'email' => array('required','unique:users,email'),
                 //'pass' => array('required','confirmed'),
                 //'pass_confirmation' => array('required'),
                 'phone' => array('required')
@@ -71,7 +71,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $json_before = json_encode($user);
 
                 //$user->password = Hash::make(Input::get('pass'));
-                $user->email = Input::get('email');
+                //$user->email = Input::get('email');
                 $user->phone = Input::get('phone');
                 $user->fio = Input::get('fio');
 

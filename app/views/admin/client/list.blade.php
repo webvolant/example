@@ -15,7 +15,7 @@
 
 @section('content')
 <p class="pull-right">
-    <a href="{{ URL::route('user/add') }}" class="btn btn-primary"><i class="fa fa-plus fa-fw"></i>Добавить</a>
+    <a href="{{ URL::route('client/add') }}" class="btn btn-primary"><i class="fa fa-plus fa-fw"></i>Добавить</a>
 </p>
 
 
@@ -46,15 +46,15 @@
     <tbody>
         @foreach ( $users as $key => $user)
             <tr>
-                <td><a href='{{ URL::route("user/edit", array($user->id)) }}'>{{ $user->id }}</a></td>
-                <td><a href='{{ URL::route("user/edit", array($user->id)) }}'>{{ $user->fio }}</a></td>
+                <td><a href='{{ URL::route("client/edit", array($user->id)) }}'>{{ $user->id }}</a></td>
+                <td><a href='{{ URL::route("client/edit", array($user->id)) }}'>{{ $user->fio }}</a></td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->created_at }}</td>
                 <td>{{ $user->updated_at }}</td>
                 <td>{{ $user->phone }}</td>
                 <td class="gradeA">
-                    <a href='{{ URL::route("user/edit", array($user->id)) }}' class="btn btn-info"><i class="fa fa-wrench fa-fw"></i></a>
-                    <a href='{{ URL::route("user/delete", array($user->id)) }}' class="btn btn-danger"><i class="fa fa-trash-o fa-fw"></i></a>
+                    <a href='{{ URL::route("client/edit", array($user->id)) }}' class="btn btn-info"><i class="fa fa-wrench fa-fw"></i></a>
+                    <a href='{{ URL::route("client/delete", array($user->id)) }}' class="btn btn-danger"><i class="fa fa-trash-o fa-fw"></i></a>
                 </td>
             </tr>
         @endforeach

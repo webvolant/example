@@ -15,7 +15,7 @@
 
 @section('content')
 <p class="pull-right">
-    <a href="{{ URL::route('order/add') }}" class="btn btn-primary"><i class="fa fa-plus fa-fw"></i>Добавить</a>
+    <a href="{{ URL::route('review/add') }}" class="btn btn-primary"><i class="fa fa-plus fa-fw"></i>Добавить</a>
 </p>
 
 

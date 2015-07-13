@@ -4,13 +4,12 @@ class AdminOtzivController extends Controller {
 
     public function add()
     {
-        $doctors = User::getDoctors()->lists('fio','id');
-        asort($doctors);
-        $clients = Client::all()->lists('phone','id');
-        asort($clients);
+        $doctors = User::getDoctors()->lists('fio', 'id');
+        $clients = Client::getClients()->lists('phone', 'id');
+
         return View::make('admin.review.add',array(
-            'clients'=>$clients,
             'doctors'=>$doctors,
+            'clients'=>$clients,
         ));
     }
 
@@ -35,10 +34,8 @@ class AdminOtzivController extends Controller {
 
     public function edit($id)
     {
-        ///$doctors = User::getDoctors()->lists('fio','id');
-        //asort($doctors);
-        //$clients = Client::all()->lists('phone','id');
-       // asort($clients);
+        $doctors = User::getDoctors()->lists('fio', 'id');
+        $clients = Client::getClients()->lists('phone', 'id');
 
         $otziv = Otziv::find($id);
 
@@ -48,7 +45,8 @@ class AdminOtzivController extends Controller {
 
         return View::make('admin.review.edit',array(
             'otziv'=>$otziv,
-            //'doctors'=>$doctors,
+            'clients'=>$clients,
+            'doctors'=>$doctors,
             //'order'=>$order,
             //'events'=>$events,
             //'status'=>$status,

@@ -47,22 +47,76 @@ Route::post('review/add', array(
     'as'=>'review/add',
     function(){
         $rules = array(
-            //'name' => array('required','unique:specialities,name')
+            'fio' => array('required'),
+            'rang_qualif'=>'required',
+            'rang_price'=>'required',
+            'rang_vnimanie'=>'required',
         );
+
         $validation = Validator::make(Input::all(), $rules);
         if ($validation->passes()){
-            $order = new Order();
-            //var_dump(Input::get('global_status')[0]);
+
+            $otziv = new Otziv;
+            $json_before = json_encode($otziv);
+
+            $otziv->client_id = Input::get('client_id');
+            $otziv->fio = Input::get('fio');
+            $otziv->phone = Client::find(Input::get('client_id'))->phone;
+            $otziv->status = Input::get('status')[0];
+            $otziv->comment = Input::get('comment');
+            $otziv->doctor_id = Input::get('doctor_id');
+            $otziv->rang_qualif = Input::get('rang_qualif');
+            $otziv->rang_vnimanie = Input::get('rang_price');
+            $otziv->rang_price = Input::get('rang_vnimanie');
+            $otziv->user_id = Auth::user()->id;
+
+            $otziv->save();
+
+            // Пересчет для конкретного врача
+            $user = User::where('id','=',$otziv->doctor_id)->first();
+            //var_dump($user->id);
             //die();
-            $order->global_status = Input::get('global_status')[0];
-            $order->client_id = Input::get('client')[0];
-            $order->operator_id = Auth::user()->id;
-            $order->doctor_id = Input::get('doctor')[0];
-            //$order->otziv_id
-            $order->save();
+            $count = Otziv::where('doctor_id','=',$otziv->doctor_id)->where('status','=',1)->count();
+            if ($count!=0){
+                $sum1 = Otziv::where('doctor_id','=',$otziv->doctor_id)->where('status','=',1)->sum('rang_qualif');
+                $sum2 = Otziv::where('doctor_id','=',$otziv->doctor_id)->where('status','=',1)->sum('rang_price');
+                $sum3 = Otziv::where('doctor_id','=',$otziv->doctor_id)->where('status','=',1)->sum('rang_vnimanie');
+
+                $sum = ((($sum1+$sum2+$sum3)*2)/3)/$count;
+                $user->count_otzivi = $count;
+                $user->rating = $sum;
+                $user->save();
+            }
+
+            //Ищем клиники для врача , а потом врачей для клиник и пересчитываем результат рейтинга и отзывов
+            $k = $user->Kliniks()->get();
+            foreach ($k as $klinika){
+                $rating = 0;
+                $count_otzivi = 0;
+                $count_doctors = $klinika->Users->count();
+                foreach ( $klinika->Users as $key => $doctor)
+                    if($doctor->rating!=""){
+                        $rating = $rating + $doctor->rating;
+                        $count_otzivi = $count_otzivi + $doctor->count_otzivi;
+                    }
+                    else{
+                        $rating = $rating + $doctor->rating_second;
+                        $count_otzivi = $count_otzivi + $doctor->count_otzivi;
+                    }
+                $klinika->rating = $rating/$count_doctors;
+                $klinika->count_otzivi = $count_otzivi;
+                $klinika->save();
+            }
+
+
+
+
+
+
             return Redirect::route('review/index');
         }
         else{
+
             return Redirect::route('review/add')->withInput()->withErrors($validation);
         }
     }
@@ -78,12 +132,15 @@ Route::post('review/edit/{id}', array(
     'as'=>'review/edit',
     function($id){
         $rules = array(
-            //'name' => array('required','unique:specialities,name')
+            'fio' => array('required'),
+            'rang_qualif'=>'required',
+            'rang_price'=>'required',
+            'rang_vnimanie'=>'required',
         );
 
         $validation = Validator::make(Input::all(), $rules);
         if ($validation->passes()){
-
+/*
             $id_cl = 0;
             $phone = Input::get('phone');
             $client = Client::where('phone','LIKE', "%$phone%")->exists();
@@ -95,14 +152,14 @@ Route::post('review/edit/{id}', array(
                 $cl = Client::where('phone','LIKE', "%$phone%")->first();
                 $id_cl = $cl->id;
             }
-
+*/
 
             $otziv = Otziv::find($id);
             $json_before = json_encode($otziv);
 
-            $otziv->client_id = $id_cl;
+            $otziv->client_id = Input::get('client_id');
             $otziv->fio = Input::get('fio');
-            $otziv->phone = $phone;
+            $otziv->phone = Client::find(Input::get('client_id'))->phone;
             $otziv->status = Input::get('status')[0];
             $otziv->comment = Input::get('comment');
             $otziv->doctor_id = Input::get('doctor_id');

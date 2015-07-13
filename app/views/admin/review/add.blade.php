@@ -18,24 +18,34 @@
 
 {{ Form::open(array('url' => action('AdminOtzivController@add'), 'role' => 'form', 'class' => 'width90 form-horizontal')) }}
 
+<p>
+    @if ($errors->first('doctor_id'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('doctor_id'); ?></div>
+@else
+@endif
+{{ Form::label('Привязка к доктору') }}
+{{ Form::select('doctor_id',['NULL'=>'Ничего не выбрано'] + $doctors,array('class'=>'form-control custom-scroll')) }}
+</p>
 
 <p>
     @if ($errors->first('fio'))
 <div class="alert alert-danger" role="alert"><?php echo $errors->first('fio'); ?></div>
 @else
 @endif
-{{ Form::label('Имя клиента') }}
+{{ Form::label('Отображаемое имя клиента на сайте') }}
 {{ Form::text('fio',null,array('class'=>'form-control')) }}
 </p>
 
 <p>
-    @if ($errors->first('phone'))
-<div class="alert alert-danger" role="alert"><?php echo $errors->first('phone'); ?></div>
+    @if ($errors->first('client_id'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('client_id'); ?></div>
 @else
 @endif
-{{ Form::label('Телефон') }}
-{{ Form::text('phone',null,array('class'=>'form-control')) }}
+{{ Form::label('Привязка к клиенту') }}
+{{ Form::select('client_id',['NULL'=>'Ничего не выбрано'] + $clients,array('class'=>'form-control custom-scroll')) }}
 </p>
+
+
 
 <p>
     @if ($errors->first('rang_qualif'))
@@ -81,6 +91,7 @@
 {{ Form::label('Статус') }}
 {{ Form::select('status', Helper::status(), null, array('class' => 'form-control')) }}
 </p>
+
 
 
 <p>

@@ -58,7 +58,7 @@
 
     {{ HTML::script('bootstrap-multiselect-master/dist/js/bootstrap-multiselect.js') }}
 
-
+    {{ HTML::script('https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.3.1/jquery.maskedinput.js') }}
 
 
 
@@ -474,6 +474,7 @@
 
 
 
+
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
     $(document).ready(function() {
@@ -492,6 +493,10 @@
             }
         });
 
+        var $inputs = $('input[id=phone]');
+        $.each($inputs,function(){
+            $(this).mask("0(999) 99-99-99");
+        });
 
 
 

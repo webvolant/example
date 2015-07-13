@@ -14,42 +14,55 @@
 
 @section('content')
 
-{{ Form::model($user, array('action' => array('AdminUserController@edit', $user->id), 'role' => 'form', 'class' => 'width90 form-horizontal')) }}
-
-        <p>
-            <?php echo $errors->first('fio'); ?>
-            {{ Form::label('Фамилия Имя Отчество') }}
-            {{ Form::text('fio', null, array('class' => 'form-control', 'placeholder'=>'Фамилия Имя Отчество')) }}
-        </p>
-
+{{ Form::model($user, array('action' => array('AdminClientController@edit', $user->id), 'role' => 'form', 'class' => 'width90 form-horizontal')) }}
 <p>
-    <?php echo $errors->first('pass'); ?>
+    @if ($errors->first('fio'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('fio'); ?></div>
+@else
+@endif
+{{ Form::label('ФИО') }}
+{{ Form::text('fio', null, array('class' => 'form-control', 'placeholder'=>'')) }}
+</p>
+<!--
+    <p>
+        @if ($errors->first('pass'))
+    <div class="alert alert-danger" role="alert"><?php //echo $errors->first('pass'); ?></div>
+    @else
+    @endif
     {{ Form::label('Пароль') }}
-    {{ Form::password('pass', array('class' => 'form-control', 'placeholder'=>'Пароль')) }}
-</p>
+    {{ Form::text('pass', null, array('class' => 'form-control', 'placeholder'=>'')) }}
+    </p>
+
+    <p>
+        @if ($errors->first('pass_confirmation'))
+    <div class="alert alert-danger" role="alert"><?php //echo $errors->first('pass_confirmation'); ?></div>
+    @else
+    @endif
+    {{ Form::label('Повтор пароля') }}
+    {{ Form::text('pass_confirmation', null, array('class' => 'form-control', 'placeholder'=>'')) }}
+    </p>
 
 <p>
-    <?php echo $errors->first('pass_confirmation'); ?>
-    {{ Form::label('Повторите пароль') }}
-    {{ Form::password('pass_confirmation', array('class' => 'form-control', 'placeholder'=>'Повторите пароль')) }}
+    @if ($errors->first('email'))
+        <div class="alert alert-danger" role="alert"><?php //echo $errors->first('email'); ?></div>
+    @else
+    @endif
+    {{ Form::label('email') }}
+    {{ Form::text('email', null, array('class' => 'form-control', 'placeholder'=>'')) }}
 </p>
-
-        <p>
-            <?php echo $errors->first('email'); ?>
-            {{ Form::label('email') }}
-            {{ Form::text('email', null, array('class' => 'form-control', 'placeholder'=>'Email')) }}
-        </p>
-
-        <p>
-            <?php echo $errors->first('phone'); ?>
-            {{ Form::label('Телефон') }}
-            {{ Form::text('phone', null, array('class' => 'form-control', 'placeholder'=>'Телефон')) }}
-        </p>
-
+-->
+<p>
+    @if ($errors->first('phone'))
+<div class="alert alert-danger" role="alert"><?php echo $errors->first('phone'); ?></div>
+@else
+@endif
+{{ Form::label('Телефон') }}
+{{ Form::text('phone', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control width250', 'placeholder'=>'0(___) __ __ __')) }}
+</p>
 
 <p>
     {{ Form::submit( "Отправить", array('class' => 'btn btn-primary')) }}
-    <a href="{{ URL::route('user/index') }}" class="btn btn-danger">Отмена</a>
+    <a href="{{ URL::route('client/index') }}" class="btn btn-danger">Отмена</a>
 </p>
 
 {{ Form::close() }}
