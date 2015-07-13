@@ -13,7 +13,10 @@ class Client extends Eloquent {
     protected $table = 'clients';
 
 
-
+    /*public function Orders()
+    {
+        return $this->belongsToMany('Order', 'order_clients', 'client_id', 'order_id');
+    }*/
 
     public static function getClients(){
         $result = Cache::remember('getClients', Helper::cacheTime(), function () {

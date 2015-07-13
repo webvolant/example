@@ -49,7 +49,7 @@
 
                 <div class="col-xs-7 col-sm-6 col-md-2 paddingtop15">
                         <ul class="list">
-                            <li><span class="orange_text">{{ $orders }} </span><?php echo strstr(Lang::choice('mydoc.orders', $orders, ['n' => $orders], 'ru'),"з"); ?> к врачам</li>
+                            <li><span class="orange_text">{{ $orders+75 }} </span><?php echo strstr(Lang::choice('mydoc.orders', $orders+75, ['n' => $orders+75], 'ru'),"з"); ?> к врачам</li>
                             <li><span class="orange_text">{{ $docs }} </span><?php echo strstr(Lang::choice('mydoc.docs', $docs, ['n' => $docs], 'ru'),"в"); ?> в базе</li>
                             <li><span class="orange_text">{{ $ot }} </span><?php echo strstr(Lang::choice('mydoc.ot', $ot, ['n' => $ot], 'ru'),"о"); ?> </li>
                         </ul>

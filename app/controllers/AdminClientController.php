@@ -10,6 +10,11 @@ class AdminClientController extends Controller {
     public function delete($id)
     {
         $user = Client::find($id);
+        $orders = Order::where('client_id','=',$user->id)->get();
+        foreach($orders as $item){
+            $item->client_id = NULL;
+            $item->save();
+        }
         $user->delete();
         return Redirect::route("client/index");
     }

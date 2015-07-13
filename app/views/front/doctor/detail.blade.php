@@ -430,22 +430,22 @@ $grafik_arr = explode(";", $user->grafik);
                                                       echo '<span class="glyphicon glyphicon-star blau"></span>';
                                                   else
                                                       echo '<span class="glyphicon glyphicon-star gray"></span>';
-                                            ?>
-
+                                            ?></div>
+                                        <div class="col-md-3"><p>Внимание</p>
                                         <?php for ($i=1; $i <= 5; $i++)
                                             if ($i <= $item->rang_vnimanie)
                                                 echo '<span class="glyphicon glyphicon-star blau"></span>';
                                             else
                                                 echo '<span class="glyphicon glyphicon-star gray"></span>';
-                                        ?>
-
+                                        ?></div>
+                                            <div class="col-md-3"><p>Цена</p>
                                         <?php for ($i=1; $i <= 5; $i++)
                                             if ($i <= $item->rang_price)
                                                 echo '<span class="glyphicon glyphicon-star blau"></span>';
                                             else
                                                 echo '<span class="glyphicon glyphicon-star gray"></span>';
-                                        ?>
-                                    </div>
+                                        ?></div>
+
 
 
                             </div>
