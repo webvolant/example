@@ -41,10 +41,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/config/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="19" selection-start="441" selection-end="441" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="3638">
+            <state line="15" column="21" selection-start="443" selection-end="443" vertical-scroll-proportion="0.46703297" vertical-offset="0" max-vertical-offset="3638">
               <folding />
             </state>
           </provider>
@@ -86,10 +86,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="client.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes/admin/client.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="28" selection-start="3288" selection-end="3288" vertical-scroll-proportion="0.7197802" vertical-offset="1256" max-vertical-offset="1802">
+            <state line="102" column="28" selection-start="3288" selection-end="3288" vertical-scroll-proportion="-15.115385" vertical-offset="1256" max-vertical-offset="1802">
               <folding />
             </state>
           </provider>
@@ -170,10 +170,10 @@
         <option value="$PROJECT_DIR$/app/controllers/AdminOtzivController.php" />
         <option value="$PROJECT_DIR$/app/views/admin.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin/client/list.blade.php" />
-        <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/views/admin/client/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin/client/add.blade.php" />
         <option value="$PROJECT_DIR$/app/routes/admin/client.php" />
+        <option value="$PROJECT_DIR$/app/config/app.php" />
       </list>
     </option>
   </component>
@@ -1044,13 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="19" selection-start="441" selection-end="441" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="3638">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AdminOtzivController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="34" selection-start="969" selection-end="969" vertical-scroll-proportion="-11.769231" vertical-offset="357" max-vertical-offset="1156">
@@ -1095,7 +1088,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes/admin/client.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="28" selection-start="3288" selection-end="3288" vertical-scroll-proportion="0.7197802" vertical-offset="1256" max-vertical-offset="1802">
+        <state line="102" column="28" selection-start="3288" selection-end="3288" vertical-scroll-proportion="-15.115385" vertical-offset="1256" max-vertical-offset="1802">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="21" selection-start="443" selection-end="443" vertical-scroll-proportion="0.46703297" vertical-offset="0" max-vertical-offset="3638">
           <folding />
         </state>
       </provider>
