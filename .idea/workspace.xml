@@ -32,19 +32,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="otziv.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes/admin/otziv.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="161" column="73" selection-start="5534" selection-end="5534" vertical-scroll-proportion="22.0" vertical-offset="3224" max-vertical-offset="4012">
-              <folding>
-                <marker date="1436786571522" expanded="true" signature="529:841" placeholder="..." />
-                <marker date="1436786571522" expanded="true" signature="565:836" placeholder="..." />
-                <marker date="1436786571522" expanded="true" signature="601:805" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="admin.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,6 +45,15 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminOtzivController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="39" column="34" selection-start="969" selection-end="969" vertical-scroll-proportion="-11.769231" vertical-offset="357" max-vertical-offset="1156">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="20" selection-start="437" selection-end="442" vertical-scroll-proportion="0.46703297" vertical-offset="0" max-vertical-offset="3638">
               <folding />
             </state>
           </provider>
@@ -108,10 +104,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="list.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/client/list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="50" selection-start="1595" selection-end="1595" vertical-scroll-proportion="0.76547843" vertical-offset="459" max-vertical-offset="1292">
+            <state line="56" column="50" selection-start="1595" selection-end="1595" vertical-scroll-proportion="-15.692307" vertical-offset="459" max-vertical-offset="1292">
               <folding />
             </state>
           </provider>
@@ -168,7 +164,6 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/views/front.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin/review/list.blade.php" />
-        <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/views/admin/review/add.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin/review/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/routes/admin/otziv.php" />
@@ -178,6 +173,7 @@
         <option value="$PROJECT_DIR$/app/views/admin/client/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/routes/admin/client.php" />
         <option value="$PROJECT_DIR$/app/views/admin/client/list.blade.php" />
+        <option value="$PROJECT_DIR$/app/config/app.php" />
       </list>
     </option>
   </component>
@@ -1007,13 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="19" selection-start="441" selection-end="441" vertical-scroll-proportion="0.4894434" vertical-offset="0" max-vertical-offset="3638">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/doctor/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="61" column="18" selection-start="3354" selection-end="3354" vertical-scroll-proportion="0.6022514" vertical-offset="631" max-vertical-offset="3961">
@@ -1032,9 +1021,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="161" column="73" selection-start="5534" selection-end="5534" vertical-scroll-proportion="22.0" vertical-offset="3224" max-vertical-offset="4012">
           <folding>
-            <marker date="1436786571522" expanded="true" signature="529:841" placeholder="..." />
-            <marker date="1436786571522" expanded="true" signature="565:836" placeholder="..." />
-            <marker date="1436786571522" expanded="true" signature="601:805" placeholder="..." />
+            <marker date="1436786571522" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436786571522" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436786571522" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1097,7 +1086,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/client/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="50" selection-start="1595" selection-end="1595" vertical-scroll-proportion="0.76547843" vertical-offset="459" max-vertical-offset="1292">
+        <state line="56" column="50" selection-start="1595" selection-end="1595" vertical-scroll-proportion="-15.692307" vertical-offset="459" max-vertical-offset="1292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="20" selection-start="437" selection-end="442" vertical-scroll-proportion="0.46703297" vertical-offset="0" max-vertical-offset="3638">
           <folding />
         </state>
       </provider>
