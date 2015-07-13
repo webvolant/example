@@ -95,3 +95,12 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
     ))->where('id', '[0-9]+');
 
 });
+
+//Удаление Доктора только админу
+Route::group(array('prefix' => 'admin', 'before' => 'administrator'), function() {
+    Route::get('client/delete/{id}', array(
+        'as'=>'client/delete',
+        'uses'=>'AdminClientController@delete'
+    ))->where('id', '[0-9]+');
+
+});

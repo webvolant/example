@@ -9,7 +9,7 @@
 @extends('admin')
 
 @section('page-header')
-    Редактирование оператора
+    Редактирование клиента
 @stop
 
 @section('content')
