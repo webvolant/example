@@ -21,11 +21,11 @@
 {{ Form::open(array('to' => 'report/orders', 'role' => 'form', 'class' => 'width90 form-inline', 'id'=>'')) }}
 
 <p>
-    {{ Form::label('По каким заявкам сделать отчет?') }}
+    {{ Form::label('По каким событиям сделать отчет?') }}
     <select id="events" name="type">
-        <option value="0">Ожидающие заявки</option>
-        <option value="1">Просроченные заявки</option>
-        <option value="2">Выполненные заявки</option>
+        <option value="0">Ожидающие события</option>
+        <option value="1">Просроченные события</option>
+        <option value="2">Выполненные события</option>
     </select>
 </p>
 
@@ -46,7 +46,7 @@
 </p>
 
 {{ Form::close() }}
-
+@if (isset($events))
 <!-- /.row -->
 <div class="row">
     <div class="col-lg-12">
@@ -92,7 +92,7 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
-
+@endif;
 
 @stop
 

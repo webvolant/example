@@ -46,7 +46,7 @@
 </p>
 
 {{ Form::close() }}
-
+@if (isset($orders))
 <!-- /.row -->
 <div class="row">
     <div class="col-lg-12">
@@ -96,7 +96,7 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
-
+@endif
 
 @stop
 

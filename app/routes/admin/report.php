@@ -15,12 +15,22 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         'uses'=>'AdminReportController@wait'
     ));*/
 
-    Route::match(array('GET', 'POST'), 'report/orders' , array(
+    Route::get('report/orders' , array(
         'as'=>'report/orders',
         'uses'=>'AdminReportController@orders'
     ));
 
-    Route::match(array('GET', 'POST'), 'report/events' , array(
+    Route::post('report/orders' , array(
+        'as'=>'report/orders',
+        'uses'=>'AdminReportController@orders'
+    ));
+
+    Route::get('report/events' , array(
+        'as'=>'report/events',
+        'uses'=>'AdminReportController@events'
+    ));
+
+    Route::post('report/events' , array(
         'as'=>'report/events',
         'uses'=>'AdminReportController@events'
     ));
