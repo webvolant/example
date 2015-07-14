@@ -56,7 +56,7 @@ View::composer(array('front',
 
             $specialisations = Cache::remember('specialisations', Helper::cacheTime(), function()
             {
-                return $specialisations = Speciality::orderBy('name','asc')->lists('name', 'id');
+                return $specialisations = Speciality::orderBy('specialisation','asc')->lists('specialisation', 'id');
             });
 
             $view->with('search1', $search_mas); //массив критериев поиска
@@ -91,7 +91,7 @@ View::composer(array('front',
 
              $specialisations2 = Cache::remember('specialisations2', Helper::cacheTime(), function()
              {
-                 return Speciality::orderBy('name','asc')->get();
+                 return Speciality::orderBy('specialisation','asc')->get();
              });
             $view->with('specialisations2', $specialisations2);
 

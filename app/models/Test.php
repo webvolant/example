@@ -27,7 +27,7 @@ class Test extends Node {
 
     //для поиска
     public static function getTreeWithLinks(){
-        $links = Cache::remember('orders', Helper::cacheTime(), function()
+        $links = Cache::remember('getTreeWithLinks', Helper::cacheTime(), function()
         {
             $tests = Test::where('name','!=','root')->orderBy('lft')->get();
             $cap = "";

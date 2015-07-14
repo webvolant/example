@@ -31,7 +31,37 @@
         {{ HTML::style('css/sweet-alert.css') }}
 
 
+    {{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') }}
+    {{ HTML::script('https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.3.1/jquery.maskedinput.js') }}
+    {{ HTML::script('js/bootstrap.min.js') }}
+    {{ HTML::script('js/jquery.chained.min.js') }}
+    {{ HTML::script('js/jquery.mousewheel-3.0.6.pack.js') }}
+    {{ HTML::script('source/jquery.fancybox.pack.js') }}
+    {{ HTML::script('js/sweet-alert.min.js') }}
+    {{ HTML::script('slick/slick.min.js') }}
+    {{ HTML::script('js/modernizr.custom.js') }}
 
+
+    <script>
+        $(document).ready(function() {
+            $("#krit2").chained("#krit1");
+
+            $('.car_grafik').slick({
+                infinite: true,
+                slidesToShow: 6,
+                slidesToScroll: 6
+            });
+
+            $('.car_pic').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear'
+            });
+
+        });
+    </script>
 
 
     @show
@@ -98,7 +128,7 @@
                                 </div>
                         </div>
 
-                <?php //var_dump($specialities); ?>
+                <?php //Test::getTreeWithLinks() ?>
                 <?php //die() ?>
                         <div class="col-xs-4 col-sm-4 col-md-5 padding_left_right">
                             <div class="form-group">
@@ -349,37 +379,7 @@
 </div> <!-- container -->
 
 
-{{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') }}
-{{ HTML::script('https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.3.1/jquery.maskedinput.js') }}
-{{ HTML::script('js/bootstrap.min.js') }}
-{{ HTML::script('js/jquery.chained.min.js') }}
-{{ HTML::script('js/jquery.mousewheel-3.0.6.pack.js') }}
-{{ HTML::script('source/jquery.fancybox.pack.js') }}
-{{ HTML::script('js/sweet-alert.min.js') }}
-{{ HTML::script('slick/slick.min.js') }}
-{{ HTML::script('js/modernizr.custom.js') }}
 
-
-<script>
-    $(document).ready(function() {
-        $("#krit2").chained("#krit1");
-
-        $('.car_grafik').slick({
-            infinite: true,
-            slidesToShow: 6,
-            slidesToScroll: 6
-        });
-
-        $('.car_pic').slick({
-            dots: true,
-            infinite: true,
-            speed: 500,
-            fade: true,
-            cssEase: 'linear'
-        });
-
-    });
-</script>
 
 </body>
 
