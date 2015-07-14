@@ -98,6 +98,8 @@
                                 </div>
                         </div>
 
+                <?php //var_dump($specialities); ?>
+                <?php //die() ?>
                         <div class="col-xs-4 col-sm-4 col-md-5 padding_left_right">
                             <div class="form-group">
                                 <a id="test_icon" class="pull-left" data-toggle="modal" data-target="#testsModal" class="btn btn-info btn-sm" ><span class="glyphicon glyphicon-edit"></span></a>
@@ -142,16 +144,18 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="column3">
-                                                <?php $temp='А'; ?>
-                                                @foreach($illness as $key => $item)
+                                                <ul class="list">
+                                                    <?php $temp='А'; ?>
+                                                    @foreach($illness as $key => $item)
 
-                                                @if (substr($item->name, 0 , 2)!=substr($temp, 0, 2))
-                                                <h4><br/>{{ substr($item->name, 0 , 2) }} </h4>
-                                                @endif
-                                                <?php $temp = $item->name; ?>
+                                                    @if (substr($item->name, 0 , 2)!=substr($temp, 0, 2))
+                                                    <h4><br/>{{ substr($item->name, 0 , 2) }} </h4>
+                                                    @endif
+                                                    <?php $temp = $item->name; ?>
 
-                                                <h5><li><a href='{{ URL::route("illness/detail", array($item->link)) }}'>{{ $item->name }}</a></li></h5>
-                                                @endforeach
+                                                    <h5><li><a href='{{ URL::route("illness/detail", array($item->link)) }}'>{{ $item->name }}</a></li></h5>
+                                                    @endforeach
+                                                </ul>
                                             </div>
                                         </div>
                                         <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button>
@@ -204,11 +208,11 @@
 
                             <?php
                                 if (substr($item, 0 , 2)!=substr($temp, 0, 2)){
-                                    echo '<h5><br/> </h5>';
+                                    echo '<h5 ><br/> </h5>';
                                 }
                                 $temp = $item;
                             ?>
-                        <h5><li><a href='{{ URL::route("doctor/doctors", array($key)) }}'>{{ $item }}</a></li></h5>
+                        <h5 class="font13"><li><a class="font13" href='{{ URL::route("doctor/doctors", array($key)) }}'>{{ $item }}</a></li></h5>
                         @endforeach
                     </ul>
 

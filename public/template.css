@@ -557,6 +557,23 @@ a:hover{
     font-size: 14px;
 }
 
+#illnessModal .modal-dialog{
+    width:90%;
+}
+
+#illnessModal .modal-dialog a{
+    font-size: 12px;
+    line-height: 0.6;
+}
+
+#illnessModal .modal-dialog p{
+    margin: 0 0 0px;
+}
+#illnessModal .modal-dialog .h_head{
+    font-weight: bold;
+    font-size: 14px;
+}
+
 .logo{
     background: url("template_image/logotype5.png") bottom center no-repeat;
     background-size: cover; /* Масштабируем фон */
@@ -1197,4 +1214,11 @@ input#user_phone::-webkit-input-placeholder {
 .btn_submit.disabled {
     color: #363636;
     background: #ccc;
+}
+
+
+
+.font13{
+    font-size: 13px;
+    line-height: 0.7;
 }

@@ -28,30 +28,40 @@ View::composer(array('front',
     'front.illness.list'),
     function($view)
         {
-            $view->with('orders', Order::getOrdersCount());
-            $view->with('docs', User::getDoctorsCount());
-            $view->with('ot', Otziv::getOtzivCount());
+            $orders = Cache::remember('orders', Helper::cacheTime(), function()
+            {
+                return $orders = Order::getOrdersCount();
+            });
+
+            $docs = Cache::remember('docs', Helper::cacheTime(), function()
+            {
+                return $docs = User::getDoctorsCount();
+            });
+
+            $ot = Cache::remember('ot', Helper::cacheTime(), function()
+            {
+                return $ot = Otziv::getOtzivCount();
+            });
+
+            $view->with('orders', $orders);
+            $view->with('docs', $docs);
+            $view->with('ot', $ot);
 
             $search_mas = [0=>"По специальности",1=>"По специализации",2=>"По исследованию",3=>"По заболеванию"];
 
+            $specialities = Cache::remember('specialities', Helper::cacheTime(), function()
+            {
+                return $specialities = Speciality::orderBy('name','asc')->lists('name', 'id');
+            });
 
-
-            $specialities = Speciality::all()->lists('name', 'id');
-            asort($specialities);
-
-            $specialisations = Speciality::all()->lists('specialisation', 'id');
-            asort($specialisations);
+            $specialisations = Cache::remember('specialisations', Helper::cacheTime(), function()
+            {
+                return $specialisations = Speciality::orderBy('name','asc')->lists('name', 'id');
+            });
 
             $view->with('search1', $search_mas); //массив критериев поиска
             $view->with('specialities', $specialities); //массив специальностей
-
-        /*
-            $temp = [];
-            foreach ( $specialisations as $key => $sp)
-                    array_push($temp, $sp);
-
-            $unic = array_unique($temp);
-        */
+            $view->with('specialisations', $specialisations); //массив специализаций
 
 
             $sidebar_libraries = '<div class="pull-right col-xs-12 col-sm-12 col-md-2">
@@ -79,10 +89,18 @@ View::composer(array('front',
             $view->with('sidebar_libraries', $sidebar_libraries);
 
 
-            $view->with('specialisations', $specialisations); //массив специализаций
-            $view->with('specialisations2', Speciality::all());
+             $specialisations2 = Cache::remember('specialisations2', Helper::cacheTime(), function()
+             {
+                 return Speciality::orderBy('name','asc')->get();
+             });
+            $view->with('specialisations2', $specialisations2);
 
-            $view->with('illness', Illness::all());
+
+            $illness = Cache::remember('illness', Helper::cacheTime(), function()
+            {
+                return $illness = Illness::all();
+            });
+            $view->with('illness', $illness);
 
 
         });
