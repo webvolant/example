@@ -190,7 +190,7 @@ Route::post('/order-new', array(
                     return $data;
                 }
 
-
+/*
                 // Робот по Ip
                 $access = 0;
                 $ip = Request::ip();
@@ -205,7 +205,7 @@ Route::post('/order-new', array(
                 }else{
                     file_put_contents('ip.txt',  $ip."\n" , FILE_APPEND);
 
-
+*/
 
 
                     $id = 0;
@@ -246,7 +246,6 @@ Route::post('/order-new', array(
                     $data['flag'] = 1;
                     $data['data'] = "Ваша заявка на прием отправлена. Наши консультанты свяжутся с Вами в течении 15 минут ежедневно в с 9:00 до 21:00 и запишут Вас на прием.";
                     return $data;
-                }
             }
             else{
                 $data['flag'] = 0;

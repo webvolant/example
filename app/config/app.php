@@ -26,9 +26,9 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	//'url' => 'http://localhost',
     //'url' => 'http://my-doc.volant247.lclients.ru/',
-    //'url' => 'http://my-doc.slide11.lclients.ru/',
+    'url' => 'http://my-doc.kg',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return array(
 	|
 	*/
 
-	'timezone' => 'Europe/Berlin', //'Asia/Bishkek',
+	'timezone' => 'Asia/Bishkek',
 
 	/*
 	|--------------------------------------------------------------------------
