@@ -1,11 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: barkalovlab
- * Date: 20.01.15
- * Time: 23:18
- */
-?>
 @extends('front')
 
 
@@ -19,77 +11,78 @@
 @stop
 
 @section('specialities')
-<!--
-<div class="row">
-    <div class="column_5 col-xs-12 col-sm-12 col-md-12">
-        <!--
-                <ul class="list">
-                    <li class="column">
-                        <div class="spec_list_head"><a href="/diagnostica/centers/uzi/">УЗИ</a></div>
-                        <div>– <a href="/diagnostica/centers/uzi/">при беременности</a></div>
-                        <div>– <a href="/uzi/uzi-brushnoi-polosti/">брюшной полости</a></div>
-                        <div>– <a href="/uzi/uzi-malogo-taza/">малого таза</a></div>
-                        <div>– <a href="/uzi/uzi-pochek/">почек</a></div>
-                        <div>– <a href="/ehokardiografiya/">сердца (ЭХОКГ)</a></div>
-                        <div>– <a href="/3d-uzi/">3D УЗИ</a></div>
-                    </li>
-                    <li class="column">
-                        <div class="spec_list_head"><a href="/komputernaya-tomografiya/">КТ</a></div>
-                        <div>– <a href="/komputernaya-tomografiya/kt-golovi/">головного мозга</a></div>
-                        <div>– <a href="/komputernaya-tomografiya/kt-leghih-i-serdca/">легких</a></div>
-                        <div>– <a href="/komputernaya-tomografiya/kt-brushnoi-polosti/">брюшной полости</a></div>
-                        <div>– <a href="/komputernaya-tomografiya/kt-pozvonochnika/">позвоночника</a></div>
-                        <div>– <a href="/komputernaya-tomografiya/kt-grudnoi-kletki/">грудной клетки</a></div>
-                        <div>– <a href="/komputernaya-tomografiya/kt-pochek/">почек</a></div>
-                    </li>
-                    <li class="column">
-                        <div class="spec_list_head"><a href="/mrt/">МРТ</a></div>
-                        <div>– <a href="/diagnostica/centers/mrt-magnito-rezonansnaya-tomografiya-0-4-tesla/mrt-golovnogo-mozga">головного мозга</a></div>
-                        <div>– <a href="/mrt/mrt-otdelov-pozvonochnika/">позвоночника</a></div>
-                        <div>– <a href="/mrt/mrt-kolennogo-sustava/">коленного сустава</a></div>
-                        <div>– <a href="/mrt/mrt-brushnoi-polosti-zabrjushinnogo-prostranstva/">брюшной полости</a></div>
-                        <div>– <a href="/mrt/mrt-malogo-taza/">малого таза</a></div>
-                        <div>– <a href="/mrt/mrt-gipofiza/">гипофиза</a></div>
-                    </li>
-                    <li class="column">
-                        <div class="spec_list_head"><a href="/rentgen/">Рентген</a></div>
-                        <div>– <a href="/rentgen/rentgen-legkih/">легких</a></div>
-                        <div>– <a href="/rentgen/rentgen-pozvonochnika/">позвоночника</a></div>
-                        <div>– <a href="/rentgen/rentgen-grudnoi-kletki/">грудной клетки</a></div>
-                        <div>– <a href="/rentgen/rentgen-sustavov/">суставов</a></div>
-                        <div>– <a href="/rentgen/mammografia/">маммография</a></div>
-                        <div>– <a href="/rentgen/rentgen_tolstoj_kishki_irrigoskopia/">ирригоскопия</a></div>
-                    </li>
-                    <li class="column">
-                        <div><a href="/fluorografiya/">Флюорография</a></div>
-                        <div><a href="/func-diagnostika/sutochnoe-ekg/">Электрокардиография (ЭКГ)</a></div>
-                        <div><a href="/endoskopicheskie-issledovaniya/kolonoskopiya/">Колоноскопия</a></div>
-                        <div><a href="/gastroskopiya/">Гастроскопия</a></div>
-                        <div><a href="/bronhoskopiya/">Бронхоскопия</a></div>
-                        <div><a href="/analiz-krovi/">Анализ крови</a></div>
-                    </li>
-                </ul>
-
-
-
-    </div>
-</div>
--->
 @stop
 
 @section('content')
-
-
 <div class="col-xs-12 col-sm-12 col-md-10">
-<!--
+
+<?php /*
     @if (\Route::current()->parameter('diag')!=null)
     {{ Test::where('link','=',\Route::current()->parameter('diag'))->first()->description }}
     @endif
 
     @if (\Route::current()->parameter('area')!=null)
-    {{ Test::where('link','=',\Route::current()->parameter('area'))->first()->description }}
+    <?php //Test::where('link','=',\Route::current()->parameter('area'))->first()->description ?>
     @endif
+    */ ?>
+
+<!--
+<div class="row">
+<div class="column_5 col-xs-12 col-sm-12 col-md-12">
+
+            <ul class="list">
+                <li class="column">
+                    <div class="spec_list_head"><a href="/diagnostica/centers/uzi/">УЗИ</a></div>
+                    <div>– <a href="/diagnostica/centers/uzi/">при беременности</a></div>
+                    <div>– <a href="/uzi/uzi-brushnoi-polosti/">брюшной полости</a></div>
+                    <div>– <a href="/uzi/uzi-malogo-taza/">малого таза</a></div>
+                    <div>– <a href="/uzi/uzi-pochek/">почек</a></div>
+                    <div>– <a href="/ehokardiografiya/">сердца (ЭХОКГ)</a></div>
+                    <div>– <a href="/3d-uzi/">3D УЗИ</a></div>
+                </li>
+                <li class="column">
+                    <div class="spec_list_head"><a href="/komputernaya-tomografiya/">КТ</a></div>
+                    <div>– <a href="/komputernaya-tomografiya/kt-golovi/">головного мозга</a></div>
+                    <div>– <a href="/komputernaya-tomografiya/kt-leghih-i-serdca/">легких</a></div>
+                    <div>– <a href="/komputernaya-tomografiya/kt-brushnoi-polosti/">брюшной полости</a></div>
+                    <div>– <a href="/komputernaya-tomografiya/kt-pozvonochnika/">позвоночника</a></div>
+                    <div>– <a href="/komputernaya-tomografiya/kt-grudnoi-kletki/">грудной клетки</a></div>
+                    <div>– <a href="/komputernaya-tomografiya/kt-pochek/">почек</a></div>
+                </li>
+                <li class="column">
+                    <div class="spec_list_head"><a href="/mrt/">МРТ</a></div>
+                    <div>– <a href="/diagnostica/centers/mrt-magnito-rezonansnaya-tomografiya-0-4-tesla/mrt-golovnogo-mozga">головного мозга</a></div>
+                    <div>– <a href="/mrt/mrt-otdelov-pozvonochnika/">позвоночника</a></div>
+                    <div>– <a href="/mrt/mrt-kolennogo-sustava/">коленного сустава</a></div>
+                    <div>– <a href="/mrt/mrt-brushnoi-polosti-zabrjushinnogo-prostranstva/">брюшной полости</a></div>
+                    <div>– <a href="/mrt/mrt-malogo-taza/">малого таза</a></div>
+                    <div>– <a href="/mrt/mrt-gipofiza/">гипофиза</a></div>
+                </li>
+                <li class="column">
+                    <div class="spec_list_head"><a href="/rentgen/">Рентген</a></div>
+                    <div>– <a href="/rentgen/rentgen-legkih/">легких</a></div>
+                    <div>– <a href="/rentgen/rentgen-pozvonochnika/">позвоночника</a></div>
+                    <div>– <a href="/rentgen/rentgen-grudnoi-kletki/">грудной клетки</a></div>
+                    <div>– <a href="/rentgen/rentgen-sustavov/">суставов</a></div>
+                    <div>– <a href="/rentgen/mammografia/">маммография</a></div>
+                    <div>– <a href="/rentgen/rentgen_tolstoj_kishki_irrigoskopia/">ирригоскопия</a></div>
+                </li>
+                <li class="column">
+                    <div><a href="/fluorografiya/">Флюорография</a></div>
+                    <div><a href="/func-diagnostika/sutochnoe-ekg/">Электрокардиография (ЭКГ)</a></div>
+                    <div><a href="/endoskopicheskie-issledovaniya/kolonoskopiya/">Колоноскопия</a></div>
+                    <div><a href="/gastroskopiya/">Гастроскопия</a></div>
+                    <div><a href="/bronhoskopiya/">Бронхоскопия</a></div>
+                    <div><a href="/analiz-krovi/">Анализ крови</a></div>
+                </li>
+            </ul>
+
+
+
+</div>
+</div>
 -->
+
 
     <div class="row margin10">
         <?php $url = Helper::getUrlWithParams(); ?>
@@ -233,7 +226,7 @@
 
     <div class="col-xs-12 col-sm-12 col-md-2">
         @section('sidebar')
-        <!--{{ Test::getListWithLinks() }}-->
+        <?php //{{ Test::getListWithLinks() }} ?>
         {{ $sidebar_libraries }}
         @stop
     </div>
