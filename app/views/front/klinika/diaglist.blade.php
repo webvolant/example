@@ -126,7 +126,9 @@
                         <div class="intro_doctor_info">
                             <p class="h3_my"><a href='{{ URL::route("diagnostica/detail", array($user->link)) }}'>{{ $user->name }}</a></p>
 
-                            <p><span class="h6_my"> Направления клиники: </span> @foreach(Klinika::getSpecialisations($user->id) as $item) {{ $item }} @endforeach </p>
+                            @if (Klinika::getSpecialisations($user->id)!=null)
+                            <p><span class="h6_my"> Направления клиники: </span> @foreach ( Klinika::getSpecialisations($user->id) as $item ) {{ $item }} @endforeach </p>
+                            @endif
 
                             <?php mb_internal_encoding("UTF-8"); ?>
                             <p><?php echo mb_substr(html_entity_decode($user->description, ENT_QUOTES, 'UTF-8'), 0, 500);?>
