@@ -575,10 +575,17 @@ a:hover{
 }
 
 .logo{
-    background: url("template_image/logotype5.png") bottom center no-repeat;
+    background: url("template_image/logotype5.png") left center no-repeat;
     background-size: cover; /* Масштабируем фон */
-    min-height:100px;
+    min-height: 120px;
 
+}
+
+
+.logo2 {
+    background: url("template_image/logotype5.png") left center no-repeat;
+    background-size: contain;
+    min-height: 120px;
 }
 
 .header .logo{
@@ -591,7 +598,7 @@ a:hover{
 
 .doctor1{
     background: url("template_image/doctor1.jpg") top center no-repeat;
-    background-size: 68%;
+    background-size: contain;
     min-height: 136px;
     margin-top: 10px;
 

@@ -73,23 +73,23 @@
 <div class="container">
     <div class="row header">
             @section('header')
-                <div class=" col-xs-12 col-sm-6 col-md-4 paddingtop15">
+                <div class=" col-xs-8 col-sm-7 col-md-4 paddingtop15">
                     <div class="logo"></div>
                 </div>
 
-                <div class="col-xs-7 col-sm-6 col-md-2 paddingtop15">
+                <div class="col-xs-4 col-sm-5 col-md-2 paddingtop15">
                         <ul class="list">
-                            <li><span class="orange_text">{{ $orders+75 }} </span><?php echo strstr(Lang::choice('mydoc.orders', $orders+75, ['n' => $orders+75], 'ru'),"з"); ?> к врачам</li>
-                            <li><span class="orange_text">{{ $docs }} </span><?php echo strstr(Lang::choice('mydoc.docs', $docs, ['n' => $docs], 'ru'),"в"); ?> в базе</li>
+                            <li><span class="orange_text">{{ $orders+75 }} </span><?php echo strstr(Lang::choice('mydoc.orders', $orders+75, ['n' => $orders+75], 'ru'),"з"); ?></li>
+                            <li><span class="orange_text">{{ $docs }} </span><?php echo strstr(Lang::choice('mydoc.docs', $docs, ['n' => $docs], 'ru'),"в"); ?></li>
                             <li><span class="orange_text">{{ $ot }} </span><?php echo strstr(Lang::choice('mydoc.ot', $ot, ['n' => $ot], 'ru'),"о"); ?> </li>
                         </ul>
                 </div>
 
-                <div class="col-xs-5 col-sm-offset-2 col-sm-3 col-md-offset-0 col-md-2 hidden-xs hidden-sm">
+                <div class="col-xs-offset-0 col-xs-6 col-sm-6 col-md-offset-0 col-md-2 hidden-xs">
                     <div class="doctor1"></div>
                 </div>
 
-                <div class="col-xs-12 col-sm-offset-3 col-sm-9  col-md-offset-0 col-md-4">
+                <div class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-5  col-md-offset-0 col-md-4">
                     <div class="form-group form-inline order_form">
                         <?php echo $errors->first('phone_main'); ?>
 
@@ -97,12 +97,12 @@
                             звоните <span class="orange_text">0(312) 98-69-00</span><br/>
                             <span class="h7_my"> или оставьте свой номер</span>
                         </p>
-                        {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control width250', 'placeholder'=>'0(___) __ __ __')) }}
+                        {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control form-inline width250', 'placeholder'=>'0(___) __ __ __')) }}
                         <!-- Honeypot::generate('my_name', 'my_time') -->
                         <div class="lastname">
                             {{ Form::text('lastname', null, array('title'=>'Поле должно быть заполнено!', 'id'=>'lastname', 'class' => 'form-control')) }}
                         </div>
-                        {{ Form::submit( "Отправить", array('class' => 'form-control btn_submit_main btn btn-warning submit_send_order')) }}
+                        {{ Form::submit( "OK", array('class' => 'form-control form-inline btn_submit_main btn btn-warning submit_send_order')) }}
 
 
                     </div>
@@ -115,7 +115,7 @@
 
                     @section('search')
 
-                        <div class="col-xs-4 col-sm-4 col-md-5 padding_left_right">
+                        <div class="col-xs-12 col-sm-6 col-md-5 padding_left_right">
                             {{ Form::open(array('url' => 'search', 'role' => 'form', 'class' => '')) }}
                                 <div class="form-group">
 
@@ -130,7 +130,7 @@
 
                 <?php //Test::getTreeWithLinks() ?>
                 <?php //die() ?>
-                        <div class="col-xs-4 col-sm-4 col-md-5 padding_left_right">
+                        <div class="col-xs-12 col-sm-6 col-md-5 padding_left_right">
                             <div class="form-group">
                                 <a id="test_icon" class="pull-left" data-toggle="modal" data-target="#testsModal" class="btn btn-info btn-sm" ><span class="glyphicon glyphicon-edit"></span></a>
                                 <select id="krit2" name="krit2" class="form-control">
@@ -197,7 +197,7 @@
 
 
                         </div>
-                        <div class="col-xs-offset-2 col-xs-2 col-sm-offset-0 col-sm-4 col-md-offset-0 col-md-2 padding_left_right">
+                        <div class="col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-12 col-md-offset-0 col-md-2 padding_left_right">
                                 <div class="">{{ Form::submit( "Начать поиск", array('class' => 'form-control btn btn-warning')) }}</div>
                             </div>
                         {{ Form::close() }}
@@ -323,11 +323,11 @@
     <div class="row">
         <div class="footer col-xs-12 col-sm-12 col-md-12">
                 @section('footer')
-                <div class="col-xs-12 col-sm-3 col-md-3">
-                    <div class="logo"></div>
+                <div class="col-xs-6 col-sm-6 col-md-3">
+                    <div class="logo2"></div>
                 </div>
 
-                <div class="col-xs-12 col-sm-4 col-md-4 about">
+                <div class="col-xs-6 col-sm-6 col-md-4 about">
                     <span class="h4_my">О нас</span>
                     <p></p>
                     <span class="h8_my"><p>Сервис "Мой доктор" предоставляет доступ к данным о врачах, практикующих в клиниках и медицинских центрах Бишкека.</p></span>
@@ -335,7 +335,7 @@
                     <span class="h8_my"><p>Вы можете легко подобрать себе нужного специалиста, используя удобные опции поиска на сайте.</p></span>
                 </div>
 
-                <div class="col-xs-12 col-sm-5 col-md-5">
+                <div class="col-xs-12 col-sm-12 col-md-5">
                     <div class="registration">
                         @section('registration')
                         <span class="h4_my">Врачам и клиникам</span>
