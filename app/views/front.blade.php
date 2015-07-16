@@ -74,7 +74,7 @@
     <div class="row header">
             @section('header')
                 <div class=" col-xs-8 col-sm-7 col-md-4 paddingtop15">
-                    <div class="logo"></div>
+                    <a href="{{ URL::route('/') }}"><div class="logo"></div></a>
                 </div>
 
                 <div class="col-xs-4 col-sm-5 col-md-2 paddingtop15">
