@@ -89,33 +89,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="orders.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/report/orders.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="20" selection-start="1092" selection-end="1092" vertical-scroll-proportion="-12.653846" vertical-offset="402" max-vertical-offset="1751">
-              <folding>
-                <marker date="1436869129178" expanded="true" signature="213:218" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="336:610" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="430:605" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="615:788" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="793:963" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="970:1049" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="1124:3211" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="1152:3179" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="1194:3143" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="1234:1254" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="1328:3094" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="1376:3074" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="1483:3051" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="1515:1977" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="1545:1943" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="2009:3022" placeholder="..." />
-                <marker date="1436869129178" expanded="true" signature="2099:2953" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="events.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/report/events.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -134,10 +107,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="front.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="front.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/front.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="43" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.42911154" vertical-offset="1235" max-vertical-offset="10081">
+            <state line="91" column="43" selection-start="3097" selection-end="3097" vertical-scroll-proportion="-4.45098" vertical-offset="1235" max-vertical-offset="10081">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/front/klinika/list.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="90" selection-start="727" selection-end="727" vertical-scroll-proportion="0.3104693" vertical-offset="287" max-vertical-offset="3383">
               <folding />
             </state>
           </provider>
@@ -172,7 +154,6 @@
         <option value="$PROJECT_DIR$/app/views/front/klinika/detail.blade.php" />
         <option value="$PROJECT_DIR$/app/views/front/klinika/diagdetail.blade.php" />
         <option value="$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/front/klinika/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/front/user/login.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin/login_template.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin/login.blade.php" />
@@ -204,6 +185,7 @@
         <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/public/template.css" />
         <option value="$PROJECT_DIR$/app/views/front.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/front/klinika/list.blade.php" />
       </list>
     </option>
   </component>
@@ -360,6 +342,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doctors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doctors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="klinika" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -773,11 +781,6 @@
         <state line="194" column="0" selection-start="10859" selection-end="10859" vertical-scroll-proportion="-14.038462" vertical-offset="2848" max-vertical-offset="4114" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/klinika/list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="50" selection-start="7664" selection-end="7664" vertical-scroll-proportion="14.153846" vertical-offset="2731" max-vertical-offset="3264" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/user/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="21" selection-start="753" selection-end="753" vertical-scroll-proportion="0.0" vertical-offset="372" max-vertical-offset="969" />
@@ -1023,23 +1026,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="20" selection-start="1092" selection-end="1092" vertical-scroll-proportion="-12.653846" vertical-offset="402" max-vertical-offset="1751">
           <folding>
-            <marker date="1436869129178" expanded="true" signature="213:218" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="336:610" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="430:605" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="615:788" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="793:963" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="970:1049" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="1124:3211" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="1152:3179" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="1194:3143" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="1234:1254" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="1328:3094" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="1376:3074" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="1483:3051" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="1515:1977" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="1545:1943" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="2009:3022" placeholder="..." />
-            <marker date="1436869129178" expanded="true" signature="2099:2953" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436869129178" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1114,7 +1117,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="43" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.42911154" vertical-offset="1235" max-vertical-offset="10081">
+        <state line="91" column="43" selection-start="3097" selection-end="3097" vertical-scroll-proportion="-4.45098" vertical-offset="1235" max-vertical-offset="10081">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/klinika/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="90" selection-start="727" selection-end="727" vertical-scroll-proportion="0.3104693" vertical-offset="287" max-vertical-offset="3383">
           <folding />
         </state>
       </provider>

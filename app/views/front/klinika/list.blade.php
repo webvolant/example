@@ -30,7 +30,14 @@
             <h5>
                 <li>
                     <a href='{{ URL::route("clinics/all", array($item->id)) }}'> {{ $item->specialisation }}</a>
-                    <div class="pull-right">{{ $count = Klinika::getKliniksBySpecialisationsCount($item->id) }}</div>
+                    <?php $count = Klinika::getKliniksBySpecialisationsCount($item->id) ?>
+                    <div class="pull-right">
+                        @if (is_integer($count))
+                        {{ $count }}
+                        @else
+                        {{ 0 }}
+                        @endif
+                    </div>
                 </li>
             </h5>
             @endforeach
