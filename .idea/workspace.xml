@@ -41,23 +41,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes/order.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="255" column="5" selection-start="9666" selection-end="9666" vertical-scroll-proportion="-46.846153" vertical-offset="3032" max-vertical-offset="8262">
-              <folding>
-                <marker date="1436943684982" expanded="true" signature="1680:2352" placeholder="..." />
-                <marker date="1436943684982" expanded="true" signature="1748:1832" placeholder="..." />
-                <marker date="1436943684982" expanded="true" signature="1895:1996" placeholder="..." />
-                <marker date="1436943684982" expanded="true" signature="2059:2160" placeholder="..." />
-                <marker date="1436943684982" expanded="true" signature="2223:2324" placeholder="..." />
-                <marker date="1436943684982" expanded="true" signature="2396:2455" placeholder="..." />
-                <marker date="1436943684982" expanded="true" signature="2498:2573" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="doctor.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes/admin/doctor.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -88,7 +71,18 @@
       <file leaf-file-name="diaglist.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="34" selection-start="6942" selection-end="6942" vertical-scroll-proportion="0.5216606" vertical-offset="1836" max-vertical-offset="4148">
+            <state line="91" column="3" selection-start="4433" selection-end="4433" vertical-scroll-proportion="0.70577615" vertical-offset="1156" max-vertical-offset="4267">
+              <folding>
+                <element signature="e#6#91#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KlinikaController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/KlinikaController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="137" column="18" selection-start="5537" selection-end="5543" vertical-scroll-proportion="-15.038462" vertical-offset="1938" max-vertical-offset="3026">
               <folding />
             </state>
           </provider>
@@ -97,16 +91,7 @@
       <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="58" selection-start="3182" selection-end="3182" vertical-scroll-proportion="-4.1538463" vertical-offset="1439" max-vertical-offset="2261">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/front/klinika/detail.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="155" column="6" selection-start="5843" selection-end="5843" vertical-scroll-proportion="-13.730769" vertical-offset="2193" max-vertical-offset="9775">
+            <state line="25" column="28" selection-start="463" selection-end="463" vertical-scroll-proportion="-13.5" vertical-offset="74" max-vertical-offset="2346">
               <folding />
             </state>
           </provider>
@@ -178,17 +163,17 @@
         <option value="$PROJECT_DIR$/public/template.css" />
         <option value="$PROJECT_DIR$/app/models/Klinika.php" />
         <option value="$PROJECT_DIR$/app/views/front/klinika/detail.blade.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/views/front/klinika/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/front.blade.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="171" />
-    <option name="y" value="182" />
+    <option name="x" value="114" />
+    <option name="y" value="215" />
     <option name="width" value="1676" />
     <option name="height" value="728" />
   </component>
@@ -707,7 +692,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="171" y="182" width="1676" height="728" extended-state="0" />
+    <frame x="114" y="215" width="1676" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -799,13 +784,6 @@
     <entry file="file://$PROJECT_DIR$/app/routes/admin/klinika.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="84" column="0" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.0" vertical-offset="1428" max-vertical-offset="5644">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/KlinikaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3026">
           <folding />
         </state>
       </provider>
@@ -1057,13 +1035,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="255" column="5" selection-start="9666" selection-end="9666" vertical-scroll-proportion="-46.846153" vertical-offset="3032" max-vertical-offset="8262">
           <folding>
-            <marker date="1436943684982" expanded="true" signature="1680:2352" placeholder="..." />
-            <marker date="1436943684982" expanded="true" signature="1748:1832" placeholder="..." />
-            <marker date="1436943684982" expanded="true" signature="1895:1996" placeholder="..." />
-            <marker date="1436943684982" expanded="true" signature="2059:2160" placeholder="..." />
-            <marker date="1436943684982" expanded="true" signature="2223:2324" placeholder="..." />
-            <marker date="1436943684982" expanded="true" signature="2396:2455" placeholder="..." />
-            <marker date="1436943684982" expanded="true" signature="2498:2573" placeholder="..." />
+            <marker date="1436943684982" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436943684982" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436943684982" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436943684982" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436943684982" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436943684982" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436943684982" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1089,13 +1067,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="58" selection-start="3182" selection-end="3182" vertical-scroll-proportion="-4.1538463" vertical-offset="1439" max-vertical-offset="2261">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/klinika/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="10" selection-start="475" selection-end="475" vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="3111">
@@ -1110,6 +1081,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/klinika/detail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="155" column="6" selection-start="5843" selection-end="5843" vertical-scroll-proportion="0.64440435" vertical-offset="2193" max-vertical-offset="9775">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Klinika.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="89" column="80" selection-start="2710" selection-end="2719" vertical-scroll-proportion="-13.730769" vertical-offset="1105" max-vertical-offset="2091">
@@ -1117,17 +1095,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/klinika/detail.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="6" selection-start="5843" selection-end="5843" vertical-scroll-proportion="-13.730769" vertical-offset="2193" max-vertical-offset="9775">
+        <state line="25" column="28" selection-start="463" selection-end="463" vertical-scroll-proportion="-13.5" vertical-offset="74" max-vertical-offset="2346">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/KlinikaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="18" selection-start="5537" selection-end="5543" vertical-scroll-proportion="-15.038462" vertical-offset="1938" max-vertical-offset="3026">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="34" selection-start="6942" selection-end="6942" vertical-scroll-proportion="0.5216606" vertical-offset="1836" max-vertical-offset="4148">
-          <folding />
+        <state line="91" column="3" selection-start="4433" selection-end="4433" vertical-scroll-proportion="0.70577615" vertical-offset="1156" max-vertical-offset="4267">
+          <folding>
+            <element signature="e#6#91#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

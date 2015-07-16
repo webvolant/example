@@ -22,6 +22,11 @@ View::composer(array('front',
     'front.doctor.list',
     'front.klinika.list',
     'front.klinika.diaglist',
+
+        'front.doctor.detail',
+        'front.klinika.detail',
+        'front.klinika.diagdetail',
+
     'front.article.library',
     'front.article.list',
     'front.illness.library',
