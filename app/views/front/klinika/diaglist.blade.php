@@ -21,7 +21,7 @@
 @section('specialities')
 <div class="row">
     <div class="column_5 col-xs-12 col-sm-12 col-md-12">
-
+<!--
         <ul class="list">
             <li class="column">
                 <div class="spec_list_head"><a href="/diagnostica/centers/uzi/">УЗИ</a></div>
@@ -68,7 +68,7 @@
                 <div><a href="/analiz-krovi/">Анализ крови</a></div>
             </li>
         </ul>
-
+-->
 
 
     </div>
