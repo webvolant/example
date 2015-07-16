@@ -71,9 +71,9 @@ class Klinika extends Eloquent {
     }
 
     public static function getSpecialisations($id){
-        $kl = Klinika::find($id);
-        $temp = array();
-        $result = Cache::remember('getKliniks', Helper::cacheTime(), function() use ($kl, $temp) {
+        $result = Cache::remember('getKliniks'+$id, Helper::cacheTime(), function() use ($id) {
+            $temp = array();
+            $kl = Klinika::find($id);
             foreach ( $kl->Users as $key => $sp)
             {
                 foreach ( $sp->Specialities as $key => $sp){
@@ -83,16 +83,13 @@ class Klinika extends Eloquent {
             }
             return array_unique($temp);
         });
-        //var_dump(array_unique($temp));
-        //die();
         return $result;
-
     }
 
     public static function getSpecialities($id){
-        $kl = Klinika::find($id);
-        $temp = array();
-        $result = Cache::remember('getKliniks', Helper::cacheTime(), function() use ($kl, $temp) {
+        $result = Cache::remember('getKliniks', Helper::cacheTime(), function() use ($id) {
+            $kl = Klinika::find($id);
+            $temp = array();
             foreach ( $kl->Users as $key => $sp)
             {
                 foreach ( $sp->Specialities as $key => $sp){
@@ -102,8 +99,6 @@ class Klinika extends Eloquent {
             }
             return array_unique($temp);
         });
-        //var_dump(array_unique($temp));
-        //die();
         return $result;
 
     }

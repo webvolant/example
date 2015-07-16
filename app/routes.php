@@ -89,11 +89,23 @@ View::composer(array('front',
             $view->with('sidebar_libraries', $sidebar_libraries);
 
 
-             $specialisations2 = Cache::remember('specialisations2', Helper::cacheTime(), function()
+             $specialisations_for_list = Cache::remember('specialisations_for_list', Helper::cacheTime(), function()
              {
                  return Speciality::orderBy('specialisation','asc')->get();
              });
-            $view->with('specialisations2', $specialisations2);
+
+
+            $specialisationsWithIndex = Cache::remember('specialisationsWithIndex', Helper::cacheTime(), function() use ($specialisations_for_list)
+            {
+                $spec_temp = '';
+                foreach($specialisations_for_list as $key => $item){
+                    $spec_temp.='<h5><li><a href='.URL::route('clinics/all', array($item->id)).'>'. $item->specialisation .'</a>'.
+                            '<div class="pull-right">'.Klinika::getKliniksBySpecialisationsCount($item->id).
+                            '</div></li></h5>';
+                }
+                return $spec_temp;
+            });
+            $view->with('specialisationsWithIndex', $specialisationsWithIndex);
 
 
             $illness = Cache::remember('illness', Helper::cacheTime(), function()

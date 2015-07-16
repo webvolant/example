@@ -25,23 +25,7 @@
 <div class="col-xs-12 col-sm-12 col-md-10">
 
     <div class="specialisations">
-        <ul class="list">
-            @foreach($specialisations2 as $key => $item)
-            <h5>
-                <li>
-                    <a href='{{ URL::route("clinics/all", array($item->id)) }}'> {{ $item->specialisation }}</a>
-                    <?php $count = Klinika::getKliniksBySpecialisationsCount($item->id) ?>
-                    <div class="pull-right">
-                        @if (is_integer($count))
-                        {{ $count }}
-                        @else
-                        {{ 0 }}
-                        @endif
-                    </div>
-                </li>
-            </h5>
-            @endforeach
-        </ul>
+        <ul class="list">{{ $specialisationsWithIndex }}</ul>
     </div>
 
     @if (\Route::current()->parameter('spec')!=null)

@@ -151,7 +151,7 @@
         <p class="h4_my line45">О Клинике / специализация</p>
 
         <p>{{ $user->description }}</p>
-        <p>Специализации: @foreach ( Klinika::getSpecialisations($user->id) as $item ) {{ $item }} @endforeach</p>
+        <p><b>Специализации:</b> @foreach ( Klinika::getSpecialisations($user->id) as $item ) {{ $item }} @endforeach </p>
    </div>
 </div>
 
