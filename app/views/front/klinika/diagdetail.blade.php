@@ -349,9 +349,6 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
-
-
-
     if (window.location.href.indexOf("deti") > -1) {
         $(".child_checkbox").prop("checked", true);
     }
@@ -364,6 +361,9 @@ $(document).ready(function() {
         openEffect	: 'none',
         closeEffect	: 'none'
     });
+
+
+
 
 
     //как собираем отзывы
