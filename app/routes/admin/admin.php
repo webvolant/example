@@ -134,7 +134,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'administrator'), function()
 
             $rules = array(
                 'fio' => array('required'),
-                'email' => array('required','unique:users,email'),
+                'email' => array('required'),
                 'pass' => array('required','confirmed'),
                 'pass_confirmation' => array('required'),
                 'phone' => array('required')

@@ -41,7 +41,7 @@
     {{ HTML::style('bootstrap-multiselect-master/dist/css/bootstrap-multiselect.css') }}
 
 
-    {{ HTML::script('ckeditor/ckeditor.js') }}
+
 
     <!-- jQuery -->
     {{ HTML::script('bower_components/jquery/dist/jquery.min.js') }}
@@ -60,7 +60,7 @@
 
     {{ HTML::script('https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.3.1/jquery.maskedinput.js') }}
 
-
+    {{ HTML::script('ckeditor/ckeditor.js') }}
 
 </head>
 <body>
