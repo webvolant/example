@@ -115,7 +115,7 @@ View::composer(array('front',
 
             $illness = Cache::remember('illness', Helper::cacheTime(), function()
             {
-                return $illness = Illness::all();
+                return $illness = Illness::orderBy('name','asc')->get();
             });
             $view->with('illness', $illness);
 

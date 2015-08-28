@@ -57,8 +57,10 @@ class AdminKlinikaController extends Controller {
         //getNestedList('name');
         $json_list = "[";
         foreach($parentList as $key=>$i)
-            $json_list .= '{"'.$key.'":"'.$i.'"},';
+            $json_list .= "{'".$key."':'".$i."'},";
         $json_list .=']';
+
+
 
         //var_dump($json22);
 

@@ -14,7 +14,7 @@
 @stop
 
 @section('content')
-
+<div class="col-xs-12 col-sm-12 col-md-10">
 @foreach($user as $user)
         <p class="h4_my_bold">{{ $user->specialisation }}</p>
 
@@ -30,8 +30,9 @@
             @endforeach
 
         <p class="h4_my_bold">{{ $user->specialisation }} – заболевания</p>
+</div>
 
-
+<div class="col-xs-12 col-sm-12 col-md-2">
             @section('sidebar')
 
             <p class="h6_my_bold">Специальности</p>
@@ -42,7 +43,7 @@
             </ul>
 
             @stop
-
+</div>
 
 @stop
 
