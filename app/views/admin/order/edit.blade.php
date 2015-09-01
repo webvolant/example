@@ -48,7 +48,7 @@
                 @else
                 @endif
                 {{ Form::label('Дата исполнения события') }}
-                {{ Form::text('date_end',null,array('id'=>'datetimepicker_end','class'=>'form-control','placeholder'=>'Кликните для выбора даты')) }}
+                {{ Form::text('date_end',null,array('id'=>'datetimepicker_end','class'=>'form-control','placeholder'=>'Кликните для выбора даты', 'required')) }}
                 </p>
 
 
@@ -232,7 +232,7 @@
                                                 @else
                                                 @endif
                                                 {{ Form::label('Дата исполнения события') }}
-                                                {{ Form::text('date_end',null,array('id'=>'datetimepicker_end_edit','class'=>'datepick form-control','placeholder'=>'Кликните для выбора даты')) }}
+                                                {{ Form::text('date_end',null,array('id'=>'datetimepicker_end_edit','class'=>'datepick form-control','placeholder'=>'Кликните для выбора даты', 'required')) }}
                                                 </p>
 
 
