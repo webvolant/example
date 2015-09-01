@@ -38,7 +38,17 @@
 
                         </thead>
                         <tbody>
-                            {{ AdminTestController::recurs($node) }}
+                            @foreach ( $nodes as $key => $node)
+                            <tr>
+                                <td><a href='{{ URL::route("test/edit", array($node->id)) }}'>{{ $node->id }}</a></td>
+                                <td><a href='{{ URL::route("test/edit", array($node->id)) }}'>{{ $node->name }}</a></td>
+                                <td><a href='{{ URL::route("test/edit", array($node->id)) }}'>{{ $node->parent_id }}</a></td>
+                                <td class="gradeA">
+                                    <a href='{{ URL::route("test/edit", array($node->id)) }}' class="btn btn-info"><i class="fa fa-wrench fa-fw"></i></a>
+                                    <a href='{{ URL::route("test/delete", array($node->id)) }}' class="btn btn-danger"><i class="fa fa-trash-o fa-fw"></i></a>
+                                </td>
+                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

@@ -697,7 +697,7 @@
             var date_begin = "";
             $.post('/admin/remind', {name:date_begin},function(data){
                 $(".dropdown-alerts").html(data);
-                //console.log(data);
+                console.log(data);
                 if (data==""){
                     $.favicon('/public/template_image/favicon.ico');
                 }else{
@@ -712,7 +712,7 @@
             var date_begin = "";
             $.post('/admin/remind', {name:date_begin},function(data){
                 $(".dropdown-alerts").html(data);
-                //console.log(data);
+                console.log(data);
                 if (data==""){
                     $.favicon('/public/template_image/favicon.ico');
                 }else{
@@ -725,7 +725,7 @@
             var date_begin = "";
             $.post('/admin/remind', {name:date_begin},function(data){
                 $(".dropdown-alerts").html(data);
-                //console.log(data);
+                console.log(data);
                 if (data==""){
                     $.favicon('/public/template_image/favicon.ico');
                 }else{

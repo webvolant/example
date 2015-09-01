@@ -24,6 +24,11 @@ use Illuminate\Support\Facades\URL;
 
 class AdminTestController extends Controller {
 
+    public function all(){
+        $nodes = \Test::orderBy('lft')->get();
+        return View::make('admin.test.list', array('nodes'=>$nodes));
+    }
+
     public function index(){
         //$root = Category::find(10);
 

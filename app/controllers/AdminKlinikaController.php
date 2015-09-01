@@ -58,7 +58,7 @@ class AdminKlinikaController extends Controller {
         $json_list = "[";
         foreach($parentList as $key=>$i)
             $json_list .= "{'".$key."':'".$i."'},";
-        $json_list .=']';
+        $json_list .="]";
 
 
 

@@ -28,7 +28,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $seconds = date('U', time());
                 //$seconds = $object->format('U'); //текущее время в секундах
                 $events = array();// date( "U" );//date( "d.m.Y H:i" );
-                $eventers = Eventer::where('flag','!=',3)->take(Helper::getEventsCount())->get();
+                $eventers = Eventer::where('flag','!=',3)->get();
                 foreach ($eventers as $i):
                     $object = DateTime::createFromFormat('d.m.Y H:i', $i->date_end);
                     $object_seconds = $object->format('U');
@@ -57,7 +57,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 //$seconds = $object->format('U'); //текущее время в секундах
                 $seconds = date('U', time());
                 $events = array();// date( "U" );//date( "d.m.Y H:i" );
-                $eventers = Eventer::where('flag','!=',3)->take(Helper::getEventsCount())->get();
+                $eventers = Eventer::where('flag','!=',3)->get();
                 //var_dump($eventers->count());
                 foreach ($eventers as $i):
                     $object = DateTime::createFromFormat('d.m.Y H:i', $i->date_end);

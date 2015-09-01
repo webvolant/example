@@ -11,8 +11,11 @@
 Route::group(array('prefix' => 'admin', 'before' => 'operator'), function()
 {
 
-    Route::get('test/index', array('as' => 'test/index',
+    /*Route::get('test/index', array('as' => 'test/index',
         'uses' => 'AdminTestController@index'));
+*/
+    Route::get('test/index', array('as' => 'test/index',
+        'uses' => 'AdminTestController@all'));
 
     //Route::post('category/show', array('as' => 'category',
     //    'uses' => 'CategoryController@show'));
