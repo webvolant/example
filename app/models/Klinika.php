@@ -57,23 +57,34 @@ class Klinika extends Eloquent {
         return $result;
     }
 
-    //Получение клиник по специальности
+    //Получение числа клиник по специальности
     public static function getKliniksBySpecialisationsCount($id){
-        $users = User::whereHas(
-            'specialities', function($q) use ($id){
-                $q->where('speciality_id',$id);
+        $kls = User::whereHas(
+            'specialities', function($q) use ($id) {
+                $q->where('speciality_id', $id);
             }
         )->get();
-        foreach($users as $i)
-            $users = $i->Kliniks()
-                ->count();
-        return $users;
+        $docIds = array_pluck($kls,"id");
+        $kliniks = DB::table('kliniks')->distinct()
+            ->join('user_kliniks', function($join){
+                $join->on('user_kliniks.klinik_id','=','kliniks.id');
+            })
+            ->whereIn('user_id',$docIds)
+            ->where('kliniks.type',0)->orWhere('kliniks.type','=',"")
+            ->groupBy('link')
+            ->get();
+        //var_dump(count($kliniks));
+        return count($kliniks);
     }
 
+    //Получение клиник по специальности
     public static function getSpecialisations($id){
         $result = Cache::remember('getKliniks'+$id, Helper::cacheTime(), function() use ($id) {
+            //echo 'idddddddddddd'.$id;
             $temp = array();
             $kl = Klinika::find($id);
+            //var_dump($kl);
+            //die();
             foreach ( $kl->Users as $key => $sp)
             {
                 foreach ( $sp->Specialities as $key => $sp){

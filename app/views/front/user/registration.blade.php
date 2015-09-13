@@ -23,7 +23,7 @@
 
 <p>
     <?php echo $errors->first('fio'); ?>
-    {{ Form::text('fio', null, array('class' => 'form-control', 'placeholder'=>'Фамилия Имя Отчестсво')) }}
+    {{ Form::text('fio', null, array('class' => 'form-control', 'placeholder'=>'Фамилия Имя Отчестство')) }}
 </p>
 
 <p>

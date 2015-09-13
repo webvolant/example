@@ -2,79 +2,120 @@
 
 class KlinikaController extends Controller {
 
-
-
     //все клиники что есть в базе
     public function all(){
         if (\Route::current()->parameter('spec')!=null){
             //клиники по айди специальности
             if ( Input::get('order') != null && Input::get('direction') != null ){
-                    $users = User::whereHas(
-                        'specialities', function($q){
-                            $q->where('speciality_id', \Route::current()->parameter('spec'));
-                        }
-                    )->get();
-                    foreach($users as $i)
-                        $users = $i->Kliniks()->where('type','=',0)
-                            ->orderBy(Input::get('order'),Input::get('direction'))
-                            ->paginate(Helper::getPagesCount());
-                    return View::make('front.klinika.list', array('users'=>$users));
-
-            } elseif ( Input::get('order') == null && Input::get('direction') == null ){
-                $users = User::whereHas(
+                $kls = User::whereHas(
                     'specialities', function($q){
                         $q->where('speciality_id', \Route::current()->parameter('spec'));
                     }
                 )->get();
-                foreach($users as $i)
-                    $users = $i->Kliniks()->where('type','=',0)
-                        ->paginate(Helper::getPagesCount());
-                return View::make('front.klinika.list', array('users'=>$users));
+                $docIds = array_pluck($kls,"id");
+                $kliniks = DB::table('kliniks')->distinct()
+                    ->join('user_kliniks', function($join){
+                        $join->on('user_kliniks.klinik_id','=','kliniks.id');
+                    })
+                    ->whereIn('user_id',$docIds)
+                    ->where('kliniks.type',0)->orWhere('kliniks.type','=',"")
+                    ->groupBy('link')
+                    ->orderBy(Input::get('order'),Input::get('direction'))
+                    ->paginate(Helper::getPagesCount());
+                    return View::make('front.klinika.list', array('users'=>$kliniks));
+
+            } elseif ( Input::get('order') == null && Input::get('direction') == null ){
+                $kls = User::whereHas(
+                    'specialities', function($q){
+                        $q->where('speciality_id', \Route::current()->parameter('spec'));
+                    }
+                )->get();
+                $docIds = array_pluck($kls,"id");
+                $kliniks = DB::table('kliniks')->distinct()
+                    ->join('user_kliniks', function($join){
+                        $join->on('user_kliniks.klinik_id','=','kliniks.id');
+                    })
+                    ->whereIn('user_id',$docIds)
+                    ->where('kliniks.type',0)->orWhere('kliniks.type','=',"")
+                    ->groupBy('link')
+                    ->paginate(Helper::getPagesCount());
+
+                  /*
+                    User::whereHas(
+                    'specialities', function($q){
+                        $q->where('speciality_id', \Route::current()->parameter('spec'));
+                    }
+                )->get();
+                $kliniks = new \Illuminate\Database\Eloquent\Collection;
+                foreach($users as $i){
+
+                    $klinika = $i->Kliniks()->where('type','=',0)->first();
+                    if (is_object($klinika))
+                        $kliniks->push($i->Kliniks()->where('type','=',0)->first());
+                }
+
+                $kliniks = Paginator::make($kliniks, 6, 1);
+*/
+
+
+                //$kliniks = DB::table('kliniks as k')->join('user_kliniks', 'user_kliniks.klinik_id','=','k.id')->where('k.id','=','2')->get();
+                /*$kliniks = DB::table('kliniks')
+                    ->join('user_kliniks', function($join){
+                      $join->on('user_kliniks.klinik_id','=','kliniks.id');
+                    })
+                    ->join('users', function($join){
+                        $join->on('users.id','=','user_kliniks.user_id');
+                    })
+                    ->join('user_specialities', function($join){
+                        $join->on('user_specialities.user_id','=','users.id');
+                    })
+                    ->where('user_specialities.speciality_id','2')
+                    ->distinct()
+                    ->get();
+*/
+
+                return View::make('front.klinika.list', array('users'=>$kliniks));
             }
-
-
+/*
             $users = User::whereHas(
                 'specialities', function($q){
                     $q->where('speciality_id', \Route::current()->parameter('spec'));
                 }
             )->get();
-            if (!$users->exists())
-                $users = Klinika::where('type','=',0)->paginate(Helper::getPagesCount());
-            return View::make('front.klinika.list', array('users'=>$users));
 
-
+            if (!$users->exists()) */
+            $kliniks = DB::table('kliniks')->distinct()
+                ->join('user_kliniks', function($join){
+                    $join->on('user_kliniks.klinik_id','=','kliniks.id');
+                })
+                ->where('kliniks.type',0)->orWhere('kliniks.type','=',"")
+                ->groupBy('link')
+                ->paginate(Helper::getPagesCount());
+            //var_dump($kliniks);
+            //die();
+            return View::make('front.klinika.list', array('users'=>$kliniks));
         } else { //Клиники без специализации
             if ( Input::get('order') != null && Input::get('direction') != null ){
-                        $users = Klinika::whereStatus(1)->where('type','=',0)
-                        ->orderBy(Input::get('order'),Input::get('direction'))
-                        ->paginate(Helper::getPagesCount());
-                        return View::make('front.klinika.list', array('users'=>$users));
-            } elseif ( Input::get('order') == null && Input::get('direction') == null ){
-                     $users = Klinika::whereStatus(1)->where('type','=',0)
+                    $kliniks = DB::table('kliniks')->distinct()
+                    ->join('user_kliniks', function($join){
+                        $join->on('user_kliniks.klinik_id','=','kliniks.id');
+                    })
+                    ->where('kliniks.type',0)->orWhere('kliniks.type','=',"")
+                    ->orderBy(Input::get('order'),Input::get('direction'))
+                    ->groupBy('link')
                     ->paginate(Helper::getPagesCount());
-                    return View::make('front.klinika.list', array('users'=>$users));
+                    return View::make('front.klinika.list', array('users'=>$kliniks));
+            } elseif ( Input::get('order') == null && Input::get('direction') == null ){
+                    $kliniks = DB::table('kliniks')->distinct()
+                    ->join('user_kliniks', function($join){
+                        $join->on('user_kliniks.klinik_id','=','kliniks.id');
+                    })
+                    ->where('kliniks.type',0)->orWhere('kliniks.type','=',"")
+                    ->groupBy('link')
+                    ->paginate(Helper::getPagesCount());
+                    return View::make('front.klinika.list', array('users'=>$kliniks));
             }
-
-
-
         }
-
-
-/*
-        $users = User::whereHas(
-            'specialities', function($q){
-                $q->where('speciality_id', 1);
-            }
-        )->get();
-        var_dump($users->count());
-        foreach($users as $i)
-            $users = $i->Kliniks()->orderBy('rating')->paginate(3);
-        var_dump($users->count());
-        //$users = Klinika::getKliniks();
-
-        //$users = Klinika::with('Users')
-
-        return View::make('front.klinika.list', array('users'=>$users));*/
     }
 
 

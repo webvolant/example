@@ -350,6 +350,7 @@
                             @endif
 
                         </ul>
+                        <p><span class="h8_my">Пишите нам - office@my-doc.kg</span></p>
 
 
                         @show
@@ -368,7 +369,7 @@
                         top:-2px;
                         }
                     </style>
-                        <img src="/public/template_image/ablogo.png" class="developed_logo" width="20px" height="20px"/> <a href="">AB SOLUTIONS</a> - Разработка веб-сайта<br/>
+                        <img src="/public/template_image/ablogo.png" class="developed_logo" width="20px" height="20px"/> <a href="http://abs-it.net">AB SOLUTIONS</a> - Разработка веб-сайта<br/>
                         <div class="pull-right"><a href="mailto:barkalovlab@gmail.com"><span class="glyphicon glyphicon-envelope"></span>  Антон Баркалов</a></div>
                     </div>
 

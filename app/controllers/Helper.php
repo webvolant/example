@@ -123,7 +123,7 @@ class Helper extends Controller{
 
 
     public static function cacheTime(){
-        return Carbon::now()->addMinutes(20); //addMinutes(1/60);
+        return Carbon::now()->addMinutes(1/60); //addMinutes(1/60);
     }
 
     public static function typeOfObject(){
@@ -221,4 +221,16 @@ class Helper extends Controller{
         //$mas=[0=>'Не опубликовано',1=>'Опубликовано'];
         return "На портале большая база данных врачей Бишкека, а также клиник и диагностических центров.";
     }
+
+/*
+    public function mypaginate($perPage) {
+        $pagination = App::make('paginator');
+        $count = $this->count();
+        $page = $pagination->getCurrentPage($count);
+        $items = $this->slice(($page - 1) * $perPage, $perPage)->all();
+        $pagination = $pagination->make($items, $count, $perPage);
+        return $pagination;
+    }
+*/
+
 }
