@@ -123,7 +123,7 @@ class Helper extends Controller{
 
 
     public static function cacheTime(){
-        return Carbon::now()->addMinutes(1/60); //addMinutes(1/60);
+        return Carbon::now()->addMinutes(30); //addMinutes(1/60);
     }
 
     public static function typeOfObject(){
