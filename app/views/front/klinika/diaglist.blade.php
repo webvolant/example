@@ -100,9 +100,6 @@
 
     </div>
 
-    <?php var_dump($users) ?>
-
-
     <div id="sorting">
         @foreach ( $users as $key => $user)
         <div id="object_list">
