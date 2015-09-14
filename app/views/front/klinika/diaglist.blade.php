@@ -224,7 +224,7 @@
 
     <div class="col-xs-12 col-sm-12 col-md-2">
         @section('sidebar')
-        <?php //{{ Test::getListWithLinks() }} ?>
+        <?php // Test::getListWithLinks()  ?>
         {{ $sidebar_libraries }}
         @stop
     </div>

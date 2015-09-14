@@ -67,7 +67,7 @@ return array(
                 'mysql' => array(
                     'driver'    => 'mysql',
                     'host'      => 'localhost',
-                    'database'  => 'doc',
+                    'database'  => 'doctors',
                     'username'  => 'root',
                     'password'  => '',
                     'charset'   => 'utf8',
