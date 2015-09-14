@@ -32,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="database.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="39" selection-start="2216" selection-end="2216" vertical-scroll-proportion="0.33819628" vertical-offset="918" max-vertical-offset="2805">
+            <state line="69" column="39" selection-start="2216" selection-end="2216" vertical-scroll-proportion="-9.807693" vertical-offset="918" max-vertical-offset="2805">
               <folding />
             </state>
           </provider>
@@ -53,7 +53,7 @@
       <file leaf-file-name="list.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/front/klinika/list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="81" selection-start="3314" selection-end="3402" vertical-scroll-proportion="-5.0" vertical-offset="867" max-vertical-offset="3128">
+            <state line="66" column="0" selection-start="2985" selection-end="2985" vertical-scroll-proportion="-4.3333335" vertical-offset="816" max-vertical-offset="3128">
               <folding />
             </state>
           </provider>
@@ -95,10 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="diaglist.blade.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="diaglist.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="0" selection-start="5936" selection-end="5936" vertical-scroll-proportion="-16.076923" vertical-offset="1095" max-vertical-offset="3978">
+            <state line="102" column="10" selection-start="5961" selection-end="5961" vertical-scroll-proportion="0.44534412" vertical-offset="1268" max-vertical-offset="4029">
               <folding />
             </state>
           </provider>
@@ -171,16 +171,16 @@
         <option value="$PROJECT_DIR$/app/models/Klinika.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/controllers/Helper.php" />
-        <option value="$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/config/database.php" />
+        <option value="$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="119" />
-    <option name="y" value="177" />
+    <option name="x" value="50" />
+    <option name="y" value="32" />
     <option name="width" value="1676" />
     <option name="height" value="915" />
   </component>
@@ -563,7 +563,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="119" y="177" width="1676" height="915" extended-state="0" />
+    <frame x="50" y="32" width="1676" height="915" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -848,20 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="371" column="147" selection-start="18894" selection-end="18894" vertical-scroll-proportion="3.2692308" vertical-offset="6307" max-vertical-offset="10098">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/klinika/list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="81" selection-start="3314" selection-end="3402" vertical-scroll-proportion="-5.0" vertical-offset="867" max-vertical-offset="3128">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Helper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="125" column="43" selection-start="3694" selection-end="3694" vertical-scroll-proportion="-78.46154" vertical-offset="0" max-vertical-offset="4012">
@@ -876,13 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="0" selection-start="5936" selection-end="5936" vertical-scroll-proportion="-16.076923" vertical-offset="1095" max-vertical-offset="3978">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="52" selection-start="674" selection-end="674" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="3638">
@@ -892,7 +871,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="39" selection-start="2216" selection-end="2216" vertical-scroll-proportion="0.33819628" vertical-offset="918" max-vertical-offset="2805">
+        <state line="69" column="39" selection-start="2216" selection-end="2216" vertical-scroll-proportion="-9.807693" vertical-offset="918" max-vertical-offset="2805">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="371" column="147" selection-start="18894" selection-end="18894" vertical-scroll-proportion="3.2692308" vertical-offset="6307" max-vertical-offset="10098">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/klinika/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="0" selection-start="2985" selection-end="2985" vertical-scroll-proportion="-4.3333335" vertical-offset="816" max-vertical-offset="3128">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="10" selection-start="5961" selection-end="5961" vertical-scroll-proportion="0.44534412" vertical-offset="1268" max-vertical-offset="4029">
           <folding />
         </state>
       </provider>
