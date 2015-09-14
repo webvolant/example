@@ -98,7 +98,7 @@
       <file leaf-file-name="diaglist.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="10" selection-start="5961" selection-end="5961" vertical-scroll-proportion="0.44534412" vertical-offset="1268" max-vertical-offset="4029">
+            <state line="226" column="22" selection-start="12108" selection-end="12108" vertical-scroll-proportion="0.6329285" vertical-offset="3237" max-vertical-offset="3978">
               <folding />
             </state>
           </provider>
@@ -892,7 +892,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="10" selection-start="5961" selection-end="5961" vertical-scroll-proportion="0.44534412" vertical-offset="1268" max-vertical-offset="4029">
+        <state line="226" column="22" selection-start="12108" selection-end="12108" vertical-scroll-proportion="0.6329285" vertical-offset="3237" max-vertical-offset="3978">
           <folding />
         </state>
       </provider>

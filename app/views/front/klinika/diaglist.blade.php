@@ -100,9 +100,6 @@
 
     </div>
 
-    <?php var_dump($users) ?>
-
-
     <div id="sorting">
         @foreach ( $users as $key => $user)
         <div id="object_list">
@@ -227,7 +224,7 @@
 
     <div class="col-xs-12 col-sm-12 col-md-2">
         @section('sidebar')
-        <?php //{{ Test::getListWithLinks() }} ?>
+        <?php // echo Test::getListWithLinks()  ?>
         {{ $sidebar_libraries }}
         @stop
     </div>
