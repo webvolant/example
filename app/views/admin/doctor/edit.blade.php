@@ -47,6 +47,19 @@
 {{ Form::text('phone', null, array('class' => 'form-control', 'placeholder'=>'0(312)565656')) }}
 </p>
 
+<div class="alert alert-success" role="alert">
+    <h5>Клиники за которыми закреплен врач:</h5>
+
+@foreach($user->Kliniks as $klinika)
+<?php //var_dump($klinika) ?>
+<div class="panel panel-info">
+    <div class="panel-heading"><a href='{{ URL::route("klinika/edit", array($klinika->id)) }}'>{{ $klinika->name }}</a></div>
+    <div class="panel-body">
+            <p>Адрес: {{ $klinika->address }}</p>
+    </div>
+</div>
+@endforeach
+</div>
 
 <p>
     @if ($errors->first('klinika_name'))

@@ -135,12 +135,20 @@ class KlinikaController extends Controller {
         $config['center'] = "$mm->lat,$mm->lng";
         $config['zoom'] = 15;
         Gmaps::initialize($config);
-
+        //var_dump($mm->lat,$mm->lng);
         $marker = array();
         $marker['position'] = "$mm->lat,$mm->lng";
         Gmaps::add_marker($marker);
 
         $map = Gmaps::create_map();
+        //http://maps.googleapis.com/maps/api/geocode/output?parameters
+        /*$xml = simplexml_load_file('http://maps.googleapis.com/maps/api/geocode/xml?address='.$user->address);
+        $lat = $xml->result->geometry->location->lat;
+        $lng = $xml->result->geometry->location->lng;
+        var_dump($lat);
+        var_dump($lng);*/
+
+
 
 
         //var_dump($photos);
