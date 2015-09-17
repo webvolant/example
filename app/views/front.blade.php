@@ -18,6 +18,7 @@
     @section('meta')
         <title>@yield('title', Helper::title() )</title>
         <meta name="description" content="@yield('description', Helper::description())">
+        <meta name="keywords" content="@yield('keywords', Helper::keywords())">
     @show
 
         {{ HTML::style('css/bootstrap.min.css') }}
