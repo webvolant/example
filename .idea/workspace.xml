@@ -26,7 +26,7 @@
       <file leaf-file-name="app.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="20" selection-start="437" selection-end="442" vertical-scroll-proportion="-3.9230769" vertical-offset="153" max-vertical-offset="3638">
+            <state line="15" column="19" selection-start="441" selection-end="441" vertical-scroll-proportion="-3.9230769" vertical-offset="153" max-vertical-offset="3638">
               <folding />
             </state>
           </provider>
@@ -89,7 +89,7 @@
       <file leaf-file-name="DoctorController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/DoctorController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="92" selection-start="7790" selection-end="7790" vertical-scroll-proportion="0.41463414" vertical-offset="2550" max-vertical-offset="3757">
+            <state line="89" column="50" selection-start="4603" selection-end="4603" vertical-scroll-proportion="1.7861164" vertical-offset="561" max-vertical-offset="3757">
               <folding />
             </state>
           </provider>
@@ -172,9 +172,9 @@
         <option value="$PROJECT_DIR$/app/views/front.blade.php" />
         <option value="$PROJECT_DIR$/app/models/Klinika.php" />
         <option value="$PROJECT_DIR$/app/views/front/klinika/list.blade.php" />
-        <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/controllers/Helper.php" />
         <option value="$PROJECT_DIR$/app/controllers/KlinikaController.php" />
+        <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/controllers/DoctorController.php" />
       </list>
     </option>
@@ -879,13 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="437" selection-end="442" vertical-scroll-proportion="-3.9230769" vertical-offset="153" max-vertical-offset="3638">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Helper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="125" column="42" selection-start="3692" selection-end="3693" vertical-scroll-proportion="-0.65384614" vertical-offset="2023" max-vertical-offset="4012">
@@ -921,9 +914,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="19" selection-start="441" selection-end="441" vertical-scroll-proportion="-3.9230769" vertical-offset="153" max-vertical-offset="3638">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/DoctorController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="92" selection-start="7790" selection-end="7790" vertical-scroll-proportion="0.41463414" vertical-offset="2550" max-vertical-offset="3757">
+        <state line="89" column="50" selection-start="4603" selection-end="4603" vertical-scroll-proportion="1.7861164" vertical-offset="561" max-vertical-offset="3757">
           <folding />
         </state>
       </provider>

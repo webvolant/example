@@ -87,7 +87,7 @@ class DoctorController extends Controller {
                 else{
                     $users = Speciality::find(\Route::current()->parameter('spec'))->Users()
                         ->whereRole('doctor')->whereStatus(1)
-                        ->orderBy(ABS('rating'),'desc')
+                        ->orderBy('rating','desc')
                         ->paginate(Helper::getPagesCount());
                    // var_dump($users);
                     return View::make('front.doctor.list', array('users'=>$users));
