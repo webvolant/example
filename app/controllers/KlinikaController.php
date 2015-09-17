@@ -96,24 +96,16 @@ class KlinikaController extends Controller {
             return View::make('front.klinika.list', array('users'=>$kliniks));
         } else { //Клиники без специализации
             if ( Input::get('order') != null && Input::get('direction') != null ){
-                    $kliniks = DB::table('kliniks')->distinct()
-                    ->join('user_kliniks', function($join){
-                        $join->on('user_kliniks.klinik_id','=','kliniks.id');
-                    })
-                    ->where('kliniks.type',0)->orWhere('kliniks.type','=',"")
+                $kliniks = Klinika::where('status','=','1')->orWhere('type','=',0)
                     ->orderBy(Input::get('order'),Input::get('direction'))
-                    ->groupBy('link')
                     ->paginate(Helper::getPagesCount());
                     return View::make('front.klinika.list', array('users'=>$kliniks));
             } elseif ( Input::get('order') == null && Input::get('direction') == null ){
-                    $kliniks = DB::table('kliniks')->distinct()
-                    ->join('user_kliniks', function($join){
-                        $join->on('user_kliniks.klinik_id','=','kliniks.id');
-                    })
-                    ->where('kliniks.type',0)->orWhere('kliniks.type','=',"")
-                    ->groupBy('link')
+                    $kliniks = Klinika::where('status','=','1')->orWhere('type','=',0)
                     ->paginate(Helper::getPagesCount());
                     return View::make('front.klinika.list', array('users'=>$kliniks));
+                //var_dump($kliniks);
+                //die();
             }
         }
     }

@@ -80,17 +80,13 @@ class Klinika extends Eloquent {
     //Получение клиник по специальности
     public static function getSpecialisations($id){
         $result = Cache::remember('getKliniks'+$id, Helper::cacheTime(), function() use ($id) {
-            //echo 'idddddddddddd'.$id;
             $temp = array();
             $kl = Klinika::find($id);
-            //var_dump($kl);
-            //die();
             foreach ( $kl->Users as $key => $sp)
             {
                 foreach ( $sp->Specialities as $key => $sp){
                     array_push($temp, $sp->specialisation);
                 }
-                //die();
             }
             return array_unique($temp);
         });
