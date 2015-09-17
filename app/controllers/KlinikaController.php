@@ -38,6 +38,7 @@ class KlinikaController extends Controller {
                     ->whereIn('user_id',$docIds)
                     ->where('kliniks.type',0)->orWhere('kliniks.type','=',"")
                     ->groupBy('link')
+                    ->orderBy('rating','desc')
                     ->paginate(Helper::getPagesCount());
 
                   /*
@@ -102,7 +103,8 @@ class KlinikaController extends Controller {
                     return View::make('front.klinika.list', array('users'=>$kliniks));
             } elseif ( Input::get('order') == null && Input::get('direction') == null ){
                     $kliniks = Klinika::where('type','=',0)
-                    ->paginate(Helper::getPagesCount());
+                        ->orderBy('rating','desc')
+                        ->paginate(Helper::getPagesCount());
                     return View::make('front.klinika.list', array('users'=>$kliniks));
                 //var_dump($kliniks);
                 //die();
