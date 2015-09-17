@@ -69,7 +69,16 @@
                         <div class="intro_doctor_info">
                             <p class="h3_my"><a href='{{ URL::route("clinic/detail", array($user->link)) }}'>{{ $user->name }}</a></p>
 
-                            <p><span class="h6_my"> Направления клиники: </span> @foreach(Klinika::getSpecialisations($user->klinik_id) as $item) {{ $item }} @endforeach </p>
+                            <? if ($user->klinik_id!=null){
+                                $klinik_id_var = "$user->klinik_id";
+                            }else{
+                                $klinik_id_var = "$user->id";
+                            }
+
+                            ?>
+                            <p><span class="h6_my"> Направления клиники: </span> @foreach(Klinika::getSpecialisations($klinik_id_var) as $item) {{ $item }} @endforeach </p>
+
+
 
                             <?php mb_internal_encoding("UTF-8"); ?>
                             <p><?php echo mb_substr(html_entity_decode($user->description, ENT_QUOTES, 'UTF-8'), 0, 500);?>
@@ -137,7 +146,7 @@
 
                                             <p>{{ Form::text('name', null, array('class' => ' form-control', 'placeholder'=>'Ваше имя')) }}</p>
 
-                                            {{ Form::hidden('klinik_id', "$user->klinik_id") }}
+                                            {{ Form::hidden('klinik_id', "$klinik_id_var") }}
                                             <p>
                                                 {{ Form::radio('pacient', 'small'); }} Ребенок
                                             </p>
@@ -145,8 +154,8 @@
                                                 {{ Form::radio('pacient', 'big', true); }} Взрослый
                                             </p>
 
-                                            <p><a href="#" id="{{ $user->klinik_id }}"class="user_phone2_a">Добавить комментарий</a></p>
-                                            <p>{{ Form::textarea('comment', null, array('class' =>'hidden2 form-control', 'id'=>"user_phone2_comment$user->klinik_id", 'placeholder'=>'Ваш комментарий')) }}</p>
+                                            <p><a href="#" id="{{ $klinik_id_var }}"class="user_phone2_a">Добавить комментарий</a></p>
+                                            <p>{{ Form::textarea('comment', null, array('class' =>'hidden2 form-control', 'id'=>"user_phone2_comment$klinik_id_var", 'placeholder'=>'Ваш комментарий')) }}</p>
 
                                             <p>{{ Form::submit( "Отправить", array('class' => 'btn_submit btn btn-warning submit_send_order_klinika')) }}</p>
 

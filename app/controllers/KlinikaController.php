@@ -96,12 +96,12 @@ class KlinikaController extends Controller {
             return View::make('front.klinika.list', array('users'=>$kliniks));
         } else { //Клиники без специализации
             if ( Input::get('order') != null && Input::get('direction') != null ){
-                $kliniks = Klinika::where('status','=','1')->orWhere('type','=',0)
+                $kliniks = Klinika::where('type','=',0)
                     ->orderBy(Input::get('order'),Input::get('direction'))
                     ->paginate(Helper::getPagesCount());
                     return View::make('front.klinika.list', array('users'=>$kliniks));
             } elseif ( Input::get('order') == null && Input::get('direction') == null ){
-                    $kliniks = Klinika::where('status','=','1')->orWhere('type','=',0)
+                    $kliniks = Klinika::where('type','=',0)
                     ->paginate(Helper::getPagesCount());
                     return View::make('front.klinika.list', array('users'=>$kliniks));
                 //var_dump($kliniks);
