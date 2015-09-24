@@ -156,29 +156,28 @@ class KlinikaController extends Controller {
 
     public function centers(){
         if (\Route::current()->parameter('diag') != null && \Route::current()->parameter('area') != null){
-            $users = Klinika::where('status','=',1)->where('type','=',1)->whereHas('tests', function($q){
-                    $q->where('link', \Route::current()->parameter('area'))->orWhere('link', \Route::current()->parameter('diag'));
-                }
-            )->paginate(Helper::getPagesCount());
-            return View::make('front.klinika.diaglist', array('users'=>$users));
-        }
-        elseif (\Route::current()->parameter('diag') != null){ //для поиска по второму параметру.
-            $users = Klinika::where('status','=',1)->where('type','=',1)->whereHas('tests', function($q){
+            $users = Klinika::whereHas('tests', function($q){
                     $q->where('link', \Route::current()->parameter('diag'));
                 }
             )->paginate(Helper::getPagesCount());
             return View::make('front.klinika.diaglist', array('users'=>$users));
         }
-        elseif (\Route::current()->parameter('area') != null){ //для поиска по второму параметру.
+        elseif (\Route::current()->parameter('diag') != null){ //для поиска по первому параметру.
+            $users = Klinika::whereHas('tests', function($q){
+                    $q->where('link', \Route::current()->parameter('diag'));
+                }
+            )->paginate(Helper::getPagesCount());
+            return View::make('front.klinika.diaglist', array('users'=>$users));
+        }
+        /*elseif (\Route::current()->parameter('area') != null){ //для поиска по второму параметру.
             $users = Klinika::where('status','=',1)->where('type','=',1)->whereHas('tests', function($q){
                     $q->where('link', \Route::current()->parameter('area'));
                 }
             )->paginate(Helper::getPagesCount());
             return View::make('front.klinika.diaglist', array('users'=>$users));
-        }
-
+        }*/
         elseif (\Route::current()->parameter('diag') == null && \Route::current()->parameter('area') == null){
-            $users = Klinika::where('status','=',1)->where('type','=',1)->paginate(Helper::getPagesCount());
+            $users = Klinika::where('type','=',1)->paginate(Helper::getPagesCount());
             return View::make('front.klinika.diaglist', array('users'=>$users));
         }
 
