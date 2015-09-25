@@ -283,6 +283,24 @@
 </p>
 
 
+
+
+<div class="panel panel-warning">
+    <div class="panel-heading">Мета информация</div>
+    <div class="panel-body">
+
+        <p>
+            @if ($errors->first('keywords'))
+        <div class="alert alert-danger" role="alert"><?php echo $errors->first('keywords'); ?></div>
+        @else
+        @endif
+        {{ Form::label('Ключевые слова - наиболее важные слова из описания врача') }}
+        {{ Form::textarea('keywords', null, array('class' => 'form-control', 'placeholder'=>'врач, Косметолог, в Бишкеке, хороший, квалифицированный')) }}
+        </p>
+    </div>
+</div>
+
+
 <p>
     {{ Form::submit( "Отправить", array('class' => 'btn btn-primary')) }}
     <a href="{{ URL::route('doctor/index') }}" class="btn btn-danger">Отмена</a>

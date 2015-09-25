@@ -187,7 +187,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         $user->rating = Input::get('rating');
 
 
-
+                        $user->keywords = Input::get('keywords');
 
                     $user->save();
 

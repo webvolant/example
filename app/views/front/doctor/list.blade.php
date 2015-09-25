@@ -9,15 +9,28 @@
 @extends('front')
 
 @section('title')
-{{ Helper::title() }}
-{{ "Каталог врачей." }}
-@if (\Route::current()->parameter('spec')!=null)
-{{ Speciality::where('id','=',\Route::current()->parameter('spec'))->first()->description }}
-@endif
+    {{ Helper::title() }}
+    @if (\Route::current()->parameter('spec')!=null)
+    {{ 'Врач -' }} {{ Speciality::where('id','=',\Route::current()->parameter('spec'))->first()->name }}
+    @else
+    {{ "Каталог врачей." }}
+    @endif
 @stop
 
 @section('description')
-{{ "Врачи разбиты по специализациям. " }}
+    @if (\Route::current()->parameter('spec')!=null)
+    {{ strip_tags(Speciality::where('id','=',\Route::current()->parameter('spec'))->first()->description) }}
+    @else
+    {{ "На сервисе Мой Доктор - Врачи разбиты по специализациям для того, чтобы вы удобно нашли нужного специалиста. " }}
+    @endif
+@stop
+
+@section('keywords')
+    @if (\Route::current()->parameter('spec')!=null)
+    {{ strip_tags(Speciality::where('id','=',\Route::current()->parameter('spec'))->first()->keywords) }}
+    @else
+    {{ "Мой Доктор,каталог врачей, специализация, направления, специальность, поиск врача, найти врача, Бишкек," }}
+    @endif
 @stop
 
 

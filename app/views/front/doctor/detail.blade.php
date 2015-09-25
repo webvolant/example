@@ -15,12 +15,20 @@
 
 @section('title')
     {{ Helper::title() }}
-    {{ "Врач - ".$user->fio }}
+    {{ $user->fio }}
 @stop
 
 @section('description')
     {{ $user->description }}
 @stop
+
+@if($user->keywords)
+    @section('keywords')
+    {{ $user->keywords }}
+    @stop
+@endif
+
+
 
     @section('specialities')
     @show

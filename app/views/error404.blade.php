@@ -78,7 +78,7 @@
                 <h3>
                     <a href="{{ URL::to('/') }}"><?php echo "МОЙ ДОКТОР" ?></a>
                 </h3>
-                
+
             </div>
     </div>
     @show
