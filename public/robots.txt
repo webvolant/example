@@ -1,2 +1,3 @@
+Host: my-doc.kg
 User-agent: *
 Disallow:
