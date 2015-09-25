@@ -43,7 +43,15 @@
 
 
 
+h4.error404{
+    font-size: 70pt;
+    color: #2490bc;
+}
 
+span.error404text{
+    font-size: 20pt;
+    color: #2490bc;
+}
 
 
 .border-left{
@@ -51,7 +59,7 @@
 }
 
 .err-image{
-    background: url("template_image/doc-err.jpeg") top right no-repeat;
+    background: url("template_image/doctor2.jpg") top right no-repeat;
     background-size: contain;
     min-height: 200px;
     margin-top: 20px;
@@ -60,7 +68,7 @@
 .center{
     position: absolute;
     top: 35%;
-    left:35%;
+    left:25%;
 }
 
 

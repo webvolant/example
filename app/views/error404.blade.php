@@ -70,14 +70,15 @@
             <div class="err-image col-xs-12 col-sm-6 col-md-6">
 
             </div>
-            <div class="border-left col-xs-12 col-sm-6 col-md-6">
-                <h1>Произошла ошибка</h1>
+            <div class=" col-xs-12 col-sm-6 col-md-6">
+                <h4 class="error404">404 <span class="error404text">ошибка</span></h4>
                 <p>Думаю на сайте не оказалось запрашиваемой ссылки, данная ошибка могла возникнуть по разным причинам.</p>
 
-                <p>Попробуйте перейти по следующему линку</p>
+                <p>Попробуйте перейти по следующему линку. </p>
                 <h3>
-                    <a href="{{ URL::to('/') }}"><?php echo "В начало" ?></a>
+                    <a href="{{ URL::to('/') }}"><?php echo "МОЙ ДОКТОР" ?></a>
                 </h3>
+                
             </div>
     </div>
     @show

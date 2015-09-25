@@ -10,11 +10,14 @@
 
 @section('title')
 {{ Helper::title() }}
-{{ "Врачи" }}
+{{ "Каталог врачей." }}
+@if (\Route::current()->parameter('spec')!=null)
+{{ Speciality::where('id','=',\Route::current()->parameter('spec'))->first()->description }}
+@endif
 @stop
 
 @section('description')
-{{ "врачи по всем специализациям" }}
+{{ "Врачи разбиты по специализациям. " }}
 @stop
 
 
