@@ -24,6 +24,12 @@
 {{ $user->description }}
 @stop
 
+@if($user->keywords)
+@section('keywords')
+{{ $user->keywords }}
+@stop
+@endif
+
 @section('specialities')
 @show
 

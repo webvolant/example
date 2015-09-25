@@ -215,6 +215,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $klinika->address = Input::get('address');
                 $klinika->fio = Input::get('fio');
 
+                $klinika->keywords = Input::get('keywords');
+
 
                 $klinika->grafik = Input::get('grafik');
                 $klinika->description = Input::get('description');
