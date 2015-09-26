@@ -386,9 +386,9 @@
 
 
 <!--Openstat-->
-<span id="openstat1"></span>
+<span id="openstat2376901"></span>
 <script type="text/javascript">
-    var openstat = { counter: 1, next: openstat };
+    var openstat = { counter: 2376901, next: openstat };
     (function(d, t, p) {
         var j = d.createElement(t); j.async = true; j.type = "text/javascript";
         j.src = ("https:" == p ? "https:" : "http:") + "//openstat.net/cnt.js";
