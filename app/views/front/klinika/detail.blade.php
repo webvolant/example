@@ -352,6 +352,8 @@ $(document).ready(function() {
     }
 
     $(".fancybox").fancybox({
+        maxWidth:'650',
+        maxHeight:'400',
         openEffect	: 'none',
         closeEffect	: 'none'
     });
