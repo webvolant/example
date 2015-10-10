@@ -326,6 +326,7 @@
         <div class="footer col-xs-12 col-sm-12 col-md-12">
                 @section('footer')
                 <div class="col-xs-6 col-sm-6 col-md-3">
+                    <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus" data-yashareTheme="counter"></div>
                     <div class="logo2"></div>
                 </div>
 
