@@ -465,18 +465,7 @@
 
 
 
-        //еще отзывы
-        $(".more-reviews").click(function(e){
-            e.preventDefault();
-            var user = $(".doctor_id").text();
-            if (user){
-                $("a.more-reviews").html('Пожалуйста подождите!');
-                $.post('/more-review', {user:user},function(data){
-                    $(".reviews").html(data);
-                    $("a.more-reviews").hide();
-                });
-            }
-        });
+
 
         //заказ аякс
         $(".submit_send_order").click(function(e){

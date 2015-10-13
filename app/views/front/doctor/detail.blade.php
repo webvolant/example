@@ -652,4 +652,23 @@ $grafik_arr = explode(";", $user->grafik);
         </ul>
 
     </div>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        //еще отзывы
+        $(".more-reviews").click(function(e){
+        e.preventDefault();
+        var user = <?php echo $user->id; ?> //$(".doctor_id").text();
+        if (user){
+        $("a.more-reviews").html('Пожалуйста подождите!');
+        $.post('/more-review', {user:user},function(data){
+        console.log(data);
+        $(".reviews").html(data);
+        $("a.more-reviews").hide();
+        });
+        }
+        });
+    });
+</script>
 @stop
