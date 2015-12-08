@@ -298,7 +298,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
 
                 //$json = json_encode($klinika);
-
+/*
                 $crm = new Crm;
                 $crm->info_before = $json_before;
                 $crm->info_after = $json;
@@ -306,6 +306,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $crm->object = "klinika";
                 $crm->user_id = Auth::user()->id;
                 $crm->save();
+*/
                 return Redirect::route('klinika/index');
             }
             else{

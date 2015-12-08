@@ -208,7 +208,7 @@ Route::post('review/edit/{id}', array(
 
 
 
-
+/*
             //$json_before = json_encode($user);
             $json = json_encode($otziv);
             $crm = new Crm;
@@ -218,7 +218,7 @@ Route::post('review/edit/{id}', array(
             $crm->object = "review";
             $crm->user_id = Auth::user()->id;
             $crm->save();
-
+*/
             return Redirect::route('review/index');
         }
         else{

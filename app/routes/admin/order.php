@@ -134,7 +134,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $event->save();
 
                 $json = json_encode($event);
-
+/*
                 $crm = new Crm;
                 $crm->info_before = $json_before;
                 $crm->info_after = $json;
@@ -142,7 +142,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $crm->object = "event";
                 $crm->user_id = Auth::user()->id;
                 $crm->save();
-
+*/
                 return '<div class="alert alert-success" role="alert">Операция завершена</div>';
             }
         }

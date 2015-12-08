@@ -155,7 +155,7 @@
             <li>
                 <a href="{{ URL::route('dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Админ Панель</a>
             </li>
-            <li>
+            <!--<li>
                 <a href="#"><i class="fa fa-calendar fa-fw"></i> История изменений<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -164,8 +164,8 @@
                         <a href="{{ URL::route('crm/events') }}"><i class="fa fa-list fa-fw"></i>События заявок</a>
                     </li>
                 </ul>
-                <!-- /.nav-second-level -->
-            </li>
+
+            </li>-->
 
             <li>
                 <a href="#"><i class="fa fa-ambulance fa-fw"></i> Менеджер заявок<span class="fa arrow"></span></a>

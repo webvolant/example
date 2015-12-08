@@ -153,7 +153,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'administrator'), function()
 
                 $user->save();
 
-
+/*
                 //$json_before = json_encode($user);
                 $json = json_encode($user);
                 $crm = new Crm;
@@ -163,7 +163,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'administrator'), function()
                 $crm->object = "user";
                 $crm->user_id = Auth::user()->id;
                 $crm->save();
-
+*/
                 return Redirect::route('user/index');
             }else{
                 return Redirect::route('user/add')->withInput()->withErrors($validation);

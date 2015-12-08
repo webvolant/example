@@ -77,7 +77,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
                 $user->save();
 
-
+/*
                 //$json_before = json_encode($klinika);
                 $json = json_encode($user);
                 $crm = new Crm;
@@ -87,6 +87,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $crm->object = "client";
                 $crm->user_id = Auth::user()->id;
                 $crm->save();
+*/
                 return Redirect::route('client/index');
             }else{
                 return Redirect::route('client/add')->withInput()->withErrors($validation);

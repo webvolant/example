@@ -222,7 +222,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
                         //before in Controller
                         //$j_before = Session::get('j_before');
-
+/*
                         //$json_before = json_encode($klinika);
                         $crm = new Crm;
                         $crm->info_before = $json_before;
@@ -231,6 +231,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         $crm->object = "doctor";
                         $crm->user_id = Auth::user()->id;
                         $crm->save();
+*/
                     return Redirect::route('doctor/index');
                 }
                 else{

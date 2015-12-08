@@ -76,7 +76,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $user->speciality_id = Input::get('specialities')[0];
 
                 $user->save();
-
+/*
                 //$json_before = json_encode($user);
                 $json = json_encode($user);
                 $crm = new Crm;
@@ -86,7 +86,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $crm->object = "illness";
                 $crm->user_id = Auth::user()->id;
                 $crm->save();
-
+*/
                 return Redirect::route('illness/index');
             }
             else{
@@ -183,7 +183,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         $user->speciality_id = Input::get('specialities')[0];
 
                         $user->save();
-
+/*
                         //$json_before = json_encode($user);
                         $json = json_encode($user);
                         $crm = new Crm;
@@ -193,7 +193,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         $crm->object = "article";
                         $crm->user_id = Auth::user()->id;
                         $crm->save();
-
+*/
                     return Redirect::route('article/index');
                 }
                 else{
