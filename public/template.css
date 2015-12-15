@@ -524,9 +524,7 @@ a:hover{
     border-radius: 5px;
     padding:5px;
 
-    -webkit-column-count:3;
-    -moz-column-count:3;
-    column-count:3;
+  
 }
 
 
@@ -535,9 +533,7 @@ a:hover{
     border-top:1px solid rgba(0, 0, 0, 0.20);
     padding-top: 10px;
     padding-right: 20px;
-    -webkit-column-count:3;
-    -moz-column-count:3;
-    column-count:3;
+    
 }
 
 .specialisations li{
@@ -1242,12 +1238,35 @@ input#user_phone::-webkit-input-placeholder {
     -moz-column-count:1;
     column-count:1;
 }
+.specialities{
+  -webkit-column-count:1;
+    -moz-column-count:1;
+    column-count:1;
+}
+
+.specialisations{
+  -webkit-column-count:1;
+    -moz-column-count:1;
+    column-count:1;
+}
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px) {
 .column3{
     -webkit-column-count:1;
+    -moz-column-count:1;
+    column-count:1;
+}
+
+.specialities{
+  -webkit-column-count:1;
+    -moz-column-count:1;
+    column-count:1;
+}
+
+.specialisations{
+  -webkit-column-count:1;
     -moz-column-count:1;
     column-count:1;
 }
@@ -1262,6 +1281,17 @@ input#user_phone::-webkit-input-placeholder {
     -moz-column-count:2;
     column-count:2;
 }
+.specialities{
+  -webkit-column-count:2;
+    -moz-column-count:2;
+    column-count:2;
+}
+
+.specialisations{
+  -webkit-column-count:2;
+    -moz-column-count:2;
+    column-count:2;
+}
 }
 
 /* Medium Devices, Desktops */
@@ -1271,12 +1301,35 @@ input#user_phone::-webkit-input-placeholder {
     -moz-column-count:3;
     column-count:3;
 }
+.specialities{
+  -webkit-column-count:3;
+    -moz-column-count:3;
+    column-count:3;
+}
+
+.specialisations{
+  -webkit-column-count:3;
+    -moz-column-count:3;
+    column-count:3;
+}
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
 .column3{
     -webkit-column-count:3;
+    -moz-column-count:3;
+    column-count:3;
+}
+
+.specialities{
+  -webkit-column-count:3;
+    -moz-column-count:3;
+    column-count:3;
+}
+
+.specialisations{
+  -webkit-column-count:3;
     -moz-column-count:3;
     column-count:3;
 }
