@@ -75,11 +75,11 @@
 <div class="container">
     <div class="row header">
             @section('header')
-                <div class=" col-xs-8 col-sm-7 col-md-4 paddingtop15">
+                <div class=" col-xs-12 col-sm-7 col-md-4 paddingtop15">
                     <a href="{{ URL::route('/') }}"><div class="logo"></div></a>
                 </div>
 
-                <div class="col-xs-4 col-sm-5 col-md-2 paddingtop15">
+                <div class="col-xs-12 col-sm-5 col-md-2 paddingtop15 hidden-xs">
                         <ul class="list">
                             <li><span class="orange_text">{{ $orders+75 }} </span><?php echo strstr(Lang::choice('mydoc.orders', $orders+75, ['n' => $orders+75], 'ru'),"з"); ?></li>
                             <li><span class="orange_text">{{ $docs }} </span><?php echo strstr(Lang::choice('mydoc.docs', $docs, ['n' => $docs], 'ru'),"в"); ?></li>
@@ -91,7 +91,7 @@
                     <div class="doctor1"></div>
                 </div>
 
-                <div class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-5  col-md-offset-0 col-md-4">
+                <div class="col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-5  col-md-offset-0 col-md-4">
                     <div class="form-group form-inline order_form">
                         <?php echo $errors->first('phone_main'); ?>
 
@@ -360,8 +360,86 @@
                     </div>
 
                     <div class="pull-left margin-left10">
-                        <!-- Yandex.Metrika informer --> <a href="https://metrika.yandex.ru/stat/?id=32126845&from=informer" target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/32126845/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:32126845,lang:'ru'});return false}catch(e){}" /></a> <!-- /Yandex.Metrika informer --> <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter32126845 = new Ya.Metrika({ id:32126845, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/32126845" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
-                    </div>
+                        <!-- WWW.NET.KG , code for http://www.my-doc.kg -->
+<script language="javascript" type="text/javascript">
+ java="1.0";
+ java1=""+"refer="+escape(document.referrer)+"&amp;page="+escape(window.location.href);
+ document.cookie="astratop=1; path=/";
+ java1+="&amp;c="+(document.cookie?"yes":"now");
+</script>
+<script language="javascript1.1" type="text/javascript">
+ java="1.1";
+ java1+="&amp;java="+(navigator.javaEnabled()?"yes":"now");
+</script>
+<script language="javascript1.2" type="text/javascript">
+ java="1.2";
+ java1+="&amp;razresh="+screen.width+'x'+screen.height+"&amp;cvet="+
+ (((navigator.appName.substring(0,3)=="Mic"))?
+ screen.colorDepth:screen.pixelDepth);
+</script>
+<script language="javascript1.3" type="text/javascript">java="1.3"</script>
+<script language="javascript" type="text/javascript">
+ java1+="&amp;jscript="+java+"&amp;rand="+Math.random();
+ document.write("<a href='http://www.net.kg/stat.php?id=4757&amp;fromsite=4757' target='_blank'>"+
+ "<img src='http://www.net.kg/img.php?id=4757&amp;"+java1+
+ "' border='0' alt='WWW.NET.KG' width='88' height='31' /></a>");
+</script>
+<noscript>
+ <a href='http://www.net.kg/stat.php?id=4757&amp;fromsite=4757' target='_blank'><img
+  src="http://www.net.kg/img.php?id=4757" border='0' alt='WWW.NET.KG' width='88'
+  height='31' /></a>
+</noscript>
+<!-- /WWW.NET.KG -->
+                    
+					<!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=34190090&amp;from=informer"
+target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/34190090/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:34190090,lang:'ru'});return false}catch(e){}" /></a>
+<!-- /Yandex.Metrika informer -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter34190090 = new Ya.Metrika({
+                    id:34190090,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/34190090" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71399419-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+					</div>
 
 
                     <div class="developed pull-right">
@@ -373,7 +451,7 @@
                         }
                     </style>
                         <img src="/public/template_image/ablogo.png" class="developed_logo" width="20px" height="20px"/> <a href="http://abs-it.net">AB SOLUTIONS</a> - Разработка веб-сайта<br/>
-                        <div class="pull-right"><a href="mailto:barkalovlab@gmail.com"><span class="glyphicon glyphicon-envelope"></span>  Антон Баркалов</a></div>
+                        <div class="pull-right"><a href="mailto:barkalov_anton@mail.ru"><span class="glyphicon glyphicon-envelope"></span>  Антон Баркалов</a></div>
                     </div>
 
 

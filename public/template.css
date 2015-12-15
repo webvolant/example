@@ -110,11 +110,7 @@ span.error404text{
     display: none;
 }
 
-.column3{
-    -webkit-column-count:3;
-    -moz-column-count:3;
-    column-count:3;
-}
+
 
 .margintop20{
     position: relative;
@@ -584,7 +580,7 @@ a:hover{
 
 .logo{
     background: url("template_image/logotype5.png") left center no-repeat;
-    background-size: cover; /* Масштабируем фон */
+    background-size: contain; /* Масштабируем фон */
     min-height: 120px;
 
 }
@@ -1235,5 +1231,55 @@ input#user_phone::-webkit-input-placeholder {
 
 .font13{
     font-size: 13px;
-    line-height: 0.7;
+    line-height: 14px;
 }
+
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+   .column3{
+    -webkit-column-count:1;
+    -moz-column-count:1;
+    column-count:1;
+}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+.column3{
+    -webkit-column-count:1;
+    -moz-column-count:1;
+    column-count:1;
+}
+
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+.column3{
+    -webkit-column-count:2;
+    -moz-column-count:2;
+    column-count:2;
+}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+.column3{
+    -webkit-column-count:3;
+    -moz-column-count:3;
+    column-count:3;
+}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+.column3{
+    -webkit-column-count:3;
+    -moz-column-count:3;
+    column-count:3;
+}
+
+}
+
