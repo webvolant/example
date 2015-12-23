@@ -599,7 +599,7 @@ a:hover{
 .doctor1{
     background: url("template_image/doctor1.jpg") top center no-repeat;
     background-size: contain;
-    min-height: 136px;
+    min-height: 155px;
     margin-top: 10px;
 
 }

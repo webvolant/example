@@ -95,8 +95,9 @@
                     <div class="form-group form-inline order_form">
                         <?php echo $errors->first('phone_main'); ?>
 
-                        <p class="h3_my"><span class="h4_my"> Поможем найти врача</span><br/>
-                            звоните <span class="orange_text">0(312) 98-69-00</span><br/>
+                        <p class="h3_my"><span class="h4_my"> Поможем найти врача звоните</span><br/>
+                            <span class="orange_text">0(312) 98-69-00, </span><br/>
+                            <span class="orange_text">0(706) 98-69-00</span><br/>
                             <span class="h7_my"> или оставьте свой номер</span>
                         </p>
                         {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control form-inline width250', 'placeholder'=>'0(___) __ __ __')) }}
@@ -361,35 +362,35 @@
 
                     <div class="pull-left margin-left10">
                         <!-- WWW.NET.KG , code for http://www.my-doc.kg -->
-<script language="javascript" type="text/javascript">
- java="1.0";
- java1=""+"refer="+escape(document.referrer)+"&amp;page="+escape(window.location.href);
- document.cookie="astratop=1; path=/";
- java1+="&amp;c="+(document.cookie?"yes":"now");
-</script>
-<script language="javascript1.1" type="text/javascript">
- java="1.1";
- java1+="&amp;java="+(navigator.javaEnabled()?"yes":"now");
-</script>
-<script language="javascript1.2" type="text/javascript">
- java="1.2";
- java1+="&amp;razresh="+screen.width+'x'+screen.height+"&amp;cvet="+
- (((navigator.appName.substring(0,3)=="Mic"))?
- screen.colorDepth:screen.pixelDepth);
-</script>
-<script language="javascript1.3" type="text/javascript">java="1.3"</script>
-<script language="javascript" type="text/javascript">
- java1+="&amp;jscript="+java+"&amp;rand="+Math.random();
- document.write("<a href='http://www.net.kg/stat.php?id=4757&amp;fromsite=4757' target='_blank'>"+
- "<img src='http://www.net.kg/img.php?id=4757&amp;"+java1+
- "' border='0' alt='WWW.NET.KG' width='88' height='31' /></a>");
-</script>
-<noscript>
- <a href='http://www.net.kg/stat.php?id=4757&amp;fromsite=4757' target='_blank'><img
-  src="http://www.net.kg/img.php?id=4757" border='0' alt='WWW.NET.KG' width='88'
-  height='31' /></a>
-</noscript>
-<!-- /WWW.NET.KG -->
+                        <script language="javascript" type="text/javascript">
+                            java="1.0";
+                            java1=""+"refer="+escape(document.referrer)+"&amp;page="+escape(window.location.href);
+                            document.cookie="astratop=1; path=/";
+                            java1+="&amp;c="+(document.cookie?"yes":"now");
+                        </script>
+                        <script language="javascript1.1" type="text/javascript">
+                            java="1.1";
+                            java1+="&amp;java="+(navigator.javaEnabled()?"yes":"now");
+                        </script>
+                        <script language="javascript1.2" type="text/javascript">
+                            java="1.2";
+                            java1+="&amp;razresh="+screen.width+'x'+screen.height+"&amp;cvet="+
+                                    (((navigator.appName.substring(0,3)=="Mic"))?
+                                            screen.colorDepth:screen.pixelDepth);
+                        </script>
+                        <script language="javascript1.3" type="text/javascript">java="1.3"</script>
+                        <script language="javascript" type="text/javascript">
+                            java1+="&amp;jscript="+java+"&amp;rand="+Math.random();
+                            document.write("<a href='http://www.net.kg/stat.php?id=4757&amp;fromsite=4757' target='_blank'>"+
+                                    "<img src='http://www.net.kg/img.php?id=4757&amp;"+java1+
+                                    "' border='0' alt='WWW.NET.KG' width='88' height='31' /></a>");
+                        </script>
+                        <noscript>
+                            <a href='http://www.net.kg/stat.php?id=4757&amp;fromsite=4757' target='_blank'><img
+                                        src="http://www.net.kg/img.php?id=4757" border='0' alt='WWW.NET.KG' width='88'
+                                        height='31' /></a>
+                        </noscript>
+                        <!-- /WWW.NET.KG -->
                     
 					<!-- Yandex.Metrika informer -->
 <a href="https://metrika.yandex.ru/stat/?id=34190090&amp;from=informer"
