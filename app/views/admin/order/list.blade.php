@@ -36,6 +36,7 @@
                             <th>id</th>
                             <th>Статус</th>
                             <th>Клиент</th>
+                            <th>Телефон</th>
                             <th>Врач</th>
                             <th>Создано</th>
                             <th></th>
@@ -48,6 +49,7 @@
                         <tr>
                             <td><a href='{{ URL::route("order/edit", array($user->id)) }}'>{{ $user->id }}</a></td>
                             <td><a href='{{ URL::route("order/edit", array($user->id)) }}'>{{ Helper::getStrGlobalStatus($user->global_status) }}</a></td>
+                            <td>{{ Client::getName($user->client_id) }}</td>
                             <td>{{ Client::getPhone($user->client_id) }}</td>
                             <td>{{ User::getName($user->doctor_id) }}</td>
                             <td>{{ $user->created_at }}</td>
