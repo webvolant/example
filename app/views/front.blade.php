@@ -97,7 +97,7 @@
 
                         <p class="h3_my"><span class="h4_my"> Поможем найти врача звоните</span><br/>
                             <span class="orange_text">0(312) 98-69-00, </span><br/>
-                            <span class="orange_text">0(706) 98-69-00</span><br/>
+                            <span class="orange_text">0(706),(770) 98-69-00</span><br/>
                             <span class="h7_my"> или оставьте свой номер</span>
                         </p>
                         {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control form-inline width250', 'placeholder'=>'0(___) __ __ __')) }}
