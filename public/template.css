@@ -397,7 +397,7 @@ a:hover{
 }
 
 .orange_text_small{
-    font-size: 15px;
+    font-size: 14px;
     color: #ff6700;
     font-weight: bold;
 }
@@ -599,8 +599,8 @@ a:hover{
 .doctor1{
     background: url("template_image/doctor1.jpg") top center no-repeat;
     background-size: contain;
-    min-height: 155px;
-    margin-top: 10px;
+    min-height: 175px;
+    margin-top: 15px;
 
 }
 
@@ -638,7 +638,7 @@ a:hover{
     font-size: 16px;
     line-height: 33px;
     text-shadow:none;
-    padding: 10px 54px;
+    padding: 10px 70px;
 }
 
 .navbar {
@@ -1336,3 +1336,16 @@ input#user_phone::-webkit-input-placeholder {
 
 }
 
+
+
+
+ul.numbers li{
+    list-style: none;
+    margin-left:0px;
+
+}
+
+ul.numbers{
+    float:left;
+    padding-left:0px;
+}

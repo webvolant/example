@@ -95,11 +95,18 @@
                     <div class="form-group form-inline order_form">
                         <?php echo $errors->first('phone_main'); ?>
 
-                        <p class="h3_my"><span class="h4_my"> Поможем найти врача звоните</span><br/>
-                            <span class="orange_text">0(312) 98-69-00, </span><br/>
-                            <span class="orange_text">0(706),(770) 98-69-00</span><br/>
-                            <span class="h7_my"> или оставьте свой номер</span>
-                        </p>
+                        <span class="h3_my"><span class="h4_my"> Поможем найти врача звоните</span><br/>
+                            <span class="orange_text_big pull-left margintop20">0 </span>
+                            <ul class="numbers pull-left margin-left10">
+                                <li class="orange_text_small">(312)</li>
+                                <li class="orange_text_small">(706)</li>
+                                <li class="orange_text_small">(770)</li>
+                            </ul>
+                            <span class="orange_text_big pull-left margintop20 margin-left10"> 98-69-00</span>
+                            <!--<span class="orange_text">0,(770) 98-69-00</span><br/>-->
+                        </span>
+                            <div class="clear"></div>
+                            <p><span class="h7_my"> или оставьте свой номер</span></p>
                         {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control form-inline width250', 'placeholder'=>'0(___) __ __ __')) }}
                         <!-- Honeypot::generate('my_name', 'my_time') -->
                         <div class="lastname">
@@ -222,7 +229,7 @@
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav cl-effect-1">
-                                <li><a href="{{ URL::route('/') }}"><span class="glyphicon glyphicon-home"></span> Главная</a></li>
+                                <!--<li><a href=""><span class="glyphicon glyphicon-home"></span> Главная</a></li>-->
                                 <li><a href="{{ URL::to('doctor/doctors') }}"><span class="glyphicon glyphicon-user"></span> Врачи</a></li>
                                 <li><a href="{{ URL::to('clinics/all') }}"><span class="glyphicon glyphicon-plus"></span> Клиники</a></li>
                                 <li><a href="{{ URL::to('diagnostica/centers') }}"><span class="glyphicon glyphicon-search"></span> Диагностические центры и лаборатории</a></li>
