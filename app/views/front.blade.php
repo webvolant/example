@@ -43,6 +43,22 @@
     {{ HTML::script('js/modernizr.custom.js') }}
 
 
+            <!-- Facebook Pixel Code -->
+            <script>
+                !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+                    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+                    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                        document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+                fbq('init', '570951866393985');
+                fbq('track', "PageView");</script>
+            <noscript><img height="1" width="1" style="display:none"
+                           src="https://www.facebook.com/tr?id=570951866393985&ev=PageView&noscript=1"
+                /></noscript>
+            <!-- End Facebook Pixel Code -->
+
+
     <script>
         $(document).ready(function() {
             $("#krit2").chained("#krit1");
@@ -65,6 +81,7 @@
     </script>
 
     <meta name="openstat-verification" content="1a6bee1de0321fd3ea1e616659e2fce60d9ef9da" />
+
 
     @show
 
