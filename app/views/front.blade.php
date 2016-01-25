@@ -129,7 +129,8 @@
                         <div class="lastname">
                             {{ Form::text('lastname', null, array('title'=>'Поле должно быть заполнено!', 'id'=>'lastname', 'class' => 'form-control')) }}
                         </div>
-                        {{ Form::submit( "OK", array('class' => 'form-control form-inline btn_submit_main btn btn-warning submit_send_order')) }}
+                        <?php //Form::submit( "OK", array('class' => '')) ?>
+                            <input class="form-control form-inline btn_submit_main btn btn-warning submit_send_order" type="submit" value="OK" onClick="ga('send', 'event', { eventCategory: 'BUTTON', eventAction: 'CLICK', eventLabel: 'OK'});">
 
 
                     </div>
