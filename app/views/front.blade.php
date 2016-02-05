@@ -92,11 +92,11 @@
 <div class="container">
     <div class="row header">
             @section('header')
-                <div class=" col-xs-12 col-sm-7 col-md-4 paddingtop15">
+                <div class=" col-xs-6 col-sm-7 col-md-4 paddingtop15">
                     <a href="{{ URL::route('/') }}"><div class="logo"></div></a>
                 </div>
 
-                <div class="col-xs-12 col-sm-5 col-md-2 paddingtop15 hidden-xs">
+                <div class="col-xs-6 col-sm-5 col-md-2 paddingtop15">
                         <ul class="list">
                             <li><span class="orange_text">{{ $orders+75 }} </span><?php echo strstr(Lang::choice('mydoc.orders', $orders+75, ['n' => $orders+75], 'ru'),"з"); ?></li>
                             <li><span class="orange_text">{{ $docs }} </span><?php echo strstr(Lang::choice('mydoc.docs', $docs, ['n' => $docs], 'ru'),"в"); ?></li>
@@ -119,7 +119,7 @@
                                 <li class="orange_text_small">(706)</li>
                                 <li class="orange_text_small">(770)</li>
                             </ul>
-                            <span class="orange_text_big pull-left margintop20 margin-left10"> 98-69-00</span>
+                            <span class="orange_text_big pull-left margintop20 margin-left10"> <a href="tel:+996770986900">98-69-00</a></span>
                             <!--<span class="orange_text">0,(770) 98-69-00</span><br/>-->
                         </span>
                             <div class="clear"></div>
@@ -257,26 +257,7 @@
                 </div>
         </div>
 
-@section('specialities')
-    <div class="row">
-        <div class="specialities col-xs-12 col-sm-12 col-md-12">
-                    <ul class="list">
-                        <?php $temp='А'; ?>
-                        @foreach($specialities as $key => $item)
 
-                            <?php
-                                if (substr($item, 0 , 2)!=substr($temp, 0, 2)){
-                                    echo '<h5 ><br/> </h5>';
-                                }
-                                $temp = $item;
-                            ?>
-                        <h5 class="font13"><li><a class="font13" href='{{ URL::route("doctor/doctors", array($key)) }}'>{{ $item }}</a></li></h5>
-                        @endforeach
-                    </ul>
-
-        </div>
-    </div>
-@show
 
         <div class="content row">
 
@@ -344,7 +325,26 @@
             @show
         </div>
 
+    @section('specialities')
+        <div class="row">
+            <div class="specialities col-xs-12 col-sm-12 col-md-12">
+                <ul class="list">
+                    <?php $temp='А'; ?>
+                    @foreach($specialities as $key => $item)
 
+                        <?php
+                        if (substr($item, 0 , 2)!=substr($temp, 0, 2)){
+                        echo '<h5 ><br/> </h5>';
+                        }
+                        $temp = $item;
+                        ?>
+                        <h5 class="font13"><li><a class="font13" href='{{ URL::route("doctor/doctors", array($key)) }}'>{{ $item }}</a></li></h5>
+                    @endforeach
+                </ul>
+
+            </div>
+        </div>
+    @show
 
 <div class="clear"></div>
 

@@ -589,7 +589,15 @@ a:hover{
 }
 
 .header .logo{
-    background-position: 5px;
+    /*background-position: 5px;*/
+}
+
+ul.list{
+    margin-left: -25px;
+}
+
+.orange_text_big a{
+    color: #ff6700;
 }
 
 .order_form{
