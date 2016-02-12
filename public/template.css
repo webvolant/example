@@ -397,7 +397,7 @@ a:hover{
 }
 
 .orange_text_small{
-    font-size: 14px;
+    font-size: 18px;
     color: #ff6700;
     font-weight: bold;
 }
@@ -1356,4 +1356,9 @@ ul.numbers li{
 ul.numbers{
     float:left;
     padding-left:0px;
+}
+
+
+.ab_tip{
+    font-size: 10px;
 }

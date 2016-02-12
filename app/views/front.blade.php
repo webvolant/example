@@ -115,14 +115,16 @@
                         <span class="h3_my"><span class="h4_my"> Поможем найти врача звоните</span><br/>
                             <span class="orange_text_big pull-left margintop20">0 </span>
                             <ul class="numbers pull-left margin-left10">
-                                <li class="orange_text_small">(312)</li>
-                                <li class="orange_text_small">(706)</li>
-                                <li class="orange_text_small">(770)</li>
+                                <li class="orange_text_small"><a data-tooltip="Кликайте по коду оператора для звонка" href="tel:+996312986900">(312)</a></li>
+                                <li class="orange_text_small"><a data-tooltip="Кликайте по коду оператора для звонка" href="tel:+996706986900">(706)</a></li>
+                                <li class="orange_text_small"><a data-tooltip="Кликайте по коду оператора для звонка" href="tel:+996770986900">(770)</a></li>
                             </ul>
-                            <span class="orange_text_big pull-left margintop20 margin-left10"> <a href="tel:+996770986900">98-69-00</a></span>
+                            <span class="orange_text_big pull-left margintop20 margin-left10"> 98-69-00</span>
                             <!--<span class="orange_text">0,(770) 98-69-00</span><br/>-->
+
                         </span>
                             <div class="clear"></div>
+                            <div class="ab_tip">Кликайте по коду оператора для звонка</div>
                             <p><span class="h7_my"> или оставьте свой номер</span></p>
                         {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control form-inline width250', 'placeholder'=>'0(___) __ __ __')) }}
                         <!-- Honeypot::generate('my_name', 'my_time') -->
@@ -695,6 +697,15 @@ style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" tit
 */
 
     });
+
+
+
+    /*jQuery(document).ready(function() {
+        jQuery(window).load(function() {
+
+            jQuery(".ab_tip").css("display","block").delay( 2800 );
+        });
+    });*/
 </script>
 </html>
 
