@@ -151,7 +151,7 @@
                     <div class="modal-content">
                         <div class="modal-header"><button class="close" type="button" data-dismiss="modal">x</button>
                             <h4 class="modal-title" id="myModalLabel">Запишитесь на прием к этому врачу<br/>
-                                <span class="blue_text">по тел.: 0 (312) 986 900</span></h4>
+                                <span class="blue_text">по тел.: <a href="tel:+996312986900">0(312)986900</a>,<a href="tel:+996706986900">0(706)986900</a>,<a href="tel:+996770986900">0(770)986900</a></span></h4>
                         </div>
                         <div class="modal-body">
 

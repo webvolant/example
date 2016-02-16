@@ -283,14 +283,14 @@
                             Все наши врачи рейтингуются по множеству параметров. Вы сами можете оставить отзыв и оценку врачу.
                         </p>
                     </li>
-                    <li class="about_item i-sortbyprice">
+                    <!--<li class="about_item i-sortbyprice">
                         <h4>
                             Отсортируйте врачей по цене
                         </h4>
                         <p class="mvn">
                             Все наши врачи занесены в базу с указанием стоимости приема. Вы можете найти специалиста, ориентируясь на устраивающую вас цену.
                         </p>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-9 margintop20">
@@ -492,17 +492,25 @@ style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" tit
 </div> <!-- container -->
 
 
-<!--Openstat-->
-<span id="openstat2376901"></span>
 <script type="text/javascript">
-    var openstat = { counter: 2376901, next: openstat };
-    (function(d, t, p) {
-        var j = d.createElement(t); j.async = true; j.type = "text/javascript";
-        j.src = ("https:" == p ? "https:" : "http:") + "//openstat.net/cnt.js";
-        var s = d.getElementsByTagName(t)[0]; s.parentNode.insertBefore(j, s);
-    })(document, "script", document.location.protocol);
+    (function(){ var widget_id = 'AuS6rkkL4Y'; var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();
 </script>
-<!--/Openstat-->
+
+
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 955035807;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/955035807/?value=0&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
 
 </body>
 
