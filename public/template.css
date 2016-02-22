@@ -110,11 +110,13 @@ span.error404text{
     display: none;
 }
 
-
+.marginbottom{
+    margin-bottom:30px;
+}
 
 .margintop20{
     position: relative;
-    top: 20px;
+    top: 30px;
 }
 
 .margin-left20{
@@ -515,13 +517,14 @@ a:hover{
 }
 
 .specialities{
-    background-color: #f7f7f7;
+    /*background-color: #f7f7f7;
     border: 0px solid #0090DA;
     border-bottom-width: 1px;
+    border-radius: 5px;*/
     position: relative;
     z-index: 1;
     font-size: 0.1em;
-    border-radius: 5px;
+
     padding:5px;
 
   
@@ -580,6 +583,7 @@ a:hover{
     min-height: 120px;
 
 }
+
 
 
 .logo2 {
@@ -646,7 +650,7 @@ ul.list{
     font-size: 16px;
     line-height: 33px;
     text-shadow:none;
-    padding: 10px 70px;
+    padding: 10px 40px;
 }
 
 .navbar {
@@ -669,9 +673,6 @@ padding-top: 10px;
     padding-bottom: 20px;
     background-color: #F7F7F7;
     min-height: 160px;
-    margin-top: 15px;
-    border-radius: 5px 5px 5px 5px;
-
 }
 
 
@@ -692,7 +693,6 @@ body{
 }
 
 .container{
-    background: white;
 }
 
 .list{
@@ -731,6 +731,15 @@ body{
 
 
 /**************************  ОТЗЫВЫ *******************/
+.back{
+    background: #f2f2f2;
+    padding:20px;
+}
+.ab_icon{
+    width:84px;
+    margin:15px;
+}
+
 
 .i-step-review {
     background: url(/template_image/icons/i-step-review.png) no-repeat center 6px;
