@@ -456,14 +456,24 @@
     </div>
 @show
 
+<div class="clear"></div>
 
-
+<div class="container-fluid help_block">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="text-center"><h3>Нужна помощь?  <a href="tel:+996312986900"> <span class="glyphicon glyphicon-earphone"> </span> +996 (312) 98 69 00</a></h3></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="clear"></div>
 
-<div class="container">
-<div class="row">
-    <div class="footer col-xs-12 col-sm-12 col-md-12">
+<div class="container-fluid footer">
+    <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
         @section('footer')
             <div class="col-xs-6 col-sm-6 col-md-3">
                 <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus" data-yashareTheme="counter"></div>
@@ -595,20 +605,25 @@
                 </div>
 
 
+
             </div>
 
         @show
     </div>
+    </div>
 </div>
+
+
+    <script type="text/javascript">
+        (function(){ var widget_id = 'AuS6rkkL4Y'; var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();
+    </script>
+
 
 </div> <!-- container -->
 
 
-<script type="text/javascript">
-    (function(){ var widget_id = 'AuS6rkkL4Y'; var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();
-</script>
 
-
+<div class="pull-right " style="display:none;">
 <script type="text/javascript">
     /* <![CDATA[ */
     var google_conversion_id = 955035807;
@@ -623,7 +638,7 @@
         <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/955035807/?value=0&amp;guid=ON&amp;script=0"/>
     </div>
 </noscript>
-
+</div>
 </body>
 
 {{ HTML::script('bootstrap-multiselect-master/dist/js/bootstrap-multiselect.js') }}

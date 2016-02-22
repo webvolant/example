@@ -667,6 +667,12 @@ padding-top: 10px;
 
 }
 
+.help_block{
+    background-color: #262b35;
+    color:white;
+    padding:25px;
+}
+
 
 .footer{
     padding-top: 20px;
