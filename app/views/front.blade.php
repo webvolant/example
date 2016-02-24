@@ -326,25 +326,27 @@
 
 
 
+
+
 <div class="container-fluid back">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="center-block text-center"><h2>НАШИ ПРЕИМУЩЕСТВА</h2></div>
+                <div class="center-block text-center"><h2>КАК РАБОТАЕТ СЕРВИС</h2></div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_com.png" /></div>
+                    <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_spec.png" /></div>
                     <h4>
-                        Гарантия лучшей цены
+                        Выберите специалиста
                     </h4>
                     <p class="mvn">
-                        Запись на прием с помощью Мой Доктор теперь не только удобнее, но и выгоднее, чем в клинике.
+                        Сравните рейтинги врачей и почитайте отзывы чтобы определиться с выбором.
                     </p>
 
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_time.png" /></div>
+                    <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_zapis.png" /></div>
                     <h4>
-                        Экономия времени
+                        Запишитесь на прием
                     </h4>
                     <p class="mvn">
                         Благодаря актуальному расписанию вы можете записаться на прием в удобное для вас время.
@@ -352,12 +354,12 @@
 
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_like.png" /></div>
+                    <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_doctor.png" /></div>
                     <h4>
-                        Настоящие отзывы
+                        Посетите врача
                     </h4>
                     <p class="mvn">
-                        Мой Доктор публикует проверенные отзывы пациентов, которые помогут вам найти нужного специалиста.
+                        Напомним о визите к врачу заранее.
                     </p>
 
                 </div>
@@ -411,21 +413,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="center-block text-center"><h2>КАК РАБОТАЕТ СЕРВИС</h2></div>
+                    <div class="center-block text-center"><h2>НАШИ ПРЕИМУЩЕСТВА</h2></div>
                     <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_spec.png" /></div>
+                        <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_com.png" /></div>
                         <h4>
-                            Выберите специалиста
+                            Гарантия лучшей цены
                         </h4>
                         <p class="mvn">
-                            Сравните рейтинги врачей и почитайте отзывы чтобы определиться с выбором.
+                            Запись на прием с помощью Мой Доктор теперь не только удобнее, но и выгоднее, чем в клинике.
                         </p>
 
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_zapis.png" /></div>
+                        <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_time.png" /></div>
                         <h4>
-                            Запишитесь на прием
+                            Экономия времени
                         </h4>
                         <p class="mvn">
                             Благодаря актуальному расписанию вы можете записаться на прием в удобное для вас время.
@@ -433,12 +435,12 @@
 
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_doctor.png" /></div>
+                        <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_like.png" /></div>
                         <h4>
-                            Посетите врача
+                            Настоящие отзывы
                         </h4>
                         <p class="mvn">
-                            Напомним о визите к врачу заранее.
+                            Мой Доктор публикует проверенные отзывы пациентов, которые помогут вам найти нужного специалиста.
                         </p>
 
                     </div>
