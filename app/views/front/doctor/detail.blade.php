@@ -466,8 +466,8 @@ $grafik_arr = explode(";", $user->grafik);
                         <?php } ?>
                     </div>
 
-                    <?php if (($count_otzivi - Helper::reviews_count()) > Helper::reviews_count()) { ?>
-                        <a href="" class="more-reviews">Еще {{ $count_otzivi-Helper::reviews_count() }} <?php echo strstr(Lang::choice('mydoc.ot', $count_otzivi, ['n' => $count_otzivi], 'ru'),"о"); ?></a>
+                    <?php if (($count_otzivi - Helper::reviews_count()) >= Helper::reviews_count()) { ?>
+                        <a href="" class="more-reviews">Еще {{ $count_otzivi-Helper::reviews_count() }} <?php echo strstr(Lang::choice('mydoc.ot', $count_otzivi - Helper::reviews_count(), ['n' => $count_otzivi], 'ru'),"о"); ?></a>
                     <?php } ?>
                 <?php endif; ?>
 </div> <!-- вывод двух отзывов -->

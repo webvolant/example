@@ -6,7 +6,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/storage/dumps/20150710121125.sql" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/favicon.ico" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/admin/klinika.php" afterPath="$PROJECT_DIR$/app/routes/admin/klinika.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front/doctor/detail.blade.php" afterPath="$PROJECT_DIR$/app/views/front/doctor/detail.blade.php" />
     </list>
     <ignored path="doctors.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,12 +77,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="klinika.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="klinika.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes/admin/klinika.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.5142349">
+            <state vertical-scroll-proportion="-32.73077">
               <caret line="151" column="24" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="24" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/front/doctor/detail.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.54448396">
+              <caret line="469" column="186" selection-start-line="469" selection-start-column="186" selection-end-line="469" selection-end-column="186" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Helper.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/Helper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.8363636">
+              <caret line="172" column="17" selection-start-line="172" selection-start-column="17" selection-end-line="172" selection-end-column="17" />
+              <folding>
+                <element signature="e#6#91#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,35 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="front.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/front.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.1090908">
-              <caret line="591" column="29" selection-start-line="591" selection-start-column="29" selection-end-line="591" selection-end-column="29" />
-              <folding>
-                <element signature="n#style#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#noscript#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#noscript#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="list.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/front/klinika/list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="9.807693">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="diaglist.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.0">
-              <caret line="215" column="148" selection-start-line="215" selection-start-column="148" selection-end-line="215" selection-end-column="148" />
               <folding />
             </state>
           </provider>
@@ -156,13 +154,13 @@
       <list>
         <option value="$PROJECT_DIR$/app/views/admin/order/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/front/klinika/detail.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/front/doctor/detail.blade.php" />
         <option value="$PROJECT_DIR$/app/views/front/doctor/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/front.blade.php" />
         <option value="$PROJECT_DIR$/public/template.css" />
         <option value="$PROJECT_DIR$/app/models/User.php" />
         <option value="$PROJECT_DIR$/app/controllers/DoctorController.php" />
         <option value="$PROJECT_DIR$/app/routes/admin/klinika.php" />
+        <option value="$PROJECT_DIR$/app/views/front/doctor/detail.blade.php" />
       </list>
     </option>
   </component>
@@ -612,7 +610,7 @@
     <option name="totallyTimeSpent" value="553000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="14" y="13" width="1364" height="726" extended-state="0" />
+    <frame x="14" y="13" width="1364" height="726" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24925816" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -925,14 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/doctor/detail.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.923077">
-          <caret line="155" column="218" selection-start-line="155" selection-start-column="43" selection-end-line="155" selection-end-column="218" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/klinika/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.8846154">
@@ -1043,8 +1033,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes/admin/klinika.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5142349">
+        <state vertical-scroll-proportion="-32.73077">
           <caret line="151" column="24" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8363636">
+          <caret line="172" column="17" selection-start-line="172" selection-start-column="17" selection-end-line="172" selection-end-column="17" />
+          <folding>
+            <element signature="e#6#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/doctor/detail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54448396">
+          <caret line="469" column="186" selection-start-line="469" selection-start-column="186" selection-end-line="469" selection-end-column="186" />
           <folding />
         </state>
       </provider>
