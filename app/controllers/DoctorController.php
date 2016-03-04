@@ -64,7 +64,7 @@ class DoctorController extends Controller {
                     ->whereRole('doctor')->whereStatus(1)
                     ->where('det_doctor','=','1')
                     ->where('viesd_na_dom','=','1')
-                    ->orderBy('rating','desc')
+                    ->orderBy('rating','desc')->orderBy('experience','desc')
                     ->paginate(Helper::getPagesCount());
                 return View::make('front.doctor.list', array('users'=>$users));
                 }
@@ -72,7 +72,7 @@ class DoctorController extends Controller {
                     $users = Speciality::find(\Route::current()->parameter('spec'))->Users()
                         ->whereRole('doctor')->whereStatus(1)
                         ->where('det_doctor','=','1')
-                        ->orderBy('rating','desc')
+                        ->orderBy('rating','desc')->orderBy('experience','desc')
                         ->paginate(Helper::getPagesCount());
                     return View::make('front.doctor.list', array('users'=>$users));
                 }
@@ -80,14 +80,15 @@ class DoctorController extends Controller {
                     $users = Speciality::find(\Route::current()->parameter('spec'))->Users()
                         ->whereRole('doctor')->whereStatus(1)
                         ->where('viesd_na_dom','=','1')
-                        ->orderBy('rating','desc')
+                        ->orderBy('rating','desc')->orderBy('experience','desc')
                         ->paginate(Helper::getPagesCount());
                     return View::make('front.doctor.list', array('users'=>$users));
                 }
                 else{
                     $users = Speciality::find(\Route::current()->parameter('spec'))->Users()
                         ->whereRole('doctor')->whereStatus(1)
-                        ->orderBy('rating','desc')
+                        ->orderBy('rating','desc')->orderBy('experience','desc')
+
                         ->paginate(Helper::getPagesCount());
                    // var_dump($users);
                     return View::make('front.doctor.list', array('users'=>$users));
@@ -142,26 +143,26 @@ class DoctorController extends Controller {
                 $users = User::whereRole('doctor')->whereStatus(1)
                     ->where('det_doctor','=','1')
                     ->where('viesd_na_dom','=','1')
-                    ->orderBy('rating','desc')
+                    ->orderBy('rating','desc')->orderBy('experience','desc')
                     ->paginate(Helper::getPagesCount());
                 return View::make('front.doctor.list', array('users'=>$users));
             }
             elseif ( Input::get('deti') == true ){
                 $users = User::whereRole('doctor')->whereStatus(1)
                     ->where('det_doctor','=','1')
-                    ->orderBy('rating','desc')
+                    ->orderBy('rating','desc')->orderBy('experience','desc')
                     ->paginate(Helper::getPagesCount());
                 return View::make('front.doctor.list', array('users'=>$users));
             }
             elseif ( Input::get('home') == true ){
                 $users = User::whereRole('doctor')->whereStatus(1)
                     ->where('viesd_na_dom','=','1')
-                    ->orderBy('rating','desc')
+                    ->orderBy('rating','desc')->orderBy('experience','desc')
                     ->paginate(Helper::getPagesCount());
                 return View::make('front.doctor.list', array('users'=>$users));
             }
             else{
-                $users = User::whereRole('doctor')->whereStatus(1)->orderBy('rating','desc')->paginate(Helper::getPagesCount());
+                $users = User::whereRole('doctor')->whereStatus(1)->orderBy('rating','desc')->orderBy('experience','desc')->paginate(Helper::getPagesCount());
                 return View::make('front.doctor.list', array('users'=>$users));
             }
         }

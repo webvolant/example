@@ -79,7 +79,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     //Получение всех докторов
     public static function getDoctors(){
         $result = Cache::remember('getDoctors', Helper::cacheTime(), function () {
-            return User::whereRole('doctor')->whereStatus('1')->get();
+            return User::orderBy('experience','desc')->whereRole('doctor')->whereStatus('1')->get();
         });
         return $result;
     }
