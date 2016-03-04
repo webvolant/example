@@ -131,7 +131,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                     $img->resize(150, null, function ($constraint) {
                         $constraint->aspectRatio();
                     });
-                    $img->insert(public_path().'/template_image/watermark.png');
+                    //$img->insert(public_path().'/template_image/watermark.png');
                     $img->save(public_path().$dir.'thumb_'.$filename);
                     $klinika->logo = $dir.'thumb_'.$filename;
                     $klinika->save();
@@ -239,7 +239,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                     $img->resize(150, null, function ($constraint) {
                         $constraint->aspectRatio();
                     });
-                    $img->insert(public_path().'/template_image/watermark.png');
+                    //$img->insert(public_path().'/template_image/watermark.png');
                     $img->save(public_path().$dir.'thumb_'.$filename);
                     $klinika->logo = $dir.'thumb_'.$filename;
                     $klinika->save();
