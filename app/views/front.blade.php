@@ -280,11 +280,12 @@
     </div>
 </div>
 
+
+
 <div class="container">
     <div class="content row">
-
-
         @section('content')
+
             <div class="col-xs-12 col-sm-12 col-md-3">
                 <section class="about track_links"><ul class="about_list_short list">
                         <li class="about_item i-closetohome ">
@@ -336,13 +337,25 @@
                     <p>Здесь Вы можете подобрать врача, который специализируется на лечении конкретного заболевания.</p>
                 </div>
             </div>
-    </div>
-</div>
 
 
 
 
 
+
+
+
+
+@show
+
+            @section('sidebar')
+            @show
+
+            @section('info')
+            @show
+
+                </div>
+            </div>
 
 <div class="container-fluid back">
     <div class="container">
@@ -392,15 +405,9 @@
     </div>
 </div>
 
-@show
 
 
 
-@section('sidebar')
-@show
-
-@section('info')
-@show
 
 
 @section('specialities')
@@ -474,6 +481,8 @@
     </div>
 @show
 
+
+
 <div class="clear"></div>
 
 <div class="container-fluid help_block">
@@ -493,41 +502,20 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
         @section('footer')
-            <div class="col-xs-6 col-sm-6 col-md-3">
+            <div class="col-xs-12 col-sm-12 col-md-3">
                 <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus" data-yashareTheme="counter"></div>
                 <div class="logo2"></div>
             </div>
 
-            <div class="col-xs-6 col-sm-6 col-md-4 about">
+            <div class="col-xs-12 col-sm-12 col-md-4 about">
                 <span class="h4_my">О нас</span>
                 <p></p>
                 <span class="h8_my"><p>Сервис "Мой доктор" предоставляет доступ к данным о врачах, практикующих в клиниках и медицинских центрах Бишкека.</p></span>
 
                 <span class="h8_my"><p>Вы можете легко подобрать себе нужного специалиста, используя удобные опции поиска на сайте.</p></span>
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-5">
-                <div class="registration">
-                    @section('registration')
-                        <span class="h4_my">Врачам и клиникам</span>
-                        <p><span class="h8_my">Регистрация врачей и клиник на портале БЕСПЛАТНА.</span></p>
-                        <ul class="list">
-                            @if (Auth::check())
-                                <li><span class="glyphicon glyphicon-home"> </span> Вы на сайте, {{ Auth::user()->fio }}</li>
-                                <li><a href="{{ URL::route('logout') }}"><span class="glyphicon glyphicon-log-out"></span> Выйти</a></li>
-                                @else
-                                        <!--<li><a href="{{ URL::route('login') }}"><span class="glyphicon glyphicon-lock"></span> Войти в личный кабинет</a></li>-->
-                                <li><a href="{{ URL::route('registration') }}"><span class="glyphicon glyphicon-file"></span> Регистрация врача</a></li>
-                            @endif
-
-                        </ul>
-                        <p><span class="h8_my">Пишите нам - office@my-doc.kg</span></p>
 
 
-                    @show
-                </div>
-
-                <div class="pull-left margin-left10">
+                <div class="pull-left">
                     <!-- WWW.NET.KG , code for http://www.my-doc.kg -->
                     <script language="javascript" type="text/javascript">
                         java="1.0";
@@ -615,9 +603,33 @@
 
 
                 </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-5">
+                <div class="registration">
+                    @section('registration')
+                        <span class="h4_my">Врачам и клиникам</span>
+                        <p><span class="h8_my">Регистрация врачей и клиник на портале БЕСПЛАТНА.</span></p>
+                        <ul class="list">
+                            @if (Auth::check())
+                                <li><span class="glyphicon glyphicon-home"> </span> Вы на сайте, {{ Auth::user()->fio }}</li>
+                                <li><a href="{{ URL::route('logout') }}"><span class="glyphicon glyphicon-log-out"></span> Выйти</a></li>
+                                @else
+                                        <!--<li><a href="{{ URL::route('login') }}"><span class="glyphicon glyphicon-lock"></span> Войти в личный кабинет</a></li>-->
+                                <li><a href="{{ URL::route('registration') }}"><span class="glyphicon glyphicon-file"></span> Регистрация врача</a></li>
+                            @endif
+
+                        </ul>
+                        <p><span class="h8_my">Пишите нам - office@my-doc.kg</span></p>
 
 
-                <div class="developed pull-right">
+                    @show
+                </div>
+
+
+
+
+                <div class="developed pull-left">
 
                     <style>
                         img.developed_logo {
@@ -638,13 +650,13 @@
     </div>
 </div>
 
-
+</div> <!-- container -->
     <script type="text/javascript">
         (function(){ var widget_id = 'AuS6rkkL4Y'; var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();
     </script>
 
 
-</div> <!-- container -->
+
 
 
 

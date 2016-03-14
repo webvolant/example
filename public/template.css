@@ -685,13 +685,6 @@ padding-top: 10px;
     min-height: 160px;
 }
 
-
-.registration{
-    border-left: 1px solid #e0e0e0;
-    padding: 10px;
-}
-
-
 html,
 body{
     font-size: 12px;
@@ -746,8 +739,10 @@ body{
     padding:20px;
 }
 .ab_icon{
-    width:84px;
-    margin:15px;
+    width: 80px;
+    margin-right: 5px;
+    margin-bottom: 60px;
+    margin-top: 10px;
 }
 
 
@@ -1380,4 +1375,21 @@ ul.numbers{
 
 .ab_tip{
     font-size: 10px;
+}
+
+
+
+
+
+
+table, th, td {
+    border: 1px solid #eeeeee;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+
+table {
+    border-spacing: 2px;
 }

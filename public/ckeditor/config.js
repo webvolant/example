@@ -35,4 +35,45 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
+
+	config.disallowedContent = "table[cellspacing,cellpadding,border,align,summary,bgcolor,frame,rules,width]; td[axis,abbr,scope,align,bgcolor,char,charoff,height,nowrap,valign,width]; th[axis,abbr,align,bgcolor,char,charoff,height,nowrap,valign,width]; tbody[align,char,charoff,valign]; tfoot[align,char,charoff,valign]; thead[align,char,charoff,valign]; tr[align,bgcolor,char,charoff,valign]; col[align,char,charoff,valign,width]; colgroup[align,char,charoff,valign,width]";
 };
+
+// Set defaults for tables
+CKEDITOR.on( 'dialogDefinition', function( ev )
+{
+	// Take the dialog name and its definition from the event
+	// data.
+	var dialogName = ev.data.name;
+	var dialogDefinition = ev.data.definition;
+
+	// Check if the definition is from the dialog we're
+	// interested on (the "Table" dialog).
+	if ( dialogName == 'table' )
+	{
+		// Get a reference to the "Table Info" tab.
+		var infoTab = dialogDefinition.getContents( 'info' );
+		txtWidth = infoTab.get( 'txtWidth' );
+		txtWidth['default'] = '';
+		cmbWidthType = infoTab.get( 'cmbWidthType' );
+		//cmbWidthType['default'] = 'percents';
+		//txtCellPad = infoTab.get( 'txtCellPad' );
+		//txtCellPad['default'] = 4;
+	}
+});
+
+/*
+CKEDITOR.on('dialogDefinition', function( ev ) {
+	var dialogName = ev.data.name;
+	var dialogDefinition = ev.data.definition;
+
+	if(dialogName === 'table') {
+		var infoTab = dialogDefinition.getContents('info');
+		var cellSpacing = infoTab.get('txtCellSpace');
+		cellSpacing['default'] = "0";
+		var cellPadding = infoTab.get('txtCellPad');
+		cellPadding['default'] = "0";
+		var border = infoTab.get('txtBorder');
+		border['default'] = "0";
+	}
+});*/

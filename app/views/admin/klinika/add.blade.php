@@ -135,7 +135,7 @@
 </p>
 
 <script type="text/javascript">
-    CKEDITOR.replace( 'description' );
+    CKEDITOR.replace( 'description' ).config.allowedContent = true;
     CKEDITOR.instances.description.setData($('input#description').val());
     timer = setInterval(updateDiv,100);
     function updateDiv(){

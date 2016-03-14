@@ -149,11 +149,18 @@
 </p>
 
 <script type="text/javascript">
-    CKEDITOR.replace( 'description' );
+    /*CKEDITOR.replace( 'description', {
+        allowedContent: true
+    } );*/
+    CKEDITOR.replace( 'description', {
+        //allowedContent:true
+    });
+
     CKEDITOR.instances.description.setData($('input#description').val());
     timer = setInterval(updateDiv,100);
     function updateDiv(){
         var editorText = CKEDITOR.instances.description.getData();
+
         $( "[name='description']" ).val(editorText);
     }
 </script>
