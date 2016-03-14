@@ -285,21 +285,21 @@ a:hover{
 }
 
 .i-closetohome {
-    background: url(/template_image/icons/i-closetohome.png) no-repeat 0px 0px;
+    background: url(http://my-doc.kg/template_image/icons/i-closetohome.png) no-repeat 0px 0px;
     padding-left: 55px;
     background-size: 45px;
     background-position: 1px 0px;
 }
 
 .i-sortbyprice {
-    background: url(/template_image/icons/i-sortbyprice.png) no-repeat 0px 0px;
+    background: url(http://my-doc.kg/template_image/icons/i-sortbyprice.png) no-repeat 0px 0px;
     padding-left: 55px;
     background-size: 50px;
     background-position: 0px -5px;
 }
 
 .i-ratingsystem {
-    background: url(/template_image/icons/i-ratingsystem.png) no-repeat 0px 0px;
+    background: url(http://my-doc.kg/template_image/icons/i-ratingsystem.png) no-repeat 0px 0px;
     padding-left: 55px;
     background-size: 65px;
     background-position: -10px -8px;
@@ -307,7 +307,7 @@ a:hover{
 
 
 .i-sicklist {
-    background: url("/template_image/icons/i-sicklist.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+    background: url("http://my-doc.kg/template_image/icons/i-sicklist.png") no-repeat scroll center center rgba(0, 0, 0, 0);
     background-size: 80px;
     display: block;
     min-height: 100px;
@@ -315,14 +315,14 @@ a:hover{
 }
 
 .i-pacientlib {
-    background: url("/template_image/icons/i-pacientlib.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+    background: url("http://my-doc.kg/template_image/icons/i-pacientlib.png") no-repeat scroll center center rgba(0, 0, 0, 0);
     background-size: 80px;
     display: block;
     min-height: 100px;
 }
 
 .i-diagcenters {
-    background: url("/template_image/icons/i-diagcenters.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+    background: url("http://my-doc.kg/template_image/icons/i-diagcenters.png") no-repeat scroll center center rgba(0, 0, 0, 0);
     background-size: 80px;
     display: block;
     min-height: 100px;
@@ -747,22 +747,22 @@ body{
 
 
 .i-step-review {
-    background: url(/template_image/icons/i-step-review.png) no-repeat center 6px;
+    background: url(http://my-doc.kg/template_image/icons/i-step-review.png) no-repeat center 6px;
     padding-top: 60px;
 }
 
 .i-step-call {
-    background: url(/template_image/icons/i-step-call.png) no-repeat center 3px;
+    background: url(http://my-doc.kg/template_image/icons/i-step-call.png) no-repeat center 3px;
     padding-top: 60px;
 }
 
 .i-step-doctor {
-    background: url(/template_image/icons/i-step-doctor.png) no-repeat center 0;
+    background: url(http://my-doc.kg/template_image/icons/i-step-doctor.png) no-repeat center 0;
     padding-top: 60px;
 }
 
 .i-step-request {
-    background: url(/template_image/icons/i-step-request.png) no-repeat center 3px;
+    background: url(http://my-doc.kg/template_image/icons/i-step-request.png) no-repeat center 3px;
     padding-top: 60px;
 }
 
@@ -782,7 +782,7 @@ body{
     display: block;
     width: 34px;
     height: 22px;
-    background: url("/template_image/icons/arrow_grey_right.png") no-repeat 50% 50%;
+    background: url("http://my-doc.kg/template_image/icons/arrow_grey_right.png") no-repeat 50% 50%;
     position: absolute;
     top: 15px;
     left: -15px;
