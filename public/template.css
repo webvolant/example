@@ -251,7 +251,7 @@ a:hover{
 }
 
 .i-doctor_l {
-    background: url("/template_image/doctor2.jpg") no-repeat scroll center top rgba(0, 0, 0, 0);
+    background: url("http://my-doc.kg/template_image/doctor2.jpg") no-repeat scroll center top rgba(0, 0, 0, 0);
     background-size: 100%;
     display: block;
     min-height: 300px;
