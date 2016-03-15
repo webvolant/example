@@ -363,7 +363,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="center-block text-center"><h2>КАК РАБОТАЕТ СЕРВИС</h2></div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_spec.png" /></div>
+                    <div class="pull-left"><img class="ab_icon" src="/template_image/main_icon/ic_spec.png" /></div>
                     <h4>
                         Выберите специалиста
                     </h4>
@@ -373,7 +373,7 @@
 
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_zapis.png" /></div>
+                    <div class="pull-left"><img class="ab_icon" src="/template_image/main_icon/ic_zapis.png" /></div>
                     <h4>
                         Запишитесь на прием
                     </h4>
@@ -383,7 +383,7 @@
 
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="pull-left"><img class="ab_icon" src="template_image/main_icon/ic_doctor.png" /></div>
+                    <div class="pull-left"><img class="ab_icon" src="/template_image/main_icon/ic_doctor.png" /></div>
                     <h4>
                         Посетите врача
                     </h4>
