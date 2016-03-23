@@ -56,7 +56,7 @@
                 <td>{{ Klinika::getType($user->type) }}</td>
                 <td>
                     <a href='{{ URL::route("klinika/edit", array($user->id)) }}' class="btn btn-info"><i class="fa fa-wrench fa-fw"></i></a>
-                    <a href='{{ URL::route("klinika/delete", array($user->id)) }}' class="btn btn-danger"><i class="fa fa-trash-o fa-fw"></i></a>
+                    <a href='{{ URL::route("klinika/delete", array($user->id)) }}' class="btn btn-danger" disabled="true"><i class="fa fa-trash-o fa-fw"></i></a>
                 </td>
             </tr>
         @endforeach
