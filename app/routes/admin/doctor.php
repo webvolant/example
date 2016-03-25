@@ -146,7 +146,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
                         $user->role = 'doctor';
                         $user->link = Helper::alias(Input::get('fio'));
-                        $user->status = Input::get('status')[0];
+                        //var_dump(Input::get('status'));
+                        $user->status = Input::get('status');
                         //$m = Helper::alias(Input::get('fio'));
                         //var_dump($m);
 

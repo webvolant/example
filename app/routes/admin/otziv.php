@@ -160,7 +160,7 @@ Route::post('review/edit/{id}', array(
             $otziv->client_id = Input::get('client_id');
             $otziv->fio = Input::get('fio');
             $otziv->phone = Client::find(Input::get('client_id'))->phone;
-            $otziv->status = Input::get('status')[0];
+            $otziv->status = Input::get('status');
             $otziv->comment = Input::get('comment');
             $otziv->doctor_id = Input::get('doctor_id');
             $otziv->rang_qualif = Input::get('rang_qualif');

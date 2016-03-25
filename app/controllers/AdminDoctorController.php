@@ -26,6 +26,7 @@ class AdminDoctorController extends Controller {
         $user = User::find($id);
 
         $user->Specialities()->detach();
+        //$user->Orders();
         //var_dump($user->Specialities());
         //die();
         $user->delete();
