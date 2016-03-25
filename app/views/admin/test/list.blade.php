@@ -45,7 +45,7 @@
                                 <td><a href='{{ URL::route("test/edit", array($node->id)) }}'>{{ $node->parent_id }}</a></td>
                                 <td class="gradeA">
                                     <a href='{{ URL::route("test/edit", array($node->id)) }}' class="btn btn-info"><i class="fa fa-wrench fa-fw"></i></a>
-                                    <a href='{{ URL::route("test/delete", array($node->id)) }}' class="btn btn-danger"><i class="fa fa-trash-o fa-fw"></i></a>
+                                    <a href='{{ URL::route("test/delete", array($node->id)) }}' class="btn btn-danger" onclick="return confirm('Вы действительно хотите удалить объект?')"><i class="fa fa-trash-o fa-fw"></i></a>
                                 </td>
                             </tr>
                             @endforeach

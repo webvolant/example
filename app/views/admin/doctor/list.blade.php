@@ -58,7 +58,7 @@
                 <td>{{ $user->klinika_name }}</td>
                 <td class="gradeA">
                     <a href='{{ URL::route("doctor/edit", array($user->id)) }}' class="btn btn-info"><i class="fa fa-wrench fa-fw"></i></a>
-                    <a href='{{ URL::route("doctor/delete", array($user->id)) }}' class="btn btn-danger" disabled="true"><i class="fa fa-trash-o fa-fw"></i></a>
+                    <a href='{{ URL::route("doctor/delete", array($user->id)) }}' class="btn btn-danger" onclick="return confirm('Вы действительно хотите удалить объект?')"><i class="fa fa-trash-o fa-fw"></i></a>
                 </td>
             </tr>
         @endforeach

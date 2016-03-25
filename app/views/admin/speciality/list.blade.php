@@ -52,7 +52,7 @@
                 <td>{{ $user->updated_at }}</td>
                 <td class="gradeA">
                     <a href='{{ URL::route("speciality/edit", array($user->id)) }}' class="btn btn-info"><i class="fa fa-wrench fa-fw"></i></a>
-                    <a href='{{ URL::route("speciality/delete", array($user->id)) }}' class="btn btn-danger"><i class="fa fa-trash-o fa-fw"></i></a>
+                    <a href='{{ URL::route("speciality/delete", array($user->id)) }}' class="btn btn-danger" onclick="return confirm('Вы действительно хотите удалить объект?')"><i class="fa fa-trash-o fa-fw"></i></a>
                 </td>
             </tr>
         @endforeach
