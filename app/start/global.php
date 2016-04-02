@@ -49,6 +49,8 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
+
+    return Response::view('error404', array(), 500);
     //return Redirect::to('404', array('code'=>$code,'url' => Request::url()));
 });
 

@@ -18,7 +18,7 @@ class KlinikaController extends Controller {
                         $join->on('user_kliniks.klinik_id','=','kliniks.id');
                     })
                     ->whereIn('user_id',$docIds)
-                    ->where('kliniks.type',0)->orWhere('kliniks.type','=',"")
+                    ->where('kliniks.type',0)->orWhere('kliniks.type','=',"")->whereStatus(1)
                     ->groupBy('link')
                     ->orderBy(Input::get('order'),Input::get('direction'))
                     ->paginate(Helper::getPagesCount());
@@ -35,7 +35,7 @@ class KlinikaController extends Controller {
                     ->join('user_kliniks', function($join){
                         $join->on('user_kliniks.klinik_id','=','kliniks.id');
                     })
-                    ->whereIn('user_id',$docIds)
+                    ->whereIn('user_id',$docIds)->whereStatus(1)
                     ->where('kliniks.type',0)->orWhere('kliniks.type','=',"")
                     ->groupBy('link')
                     ->orderBy('rating','desc')
@@ -89,7 +89,7 @@ class KlinikaController extends Controller {
                 ->join('user_kliniks', function($join){
                     $join->on('user_kliniks.klinik_id','=','kliniks.id');
                 })
-                ->where('kliniks.type',0)->orWhere('kliniks.type','=',"")
+                ->where('kliniks.type',0)->orWhere('kliniks.type','=',"")->whereStatus(1)
                 ->groupBy('link')
                 ->paginate(Helper::getPagesCount());
             //var_dump($kliniks);
@@ -97,12 +97,12 @@ class KlinikaController extends Controller {
             return View::make('front.klinika.list', array('users'=>$kliniks));
         } else { //Клиники без специализации
             if ( Input::get('order') != null && Input::get('direction') != null ){
-                $kliniks = Klinika::where('type','=',0)
+                $kliniks = Klinika::where('type','=',0)->whereStatus(1)
                     ->orderBy(Input::get('order'),Input::get('direction'))
                     ->paginate(Helper::getPagesCount());
                     return View::make('front.klinika.list', array('users'=>$kliniks));
             } elseif ( Input::get('order') == null && Input::get('direction') == null ){
-                    $kliniks = Klinika::where('type','=',0)
+                    $kliniks = Klinika::where('type','=',0)->whereStatus(1)
                         ->orderBy('rating','desc')
                         ->paginate(Helper::getPagesCount());
                     return View::make('front.klinika.list', array('users'=>$kliniks));
@@ -117,7 +117,8 @@ class KlinikaController extends Controller {
     //Клиника детализированное инфо
     public function detail($link)
     {
-        $user = Klinika::where('link', '=', $link)->first();
+        $user = Klinika::where('link', '=', $link)->whereStatus(1)->firstOrFail();
+        //if ($user)
         $photos = Photo::getPhotos($user->id);
         //$users = User::has('Kliniks','=',$user->id)->count();
         $users = Klinika::find($user->id)->Users()->get();
@@ -187,7 +188,7 @@ class KlinikaController extends Controller {
     //Диагностический центр детализированное инфо
     public function diagdetail($link)
     {
-        $user = Klinika::where('link', '=', $link)->first();
+        $user = Klinika::where('link', '=', $link)->whereStatus(1)->firstOrFail();
         $photos = Photo::getPhotos($user->id);
         $users = Klinika::find($user->id)->Users()->get();
 

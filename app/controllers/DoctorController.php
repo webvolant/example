@@ -179,7 +179,7 @@ class DoctorController extends Controller {
     //Доктор детализированное инфо
     public function detail($link)
     {
-        $user = User::where('link', '=', $link)->firstOrFail();
+        $user = User::where('link', '=', $link)->whereStatus(1)->firstOrFail();
         $kliniks = $user->Kliniks()->get();//has('Users','=',1)->get();
 
         $mm = Helper::location($user->klinika_name);
