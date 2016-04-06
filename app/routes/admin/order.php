@@ -90,7 +90,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
 
     Route::post('/add/event', array(
-        'as'=>'add/event',
+        'as'=>'/add/event',
         function(){
             if (Request::ajax()){
                 $event = new Eventer();
