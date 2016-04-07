@@ -90,15 +90,18 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
 
     Route::post('/add/event', array(
-        'as'=>'/add/event',
+        'as'=>'add/event',
         function(){
             if (Request::ajax()){
                 $event = new Eventer();
 
                 $event->order_id = Input::get('order_id');
 
-                if (Input::get('status'))
-                $event->status_id = Input::get('status');
+                //if (Input::get('status') == null)
+                    $event->status_id = 1;
+                //else
+                    //$event->status_id = Input::get('status');
+
 
                 $event->flag = Input::get('flag');
                 $event->comment = Input::get('comment');

@@ -31,7 +31,7 @@
 
                 <p><h4></h4></p>
 
-                {{ Form::open(array('url' => 'add/event', 'role' => 'form', 'class' => 'width90 form-horizontal', 'id'=>'formid-add-event')) }}
+                {{ Form::open(array('url' => '/admin/add/event', 'role' => 'form', 'class' => 'width90 form-horizontal', 'id'=>'formid-add-event')) }}
 
                 <p>
                     @if ($errors->first('date_begin'))

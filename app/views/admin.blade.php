@@ -517,7 +517,7 @@
             $.post('/admin/add/event', {date_begin:date_begin,date_end:date_end,comment:comment,status:status,flag:flag,order_id:order_id},function(data){
                 $('.message').html(data);
                 //console.log(data);
-                //location.reload();
+                location.reload();
             });
         });
 
