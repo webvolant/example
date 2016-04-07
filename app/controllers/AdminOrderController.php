@@ -57,7 +57,7 @@ class AdminOrderController extends Controller {
 
         $order = Order::find($id);
 
-        $events = Eventer::where('order_id', '=', "$id")->take(10)->get(); //take(20)
+        $events = Eventer::where('order_id', '=', "$id")->take(20)->get(); //take(20)
 
         return View::make('admin.order.edit',array(
             'clients'=>$clients,
