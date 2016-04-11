@@ -97,13 +97,17 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
                 $event->order_id = Input::get('order_id');
 
-                //if (Input::get('status') == null)
+                /*if (Input::get('status') == null)
                     $event->status_id = 1;
-                //else
-                    //$event->status_id = Input::get('status');
+                else
+                    $event->status_id = Input::get('status');*/
 
+                if(Input::get('status') == 'NULL')
+                    $event->status_id = NULL;
+                else
+                    $event->status_id = Input::get('status');
 
-                $event->flag = Input::get('flag');
+                $event->flag = Input::get('flag')[0];
                 $event->comment = Input::get('comment');
 
                 $event->date_begin = Input::get('date_begin');
@@ -122,11 +126,16 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         function($id){
             if (Request::ajax()){
                 $event = Eventer::find($id);
-                $json_before = json_encode($event);
+                //$json_before = json_encode($event);
+
+                if(Input::get('status') == 'NULL')
+                    $event->status_id = NULL;
+                else
+                    $event->status_id = Input::get('status');
 
                 //$event->status_id = Input::get('status')[0];
                 $event->flag = Input::get('flag')[0];
-                var_dump($event->flag);
+                //var_dump($event->flag);
                 $event->comment = Input::get('comment');
 
                 //$event->date_begin = Input::get('date_begin');
@@ -136,7 +145,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
                 $event->save();
 
-                $json = json_encode($event);
+                //$json = json_encode($event);
 /*
                 $crm = new Crm;
                 $crm->info_before = $json_before;
@@ -248,8 +257,12 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                     $order->diag_id = NULL;
                 else
                     $order->diag_id = Input::get('diag');
+
+                $order->comment = Input::get('comment');
                 $order->save();
                 return Redirect::route('order/index');
+
+
             }
             else{
 

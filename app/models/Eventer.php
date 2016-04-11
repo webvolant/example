@@ -17,4 +17,6 @@ class Eventer extends Eloquent{
         return $this->belongsTo('Status');
     }
 
+
+
 }

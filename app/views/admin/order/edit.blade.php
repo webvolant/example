@@ -195,7 +195,7 @@
                         <tr>
                             <td>{{ $user->id }}</td>
                             <td>{{ Helper::getStrEventStatus($user->flag) }}</td>
-                            <td>{{ Status::getName('$user->status_id') }}</td>
+                            <td>{{ Status::getName($user->status_id) }}</td>
                             <td>{{ $user->comment }}</td>
                             <td>{{ User::getName($user->user_id) }}</td>
                             <td>{{ $user->date_begin }}</td>

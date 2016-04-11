@@ -1,13 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: barkalovlab
- * Date: 14.01.15
- * Time: 1:31
- */
-?>
-
-        <!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     @section('head')
@@ -42,6 +33,10 @@
         {{ HTML::script('slick/slick.min.js') }}
         {{ HTML::script('js/modernizr.custom.js') }}
 
+        {{ HTML::script('https://code.jquery.com/ui/1.11.4/jquery-ui.min.js') }}
+
+
+        {{ HTML::script('js/jquery.ui.autocomplete.html.js') }}
 
                 <!-- Facebook Pixel Code -->
         <script>
@@ -159,6 +154,10 @@
 
     <div class="row">
         <div class="search col-xs-12 col-sm-12 col-md-12">
+
+
+           <!-- <input type="text" id="topic_title" class="form-control">-->
+
 
             @section('search')
 
@@ -704,6 +703,49 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        //var temp = {"id":1,"name":"ivan","country":"Russia"}
+/*        $("#topic_title").autocomplete({
+        source: function (request, response) {
+                $.get("/ajaxsearch", {
+                    query: $("#topic_title").val()
+                }, function (data) {
+                    response(JSON.parse(data), function(item){
+                        return {
+                            value: item.link, // ссылка на страницу товара
+                            label: item.label // наименование товара
+                        }
+                    });
+                });
+            },
+            select: function( event, ui ) {
+                location.href = ui.item.link;
+                return false;
+            },
+            minLength: 2
+        });
+*/
+
+/*
+        $("#topic_title").autocomplete({
+            source: "/path/to/ajax_autocomplete.php",
+            minLength: 2,
+            select: function(event, ui) {
+                var url = ui.item.id;
+                if(url != '#') {
+                    location.href = '/blog/' + url;
+                }
+            },
+
+            html: true, // optional (jquery.ui.autocomplete.html.js required)
+
+            // optional (if other layers overlap autocomplete list)
+            open: function(event, ui) {
+                $(".ui-autocomplete").css("z-index", 1000);
+            }
+        });
+*/
+
+
         $(".diag_link").click(function(e){
             e.preventDefault();
             var diag_id = $(this).attr('id');
