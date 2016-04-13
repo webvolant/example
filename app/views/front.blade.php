@@ -156,8 +156,15 @@
         <div class="search col-xs-12 col-sm-12 col-md-12">
 
 
-           <!-- <input type="text" id="topic_title" class="form-control">-->
-
+            <!--<input type="text" id="topic_title" class="form-control">-->
+            <?php
+            //$json_clinics = array(array("id" => "1", "label" => "Клиника Экстрамед", "link" => "/doctor/detail/alysheva-natal-ya-vladimirovna"), array("id" => "2", "label" => "Клиника Юрфа", "link" => "/diagnostica/detail/kliniko-diagnosticheskaya-laboratoriya-yurfa"));
+            //return json_encode($json);
+            //$doctors = User::where('fio', 'LIKE', '%'.'Сер'.'%')->get();
+            //echo $doctors->toArray()[0]["fio"];
+            //$json = array_merge($doctors->toArray(),$json_clinics);
+            //echo $json;
+            ?>
 
             @section('search')
 
@@ -703,27 +710,38 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-        //var temp = {"id":1,"name":"ivan","country":"Russia"}
-/*        $("#topic_title").autocomplete({
+        /*delay: 0,
+        //var temp = [{"value":1,"label":"ivan","country":"Russia"},{"value":1,"label":"boris","country":"Russia"}]
+        $("#topic_title").autocomplete({
         source: function (request, response) {
                 $.get("/ajaxsearch", {
                     query: $("#topic_title").val()
                 }, function (data) {
+                    console.log(JSON.parse(data));
                     response(JSON.parse(data), function(item){
-                        return {
-                            value: item.link, // ссылка на страницу товара
-                            label: item.label // наименование товара
-                        }
+                        //return {label: item.fio};
                     });
                 });
             },
+
             select: function( event, ui ) {
                 location.href = ui.item.link;
                 return false;
             },
-            minLength: 2
-        });
-*/
+            minLength: 3
+        });*/
+
+
+        /*change: function( request, response ) {
+         $.get("/ajaxsearch", {
+         query: $("#topic_title").val()
+         }, function (data) {
+         console.log(JSON.parse(data));
+         response(JSON.parse(data), function(item){
+         //return {label: item.fio};
+         });
+         });
+         },*/
 
 /*
         $("#topic_title").autocomplete({

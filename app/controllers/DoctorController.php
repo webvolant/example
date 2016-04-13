@@ -208,6 +208,9 @@ class DoctorController extends Controller {
         $otzivi = Otziv::where('doctor_id','=',$user->id)->where('status','=',1)->take(Helper::reviews_count())->get();
         $count_otzivi = Otziv::where('doctor_id','=',$user->id)->count();
 
+
+
+
         return View::make('front.doctor.detail', array('user' => $user,'map' => $map,'otzivi' => $otzivi,'count_otzivi'=>$count_otzivi,'kliniks'=>$kliniks));
     }
 

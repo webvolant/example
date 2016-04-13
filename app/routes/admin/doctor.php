@@ -185,7 +185,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         $user->education = Input::get('education');
                         $user->qualif = Input::get('qualif');
 
-                        $user->rating = Input::get('rating');
+                        //$user->rating = Input::get('rating');
 
 
                         $user->keywords = Input::get('keywords');

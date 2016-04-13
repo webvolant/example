@@ -28,10 +28,21 @@ Route::get('ajaxsearch', array('as' => 'ajaxsearch',
                 }
             ];*/
             //$json = array('{"id"=>1,"name"=>"ivan","country"=>"Russia","office"=>["yandex","management"]}');
-            $json = array(array("id" => "1", "label" => "Алышева", "link" => "/doctor/detail/alysheva-natal-ya-vladimirovna"), array("id" => "2", "label" => "Юрфа", "link" => "/diagnostica/detail/kliniko-diagnosticheskaya-laboratoriya-yurfa"));
+            //$json_php = array(array("id" => "1", "label" => "Алышева", "link" => "/doctor/detail/alysheva-natal-ya-vladimirovna"), array("id" => "2", "label" => "Врач Борисов", "link" => "/borisov"));
+            $json_clinics = array(array("id" => "1", "label" => "Клиника Экстрамед", "link" => "/doctor/detail/alysheva-natal-ya-vladimirovna"), array("id" => "2", "label" => "Клиника Юрфа", "link" => "/diagnostica/detail/kliniko-diagnosticheskaya-laboratoriya-yurfa"));
             //return json_encode($json);
+            //$doctors = User::where('fio', 'LIKE', '%'.'Сер'.'%')->get();
+        $doctors = User::where('fio', 'LIKE', '%'.Input::get('query').'%')->get();
+        $docs_array = $doctors->toArray();
+        foreach($docs_array as $item){
+            $item["label"] = $item["fio"];
+            $arr[] = $item;
+        }
+            //var_dump($doctors);
+            $json = array_merge($arr,$json_clinics);
             echo json_encode($json);
             exit;
+        //label добавить из за него точки
         //}
     }));
 

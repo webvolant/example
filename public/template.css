@@ -1434,25 +1434,27 @@ table {
 
 
 
-.ui-autocomplete span.hl_results {
-    background-color: #ffff66;
+.ui-menu .ui-menu-item a.ui-corner-all:hover, .ui-menu .ui-menu-item a.ui-corner-all:focus, .ui-menu .ui-menu-item a.ui-corner-all:active {
+    background:#ff8a00!important;
+    color:#000;
+    border-radius:0;
 }
 
-.ui-autocomplete-loading {
-    background: white url('../img/ui-anim_basic_16x16.gif') right center no-repeat;
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+    background: #ff8a00;
+    border: none;
+    color:#000;
+    border-radius:0;
+    font-weight: normal;
 }
 
 .ui-autocomplete {
-    max-height: 250px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-right: 5px;
+    background: white;
+    border-radius: 0px;
+}
+.ui-autocomplete.source:hover {
+    background: #139ae1;
 }
 
-.ui-autocomplete li {
-    font-size: 16px;
-}
-
-* html .ui-autocomplete {
-    height: 250px;
-}
+.ui-menu .ui-menu-item a{
+    font-size:14px;}
