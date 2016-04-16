@@ -105,19 +105,19 @@
         @section('header')
             <div class="container">
                 <div class="row header">
-            <div class=" col-xs-6 col-sm-7 col-md-4 paddingtop15">
+            <div class=" col-xs-12 col-sm-7 col-md-4 paddingtop15">
                 <a href="{{ URL::route('/') }}"><div class="logo"></div></a>
 
 
                 <div class="inner-addon left-addon">
                     <i class="glyphicon glyphicon-search"></i>
-                    <input type="text" id="search_field" class="form-control" placeholder="Стоматолог или по Названию"/>
+                    <input type="text" id="search_field" class="form-control" placeholder="Стоматолог"/>
                 </div>
                 <span>Фамилия или имя врача, название клиники, направление или специальность в медицине</span>
 
             </div>
 
-            <div class="col-xs-6 col-sm-5 col-md-2 paddingtop15">
+            <div class="col-xs-12 col-sm-5 col-md-2 paddingtop15">
                 <ul class="list">
                     <li><span class="orange_text">{{ $orders+75 }} </span><?php echo strstr(Lang::choice('mydoc.orders', $orders+75, ['n' => $orders+75], 'ru'),"з"); ?></li>
                     <li><span class="orange_text">{{ $docs }} </span><?php echo strstr(Lang::choice('mydoc.docs', $docs, ['n' => $docs], 'ru'),"в"); ?></li>
