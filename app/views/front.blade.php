@@ -765,7 +765,7 @@
                 location.href = ui.item.plink;
                 return false;
             },
-            minLength: 1,
+            minLength: 2,
             delay: 0
         });
 
