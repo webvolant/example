@@ -109,13 +109,11 @@
                 <a href="{{ URL::route('/') }}"><div class="logo"></div></a>
 
 
-                <!--
                 <div class="inner-addon left-addon">
                     <i class="glyphicon glyphicon-search"></i>
                     <input type="text" id="search_field" class="form-control" placeholder="Стоматолог или по Названию"/>
                 </div>
                 <span>Фамилия или имя врача, название клиники, направление или специальность в медицине</span>
-                -->
 
             </div>
 
@@ -727,7 +725,6 @@
 <script type="text/javascript">
     $(document).ready(function() {
 
-        /*
         $.widget( "custom.catcomplete", $.ui.autocomplete, {
             _renderMenu: function( ul, items ) {
                 var that = this,
@@ -771,7 +768,6 @@
             minLength: 1,
             delay: 0
         });
-        */
 
         $(".diag_link").click(function(e){
             e.preventDefault();
