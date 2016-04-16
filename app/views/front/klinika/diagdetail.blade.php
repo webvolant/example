@@ -39,7 +39,7 @@
     <div class="col-md-7 block1">
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-8">
-                    <span class="h3_my margintop20">{{ $user->name }}</span>
+                    <span class="h4_my_bold margintop20">{{ $user->name }}</span>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <div class="pull-right margin10 right20">

@@ -6,6 +6,59 @@
  * Time: 23:34
  */
 
+Route::get('datatojson', array('as' => 'datatojson',
+    function(){
+        $doctors = User::whereRole('doctor')->whereStatus('1')->get();
+        $docs_array_temp = $doctors->toArray();
+        $docs_array = array();
+        foreach($docs_array_temp as $item){
+            $object["label"] = $item["fio"];
+            $object["category"] = "Доктора";
+            $object["plink"] = "/doctor/detail/".$item["link"];
+            $docs_array[] = $object;
+        }
+
+        $clinics = Klinika::whereStatus('1')->get();
+        $clinics_array_temp = $clinics->toArray();
+        $clinics_array = array();
+        foreach($clinics_array_temp as $kl){
+            $object["label"] = $kl["name"];
+            $object["category"] = "Клиники";
+            $object["plink"] = "/clinic/detail/".$kl["link"];
+            $clinics_array[] = $object;
+        }
+
+        $specialities = Speciality::all();
+        $specialities_array_temp = $specialities->toArray();
+        $specialities_array = array();
+        foreach($specialities_array_temp as $s){
+            $object["label"] = $s["name"];
+            $object["category"] = "Врач по специальности";
+            $object["plink"] = "/doctor/doctors/".$s["id"];
+            $specialities_array[] = $object;
+        }
+
+        $specialisations = Speciality::all();
+        $specialisations_array_temp = $specialisations->toArray();
+        $specialisations_array = array();
+        foreach($specialisations_array_temp as $s){
+            $object["label"] = $s["specialisation"];
+            $object["category"] = "Клиники по направлению";
+            $object["plink"] = "/clinics/all/".$s["id"];
+            $specialisations_array[] = $object;
+        }
+
+        //var_dump($clinics);
+        $json_merged = array_merge($specialities_array,$specialisations_array,$docs_array,$clinics_array);
+
+        $json = json_encode($json_merged);
+        $jsonFile = "data.json";
+        $fh = fopen($jsonFile, 'w');
+        fwrite($fh, $json);
+
+        //echo json_encode($json);
+    }));
+
 
 Route::get('ajaxsearch', array('as' => 'ajaxsearch',
     function(){

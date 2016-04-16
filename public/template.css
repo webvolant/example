@@ -405,7 +405,7 @@ a:hover{
 }
 
 .h4_my{
-    font-size: 16pt;
+    font-size: 16px;
     /*padding-bottom: 10px;*/
 
 
@@ -1433,7 +1433,7 @@ table {
 
 
 
-
+/*
 .ui-menu .ui-menu-item a.ui-corner-all:hover, .ui-menu .ui-menu-item a.ui-corner-all:focus, .ui-menu .ui-menu-item a.ui-corner-all:active {
     background:#ff8a00!important;
     color:#000;
@@ -1458,3 +1458,40 @@ table {
 
 .ui-menu .ui-menu-item a{
     font-size:14px;}
+*/
+
+.ui-autocomplete-category, .ui-autocomplete-category a{
+    font-size: 14px;
+    font-weight: 400;
+    padding-left:0;
+    border-bottom:1px solid #e4e4e4;
+    color:#233333;
+    text-transform: uppercase;
+}
+
+.ui-menu .ui-menu-item a{
+    font-size:12px;
+    padding-left:15px;
+    color: #0090DA;
+}
+
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 18px;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  40px; }
+.right-addon input { padding-right: 40px; }

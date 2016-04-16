@@ -21,6 +21,7 @@
         {{ HTML::style('slick/slick.css') }}
         {{ HTML::style('slick/slick-theme.css') }}
         {{ HTML::style('css/sweet-alert.css') }}
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/redmond/jquery-ui.css">
 
 
         {{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') }}
@@ -100,11 +101,22 @@
     </div></noscript>
 <!-- //Rating@Mail.ru counter -->
 
-<div class="container">
-    <div class="row header">
+<div class="container-fluid">
         @section('header')
+            <div class="container">
+                <div class="row header">
             <div class=" col-xs-6 col-sm-7 col-md-4 paddingtop15">
                 <a href="{{ URL::route('/') }}"><div class="logo"></div></a>
+
+
+                <!--
+                <div class="inner-addon left-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                    <input type="text" id="search_field" class="form-control" placeholder="Стоматолог или по Названию"/>
+                </div>
+                <span>Фамилия или имя врача, название клиники, направление или специальность в медицине</span>
+                -->
+
             </div>
 
             <div class="col-xs-6 col-sm-5 col-md-2 paddingtop15">
@@ -148,12 +160,16 @@
 
                 </div>
             </div>
+                </div>
+            </div>
         @show
-    </div>
+        </div>
 
 
-    <div class="row">
-        <div class="search col-xs-12 col-sm-12 col-md-12">
+
+<div class="container">
+    <div class="row search">
+        <div class="">
 
 
             <!--<input type="text" id="topic_title" class="form-control">-->
@@ -710,59 +726,52 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-        /*delay: 0,
-        //var temp = [{"value":1,"label":"ivan","country":"Russia"},{"value":1,"label":"boris","country":"Russia"}]
-        $("#topic_title").autocomplete({
-        source: function (request, response) {
-                $.get("/ajaxsearch", {
-                    query: $("#topic_title").val()
-                }, function (data) {
-                    console.log(JSON.parse(data));
-                    response(JSON.parse(data), function(item){
-                        //return {label: item.fio};
-                    });
+
+        /*
+        $.widget( "custom.catcomplete", $.ui.autocomplete, {
+            _renderMenu: function( ul, items ) {
+                var that = this,
+                        currentCategory = "";
+                $.each( items, function( index, item ) {
+                    if ( item.category != currentCategory ) {
+                        ul.append( "<li class='ui-autocomplete-category'>" + '' + item.category + "</li>" );
+                        currentCategory = item.category;
+                    }
+                    that._renderItemData( ul, item );
                 });
-            },
-
-            select: function( event, ui ) {
-                location.href = ui.item.link;
-                return false;
-            },
-            minLength: 3
-        });*/
-
-
-        /*change: function( request, response ) {
-         $.get("/ajaxsearch", {
-         query: $("#topic_title").val()
-         }, function (data) {
-         console.log(JSON.parse(data));
-         response(JSON.parse(data), function(item){
-         //return {label: item.fio};
-         });
-         });
-         },*/
-
-/*
-        $("#topic_title").autocomplete({
-            source: "/path/to/ajax_autocomplete.php",
-            minLength: 2,
-            select: function(event, ui) {
-                var url = ui.item.id;
-                if(url != '#') {
-                    location.href = '/blog/' + url;
-                }
-            },
-
-            html: true, // optional (jquery.ui.autocomplete.html.js required)
-
-            // optional (if other layers overlap autocomplete list)
-            open: function(event, ui) {
-                $(".ui-autocomplete").css("z-index", 1000);
             }
         });
-*/
 
+
+        $('#search_field').catcomplete({
+            source: function( request, response ) {
+                var regex = new RegExp(request.term, 'i');
+                $.ajax({
+                    url: "/data.json",
+                    dataType: "json",
+                    cache: true,
+                    success: function(data) {
+                        response($.map(data, function(item) {
+                            //console.log(data);
+                            if(regex.test(item.label)){
+                                return {
+                                    label: item.label,
+                                    category: item.category,
+                                    plink: item.plink
+                                };
+                            }
+                        }));
+                    }
+                });
+            },
+            select: function( event, ui ) {
+                location.href = ui.item.plink;
+                return false;
+            },
+            minLength: 1,
+            delay: 0
+        });
+        */
 
         $(".diag_link").click(function(e){
             e.preventDefault();
