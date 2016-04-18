@@ -94,8 +94,13 @@ span.error404text{
 .width250 {
 }
 
+.white{
+    color:white;
+}
 
-
+.white_opacity{
+    color: rgba(255, 255, 255, 0.6);
+}
 
 .content{
     margin: 0;
@@ -228,7 +233,7 @@ a:hover{
 }
 
 .paddingtop15{
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 .border{
@@ -380,7 +385,7 @@ a:hover{
 }
 .blue_text{
     font-size: 22px;
-    color: #75d6ff;
+    color: #0090DA;
 }
 
 
@@ -402,6 +407,17 @@ a:hover{
     font-size: 18px;
     color: #ff6700;
     font-weight: bold;
+}
+
+
+.background{
+    padding-top:30px;
+    background:rgb(0, 144, 218);
+    padding-bottom:50px;
+}
+
+.bold{
+    font-weight: 800;
 }
 
 .h4_my{
@@ -623,7 +639,7 @@ ul.list{
 .doctor1{
     background: url("template_image/doctor1.jpg") top center no-repeat;
     background-size: contain;
-    min-height: 175px;
+    min-height: 125px;
     margin-top: 15px;
 
 }
@@ -634,20 +650,20 @@ ul.list{
 }
 
 .header .h4_my{
-    line-height: 0px;
+    line-height: 30px;
     font-size: 14px;
+    font-weight: 400;
+    color: #383D45;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .h7_my{
     font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .order_form p {
     margin: 0 0 0px;
-}
-
-.header{
-
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -655,10 +671,10 @@ ul.list{
     font-size: 16px;
     line-height: 33px;
     background:#EEA63F;
-    -webkit-transition: all 300ms ease-in-out;
+    /*-webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;*/
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -666,17 +682,18 @@ ul.list{
     font-size: 16px;
     line-height: 33px;
     text-shadow:none;
-    padding: 10px 40px;
-    -webkit-transition: all 300ms ease-in-out;
+    padding: 10px 30px;
+    font-family: 'Open Sans', sans-serif;
+    /*-webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;*/
 }
 
 .navbar {
     margin-top: 5px;
     margin-bottom: 5px;
-    background: rgb(0, 144, 218);
+    background: #383D45;/*rgb(0, 144, 218);*/
 }
 
 .search{
@@ -704,7 +721,7 @@ padding-top: 10px;
 html,
 body{
     font-size: 12px;
-
+    font-family: 'Open Sans', sans-serif;
 }
 
 .clear{
@@ -1308,6 +1325,10 @@ input#user_phone::-webkit-input-placeholder {
     -moz-column-count:1;
     column-count:1;
 }
+
+    h2{
+        font-size: 20px;
+    }
 }
 
 /* Extra Small Devices, Phones */
@@ -1330,6 +1351,9 @@ input#user_phone::-webkit-input-placeholder {
     column-count:1;
 }
 
+    h2{
+        font-size: 20px;
+    }
 
 }
 
@@ -1351,6 +1375,10 @@ input#user_phone::-webkit-input-placeholder {
     -moz-column-count:2;
     column-count:2;
 }
+
+    h2{
+        font-size: 26px;
+    }
 }
 
 /* Medium Devices, Desktops */
@@ -1371,6 +1399,10 @@ input#user_phone::-webkit-input-placeholder {
     -moz-column-count:3;
     column-count:3;
 }
+
+    h2{
+        font-size: 30px;
+    }
 }
 
 /* Large Devices, Wide Screens */
@@ -1392,6 +1424,10 @@ input#user_phone::-webkit-input-placeholder {
     -moz-column-count:3;
     column-count:3;
 }
+
+    h2{
+        font-size: 35px;
+    }
 
 }
 
@@ -1461,19 +1497,33 @@ table {
 */
 
 .ui-autocomplete-category, .ui-autocomplete-category a{
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
-    padding-left:0;
-    border-bottom:1px solid #e4e4e4;
-    color:#233333;
-    text-transform: uppercase;
+
+    color: rgba(34, 34, 47, 0.71);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ui-autocomplete-category:hover, .ui-autocomplete-category a:hover{
+    background: white;
+    border:none;
+
 }
 
 .ui-menu .ui-menu-item a{
-    font-size:12px;
-    padding-left:15px;
+    font-size:14px;
     color: #0090DA;
+    padding:6px;
+    border-bottom:1px solid #f4f4f4;
+
 }
+
+
+.ui-menu .ui-menu-item a:hover{
+    background: rgba(34, 34, 47, 0.71);
+    color:white;
+}
+
 
 /* enable absolute positioning */
 .inner-addon {
@@ -1495,3 +1545,8 @@ table {
 /* add padding  */
 .left-addon input  { padding-left:  40px; }
 .right-addon input { padding-right: 40px; }
+
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="search"], input[type="url"], input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input {
+    font-size: 16px;
+}

@@ -12,8 +12,8 @@
         <meta name="keywords" content="@yield('keywords', Helper::keywords())">
         @show
 
-
-
+        {{ HTML::style('css/bootstrap.min.css') }}
+        {{ HTML::style('template.css') }}
 
         {{ HTML::style('source/jquery.fancybox.css') }}
         {{ HTML::style('css/component.css') }}
@@ -21,10 +21,8 @@
         {{ HTML::style('slick/slick.css') }}
         {{ HTML::style('slick/slick-theme.css') }}
         {{ HTML::style('css/sweet-alert.css') }}
-        <!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/redmond/jquery-ui.css">-->
-        {{ HTML::style('css/jquery-ui.css') }}
-        {{ HTML::style('css/bootstrap.min.css') }}
-        {{ HTML::style('template.css') }}
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/redmond/jquery-ui.css">
+
 
         {{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') }}
         {{ HTML::script('https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.3.1/jquery.maskedinput.js') }}
@@ -105,12 +103,19 @@
 
 <div class="container-fluid">
         @section('header')
+            <div class="container">
                 <div class="row header">
-                    <div class="container">
-                        <div class=" col-xs-12 col-sm-7 col-md-2">
-                            <a href="{{ URL::route('/') }}"><div class="logo"></div></a>
-                        </div>
-                        <!--
+            <div class=" col-xs-12 col-sm-7 col-md-4 paddingtop15">
+                <a href="{{ URL::route('/') }}"><div class="logo"></div></a>
+
+
+                <div class="inner-addon left-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                    <input type="text" id="search_field" class="form-control" placeholder="Стоматолог"/>
+                </div>
+                <span>Фамилия или имя врача, название клиники, направление или специальность в медицине</span>
+
+            </div>
 
             <div class="col-xs-12 col-sm-5 col-md-2 paddingtop15 hidden-xs">
                 <ul class="list">
@@ -118,15 +123,17 @@
                     <li><span class="orange_text">{{ $docs }} </span><?php echo strstr(Lang::choice('mydoc.docs', $docs, ['n' => $docs], 'ru'),"в"); ?></li>
                     <li><span class="orange_text">{{ $ot }} </span><?php echo strstr(Lang::choice('mydoc.ot', $ot, ['n' => $ot], 'ru'),"о"); ?> </li>
                 </ul>
-  -->
+            </div>
 
-            <div class="col-xs-offset-0 col-xs-6 col-sm-6 col-md-offset-0 col-md-2 hidden-xs hidden-sm">
+            <div class="col-xs-offset-0 col-xs-6 col-sm-6 col-md-offset-0 col-md-2 hidden-xs">
                 <div class="doctor1"></div>
             </div>
 
-            <div class="col-xs-12 col-sm-5 col-md-4 paddingtop15">
+            <div class="col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-5  col-md-offset-0 col-md-4">
+                <div class="form-group form-inline order_form">
+                    <?php echo $errors->first('phone_main'); ?>
 
-                    <div class="h3_my"><span class="h4_my"> Найдём врача и запишем на приём.</span><br/>
+                    <span class="h3_my"><span class="h4_my"> Поможем найти врача звоните</span><br/>
                             <span class="orange_text_big pull-left margintop20">0 </span>
                             <ul class="numbers pull-left margin-left10">
                                 <li class="orange_text_small"><a data-tooltip="Кликайте по коду оператора для звонка" href="tel:+996312986900">(312)</a></li>
@@ -135,49 +142,26 @@
                             </ul>
                             <span class="orange_text_big pull-left margintop20 margin-left10"> 98-69-00</span>
                         <!--<span class="orange_text">0,(770) 98-69-00</span><br/>-->
-                    </div>
+
+                        </span>
                     <div class="clear"></div>
                     <div class="ab_tip">Кликайте по коду оператора для звонка</div>
-
-            </div>
-
-
-                    <div class="col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-5  col-md-offset-0 col-md-4 paddingtop15">
-                        <div class="form-group form-inline order_form">
-                            <?php echo $errors->first('phone_main'); ?>
-                            <p><span class="h4_my"> Оставьте номер, и мы перезвоним!</span></p>
-                            {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control form-inline width250', 'placeholder'=>'0(___) __ __ __')) }}
-                                    <!-- Honeypot::generate('my_name', 'my_time') -->
-                            <div class="lastname">
-                                {{ Form::text('lastname', null, array('title'=>'Поле должно быть заполнено!', 'id'=>'lastname', 'class' => 'form-control')) }}
-                            </div>
-                            <?php //Form::submit( "OK", array('class' => '')) ?>
-                            <input class="form-control form-inline btn_submit_main btn btn-warning submit_send_order" type="submit" value="OK" onClick="ga('send', 'event', { eventCategory: 'BUTTON', eventAction: 'CLICK', eventLabel: 'OK'});">
-
-
-                        </div>
+                    <p><span class="h7_my"> или оставьте свой номер</span></p>
+                    {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control form-inline width250', 'placeholder'=>'0(___) __ __ __')) }}
+                            <!-- Honeypot::generate('my_name', 'my_time') -->
+                    <div class="lastname">
+                        {{ Form::text('lastname', null, array('title'=>'Поле должно быть заполнено!', 'id'=>'lastname', 'class' => 'form-control')) }}
                     </div>
+                    <?php //Form::submit( "OK", array('class' => '')) ?>
+                    <input class="form-control form-inline btn_submit_main btn btn-warning submit_send_order" type="submit" value="OK" onClick="ga('send', 'event', { eventCategory: 'BUTTON', eventAction: 'CLICK', eventLabel: 'OK'});">
 
 
                 </div>
             </div>
+                </div>
+            </div>
         @show
         </div>
-
-<div class="container-fluid background">
-    <div class="row">
-        <div class="container">
-            <h2 class="white bold">Нужен хороший врач, клиника или
-                услуги диагностики?</h2>
-            <h5 class="white_opacity">Ищите и записывайтесь здесь – это удобнее и дешевле, чем в клинике!</h5>
-            <div class="inner-addon left-addon">
-                <i class="glyphicon glyphicon-search blue_text"></i>
-                <input type="text" id="search_field" class="form-control" placeholder="Стоматолог"/>
-            </div>
-            <span class="white">Фамилия или имя врача, название клиники, направление или специальность в медицине</span>
-        </div>
-    </div>
-</div>
 
 
 
