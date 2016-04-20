@@ -393,7 +393,7 @@ $grafik_arr = explode(";", $user->grafik);
                             <span class="glyphicon glyphicon-star blau"></span>
                             <span class="glyphicon glyphicon-star blau"></span>
                         </div>
-                        <div class="col-md-3"><p class="margin3">Цена-качество</p>
+                        <div class="col-md-3"><p class="margin3">Цена-Качество</p>
                             <span class="glyphicon glyphicon-star blau"></span>
                             <span class="glyphicon glyphicon-star blau"></span>
                             <span class="glyphicon glyphicon-star blau"></span>
@@ -446,7 +446,7 @@ $grafik_arr = explode(";", $user->grafik);
                                             else
                                                 echo '<span class="glyphicon glyphicon-star gray"></span>';
                                         ?></div>
-                                            <div class="col-md-3"><p>Цена-качество</p>
+                                            <div class="col-md-3"><p>Цена-Качество</p>
                                         <?php for ($i=1; $i <= 5; $i++)
                                             if ($i <= $item->rang_price)
                                                 echo '<span class="glyphicon glyphicon-star blau"></span>';
@@ -536,7 +536,7 @@ $grafik_arr = explode(";", $user->grafik);
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-4">
-                <p>Цена-качество</p>
+                <p>Цена-Качество</p>
                 <p>
                     @if ($errors->first('reviewStars3'))
                 <div class="alert alert-danger" role="alert"><?php echo $errors->first('reviewStars3'); ?></div>
