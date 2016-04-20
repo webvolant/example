@@ -67,7 +67,7 @@ Route::post('/more-review', array(
                         <p></p>
                     </div>
                     <div class='col-md-9'>
-                        <p> $item->comment </p>
+                        <p class=\"comment\"> $item->comment </p>
                     </div>";
 
                 // }

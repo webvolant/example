@@ -163,6 +163,10 @@ hr.with_border{
     font-weight: bold;
 }
 
+.comment{
+    font-weight: 600;
+}
+
 .gray
 {
     color: #EFEFEF;
