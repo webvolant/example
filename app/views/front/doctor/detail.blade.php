@@ -446,7 +446,7 @@ $grafik_arr = explode(";", $user->grafik);
                                             else
                                                 echo '<span class="glyphicon glyphicon-star gray"></span>';
                                         ?></div>
-                                            <div class="col-md-3"><p>Цена</p>
+                                            <div class="col-md-3"><p>Цена-качество</p>
                                         <?php for ($i=1; $i <= 5; $i++)
                                             if ($i <= $item->rang_price)
                                                 echo '<span class="glyphicon glyphicon-star blau"></span>';
@@ -663,7 +663,7 @@ $grafik_arr = explode(";", $user->grafik);
         if (user){
         $("a.more-reviews").html('Пожалуйста подождите!');
         $.post('/more-review', {user:user},function(data){
-        console.log(data);
+        //console.log(data);
         $(".reviews").html(data);
         $("a.more-reviews").hide();
         });

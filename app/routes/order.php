@@ -53,11 +53,11 @@ Route::post('/more-review', array(
                                         $q
                                 </div>
 
-                                <div class='col-md-3 qualif'><p>Квалификация</p>
+                                <div class='col-md-3 qualif'><p>Внимание</p>
                                         $v
                                 </div>
 
-                                <div class='col-md-3 qualif'><p>Квалификация</p>
+                                <div class='col-md-3 qualif'><p>Цена-Качество</p>
                                         $p
                                 </div>
 
