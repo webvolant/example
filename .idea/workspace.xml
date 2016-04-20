@@ -6,8 +6,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/storage/dumps/20150710121125.sql" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/favicon.ico" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/order.php" afterPath="$PROJECT_DIR$/app/routes/order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front/doctor/detail.blade.php" afterPath="$PROJECT_DIR$/app/views/front/doctor/detail.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template.css" afterPath="$PROJECT_DIR$/public/template.css" />
     </list>
     <ignored path="doctors.iws" />
@@ -71,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="template.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/template.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8727274">
-              <caret line="166" column="21" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.61869156">
+              <caret line="1254" column="8" selection-start-line="1254" selection-start-column="8" selection-end-line="1254" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -111,10 +109,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="order.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes/order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7457944">
+            <state vertical-scroll-proportion="-7.2545457">
               <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
               <folding>
                 <element signature="e#6#90#0#PHP" expanded="true" />
@@ -190,8 +188,8 @@
         <option value="$PROJECT_DIR$/public/css/jquery-ui.css" />
         <option value="$PROJECT_DIR$/app/views/front.blade.php" />
         <option value="$PROJECT_DIR$/app/views/front/doctor/detail.blade.php" />
-        <option value="$PROJECT_DIR$/public/template.css" />
         <option value="$PROJECT_DIR$/app/routes/order.php" />
+        <option value="$PROJECT_DIR$/public/template.css" />
       </list>
     </option>
   </component>
@@ -934,14 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/template.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8727274">
-          <caret line="166" column="21" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/doctor/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -968,7 +958,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes/order.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7457944">
+        <state vertical-scroll-proportion="-7.2545457">
           <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
           <folding>
             <element signature="e#6#90#0#PHP" expanded="true" />
@@ -982,6 +972,14 @@
             <marker date="1461163425480" expanded="true" signature="2495:2538" placeholder="..." />
             <marker date="1461163425480" expanded="true" signature="2495:2588" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/template.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61869156">
+          <caret line="1254" column="8" selection-start-line="1254" selection-start-column="8" selection-end-line="1254" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>

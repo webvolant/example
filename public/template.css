@@ -1252,7 +1252,9 @@ textarea.form-control.review_form{
 }
 
 
-
+.reviews span{
+    padding:2px;
+}
 
 
 
