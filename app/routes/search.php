@@ -8,12 +8,13 @@
 
 Route::get('datatojson', array('as' => 'datatojson',
     function(){
-        $doctors = User::whereRole('doctor')->whereStatus('1')->get();
+        $doctors = User::whereRole('doctor')->whereStatus('1')->orderBy("pay_doctor",'desc')->get();
         $docs_array_temp = $doctors->toArray();
         $docs_array = array();
         foreach($docs_array_temp as $item){
             $object["label"] = $item["fio"];
             $object["category"] = "Доктора";
+            $object["pay_doctor"] = $item["pay_doctor"];
             $object["plink"] = "/doctor/detail/".$item["link"];
             $docs_array[] = $object;
         }
@@ -24,6 +25,7 @@ Route::get('datatojson', array('as' => 'datatojson',
         foreach($clinics_array_temp as $kl){
             $object["label"] = $kl["name"];
             $object["category"] = "Клиники";
+            $object["pay_doctor"] = 0;
             $object["plink"] = "/clinic/detail/".$kl["link"];
             $clinics_array[] = $object;
         }
@@ -35,6 +37,7 @@ Route::get('datatojson', array('as' => 'datatojson',
             $object["label"] = $s["name"];
             $object["category"] = "Врач по специальности";
             $object["plink"] = "/doctor/doctors/".$s["id"];
+            $object["pay_doctor"] = 0;
             $specialities_array[] = $object;
         }
 
@@ -45,6 +48,7 @@ Route::get('datatojson', array('as' => 'datatojson',
             $object["label"] = $s["specialisation"];
             $object["category"] = "Клиники по направлению";
             $object["plink"] = "/clinics/all/".$s["id"];
+            $object["pay_doctor"] = 0;
             $specialisations_array[] = $object;
         }
 

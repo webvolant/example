@@ -35,7 +35,6 @@
         <tr>
             <th>id</th>
             <th>ФИО</th>
-            <th>Email</th>
             <th>Статус</th>
             <th>Обновлено</th>
             <th>Дома</th>
@@ -50,8 +49,7 @@
             <tr>
                 <td><a href='{{ URL::route("doctor/edit", array($user->id)) }}'>{{ $user->id }}</a></td>
                 <td><a href='{{ URL::route("doctor/edit", array($user->id)) }}'>{{ $user->fio }}</a></td>
-                <td>{{ $user->email }}</td>
-                <td>{{ $user->status }}</td>
+                <td>{{ Helper::getStrStatus($user->status) }}</td>
                 <td>{{ $user->updated_at }}</td>
                 <td>{{ $user->doma }}</td>
                 <td>{{ $user->phone }}</td>

@@ -34,11 +34,10 @@
 
                         <tr>
                             <th>id</th>
-                            <th>Клиент</th>
+                            <th>Отзыв Клиента</th>
                             <th>Телефон</th>
-                            <th>Doctor_id</th>
+                            <th>Доктор</th>
                             <th>Статус</th>
-                            <th></th>
                             <th><i class="fa fa-wrench fa-fw"></th>
                         </tr>
 
@@ -47,11 +46,10 @@
                         @foreach ( $users as $key => $user)
                         <tr>
                             <td><a href='{{ URL::route("review/edit", array($user->id)) }}'>{{ $user->id }}</a></td>
-                            <td><a href='{{ URL::route("review/edit", array($user->id)) }}'>{{ $user->client_id }}</a></td>
+                            <td><a href='{{ URL::route("review/edit", array($user->id)) }}'>{{ Client::getName($user->client_id) }} {{$user->client_id}}</a></td>
                             <td>{{ Client::getPhone($user->client_id) }}</td>
                             <td>{{ User::getName($user->doctor_id) }}</td>
-                            <td>{{ $user->status }}</td>
-                            <td></td>
+                            <td>{{ Helper::getStrStatus($user->status) }}</td>
                             <td class="gradeA">
                                 <a href='{{ URL::route("review/edit", array($user->id)) }}' class="btn btn-info"><i class="fa fa-wrench fa-fw"></i></a>
                                 <a href='{{ URL::route("review/delete", array($user->id)) }}' class="btn btn-danger" onclick="return confirm('Вы действительно хотите удалить объект?')"><i class="fa fa-trash-o fa-fw"></i></a>

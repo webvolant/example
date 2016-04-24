@@ -164,8 +164,17 @@ class Helper extends Controller{
 
 
     public static function status(){
-        $mas=[0=>'Не опубликовано',1=>'Опубликовано'];
+        $mas=[0=>'Не опубликовано',1=>'Опубликовано',2=>'Не Зарегистрировано'];
         return $mas;
+    }
+
+    public static function getStrStatus($status){
+        if ($status==2)
+            return $str = 'Не Зарегистрировано';
+        elseif ($status==1)
+            return $str = 'Опубликовано';
+        elseif ($status==0)
+            return $str = 'Не опубликовано';
     }
 
     public static function reviews_count(){

@@ -35,7 +35,7 @@
         <tr>
             <th>id</th>
             <th>Название</th>
-            <th>Email</th>
+            <th>Статус</th>
             <th>Конт.Лицо</th>
             <th>Телефон</th>
             <th>Адрес</th>
@@ -49,7 +49,7 @@
             <tr>
                 <td class="gradeB"><a href='{{ URL::route("klinika/edit", array($user->id)) }}'>{{ $user->id }}</a></td>
                 <td class="gradeA"><a href='{{ URL::route("klinika/edit", array($user->id)) }}'>{{ $user->name }}</a></td>
-                <td>{{ $user->email }}</td>
+                <td>{{ Helper::getStrStatus($user->status) }}</td>
                 <td>{{ $user->fio }}</td>
                 <td>{{ $user->phone }}</td>
                 <td>{{ $user->address }}</td>

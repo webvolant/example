@@ -66,8 +66,8 @@ Route::post('review/add', array(
             $otziv->comment = Input::get('comment');
             $otziv->doctor_id = Input::get('doctor_id');
             $otziv->rang_qualif = Input::get('rang_qualif');
-            $otziv->rang_vnimanie = Input::get('rang_price');
-            $otziv->rang_price = Input::get('rang_vnimanie');
+            $otziv->rang_vnimanie = Input::get('rang_vnimanie');
+            $otziv->rang_price = Input::get('rang_price');
             $otziv->user_id = Auth::user()->id;
 
             $otziv->save();
@@ -164,8 +164,8 @@ Route::post('review/edit/{id}', array(
             $otziv->comment = Input::get('comment');
             $otziv->doctor_id = Input::get('doctor_id');
             $otziv->rang_qualif = Input::get('rang_qualif');
-            $otziv->rang_vnimanie = Input::get('rang_price');
-            $otziv->rang_price = Input::get('rang_vnimanie');
+            $otziv->rang_vnimanie = Input::get('rang_vnimanie');
+            $otziv->rang_price = Input::get('rang_price');
             $otziv->user_id = Auth::user()->id;
 
             $otziv->save();

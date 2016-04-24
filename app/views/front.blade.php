@@ -749,6 +749,18 @@
                     }
                     that._renderItemData( ul, item );
                 });
+            },
+            _renderItem: function( ul, item ) {
+                if ( item.pay_doctor == 1 ){
+                    return $( "<li>" )
+                            .append("<a class='extra'>" + item.label + '<span class="glyphicon glyphicon-thumbs-up pull-right"></span>' + "</a>")
+                            .appendTo(ul);
+                }
+                else{
+                    return $( "<li>" )
+                            .append("<a class=''>" + item.label + "</a>")
+                            .appendTo(ul);
+                }
             }
         });
 
@@ -767,7 +779,8 @@
                                 return {
                                     label: item.label,
                                     category: item.category,
-                                    plink: item.plink
+                                    plink: item.plink,
+                                    pay_doctor: item.pay_doctor
                                 };
                             }
                         }));

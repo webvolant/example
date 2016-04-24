@@ -226,7 +226,15 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 if (Input::get('doctors')){
                     $select_doctors = Input::get('doctors');
                     $klinika->Users()->sync($select_doctors);
+                }else{
+                    $klinika->Users()->detach();
                 }
+
+                /*if (Input::get('doctors')){
+                    $select_doctors = Input::get('doctors');
+                    foreach($select_doctors as $item)
+                        $klinika->Users()->attach($item);
+                }*/
 
 
                 if (Input::hasFile('logo')) {

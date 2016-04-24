@@ -55,6 +55,10 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         if (!isset($doma)) $doma = 0;
                         $user->doma = $doma;
 
+                        $pay_doctor = Input::get('pay_doctor');
+                        if (!isset($pay_doctor)) $pay_doctor = 0;
+                        $user->pay_doctor = $pay_doctor;
+
                         $det_doctor = Input::get('det_doctor');
                         if (!isset($det_doctor)) $det_doctor = 0;
                         $user->det_doctor = $det_doctor;
@@ -154,6 +158,10 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         $doma = Input::get('doma');
                         if (!isset($doma)) $doma = 0;
                         $user->doma = $doma;
+
+                        $pay_doctor = Input::get('pay_doctor');
+                        if (!isset($pay_doctor)) $pay_doctor = 0;
+                        $user->pay_doctor = $pay_doctor;
 
                         $det_doctor = Input::get('det_doctor');
                         if (!isset($det_doctor)) $det_doctor = 0;

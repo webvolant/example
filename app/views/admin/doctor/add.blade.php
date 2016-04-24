@@ -58,11 +58,35 @@
 </p>
 
 <p>
-    @if ($errors->first('doma'))
+@if ($errors->first('pay_doctor'))
+    <div class="alert alert-danger" role="alert"><?php echo $errors->first('pay_doctor'); ?></div>
+@else
+@endif
+{{ Form::checkbox('pay_doctor', '1') }} Платный врач
+</p>
+
+<p>
+@if ($errors->first('doma'))
     <div class="alert alert-danger" role="alert"><?php echo $errors->first('doma'); ?></div>
-    @else
-    @endif
-    {{ Form::checkbox('doma', '1') }} Прием на дому
+@else
+@endif
+{{ Form::checkbox('doma', '1') }} Прием на дому
+</p>
+
+<p>
+@if ($errors->first('det_doctor'))
+    <div class="alert alert-danger" role="alert"><?php echo $errors->first('det_doctor'); ?></div>
+@else
+@endif
+{{ Form::checkbox('det_doctor', '1') }} Детский доктор
+</p>
+
+<p>
+@if ($errors->first('viesd_na_dom'))
+    <div class="alert alert-danger" role="alert"><?php echo $errors->first('viesd_na_dom'); ?></div>
+@else
+@endif
+{{ Form::checkbox('viesd_na_dom', '1') }} Выезд на дом
 </p>
 
 <p>
@@ -151,22 +175,6 @@
 @endif
 {{ Form::label('График') }}
 {{ Form::text('grafik', null, array('class' => 'form-control', 'placeholder'=>'Пн: c 12:50 до 20:40')) }}
-</p>
-
-<p>
-    @if ($errors->first('det_doctor'))
-<div class="alert alert-danger" role="alert"><?php echo $errors->first('det_doctor'); ?></div>
-@else
-@endif
-{{ Form::checkbox('det_doctor', '1') }} Детский доктор
-</p>
-
-<p>
-    @if ($errors->first('viesd_na_dom'))
-<div class="alert alert-danger" role="alert"><?php echo $errors->first('viesd_na_dom'); ?></div>
-@else
-@endif
-{{ Form::checkbox('viesd_na_dom', '1') }} Выезд на дом
 </p>
 
 
