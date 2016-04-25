@@ -103,7 +103,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                     $event->status_id = Input::get('status');*/
 
                 if(Input::get('status') == 'NULL')
-                    $event->status_id = NULL;
+                    $event->status_id = 1;
                 else
                     $event->status_id = Input::get('status');
 
@@ -129,7 +129,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 //$json_before = json_encode($event);
 
                 if(Input::get('status') == 'NULL')
-                    $event->status_id = NULL;
+                    $event->status_id = 1;
                 else
                     $event->status_id = Input::get('status');
 
