@@ -6,8 +6,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/storage/dumps/20150710121125.sql" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/favicon.ico" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/admin/order.php" afterPath="$PROJECT_DIR$/app/routes/admin/order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/order/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/admin/order/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template.css" afterPath="$PROJECT_DIR$/public/template.css" />
     </list>
     <ignored path="doctors.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -107,10 +106,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="template.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/template.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.15070923">
+              <caret line="1535" column="0" selection-start-line="1535" selection-start-column="0" selection-end-line="1535" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/order/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33271027">
+            <state vertical-scroll-proportion="-3.2363636">
               <caret line="197" column="67" selection-start-line="197" selection-start-column="58" selection-end-line="197" selection-end-column="67" />
               <folding />
             </state>
@@ -176,7 +185,6 @@
         <option value="$PROJECT_DIR$/public/css/jquery-ui.css" />
         <option value="$PROJECT_DIR$/app/views/front/doctor/detail.blade.php" />
         <option value="$PROJECT_DIR$/app/routes/order.php" />
-        <option value="$PROJECT_DIR$/public/template.css" />
         <option value="$PROJECT_DIR$/app/routes/admin/otziv.php" />
         <option value="$PROJECT_DIR$/app/views/admin/klinika/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin/doctor/list.blade.php" />
@@ -190,6 +198,7 @@
         <option value="$PROJECT_DIR$/app/routes/search.php" />
         <option value="$PROJECT_DIR$/app/routes/admin/order.php" />
         <option value="$PROJECT_DIR$/app/views/admin/order/edit.blade.php" />
+        <option value="$PROJECT_DIR$/public/template.css" />
       </list>
     </option>
   </component>
@@ -936,14 +945,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/template.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.7818184">
-          <caret line="1531" column="38" selection-start-line="1531" selection-start-column="38" selection-end-line="1531" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes/klinika.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.5425532">
@@ -1059,14 +1060,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.692308">
-          <caret line="782" column="63" selection-start-line="782" selection-start-column="63" selection-end-line="782" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/doctor/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.7692308">
@@ -1095,15 +1088,31 @@
         <state vertical-scroll-proportion="0.1906542">
           <caret line="21" column="38" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="38" />
           <folding>
-            <element signature="e#6#90#0#PHP" expanded="true" />
+            <element signature="e#6#90#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/order/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33271027">
+        <state vertical-scroll-proportion="-3.2363636">
           <caret line="197" column="67" selection-start-line="197" selection-start-column="58" selection-end-line="197" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.692308">
+          <caret line="782" column="63" selection-start-line="782" selection-start-column="63" selection-end-line="782" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/template.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15070923">
+          <caret line="1535" column="0" selection-start-line="1535" selection-start-column="0" selection-end-line="1535" selection-end-column="0" />
           <folding />
         </state>
       </provider>
