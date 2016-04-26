@@ -202,11 +202,9 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $klinika = Klinika::find($id);
                 $json_before = json_encode($klinika);
 
-                $klinika->link = Helper::alias(Input::get('name'));
+                //$klinika->link = Helper::alias(Input::get('name'));
                 $klinika->status = Input::get('status');
                 $klinika->type = Input::get('type');
-                //$m = Helper::alias(Input::get('fio'));
-                //var_dump($m);
 
                 $klinika->name = Input::get('name');
                 //$user->password = Hash::make(Input::get('pass'));
