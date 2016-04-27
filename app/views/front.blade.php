@@ -541,6 +541,24 @@
             <div class="col-xs-12 col-sm-12 col-md-3">
                 <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus" data-yashareTheme="counter"></div>
                 <div class="logo2"></div>
+
+
+                <div class="developed pull-right">
+
+                    <style>
+                        img.developed_logo {
+                            position: relative;
+                            top:-2px;
+                        }
+
+                        .developed a:hover{
+                            text-decoration: none;
+                        }
+                    </style>
+                    <a href="http://abs-it.net">
+                        <img src="/public/template_image/ablogo.png" class="developed_logo" width="20px" height="20px"/> ab solutions - Разработка веб-сайта<br/>
+                        <div class="pull-right"><span class="glyphicon glyphicon-envelope"></span>  Антон Баркалов</div></a>
+                </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-4 about">
@@ -548,6 +566,32 @@
                 <span class="h8_my"><p>Сервис "Мой доктор" предоставляет доступ к данным о врачах, практикующих в клиниках и медицинских центрах Бишкека.</p></span>
 
                 <span class="h8_my"><p>Вы можете легко подобрать себе нужного специалиста, используя удобные опции поиска на сайте.</p></span>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-5">
+                <div class="registration">
+                    @section('registration')
+                        <h3 class="">Врачам и клиникам</h3>
+                        <p><span class="h8_my">Регистрация врачей и клиник на портале БЕСПЛАТНА.</span></p>
+                        <ul class="list">
+                            @if (Auth::check())
+                                <li><span class="glyphicon glyphicon-home"> </span> Вы на сайте, {{ Auth::user()->fio }}</li>
+                                <li><a href="{{ URL::route('logout') }}"><span class="glyphicon glyphicon-log-out"></span> Выйти</a></li>
+                                @else
+                                        <!--<li><a href="{{ URL::route('login') }}"><span class="glyphicon glyphicon-lock"></span> Войти в личный кабинет</a></li>-->
+                                <li><a href="{{ URL::route('registration') }}"><span class="glyphicon glyphicon-file"></span> Регистрация врача</a></li>
+                            @endif
+
+                        </ul>
+                        <p><span class="h8_my">Пишите нам - office@my-doc.kg</span></p>
+
+
+
+                    @show
+                </div>
+
+
                 <div class="pull-left">
                     <!-- WWW.NET.KG , code for http://www.my-doc.kg -->
                     <script language="javascript" type="text/javascript">
@@ -636,43 +680,8 @@
 
 
                 </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-5">
-                <div class="registration">
-                    @section('registration')
-                        <h3 class="">Врачам и клиникам</h3>
-                        <p><span class="h8_my">Регистрация врачей и клиник на портале БЕСПЛАТНА.</span></p>
-                        <ul class="list">
-                            @if (Auth::check())
-                                <li><span class="glyphicon glyphicon-home"> </span> Вы на сайте, {{ Auth::user()->fio }}</li>
-                                <li><a href="{{ URL::route('logout') }}"><span class="glyphicon glyphicon-log-out"></span> Выйти</a></li>
-                                @else
-                                        <!--<li><a href="{{ URL::route('login') }}"><span class="glyphicon glyphicon-lock"></span> Войти в личный кабинет</a></li>-->
-                                <li><a href="{{ URL::route('registration') }}"><span class="glyphicon glyphicon-file"></span> Регистрация врача</a></li>
-                            @endif
-
-                        </ul>
-                        <p><span class="h8_my">Пишите нам - office@my-doc.kg</span></p>
 
 
-                    @show
-                </div>
-
-
-
-
-                <div class="developed pull-left">
-
-                    <style>
-                        img.developed_logo {
-                            position: relative;
-                            top:-2px;
-                        }
-                    </style>
-                    <img src="/public/template_image/ablogo.png" class="developed_logo" width="20px" height="20px"/> <a href="http://abs-it.net">AB SOLUTIONS</a> - Разработка веб-сайта<br/>
-                    <div class="pull-right"><a href="mailto:barkalov_anton@mail.ru"><span class="glyphicon glyphicon-envelope"></span>  Антон Баркалов</a></div>
-                </div>
 
 
 
