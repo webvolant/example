@@ -10,6 +10,7 @@
 
 @section('page-header')
     Редактирование
+
 @stop
 
 @section('content')
@@ -119,17 +120,39 @@
 
 
 
-<p>
+<div class="row">
     @if ($errors->first('logo'))
 <div class="alert alert-danger" role="alert"><?php echo $errors->first('logo'); ?></div>
 @else
 @endif
 {{ Form::label('Логотип') }}
 {{ Form::file('logo', array('class' => 'form-control')) }}
-</p>
+
+@if ($user->logo)
+    <div class="image">
+        <img class="img-responsive admin_panel_images" src="http://my-doc.kg{{ $user->logo; }}"/>
+        <div class="absolute"><button class="btn btn-danger imagelogo-delete" id="{{$user->id}}"><span class="fa fa-remove"></span></button> </div>
+    </div>
+            <div class="clear"></div>
+@else
+    <div class="alert alert-warning" role="alert">Логотип не добавлен, рекомендуем добавить!</div>
+@endif
+</div>
+
+<script type="text/javascript">
+    $(".imagelogo-delete").click(function(e) {
+        e.preventDefault();
+        $(this).parents('.image').remove();
+        var images_id = $(this).attr('id');
+        var klinik_id = <?php echo $user->id ?>;
+        $.post('/admin/imagelogo-delete', {images_id:images_id,klinik_id:klinik_id},function(data){
+            console.log(data);
+        });
+    });
+</script>
 
 
-<p>
+<div class="row">
     @if ($errors->first('images'))
 <div class="alert alert-danger" role="alert"><?php echo $errors->first('images'); ?></div>
 @else
@@ -137,7 +160,32 @@
 {{ Form::label('Изображения клиники - выделите сразу несколько изображений для загрузки') }}
 {{ Form::file('images[]', array('multiple'=>'true', 'class' => 'form-control')) }}
 
-</p>
+    @if (count($images) > 0)
+        @foreach($images as $item)
+            <div class="image">
+                <img class="img-responsive admin_panel_images" src="http://my-doc.kg{{ $item->path_small; }}"/>
+                <div class="absolute"><button class="btn btn-danger images-delete" id="{{$item->id}}"><span class="fa fa-remove"></span></button> </div>
+            </div>
+        @endforeach
+    @else
+        <div class="alert alert-warning" role="alert">Изображения не добавлены, рекомендуем добавить!</div>
+    @endif
+
+</div>
+
+        <script type="text/javascript">
+            $(".images-delete").click(function(e) {
+                e.preventDefault();
+                $(this).parents('.image').remove();
+                var images_id = $(this).attr('id');
+                var klinik_id = <?php echo $user->id ?>;
+                $.post('/admin/images-delete', {images_id:images_id,klinik_id:klinik_id},function(data){
+                    console.log(data);
+                });
+            });
+        </script>
+        <div class="clear"></div>
+
 
 <p>
     @if ($errors->first('description'))

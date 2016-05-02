@@ -9,6 +9,56 @@
 
 Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
+    Route::post('imagelogo-delete', array(
+        'as'=>'imagelogo-delete',
+        function(){
+            if (Request::ajax()){
+                $images_id = Input::get('images_id');
+                $klinik_id = Input::get('klinik_id');
+                $kl = Klinika::find($images_id);
+                $kl->logo = "";
+                $kl->save();
+                //var_dump($klinik_id);
+                //echo $klinik_id;
+                //echo $images_id;
+                //$photo = Photo::find($image_id);
+
+                $filename = public_path().$kl->logo;
+                if (File::exists($filename))
+                    File::delete($filename);
+            }
+        }
+    ));
+
+    Route::post('images-delete', array(
+        'as'=>'images-delete',
+        function(){
+            if (Request::ajax()){
+                $images_id = Input::get('images_id');
+                //$klinik_id = Input::get('klinik_id');
+                //var_dump($klinik_id);
+                //echo $klinik_id;
+                //echo $images_id;
+                $photo = Photo::find($images_id);
+
+                $filename = public_path().$photo->path;
+                $filename_small = public_path().$photo->path_small;
+                $filename_big = public_path().$photo->path_big;
+
+                if (File::exists($filename))
+                    File::delete($filename);
+
+                if (File::exists($filename_small))
+                    File::delete($filename_small);
+
+                if (File::exists($filename_big))
+                    File::delete($filename_big);
+
+                $photo->delete();
+            }
+        }
+    ));
+
     Route::post('test-delete', array(
         'as'=>'test-delete',
         function(){
@@ -29,6 +79,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
             }
         }
     ));
+
 
     Route::post('/test-save', array(
         'as'=>'test-save',
@@ -254,7 +305,12 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
                 if (Input::hasFile('images')) {
                     $dir = '/uploads/kliniks'.date('/Y/'.$klinika->id.'/');
-                    $i = 1;
+
+                    $images = Klinika::getImages($klinika);
+                    $temp = explode('/',$images->last()->path);
+                    $n = explode('.',end($temp));
+                    $i = $n[0] + 1;
+
                     foreach(Input::file('images') as $image)
                     {
                         $photodb = new Photo();

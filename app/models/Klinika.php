@@ -16,6 +16,10 @@ class Klinika extends Eloquent {
         return $this->hasMany('Crm');
     }
 
+    public function photos()
+    {
+        return $this->hasMany('Photo','klinik_id');
+    }
 
     public function Users()
     {
@@ -28,6 +32,10 @@ class Klinika extends Eloquent {
     }
 
 
+    public static function getImages($kl){
+        $images = $kl->photos()->get();
+        return $images;
+    }
 
     public static function getTestsForKlinik($kl){
         $tests = $kl->Tests()->withPivot('price')->orderBy('lft')->get();

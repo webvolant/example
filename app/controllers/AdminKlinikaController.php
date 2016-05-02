@@ -69,6 +69,8 @@ class AdminKlinikaController extends Controller {
 
         $tests = Klinika::getTestsForKlinik($kl);
 
+        $images = Klinika::getImages($kl);
+
         return View::make('admin.klinika.edit',array(
             'user'=>$kl,
             'doctors'=>$doctors,
@@ -76,6 +78,7 @@ class AdminKlinikaController extends Controller {
             'map'=>$map,
             'parentList'=>$json_list,
             'tests'=>$tests,
+            'images'=>$images
         ));
     }
 
