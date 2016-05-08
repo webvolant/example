@@ -8,6 +8,23 @@
 
 Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
+    Route::post('imagelogodoctor-delete', array(
+        'as'=>'imagelogodoctor-delete',
+        function(){
+            if (Request::ajax()){
+                //$images_id = Input::get('images_id');
+                $user_id = Input::get('user_id');
+                $kl = User::find($user_id);
+                $kl->logo = "";
+                $kl->save();
+
+                $filename = public_path().$kl->logo;
+                if (File::exists($filename))
+                    File::delete($filename);
+            }
+        }
+    ));
+
         Route::get('doctor/profile/{id}', array(
             'as'=>'doctor/profile',
             'uses'=>'AdminDoctorController@profile'

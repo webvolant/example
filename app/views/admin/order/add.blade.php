@@ -64,6 +64,15 @@
 {{ Form::select('diag',['NULL'=>'Ничего не выбрано'] + $diags,NULL,array('id'=>'diag','class'=>'form-control custom-scroll')) }}
 </p>
 
+<p>
+@if ($errors->first('comment'))
+    <div class="alert alert-danger" role="alert"><?php echo $errors->first('comment'); ?></div>
+    @else
+    @endif
+    {{ Form::label('Комментарий') }}
+    {{ Form::text('comment',null,array('class'=>'form-control','placeholder'=>'Комментарий')) }}
+    </p>
+
 
 
 <p>

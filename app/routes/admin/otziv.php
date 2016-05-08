@@ -31,6 +31,18 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         }
     ));
 
+    // number of new reviews
+    Route::post('/reviews-number', array(
+        'as'=>'reviews-number',
+        function(){
+            if (Request::ajax()){
+                $eventers = Otziv::where('status','=',0)->get();
+                $events_html = count($eventers);
+                return $events_html;
+            }
+        }
+    ));
+
 
 
 Route::get('review/index' , array(

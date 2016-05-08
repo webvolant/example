@@ -116,14 +116,38 @@
 </p>
 
 
-<p>
+<div class="row">
     @if ($errors->first('logo'))
 <div class="alert alert-danger" role="alert"><?php echo $errors->first('logo'); ?></div>
 @else
 @endif
-{{ Form::label('Фото') }}
+{{ Form::label('Фотография доктора') }}
 {{ Form::file('logo', array('class' => 'form-control')) }}
-</p>
+
+@if ($user->logo)
+    <div class="image">
+        <img class="img-responsive admin_panel_images" src="http://my-doc.kg{{ $user->logo; }}"/>
+        <div class="absolute"><button class="btn btn-danger imagelogodoctor-delete" id="{{$user->id}}"><span class="fa fa-remove"></span></button> </div>
+    </div>
+    <div class="clear"></div>
+@else
+    <div class="alert alert-warning" role="alert">Фотография врача не добавлена, рекомендуем добавить!</div>
+    @endif
+    </div>
+
+    <script type="text/javascript">
+        $(".imagelogodoctor-delete").click(function(e) {
+            e.preventDefault();
+            $(this).parents('.image').remove();
+            var images_id = $(this).attr('id');
+            var user_id = $(this).attr('id');
+            $.post('/admin/imagelogodoctor-delete', {images_id:images_id,user_id:user_id},function(data){
+                console.log(data);
+            });
+        });
+    </script>
+</div>
+
 
 <p>
     @if ($errors->first('status'))

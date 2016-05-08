@@ -81,54 +81,74 @@
 <!-- /.navbar-header -->
 
 <ul class="nav navbar-top-links navbar-right">
+
+
+    <!--<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-messages">
+            <li>
+                <a class="text-center" href="#">
+                    <strong>Идет загрузка</strong>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </li>-->
+
+    <!-- ready -->
+    <li class="dropdown messages-menu li-reviews-number">
+        <a href="/admin/review/index" class="" data-toggle="">
+            <i class="fa fa-envelope"></i>
+            <span class="label label-success reviews-number"> <span class="fa fa-spinner fa-spin fa-fw"></span> </span>
+            Отзывы
+        </a>
+    </li>
+    <script type="text/javascript">
+        setInterval(function() {
+            var temp = "";
+            $.post('/admin/reviews-number',{temp:temp}, function(data){
+                $(".reviews-number").html(data);
+            })
+        }, 2000);
+    </script>
+
+
+    <li class="dropdown messages-menu li-orders-number">
+        <a href="/admin/order/index" class="" data-toggle="">
+            <i class="fa fa-bell"></i>
+            <span class="label label-danger orders-number"> <span class="fa fa-spinner fa-spin fa-fw"></span> </span>
+            Заявки
+        </a>
+    </li>
+
     <li class="dropdown"><a href="{{ URL::route('clean') }}"><i class="fa fa-refresh"> Кэш </i></a></li>
-<li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
-    </a>
-    <ul class="dropdown-menu dropdown-messages">
-        <li>
-            <a class="text-center" href="#">
-                <strong>Идет загрузка</strong>
-                <i class="fa fa-angle-right"></i>
-            </a>
-        </li>
-    </ul>
-    <!-- /.dropdown-messages -->
-</li>
-<!-- /.dropdown -->
-<li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
-    </a>
-    <ul class="dropdown-menu dropdown-tasks">
 
-        <li>
-            <a class="text-center" href="#">
-                <strong>Идет загрузка</strong>
-                <i class="fa fa-angle-right"></i>
-            </a>
-        </li>
-    </ul>
-    <!-- /.dropdown-tasks -->
-</li>
-<!-- /.dropdown -->
-<li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
-    </a>
-    <ul class="dropdown-menu dropdown-alerts">
+    <script type="text/javascript">
+        setInterval(function() {
+            var temp = "";
+            $.post('/admin/orders-number',{temp:temp}, function(data){
+                $(".orders-number").html(data);
+            })
+        }, 2000);
+    </script>
+
+    <!--<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-alerts">
 
 
-        <li>
-            <a class="text-center" href="#">
-                <strong>Идет загрузка</strong>
-                <i class="fa fa-angle-right"></i>
-            </a>
-        </li>
-    </ul>
-    <!-- /.dropdown-alerts -->
-</li>
+            <li>
+                <a class="text-center" href="#">
+                    <strong>Идет загрузка</strong>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </li>-->
 <!-- /.dropdown -->
 <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -670,13 +690,14 @@
 
 
 
-        $(".dropdown-toggle").click(function() {
+        /*$(".dropdown-toggle").click(function() {
             var date_begin = "";
             $.post('/admin/reviews-last', {name:date_begin},function(data){
                 $(".dropdown-messages").html(data);
             });
-        });
+        });*/
 
+        /* alt variant vom orders
         $(".dropdown-toggle").click(function() {
             var date_begin = "";
             $.post('/admin/remind-last', {name:date_begin},function(data){
@@ -690,10 +711,10 @@
 
             });
             //}, 10000);
-        });
+        });*/
 
 
-        $(".dropdown-toggle").click(function() {
+        /*$(".dropdown-toggle").click(function() {
             var date_begin = "";
             $.post('/admin/remind', {name:date_begin},function(data){
                 $(".dropdown-alerts").html(data);
@@ -706,13 +727,13 @@
 
             });
             //}, 10000);
-        });
+        });*/
 
         setTimeout(function() {
             var date_begin = "";
             $.post('/admin/remind', {name:date_begin},function(data){
                 $(".dropdown-alerts").html(data);
-                console.log(data);
+                //console.log(data);
                 if (data==""){
                     $.favicon('/public/template_image/favicon.ico');
                 }else{
@@ -725,7 +746,7 @@
             var date_begin = "";
             $.post('/admin/remind', {name:date_begin},function(data){
                 $(".dropdown-alerts").html(data);
-                console.log(data);
+                //console.log(data);
                 if (data==""){
                     $.favicon('/public/template_image/favicon.ico');
                 }else{

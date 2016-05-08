@@ -9,6 +9,8 @@
 
 Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
 
+
+
     Route::post('imagelogo-delete', array(
         'as'=>'imagelogo-delete',
         function(){
@@ -307,9 +309,16 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                     $dir = '/uploads/kliniks'.date('/Y/'.$klinika->id.'/');
 
                     $images = Klinika::getImages($klinika);
-                    $temp = explode('/',$images->last()->path);
-                    $n = explode('.',end($temp));
-                    $i = $n[0] + 1;
+                    if (count($images) > 0){
+                        $temp = explode('/',$images->last()->path);
+                        $n = explode('.',end($temp));
+                        $i = $n[0] + 1;
+                    }
+                    else{
+                        $i = 1;
+                    }
+
+
 
                     foreach(Input::file('images') as $image)
                     {

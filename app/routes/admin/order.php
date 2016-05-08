@@ -16,6 +16,19 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         }//'uses'=>'AdminOrderController@event'
     ));
 */
+
+    // number of new orders
+    Route::post('/orders-number', array(
+        'as'=>'orders-number',
+        function(){
+            if (Request::ajax()){
+                $eventers = Order::where('global_status','=',0)->get();
+                $events_html = count($eventers);
+                return $events_html;
+            }
+        }
+    ));
+
     Route::post('/remind', array(
         'as'=>'remind',
         function(){
@@ -205,6 +218,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                     $order->diag_id = NULL;
                 else
                     $order->diag_id = Input::get('diag');
+
+                $order->comment = Input::get('comment');
                 $order->save();
 
 
