@@ -108,12 +108,12 @@
         </a>
     </li>
     <script type="text/javascript">
-        setInterval(function() {
+        setTimeout(function() {
             var temp = "";
             $.post('/admin/reviews-number',{temp:temp}, function(data){
                 $(".reviews-number").html(data);
             })
-        }, 2000);
+        }, 1000);
     </script>
 
 
@@ -128,12 +128,12 @@
     <li class="dropdown"><a href="{{ URL::route('clean') }}"><i class="fa fa-refresh"> Кэш </i></a></li>
 
     <script type="text/javascript">
-        setInterval(function() {
+        setTimeout(function() {
             var temp = "";
             $.post('/admin/orders-number',{temp:temp}, function(data){
                 $(".orders-number").html(data);
             })
-        }, 2000);
+        }, 1000);
     </script>
 
     <!--<li class="dropdown">
@@ -755,7 +755,7 @@
                      $.favicon('/public/template_image/favicon_warning.ico');
                 }
             });
-        }, 90000);//20000);
+        }, 50000);//20000);
 
 
 
