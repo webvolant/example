@@ -154,7 +154,7 @@
 @else
 @endif
 {{ Form::label('Комментарий к заявке') }}
-{{ Form::text('comment', null, array('class' => 'form-control', 'placeholder'=>'')) }}
+{{ Form::textarea('comment', null, array('rows'=>'3','class' => 'form-control', 'placeholder'=>'')) }}
 </p>
 
 

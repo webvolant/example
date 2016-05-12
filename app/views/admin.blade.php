@@ -80,6 +80,8 @@
 </div>
 <!-- /.navbar-header -->
 
+
+
 <ul class="nav navbar-top-links navbar-right">
 
 
@@ -338,7 +340,7 @@
 </div>
 <!-- /.navbar-static-side -->
 </nav>
-
+    <div class="margintop70"></div>
 <!-- Page Content -->
 <div id="page-wrapper">
     <div class="container-fluid">

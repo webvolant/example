@@ -728,6 +728,10 @@ ul.list{
     transition: all 300ms ease-in-out;*/
 }
 
+.margintop70{
+    margin-top:40px;
+}
+
 .navbar {
     margin-bottom: 5px;
     background: #383D45;/*rgb(0, 144, 218);*/
