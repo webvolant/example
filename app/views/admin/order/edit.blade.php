@@ -9,7 +9,7 @@
 @extends('admin')
 
 @section('page-header')
-    Редактирование заявки
+    Редактирование заявки {{ $order->id }}
 @stop
 
 @section('content')
@@ -116,6 +116,7 @@
     @endif
     {{ Form::label('Привязка к клиенту') }}
     {{ Form::select('client',['NULL'=>'Ничего не выбрано'] + $clients,$order->client_id,array('id'=>'client','class'=>'form-control custom-scroll')) }}
+    {{ Client::getName($order->client_id) }}
     </p>
 
     <p>
