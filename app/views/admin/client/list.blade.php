@@ -35,7 +35,7 @@
         <tr>
             <th>id</th>
             <th>ФИО</th>
-            <th>Email</th>
+            <!--<th>Email</th>-->
             <th>Создано</th>
             <th>Обновлено</th>
             <th>Телефон</th>
@@ -48,7 +48,7 @@
             <tr>
                 <td><a href='{{ URL::route("client/edit", array($user->id)) }}'>{{ $user->id }}</a></td>
                 <td><a href='{{ URL::route("client/edit", array($user->id)) }}'>{{ $user->fio }}</a></td>
-                <td>{{ $user->email }}</td>
+                <!--<td>{{ $user->email }}</td>-->
                 <td>{{ $user->created_at }}</td>
                 <td>{{ $user->updated_at }}</td>
                 <td>{{ $user->phone }}</td>

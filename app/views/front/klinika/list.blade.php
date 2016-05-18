@@ -17,6 +17,8 @@
 {{ "большая база данных клиник по различным специализациям" }}
 @stop
 
+@section('block1')
+@show
 
 @section('specialities')
 @stop

@@ -33,6 +33,8 @@
     @endif
 @stop
 
+@section('block1')
+@show
 
 @section('specialities')
 @show

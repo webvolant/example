@@ -10,6 +10,9 @@
 {{ "большая база данных диагностических центров" }}
 @stop
 
+@section('block1')
+@show
+
 @section('specialities')
 @stop
 

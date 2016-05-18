@@ -680,6 +680,39 @@ ul.list{
 
 }
 
+.doctor_zahlen{
+    background: url("template_image/doctor1.jpg") top center no-repeat;
+    background-size: contain;
+    min-height: 131px;
+    margin-top: -30px;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+
+    /*border-bottom:1px solid #eeeeee;
+    -moz-box-shadow: 0px 10px 14px -7px #999;
+    -webkit-box-shadow: 0px 10px 14px -7px #999;
+    box-shadow: 0px 10px 15px -7px #999;*/
+}
+
+.back2{
+    background:#f2f2f2;
+}
+
+.nomargin{
+    height: 150px;
+    width: 25%;
+
+}
+
+
+.border-bottom{
+    border-bottom:5px solid #e7e7e7;
+}
+
 .header .h3_my{
     font-size: 18px;
     line-height: 22px;
@@ -733,8 +766,20 @@ ul.list{
 }
 
 .navbar {
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     background: #383D45;/*rgb(0, 144, 218);*/
+}
+
+.front.navbar{
+    border-radius: 0px;
+}
+
+.front .navbar-collapse {
+    text-align:center;
+}
+.front .navbar-nav {
+    display:inline-block;
+    float:none;
 }
 
 .search{
@@ -781,6 +826,19 @@ body{
     margin-top: 5px;
 }
 
+.horizontal_list{
+    float:left;
+    padding-right:20px;
+}
+
+
+
+/*.horizontal_list .orange_text*/
+
+.orange_text_big .fa{
+    font-size:58px;
+}
+
 .line0{
     vertical-align: top;
     margin: -15px 0 0;
@@ -815,6 +873,7 @@ body{
 .back{
     background: #f2f2f2;
     padding:20px;
+    border-bottom:5px solid #e7e7e7;
 }
 .ab_icon{
     width: 80px;
@@ -1346,7 +1405,15 @@ input#user_phone::-webkit-input-placeholder {
     background: #ccc;
 }
 
+.btn {
+    border-width: 0 1px 4px 1px;
+}
 
+.btn-info {
+    color: #ffffff;
+    background-color: #75caeb;
+    border-color: #5EA6C3;
+}
 
 .font13{
     font-size: 13px;

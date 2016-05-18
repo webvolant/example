@@ -41,6 +41,7 @@
 
         {{ HTML::script('js/jquery.ui.autocomplete.html.js') }}
 
+        {{ HTML::style('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css') }}
                 <!-- Facebook Pixel Code -->
         <script>
             !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -109,6 +110,14 @@
                     <div class="container">
                         <div class=" col-xs-12 col-sm-7 col-md-2">
                             <a href="{{ URL::route('/') }}"><div class="logo"></div></a>
+
+<!--
+                            <ul style="list-style: none; display:inline-block">
+                                <li style="float: left;" class="horizontal_list"><span class="orange_text"><i class="fa fa-medkit"></i> {{ $orders+75 }} </span><?php echo strstr(Lang::choice('mydoc.orders', $orders+75, ['n' => $orders+75], 'ru'),"з"); ?></li>
+                                <li style="float: left;" class="horizontal_list"><span class="orange_text"><i class="fa fa-user-md"></i> {{ $docs }} </span><?php echo strstr(Lang::choice('mydoc.docs', $docs, ['n' => $docs], 'ru'),"в"); ?></li>
+                                <li style="float: left;" class="horizontal_list"><span class="orange_text"><i class="fa fa-comments-o"></i> {{ $ot }} </span><?php echo strstr(Lang::choice('mydoc.ot', $ot, ['n' => $ot], 'ru'),"о"); ?> </li>
+                            </ul>
+                            -->
                         </div>
                         <!--
 
@@ -122,6 +131,7 @@
 
             <div class="col-xs-offset-0 col-xs-6 col-sm-6 col-md-offset-0 col-md-2 hidden-xs hidden-sm">
                 <div class="doctor1"></div>
+
             </div>
 
             <div class="col-xs-12 col-sm-5 col-md-4 paddingtop15">
@@ -156,6 +166,7 @@
 
 
                         </div>
+
                     </div>
 
 
@@ -167,8 +178,16 @@
 <div class="container-fluid background">
     <div class="row">
         <div class="container">
-            <h2 class="white bold">Нужен хороший врач, клиника или
-                услуги диагностики?</h2>
+            <h1 class="white bold">Нужен хороший врач, клиника или
+                услуги диагностики?</h1>
+                <!--
+    <ul style="list-style: none; display:inline-block">
+        <li style="float: left;"><span class="orange_text">{{ $orders+75 }} </span><?php echo strstr(Lang::choice('mydoc.orders', $orders+75, ['n' => $orders+75], 'ru'),"з"); ?></li>
+        <li style="float: left;"><span class="orange_text">{{ $docs }} </span><?php echo strstr(Lang::choice('mydoc.docs', $docs, ['n' => $docs], 'ru'),"в"); ?></li>
+        <li style="float: left;"><span class="orange_text">{{ $ot }} </span><?php echo strstr(Lang::choice('mydoc.ot', $ot, ['n' => $ot], 'ru'),"о"); ?> </li>
+    </ul>
+    -->
+
             <h5 class="white_opacity">Ищите и записывайтесь здесь – это удобнее и дешевле, чем в клинике!</h5>
             <div class="inner-addon left-addon">
                 <i class="glyphicon glyphicon-search blue_text"></i>
@@ -289,10 +308,12 @@
     </div>
 </div>
 
-<div class="container">
+
+
+<div class="container-fluid">
     <div class="row">
         <!-- Static navbar -->
-        <div class="navbar navbar-default" role="navigation">
+        <div class="front navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -316,7 +337,19 @@
     </div>
 </div>
 
-
+@section('block1')
+<div class="container-fluid back2 border-bottom">
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center">MY-DOC.KG в цифрах</h2>
+            <div class="col-xs-12 col-sm-3 col-md-offset-1 col-md-2" class="horizontal_list "><p class="text-center"><span class="orange_text_big"><i class="fa fa-medkit"></i> {{ $orders+75 }} </span><br/><?php echo strstr(Lang::choice('mydoc.orders', $orders+75, ['n' => $orders+75], 'ru'),"з"); ?></p></div>
+            <div class="col-xs-12 col-sm-3 col-md-offset-1 col-md-2"  class="horizontal_list"><p class="text-center"><span class="orange_text_big"><i class="fa fa-user-md"></i> {{ $docs }} </span><br/><?php echo strstr(Lang::choice('mydoc.docs', $docs, ['n' => $docs], 'ru'),"в"); ?></p></div>
+            <div class="col-xs-12 col-sm-3 col-md-offset-1 col-md-2"  class="horizontal_list"><p class="text-center"><span class="orange_text_big"><i class="fa fa-comments-o"></i> {{ $ot }} </span><br/><?php echo strstr(Lang::choice('mydoc.ot', $ot, ['n' => $ot], 'ru'),"о"); ?> </p></div>
+            <div class="hidden-xs nomargin doctor_zahlen pull-right"></div>
+        </div>
+    </div>
+</div>
+@show
 
 <div class="container">
     <div class="content row">
@@ -392,6 +425,9 @@
 
                 </div>
             </div>
+
+
+
 
 <div class="container-fluid back">
     <div class="container">
@@ -563,10 +599,11 @@
 
             <div class="col-xs-12 col-sm-12 col-md-4 about">
                 <h3 class="">Сервис "Мой Доктор"</h3>
+
                 <span class="h8_my"><p>Сервис "Мой доктор" предоставляет доступ к данным о врачах, практикующих в клиниках и медицинских центрах Бишкека.</p></span>
 
                 <span class="h8_my"><p>Вы можете легко подобрать себе нужного специалиста, используя удобные опции поиска на сайте.</p></span>
-
+                <span class="h8_my"><p>Информация предоставляется исключительно в справочных целях</p></span>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-5">

@@ -113,7 +113,13 @@
             $.post('/admin/reviews-number',{temp:temp}, function(data){
                 $(".reviews-number").html(data);
             })
-        }, 1000);
+        }, 100);
+        setInterval(function() {
+            var temp = "";
+            $.post('/admin/reviews-number',{temp:temp}, function(data){
+                $(".reviews-number").html(data);
+            })
+        }, 90000);
     </script>
 
 
@@ -133,7 +139,14 @@
             $.post('/admin/orders-number',{temp:temp}, function(data){
                 $(".orders-number").html(data);
             })
-        }, 1000);
+        }, 100);
+
+        setInterval(function() {
+            var temp = "";
+            $.post('/admin/orders-number',{temp:temp}, function(data){
+                $(".orders-number").html(data);
+            })
+        }, 90000);
     </script>
 
     <!--<li class="dropdown">
