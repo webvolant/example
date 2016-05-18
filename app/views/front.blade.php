@@ -592,7 +592,7 @@
                         }
                     </style>
                     <a href="http://abs-it.net">
-                        <img src="/public/template_image/ablogo.png" class="developed_logo" width="20px" height="20px"/> ab solutions - Разработка веб-сайта<br/>
+                        <img src="/public/template_image/ablogo.png" class="developed_logo" width="20px" height="20px"/> abs-it.net - создание сайтов в Бишкеке<br/>
                         <div class="pull-right"><span class="glyphicon glyphicon-envelope"></span>  Антон Баркалов</div></a>
                 </div>
             </div>

@@ -6,19 +6,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/storage/dumps/20150710121125.sql" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/favicon.ico" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template_image/watermark.png" afterPath="$PROJECT_DIR$/public/template_image/watermark.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/AdminOrderController.php" afterPath="$PROJECT_DIR$/app/controllers/AdminOrderController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin.blade.php" afterPath="$PROJECT_DIR$/app/views/admin.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/client/list.blade.php" afterPath="$PROJECT_DIR$/app/views/admin/client/list.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front.blade.php" afterPath="$PROJECT_DIR$/app/views/front.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front/doctor/detail.blade.php" afterPath="$PROJECT_DIR$/app/views/front/doctor/detail.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front/doctor/list.blade.php" afterPath="$PROJECT_DIR$/app/views/front/doctor/list.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front/klinika/detail.blade.php" afterPath="$PROJECT_DIR$/app/views/front/klinika/detail.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front/klinika/diagdetail.blade.php" afterPath="$PROJECT_DIR$/app/views/front/klinika/diagdetail.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php" afterPath="$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front/klinika/list.blade.php" afterPath="$PROJECT_DIR$/app/views/front/klinika/list.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template.css" afterPath="$PROJECT_DIR$/public/template.css" />
     </list>
     <ignored path="doctors.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,10 +49,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminOrderController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdminOrderController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminOrderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67250437">
+            <state vertical-scroll-proportion="-14.769231">
               <caret line="74" column="68" selection-start-line="74" selection-start-column="68" selection-end-line="74" selection-end-column="68" />
               <folding />
             </state>
@@ -91,13 +79,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="front.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="front.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/front.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.418182">
-              <caret line="315" column="26" selection-start-line="315" selection-start-column="26" selection-end-line="315" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.15682657">
+              <caret line="596" column="22" selection-start-line="596" selection-start-column="22" selection-end-line="596" selection-end-column="22" />
               <folding>
-                <marker date="1463298384845" expanded="true" signature="2856:3332" placeholder="..." />
+                <marker date="1463581766235" expanded="true" signature="2856:3332" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -169,10 +157,10 @@
         <option value="$PROJECT_DIR$/app/views/front/klinika/diaglist.blade.php" />
         <option value="$PROJECT_DIR$/app/views/front/klinika/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin/client/list.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/front.blade.php" />
         <option value="$PROJECT_DIR$/public/template.css" />
         <option value="$PROJECT_DIR$/app/views/admin.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/AdminOrderController.php" />
+        <option value="$PROJECT_DIR$/app/views/front.blade.php" />
       </list>
     </option>
   </component>
@@ -1214,16 +1202,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.418182">
-          <caret line="315" column="26" selection-start-line="315" selection-start-column="26" selection-end-line="315" selection-end-column="26" />
-          <folding>
-            <marker date="1463298384845" expanded="true" signature="2856:3332" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/order/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.230769">
@@ -1234,9 +1212,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AdminOrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67250437">
+        <state vertical-scroll-proportion="-14.769231">
           <caret line="74" column="68" selection-start-line="74" selection-start-column="68" selection-end-line="74" selection-end-column="68" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15682657">
+          <caret line="596" column="22" selection-start-line="596" selection-start-column="22" selection-end-line="596" selection-end-column="22" />
+          <folding>
+            <marker date="1463581766235" expanded="true" signature="2856:3332" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
