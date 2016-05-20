@@ -72,7 +72,7 @@ class AdminOrderController extends Controller {
 
     public function index()
     {
-        $speciality = Order::orderBy('id','desc')->take(500)->get();
+        $speciality = Order::orderBy('id','desc')->take(1000)->get();
         return View::make('admin.order.list',array('users'=>$speciality));
     }
 
