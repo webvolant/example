@@ -38,8 +38,8 @@
                             <th>Клиент</th>
                             <th>Телефон</th>
                             <th>Врач</th>
+                            <th>Клиника</th>
                             <th>Создано</th>
-                            <th></th>
                             <th><i class="fa fa-wrench fa-fw"></th>
                         </tr>
 
@@ -52,8 +52,8 @@
                             <td>{{ Client::getName($user->client_id) }}</td>
                             <td>{{ Client::getPhone($user->client_id) }}</td>
                             <td>{{ User::getName($user->doctor_id) }}</td>
+                            <td>{{ Klinika::getName($user->client_id) }}</td>
                             <td>{{ $user->created_at }}</td>
-                            <td></td>
                             <td class="gradeA">
                                 <a href='{{ URL::route("order/edit", array($user->id)) }}' class="btn btn-info"><i class="fa fa-wrench fa-fw"></i></a>
                                 <a href='{{ URL::route("order/delete", array($user->id)) }}' class="btn btn-danger" onclick="return confirm('Вы действительно хотите удалить объект?')"><i class="fa fa-trash-o fa-fw"></i></a>

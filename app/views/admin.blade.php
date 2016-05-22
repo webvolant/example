@@ -516,6 +516,7 @@
 
         $('#dataTables-example').DataTable({
             "order": [[ 0, "desc" ]],
+            "processing": true,
             "language": {
                 "info": "Показано _PAGE_ из _PAGES_",
                 "lengthMenu": "Показать _MENU_ ",

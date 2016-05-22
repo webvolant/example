@@ -37,7 +37,7 @@
             <th>ФИО</th>
             <th>Статус</th>
             <th>Обновлено</th>
-            <th>Дома</th>
+            <!--<th>Дома</th>-->
             <th>Телефон</th>
             <th>Клиника</th>
             <th><i class="fa fa-wrench fa-fw"></th>
@@ -51,7 +51,7 @@
                 <td><a href='{{ URL::route("doctor/edit", array($user->id)) }}'>{{ $user->fio }}</a></td>
                 <td>{{ Helper::getStrStatus($user->status) }}</td>
                 <td>{{ $user->updated_at }}</td>
-                <td>{{ $user->doma }}</td>
+                <!--<td></td>-->
                 <td>{{ $user->phone }}</td>
                 <td>{{ $user->klinika_name }}</td>
                 <td class="gradeA">
