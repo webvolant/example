@@ -52,7 +52,7 @@
                             <td>{{ Client::getName($user->client_id) }}</td>
                             <td>{{ Client::getPhone($user->client_id) }}</td>
                             <td>{{ User::getName($user->doctor_id) }}</td>
-                            <td>{{ Klinika::getName($user->client_id) }}</td>
+                            <td>{{ Klinika::getName($user->id) }}</td>
                             <td>{{ $user->created_at }}</td>
                             <td class="gradeA">
                                 <a href='{{ URL::route("order/edit", array($user->id)) }}' class="btn btn-info"><i class="fa fa-wrench fa-fw"></i></a>
