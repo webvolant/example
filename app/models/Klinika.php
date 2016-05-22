@@ -32,13 +32,7 @@ class Klinika extends Eloquent {
     }
 
 
-    public static function getName($id){
-        $result = Klinika::find($id);
-        if ($result){
-            return $result->name;
-        }
-        return "нет клиники";
-    }
+
 
     public static function getImages($kl){
         $images = $kl->photos()->get();

@@ -52,7 +52,13 @@
                             <td>{{ Client::getName($user->client_id) }}</td>
                             <td>{{ Client::getPhone($user->client_id) }}</td>
                             <td>{{ User::getName($user->doctor_id) }}</td>
-                            <td>{{ Klinika::getName($user->id) }}</td>
+                            <td><?php $doc = User::find($user->doctor_id); ?>
+                                <?php if ($doc) { ?>
+                                @foreach($doc->Kliniks as $klinika)
+                                    <a href='{{ URL::route("klinika/edit", array($klinika->id)) }}'>{{ $klinika->name }}</a><br/>
+                                @endforeach
+                                <?php } else { echo 'нет клиники'; } ?>
+                            </td>
                             <td>{{ $user->created_at }}</td>
                             <td class="gradeA">
                                 <a href='{{ URL::route("order/edit", array($user->id)) }}' class="btn btn-info"><i class="fa fa-wrench fa-fw"></i></a>
