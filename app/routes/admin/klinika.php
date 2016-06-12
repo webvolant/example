@@ -181,10 +181,14 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                     $image = Input::file('logo');
                     $image->move(public_path().$dir, $filename);
                     $img = Image::make(public_path().$dir.$filename);
-                    $img->resize(150, null, function ($constraint) {
+
+                    $img->resize(160, null, function ($constraint) {
                         $constraint->aspectRatio();
                     });
-                    //$img->insert(public_path().'/template_image/watermark.png');
+
+                    $watermark = Image::make(public_path().'/template_image/watermark_doctor.png');
+                    $img->insert($watermark, 'bottom-left');
+
                     $img->save(public_path().$dir.'thumb_'.$filename);
                     $klinika->logo = $dir.'thumb_'.$filename;
                     $klinika->save();
@@ -201,17 +205,25 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         $image->move(public_path().$dir, $filename);
 
                         $img = Image::make(public_path().$dir.$filename);
-                        $img->resize(460, 280);
-                        $img->insert(public_path().'/template_image/watermark.png');
-                        //$img->insert('public/watermark.png');
+
+                        $img->resize(460, null, function ($constraint) {
+                            $constraint->aspectRatio();
+                        });
+
+                        $watermark = Image::make(public_path().'/template_image/watermark_doctor.png');
+                        $img->insert($watermark, 'bottom-left');
+
                         $img->save(public_path().$dir.'thumb_'.$filename);
                         $photodb->path_small = $dir.'thumb_'.$filename;
 
 
                         $img_big = Image::make(public_path().$dir.$filename);
-                        $img_big->resize(720, 640);
+                        $img_big->resize(720, null, function ($constraint) {
+                            $constraint->aspectRatio();
+                        });
 
-                        $img_big->insert(public_path().'/template_image/watermark.png');
+                        $watermark = Image::make(public_path().'/template_image/watermark_doctor.png');
+                        $img_big->insert($watermark, 'bottom-left');
 
                         $img_big->save(public_path().$dir.'big_'.$filename);
                         $photodb->path_big = $dir.'big_'.$filename;
@@ -295,10 +307,14 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                     $image = Input::file('logo');
                     $image->move(public_path().$dir, $filename);
                     $img = Image::make(public_path().$dir.$filename);
-                    $img->resize(150, null, function ($constraint) {
+
+                    $img->resize(160, null, function ($constraint) {
                         $constraint->aspectRatio();
                     });
-                    //$img->insert(public_path().'/template_image/watermark.png');
+
+                    $watermark = Image::make(public_path().'/template_image/watermark_doctor.png');
+                    $img->insert($watermark, 'bottom-left');
+
                     $img->save(public_path().$dir.'thumb_'.$filename);
                     $klinika->logo = $dir.'thumb_'.$filename;
                     $klinika->save();
@@ -328,17 +344,26 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         $image->move(public_path().$dir, $filename);
 
                         $img = Image::make(public_path().$dir.$filename);
-                        $img->resize(460, 280);
-                        $img->insert(public_path().'/template_image/watermark.png');
+
+                        $img->resize(460, null, function ($constraint) {
+                            $constraint->aspectRatio();
+                        });
+
+                        $watermark = Image::make(public_path().'/template_image/watermark_doctor.png');
+                        $img->insert($watermark, 'bottom-left');
                         //$img->insert('public/watermark.png');
                         $img->save(public_path().$dir.'thumb_'.$filename);
                         $photodb->path_small = $dir.'thumb_'.$filename;
 
 
                         $img_big = Image::make(public_path().$dir.$filename);
-                        $img_big->resize(720, 640);
 
-                        $img_big->insert(public_path().'/template_image/watermark.png');
+                        $img_big->resize(720, null, function ($constraint) {
+                            $constraint->aspectRatio();
+                        });
+
+                        $watermark = Image::make(public_path().'/template_image/watermark_doctor.png');
+                        $img_big->insert($watermark, 'bottom-left');
 
                         $img_big->save(public_path().$dir.'big_'.$filename);
                         $photodb->path_big = $dir.'big_'.$filename;

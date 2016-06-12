@@ -533,15 +533,15 @@ h2{
 .intro_klinika_image{
     min-height: 150px;
     min-width: 150px;
-    background: rgba(117, 214, 255, 0.13);
+    /*background: rgba(117, 214, 255, 0.13);*/
 }
 
 
 
 .intro_doctor_image{
-    background: rgba(117, 214, 255, 0.13);
-    min-height: 180px;
-    min-width: 140px;
+    /*background: rgba(117, 214, 255, 0.13);*/
+    /*min-height: 180px;*/
+    min-width: 160px;
 }
 
 
@@ -1668,4 +1668,8 @@ table {
 
 input[type="text"], input[type="email"], input[type="tel"], input[type="search"], input[type="url"], input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input {
     font-size: 16px;
+}
+
+.green{
+    color: #5CB85C;
 }

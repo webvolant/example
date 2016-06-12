@@ -9,7 +9,7 @@
 @extends('admin')
 
 @section('page-header')
-    Новый Клиента
+    Новый Клиент
 @stop
 
 @section('content')

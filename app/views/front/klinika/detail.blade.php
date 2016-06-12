@@ -90,16 +90,18 @@
             <?php echo "<html><head>".$map['js']."</head>".$map['html'] ?>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-xs-12 col-sm-6 col-md-7">
             <?php $grafik = explode(";",$user->grafik); ?>
-            <span class="glyphicon glyphicon-time left margin10 h4_my"></span>
-            <ul class="list">
-                @foreach ( $grafik as $key => $item)
-                <li>{{ $item }}</li>
-                @endforeach
-            </ul>
+            <div class="col-xs-2"><span class="fa fa-3x fa-clock-o paddingtop15"></span></div>
+            <div class="col-xs-10">
+                <ul class="list paddingtop15">
+                    @foreach ( $grafik as $key => $item)
+                    <li>{{ $item }}</li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
-        <div class="col-md-6 paddingtop15">
+        <div class="col-xs-12 col-sm-6 col-md-5 paddingtop15">
 
             <p id="price_include" data-toggle="modal" data-target="#zapis_na_priem" class="btn btn-success" ><span class="glyphicon glyphicon-edit"></span>  Онлайн запись</p></p>
             <div class="modal fade" id="zapis_na_priem" tabindex="-1" role="dialog">

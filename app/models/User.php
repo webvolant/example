@@ -106,7 +106,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         if ($result){
             return $result->fio;
         }
-        return "нет имени";
+        return "Доктор не выбран";
     }
 
 

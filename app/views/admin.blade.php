@@ -506,7 +506,8 @@
 
 {{ HTML::script('js/sweet-alert.min.js') }}
 
-
+{{ HTML::script('https://code.jquery.com/ui/1.11.4/jquery-ui.min.js') }}
+{{ HTML::script('js/jquery.ui.autocomplete.html.js') }}
 
 
 
@@ -530,10 +531,68 @@
             }
         });
 
-        var $inputs = $('input[id=phone]');
+        $.widget( "custom.catcomplete", $.ui.autocomplete, {
+            _renderMenu: function( ul, items ) {
+                var that = this,
+                        currentCategory = "";
+                $.each( items, function( index, item ) {
+                    if ( item.category != currentCategory ) {
+                        ul.append( "<li class='ui-autocomplete-category'>" + '' + item.category + "</li>" );
+                        currentCategory = item.category;
+                    }
+                    that._renderItemData( ul, item );
+                });
+            }
+            /*,
+            _renderItem: function( ul, item ) {
+                if ( item.pay_doctor == 1 ){
+                    return $( "<li>" )
+                            .append("<a class='extra'>" + item.label + '<span class="glyphicon glyphicon-thumbs-up pull-right"></span>' + "</a>")
+                            .appendTo(ul);
+                }
+                else{
+                    return $( "<li>" )
+                            .append("<a class=''>" + item.label + "</a>")
+                            .appendTo(ul);
+                }
+            }*/
+        });
+
+/*
+        $('#phone').autocomplete({  //catcomplete({
+            source: function( request, response ) {
+                var regex = new RegExp(request.term, 'i');
+                $.ajax({
+                    url: "/clients.json",
+                    dataType: "json",
+                    cache: true,
+                    success: function(data) {
+                        response($.map(data, function(item) {
+                            console.log(data);
+                            if(regex.test(item.label)){
+                                return {
+                                    label: item.label,
+                                    //category: item.category,
+                                    plink: item.plink
+                                };
+                            }
+                        }));
+                    }
+                });
+            },
+            select: function( event, ui ) {
+                location.href = ui.item.plink;
+                return false;
+            },
+            minLength: 4,
+            delay: 0
+        });
+*/
+
+        /*var $inputs = $('input[id=phone]');
         $.each($inputs,function(){
             $(this).mask("0(999) 99-99-99");
-        });
+        });*/
 
 
 

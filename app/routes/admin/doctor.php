@@ -64,8 +64,6 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         $user = new User;
                         $user->role = 'doctor';
                         $user->link = Helper::alias(Input::get('fio'));
-                        //$m = Helper::alias(Input::get('fio'));
-                        //var_dump($m);
                         $user->status = Input::get('status')[0];
 
                         $doma = Input::get('doma');
@@ -102,9 +100,6 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         $user->education = Input::get('education');
                         $user->qualif = Input::get('qualif');
 
-                        //var_dump(Input::all());
-                    //die();
-
                         $user->rating = Input::get('rating');
 
                         $user->save();
@@ -112,14 +107,18 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         if (Input::hasFile('logo')) {
                             $dir = '/uploads/doctors'.date('/Y/'.$user->id.'/');
                             $filename = 'logo'.'.jpg';
-                            //var_dump($dir);
-                            //die();
 
                             $image = Input::file('logo');
                             $image->move(public_path().$dir, $filename);
                             $img = Image::make(public_path().$dir.$filename);
-                            $img->resize(140, 180);
-                            $img->insert(public_path().'/template_image/watermark.png');
+
+                            $img->resize(160, null, function ($constraint) {
+                                $constraint->aspectRatio();
+                            });
+
+                            $watermark = Image::make(public_path().'/template_image/watermark_doctor.png');
+                            $img->insert($watermark, 'bottom-left');
+
                             $img->save(public_path().$dir.'thumb_'.$filename);
                             $user->logo = $dir.'thumb_'.$filename;
                             $user->save();
@@ -149,6 +148,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
             function($id){
                 $rules = array(
                     'fio' => array('required'),
+                    'link' => array('required'),
                     'email' => array('required'),
                     'rating' => array('required','numeric'),
                     'price' => array('required','numeric'),
@@ -163,14 +163,11 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                     if ($validation->passes()){
 
                     $user = User::find($id);
-                        $json_before = json_encode($user);
+                        //$json_before = json_encode($user);
 
                         $user->role = 'doctor';
-                        $user->link = Helper::alias(Input::get('fio'));
-                        //var_dump(Input::get('status'));
+                        $user->link = Input::get('link'); //Helper::alias(Input::get('fio'));
                         $user->status = Input::get('status');
-                        //$m = Helper::alias(Input::get('fio'));
-                        //var_dump($m);
 
                         $doma = Input::get('doma');
                         if (!isset($doma)) $doma = 0;
@@ -226,8 +223,21 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                             $image = Input::file('logo');
                             $image->move(public_path().$dir, $filename);
                             $img = Image::make(public_path().$dir.$filename);
-                            $img->resize(140, 180);
-                            $img->insert(public_path().'/template_image/watermark.png');
+                            //$img->resize(140, 180);
+
+                            // resize the image to a width of 300 and constrain aspect ratio (auto height)
+                            /*$img->resize(240, null, function ($constraint) {
+                                $constraint->aspectRatio();
+                            });*/
+
+                            // resize the image to a width of 300 and constrain aspect ratio (auto height)
+                            $img->resize(160, null, function ($constraint) {
+                                $constraint->aspectRatio();
+                            });
+
+                            $watermark = Image::make(public_path().'/template_image/watermark_doctor.png');
+                            $img->insert($watermark, 'bottom-left');
+
                             $img->save(public_path().$dir.'thumb_'.$filename);
                             $user->logo = $dir.'thumb_'.$filename;
                             $user->save();
@@ -237,10 +247,10 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                         $user->Specialities()->sync($select_specialities);
 
                         //CRM save - after data
-                        $json = json_encode($user);
-                        $json = json_decode($json, true);
-                        $json['specialities'] = $select_specialities;
-                        $json = json_encode($json, true);
+                        //$json = json_encode($user);
+                        //$json = json_decode($json, true);
+                        //$json['specialities'] = $select_specialities;
+                        //$json = json_encode($json, true);
 
                         //$string =  serialize( $user->toArray() ) ;
                         //$string =  serialize( $user->toArray() ) ;

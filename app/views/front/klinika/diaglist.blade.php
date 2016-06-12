@@ -160,12 +160,15 @@
                 <p class="orange_text_small">0312 986 900</p>
 
                 <?php $grafik = explode(";",$user->grafik); ?>
-                <span class="glyphicon glyphicon-time left h4_my"></span>
-                <ul class="list">
-                    @foreach ( $grafik as $key => $item)
-                    <li>{{ $item }}</li>
-                    @endforeach
-                </ul>
+                    <?php $grafik = explode(";",$user->grafik); ?>
+                    <div class="col-xs-2"><span class="fa fa-3x fa-clock-o paddingtop15"></span></div>
+                    <div class="col-xs-10">
+                        <ul class="list paddingtop15">
+                            @foreach ( $grafik as $key => $item)
+                                <li>{{ $item }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
 
 
 

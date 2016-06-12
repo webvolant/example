@@ -189,7 +189,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         'as'=>'order/add',
         function(){
             $rules = array(
-                //'name' => array('required','unique:specialities,name')
+                'client' => array('required')
             );
             $validation = Validator::make(Input::all(), $rules);
             if ($validation->passes()){
@@ -198,7 +198,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
                 $order->global_status = Input::get('global_status');
 
                 if(Input::get('client') == 'NULL')
-                    $order->client_id = NULL;
+                    return Redirect::route('order/index');
+                    //$order->client_id = NULL;
                 else
                     $order->client_id = Input::get('client');
 

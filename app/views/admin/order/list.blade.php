@@ -51,13 +51,21 @@
                             <td><a href='{{ URL::route("order/edit", array($user->id)) }}'>{{ Helper::getStrGlobalStatus($user->global_status) }}</a></td>
                             <td>{{ Client::getName($user->client_id) }}</td>
                             <td>{{ Client::getPhone($user->client_id) }}</td>
-                            <td>{{ User::getName($user->doctor_id) }}</td>
-                            <td><?php $doc = User::find($user->doctor_id); ?>
+                            <td>@if ($user->doctor_id)
+                                    <a href='{{ URL::route("doctor/edit", array($user->doctor_id)) }}' class="green">{{ User::getName($user->doctor_id) }}</a>
+                                @endif
+                                <br/>
+                                <?php $doc = User::find($user->doctor_id); ?>
                                 <?php if ($doc) { ?>
                                 @foreach($doc->Kliniks as $klinika)
                                     <a href='{{ URL::route("klinika/edit", array($klinika->id)) }}'>{{ $klinika->name }}</a><br/>
                                 @endforeach
-                                <?php } else { echo 'нет клиники'; } ?>
+                                <?php } else { echo 'Доктор не закреплен за клиникой'; } ?>
+                            </td>
+                            <td>
+                                @if ($user->klinik_id)
+                                    <a href='{{ URL::route("klinika/edit", array($user->klinik_id)) }}'>{{ Klinika::getName($user->klinik_id) }}</a>
+                                @endif
                             </td>
                             <td>{{ $user->created_at }}</td>
                             <td class="gradeA">

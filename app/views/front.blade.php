@@ -37,8 +37,6 @@
         {{ HTML::script('js/modernizr.custom.js') }}
 
         {{ HTML::script('https://code.jquery.com/ui/1.11.4/jquery-ui.min.js') }}
-
-
         {{ HTML::script('js/jquery.ui.autocomplete.html.js') }}
 
         {{ HTML::style('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css') }}

@@ -18,6 +18,31 @@ Route::group(array('prefix' => 'admin', 'before' => 'operator'), function() {
         'uses'=>'AdminClientController@add'
     ));
 
+    Route::get('clientstojson', array('as' => 'clientstojson',
+        function(){
+            $clients = Client::all();
+            $cl_array_temp = $clients->toArray();
+            $cl_array = array();
+            foreach($cl_array_temp as $item){
+                $object["label"] = $item["phone"];
+                $object["plink"] = "/admin/client/edit/".$item["id"];
+                $object["category"] = "Клиенты";
+                /*
+                $object["category"] = "Доктора";
+                $object["pay_doctor"] = $item["pay_doctor"];
+                */
+                $cl_array[] = $object;
+            }
+
+            //var_dump($clinics);
+            $json_merged = array_merge($cl_array);
+
+            $json = json_encode($json_merged);
+            $jsonFile = "clients.json";
+            $fh = fopen($jsonFile, 'w');
+            fwrite($fh, $json);
+        }));
+
     Route::post('client/add', array(
         'as'=>'client/add',
         function(){

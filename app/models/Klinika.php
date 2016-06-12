@@ -32,6 +32,14 @@ class Klinika extends Eloquent {
     }
 
 
+    //Получение имени
+    public static function getName($id){
+        $result = Klinika::find($id);
+        if ($result){
+            return $result->name;
+        }
+        return "Клиника не выбрана";
+    }
 
 
     public static function getImages($kl){
