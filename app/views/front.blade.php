@@ -795,7 +795,7 @@
             if(jQuery("#not_kg").is(':checked')){
                 var $inputs = $('input[id=phone]');
                 $.each($inputs,function(){
-                    $(this).mask("+999(999) 99-99-999");
+                    $(this).mask("+9(999) 99-99-999");
                 });
             }
             else{
