@@ -154,7 +154,12 @@
                         <div class="form-group form-inline order_form">
                             <?php echo $errors->first('phone_main'); ?>
                             <p><span class="h4_my"> Оставьте номер, и мы перезвоним!</span></p>
-                            {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control form-inline width250', 'placeholder'=>'0(___) __ __ __')) }}
+                                <p>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="" name="not_kg" id="not_kg"> Я не из Кыргызстана </label>
+                                </div>
+                                </p>
+                            {{ Form::text('phone_main', null, array('required', 'title'=>'Поле должно быть заполнено!', 'id'=>'phone', 'class' => 'form-control form-inline width250', 'placeholder'=>'Ваш номер телефона')) }}
                                     <!-- Honeypot::generate('my_name', 'my_time') -->
                             <div class="lastname">
                                 {{ Form::text('lastname', null, array('title'=>'Поле должно быть заполнено!', 'id'=>'lastname', 'class' => 'form-control')) }}
@@ -573,26 +578,11 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
         @section('footer')
             <div class="col-xs-12 col-sm-12 col-md-3">
-                <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus" data-yashareTheme="counter"></div>
+
                 <div class="logo2"></div>
 
 
-                <div class="developed pull-right">
 
-                    <style>
-                        img.developed_logo {
-                            position: relative;
-                            top:-2px;
-                        }
-
-                        .developed a:hover{
-                            text-decoration: none;
-                        }
-                    </style>
-                    <a href="http://abs-it.net">
-                        <img src="/public/template_image/ablogo.png" class="developed_logo" width="20px" height="20px"/> abs-it.net - создание сайтов в Бишкеке<br/>
-                        <div class="pull-right"><span class="glyphicon glyphicon-envelope"></span>  Антон Баркалов</div></a>
-                </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-4 about">
@@ -627,98 +617,112 @@
                 </div>
 
 
-                <div class="pull-left">
-                    <!-- WWW.NET.KG , code for http://www.my-doc.kg -->
-                    <script language="javascript" type="text/javascript">
-                        java="1.0";
-                        java1=""+"refer="+escape(document.referrer)+"&amp;page="+escape(window.location.href);
-                        document.cookie="astratop=1; path=/";
-                        java1+="&amp;c="+(document.cookie?"yes":"now");
-                    </script>
-                    <script language="javascript1.1" type="text/javascript">
-                        java="1.1";
-                        java1+="&amp;java="+(navigator.javaEnabled()?"yes":"now");
-                    </script>
-                    <script language="javascript1.2" type="text/javascript">
-                        java="1.2";
-                        java1+="&amp;razresh="+screen.width+'x'+screen.height+"&amp;cvet="+
-                                (((navigator.appName.substring(0,3)=="Mic"))?
-                                        screen.colorDepth:screen.pixelDepth);
-                    </script>
-                    <script language="javascript1.3" type="text/javascript">java="1.3"</script>
-                    <script language="javascript" type="text/javascript">
-                        java1+="&amp;jscript="+java+"&amp;rand="+Math.random();
-                        document.write("<a href='http://www.net.kg/stat.php?id=4757&amp;fromsite=4757' target='_blank'>"+
-                                "<img src='http://www.net.kg/img.php?id=4757&amp;"+java1+
-                                "' border='0' alt='WWW.NET.KG' width='88' height='31' /></a>");
-                    </script>
-                    <noscript>
-                        <a href='http://www.net.kg/stat.php?id=4757&amp;fromsite=4757' target='_blank'><img
-                                    src="http://www.net.kg/img.php?id=4757" border='0' alt='WWW.NET.KG' width='88'
-                                    height='31' /></a>
-                    </noscript>
-                    <!-- /WWW.NET.KG -->
-
-                    <!-- Yandex.Metrika informer -->
-                    <a href="https://metrika.yandex.ru/stat/?id=34190090&amp;from=informer"
-                       target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/34190090/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
-                                                           style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:34190090,lang:'ru'});return false}catch(e){}" /></a>
-                    <!-- /Yandex.Metrika informer -->
-
-                    <!-- Yandex.Metrika counter -->
-                    <script type="text/javascript">
-                        (function (d, w, c) {
-                            (w[c] = w[c] || []).push(function() {
-                                try {
-                                    w.yaCounter34190090 = new Ya.Metrika({
-                                        id:34190090,
-                                        clickmap:true,
-                                        trackLinks:true,
-                                        accurateTrackBounce:true,
-                                        webvisor:true
-                                    });
-                                } catch(e) { }
-                            });
-
-                            var n = d.getElementsByTagName("script")[0],
-                                    s = d.createElement("script"),
-                                    f = function () { n.parentNode.insertBefore(s, n); };
-                            s.type = "text/javascript";
-                            s.async = true;
-                            s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-                            if (w.opera == "[object Opera]") {
-                                d.addEventListener("DOMContentLoaded", f, false);
-                            } else { f(); }
-                        })(document, window, "yandex_metrika_callbacks");
-                    </script>
-                    <noscript><div><img src="https://mc.yandex.ru/watch/34190090" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-                    <!-- /Yandex.Metrika counter -->
 
 
-                    <script>
-                        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            </div>
 
-                        ga('create', 'UA-71399419-1', 'auto');
-                        ga('send', 'pageview');
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-xs-12">
 
-                    </script>
+                    <div class="pull-right">
 
-                    <!-- Rating@Mail.ru logo -->
-                    <a href="http://top.mail.ru/jump?from=2751852">
-                        <img src="//top-fwz1.mail.ru/counter?id=2751852;t=479;l=1"
-                             style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
-                    <!-- //Rating@Mail.ru logo -->
+                        <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="small" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus" data-yashareTheme="counter"></div>
+
+                        <!-- WWW.NET.KG , code for http://www.my-doc.kg -->
+                        <script language="javascript" type="text/javascript">
+                            java="1.0";
+                            java1=""+"refer="+escape(document.referrer)+"&amp;page="+escape(window.location.href);
+                            document.cookie="astratop=1; path=/";
+                            java1+="&amp;c="+(document.cookie?"yes":"now");
+                        </script>
+                        <script language="javascript1.1" type="text/javascript">
+                            java="1.1";
+                            java1+="&amp;java="+(navigator.javaEnabled()?"yes":"now");
+                        </script>
+                        <script language="javascript1.2" type="text/javascript">
+                            java="1.2";
+                            java1+="&amp;razresh="+screen.width+'x'+screen.height+"&amp;cvet="+
+                                    (((navigator.appName.substring(0,3)=="Mic"))?
+                                            screen.colorDepth:screen.pixelDepth);
+                        </script>
+                        <script language="javascript1.3" type="text/javascript">java="1.3"</script>
+                        <script language="javascript" type="text/javascript">
+                            java1+="&amp;jscript="+java+"&amp;rand="+Math.random();
+                            document.write("<a href='http://www.net.kg/stat.php?id=4757&amp;fromsite=4757' target='_blank'>"+
+                                    "<img src='http://www.net.kg/img.php?id=4757&amp;"+java1+
+                                    "' border='0' alt='WWW.NET.KG' width='88' height='31' /></a>");
+                        </script>
+                        <noscript>
+                            <a href='http://www.net.kg/stat.php?id=4757&amp;fromsite=4757' target='_blank'><img
+                                        src="http://www.net.kg/img.php?id=4757" border='0' alt='WWW.NET.KG' width='88'
+                                        height='31' /></a>
+                        </noscript>
+                        <!-- /WWW.NET.KG -->
+
+                        <!-- Yandex.Metrika informer -->
+                        <a href="https://metrika.yandex.ru/stat/?id=34190090&amp;from=informer"
+                           target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/34190090/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+                                                               style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:34190090,lang:'ru'});return false}catch(e){}" /></a>
+                        <!-- /Yandex.Metrika informer -->
+
+                        <!-- Yandex.Metrika counter -->
+                        <script type="text/javascript">
+                            (function (d, w, c) {
+                                (w[c] = w[c] || []).push(function() {
+                                    try {
+                                        w.yaCounter34190090 = new Ya.Metrika({
+                                            id:34190090,
+                                            clickmap:true,
+                                            trackLinks:true,
+                                            accurateTrackBounce:true,
+                                            webvisor:true
+                                        });
+                                    } catch(e) { }
+                                });
+
+                                var n = d.getElementsByTagName("script")[0],
+                                        s = d.createElement("script"),
+                                        f = function () { n.parentNode.insertBefore(s, n); };
+                                s.type = "text/javascript";
+                                s.async = true;
+                                s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                                if (w.opera == "[object Opera]") {
+                                    d.addEventListener("DOMContentLoaded", f, false);
+                                } else { f(); }
+                            })(document, window, "yandex_metrika_callbacks");
+                        </script>
+                        <noscript><div><img src="https://mc.yandex.ru/watch/34190090" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+                        <!-- /Yandex.Metrika counter -->
 
 
+                        <script>
+                            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                            ga('create', 'UA-71399419-1', 'auto');
+                            ga('send', 'pageview');
+
+                        </script>
+
+                        <!-- Rating@Mail.ru logo -->
+                        <a href="http://top.mail.ru/jump?from=2751852">
+                            <img src="//top-fwz1.mail.ru/counter?id=2751852;t=479;l=1"
+                                 style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
+                        <!-- //Rating@Mail.ru logo -->
+
+
+                    </div>
+
+
+                    <div class="developed pull-left">
+                        <div class="site-info">
+                            <a class="pull-right" style="padding: 20px;" href="http://abs-it.net"><img height="60px" class="dev_logo" src="/public/template_image/advanced.png" /> <span class="dev_text" style="display: none">Разработка и продвижение сайтов <br/>Антон Баркалов</span> </a>
+                        </div>
+                    </div>
                 </div>
-
-
-
-
 
             </div>
 
@@ -781,6 +785,36 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+
+        var $inputs = $('input[id=phone]');
+        $.each($inputs,function(){
+            $(this).mask("0(999) 99-99-99");
+        });
+
+        jQuery("#not_kg").click(function(){
+            if(jQuery("#not_kg").is(':checked')){
+                var $inputs = $('input[id=phone]');
+                $.each($inputs,function(){
+                    $(this).mask("+999(999) 99-99-999");
+                });
+            }
+            else{
+                var $inputs = $('input[id=phone]');
+                $.each($inputs,function(){
+                    $(this).mask("0(999) 99-99-99");
+                });
+            }
+
+        })
+
+
+        jQuery('.dev_logo').mouseenter(function(){
+            jQuery('.dev_text').show(300);
+        });
+
+        jQuery('.site-info').mouseleave(function(){
+            jQuery('.dev_text').hide(300);
+        });
 
         $.widget( "custom.catcomplete", $.ui.autocomplete, {
             _renderMenu: function( ul, items ) {
@@ -855,10 +889,7 @@
         $("#phone_otziv").mask("0(999) 99-99-99");
         $("#phone_reg").mask("0(999) 99-99-99");
 
-        var $inputs = $('input[id=phone]');
-        $.each($inputs,function(){
-            $(this).mask("0(999) 99-99-99");
-        });
+
 
 
         $('#user_phone2').mask("0(999) 99-99-99");
